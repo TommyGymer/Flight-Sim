@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "README.md",
-            "mode": "preview"
+            "file": "OpenGL/Opening a Window.md",
+            "mode": "source"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "OpenGL/Opening a Window.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "README.md",
-    "Input/XInput.md",
+    "OpenGL/Initialising.md",
     "Untitled.md",
-    "Index.md",
+    "Input/XInput.md",
     "OpenGL/3D Rendering.md",
+    "Language/C++.md",
+    "README.md",
+    "Index.md",
     "Physics/Baked Physics Format.md",
     "Physics/Flight Characteristics.md",
-    "Language/README.md",
-    "Flight Characteristics.md",
-    "Language/C++.md"
+    "Language/README.md"
   ]
 }
