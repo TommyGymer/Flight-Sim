@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "README.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -89,10 +89,10 @@
   "active": "8e3753dff00553c2",
   "lastOpenFiles": [
     "README.md",
+    "Language/C++.md",
     "Index.md",
     "Flight Characteristics.md",
     "Language/Java.md",
-    "Language/C++.md",
     "Untitled.md"
   ]
 }
