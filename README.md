@@ -7,7 +7,7 @@
 
 ---
 ## Index
-###### to be read using Obsidian
+###### to be read using [Obsidian](https://obsidian.md/)
 ---
 ### Language
 #### [[Java]]
