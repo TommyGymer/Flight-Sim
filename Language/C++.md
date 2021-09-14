@@ -1,4 +1,5 @@
 # C++
+###### to be read using [Obsidian](https://obsidian.md/)
 ---
 ### Setting up a development environment
 
