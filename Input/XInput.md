@@ -1,4 +1,4 @@
-## XInput
+## [XInput](https://docs.microsoft.com/en-us/windows/win32/xinput/getting-started-with-xinput)
 ---
 XInput should be able to take input from most devices as return similar data
 
