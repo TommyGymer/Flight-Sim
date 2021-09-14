@@ -1,7 +1,7 @@
 # Flight-Sim
 ---
  A CS project that will contain:
- - 3D rendering
+ - [[3D Rendering]]
  - File reading and writing
  - Controls from different input devices
  

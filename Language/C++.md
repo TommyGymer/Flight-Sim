@@ -3,8 +3,12 @@
 ---
 ### Setting up a development environment
 
-Following an [OpenGL in C++](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/) tutorial
+Following an [OpenGL in C++](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/) tutorial which covers OpenGL 3/4
 - IDE: Visual Studio
 - Compiler: CMake
 - Libraries (beyond built-ins):
 	- OpenGL
+
+The tutorial contains guides and examples of all the concepts I will need to implement the 3D renderer for the sim. The only concept not covered is bones, which I want to use for the movable flight surfaces to remove the need for liniked objects.
+
+The use of the .obj format and bones will make it easy to load a different file and make use of a different aircraft.

@@ -8,6 +8,6 @@ In order of difficultly:
 	- Mass
 	- Thrust
 3. Auto calculation based on a 3D model
--	Thrust and mass would still need to be entered manually
--	Could use vertex weight painting to calculate inertia; my research for a [TVC-system](https://github.com/TommyGymer/TVC-system) should contain all the physics required for this
--	
+	- Thrust and mass would still need to be entered manually
+	- Could use vertex weight painting to calculate inertia; my research for a [TVC-system](https://github.com/TommyGymer/TVC-system) should contain all the physics required for this
+^baking
