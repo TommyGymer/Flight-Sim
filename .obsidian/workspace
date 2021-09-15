@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Index.md",
-            "mode": "preview"
+            "file": "Building/Libraries/GLEW.md",
+            "mode": "source"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Index.md",
+                "file": "Building/Libraries/GLEW.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Building/Libraries/GLEW.md",
+    "Building/Libraries/Bullet.md",
+    "Building/Libraries/Assimp.md",
+    "Building/Libraries/AntTweakBar.md",
     "Index.md",
     "Building/Requirements.md",
-    "Building/Libraries/AntTweakBar.md",
     "Building/Libraries/GLM.md",
     "Building/Libraries/GLFW.md",
-    "Building/Libraries/Assimp.md",
     "Untitled.md",
-    "Building/Libraries/Asset Importer.md",
-    "Input/GLFW Inputs.md",
-    "Input/XInput.md"
+    "Building/Libraries/Asset Importer.md"
   ]
 }
