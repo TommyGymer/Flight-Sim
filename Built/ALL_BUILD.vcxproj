@@ -174,10 +174,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{32197E10-BECC-3F48-9247-B03B1CA80391}</Project>
       <Name>ANTTWEAKBAR_116_OGLCORE_GLFW</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\BuildingYourOwnOpenglApp.vcxproj">
-      <Project>{14664876-3FB5-3545-B72F-139F1BD2E7BE}</Project>
-      <Name>BuildingYourOwnOpenglApp</Name>
-    </ProjectReference>
     <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\bullet-2.81-rev2613\src\BulletCollision\BulletCollision.vcxproj">
       <Project>{7DB0F653-B23A-3802-A1D3-F9497677765C}</Project>
       <Name>BulletCollision</Name>
@@ -189,6 +185,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\bullet-2.81-rev2613\src\BulletSoftBody\BulletSoftBody.vcxproj">
       <Project>{6CE852B6-33A8-39B1-BA37-E1CCED7C4FBF}</Project>
       <Name>BulletSoftBody</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\FlightSim.vcxproj">
+      <Project>{3C557158-7B65-395B-8B65-1BF0F877E5B7}</Project>
+      <Name>FlightSim</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\GLEW_1130.vcxproj">
       <Project>{163ABF86-8BA8-3DA7-9E66-035482F781D0}</Project>

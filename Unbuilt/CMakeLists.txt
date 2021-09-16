@@ -61,11 +61,11 @@ set(MY_SOURCE_FILES
 	# ../common/shader.cpp
 )
 
-add_executable(BuildingYourOwnOpenglApp
+add_executable(FlightSim
 	${MY_HEADER_FILES}
 	${MY_SOURCE_FILES}
 )
-target_link_libraries(BuildingYourOwnOpenglApp
+target_link_libraries(FlightSim
 	${OPENGL_LIBRARY} # filled by "find_package(OpenGL REQUIRED)"
 	${GLFW_LIBRARY}
 	${GLEW_LIBRARY}
