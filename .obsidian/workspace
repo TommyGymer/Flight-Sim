@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Building/Libraries/GLEW.md",
-            "mode": "source"
+            "file": "Building/CMake.md",
+            "mode": "preview"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Building/Libraries/GLEW.md",
+                "file": "Building/CMake.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Building/CMake.md",
+    "Building/Requirements.md",
+    "Untitled.md",
     "Building/Libraries/GLEW.md",
     "Building/Libraries/Bullet.md",
     "Building/Libraries/Assimp.md",
     "Building/Libraries/AntTweakBar.md",
     "Index.md",
-    "Building/Requirements.md",
     "Building/Libraries/GLM.md",
-    "Building/Libraries/GLFW.md",
-    "Untitled.md",
-    "Building/Libraries/Asset Importer.md"
+    "Building/Libraries/GLFW.md"
   ]
 }

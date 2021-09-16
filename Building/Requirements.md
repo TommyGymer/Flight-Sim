@@ -1,7 +1,7 @@
 ## Build Requirements
 ---
 #### Programs
-1. CMake
+1. [[CMake]]
 2. Visual Studio
 
 #### Libraries
