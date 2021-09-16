@@ -124,7 +124,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=BuildingYourOwnOpenglApp
+CMAKE_PROJECT_NAME:STATIC=FlightSim
 
 //RC compiler
 CMAKE_RC_COMPILER:FILEPATH=rc
@@ -199,6 +199,15 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=OFF
 
 //Doxygen documentation generation tool (http://www.doxygen.org)
 DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
+
+//Value Computed by CMake
+FlightSim_BINARY_DIR:STATIC=C:/Users/Tom/Documents/GitHub/Flight-Sim/Built
+
+//Value Computed by CMake
+FlightSim_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+FlightSim_SOURCE_DIR:STATIC=C:/Users/Tom/Documents/GitHub/Flight-Sim/Unbuilt
 
 //Dependencies for the target
 GLEW_1130_LIB_DEPENDS:STATIC=general;opengl32;general;glu32;
@@ -372,7 +381,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib

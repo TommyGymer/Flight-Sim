@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6F8970AE-5E86-3DDB-973E-C4571385F308}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\AntTweakBar-1.16\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glfw-3.1.2\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glm-0.9.7.1;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glew-1.13.0\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\assimp-3.0.1270\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\bullet-2.81-rev2613\src;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\AntTweakBar-1.16\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glfw-3.1.2\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glm-0.9.7.1;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glew-1.13.0\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\assimp-3.0.1270\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\bullet-2.81-rev2613\src;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\AntTweakBar-1.16\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glfw-3.1.2\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glm-0.9.7.1;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glew-1.13.0\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\assimp-3.0.1270\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\bullet-2.81-rev2613\src;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\AntTweakBar-1.16\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glfw-3.1.2\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glm-0.9.7.1;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\glew-1.13.0\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\assimp-3.0.1270\include;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\bullet-2.81-rev2613\src;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Tom/Documents/GitHub/Flight-Sim/Unbuilt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tom/Documents/GitHub/Flight-Sim/Unbuilt -BC:/Users/Tom/Documents/GitHub/Flight-Sim/Built --check-stamp-file C:/Users/Tom/Documents/GitHub/Flight-Sim/Built/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeCCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeCXXCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeRCCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeSystem.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\CleanDirectoryList.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\CreateLaunchers.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\ListCombinations.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\MSVCMultipleProcessCompile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Tom/Documents/GitHub/Flight-Sim/Unbuilt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tom/Documents/GitHub/Flight-Sim/Unbuilt -BC:/Users/Tom/Documents/GitHub/Flight-Sim/Built --check-stamp-file C:/Users/Tom/Documents/GitHub/Flight-Sim/Built/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeCCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeCXXCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeRCCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeSystem.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\CleanDirectoryList.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\CreateLaunchers.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\ListCombinations.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\MSVCMultipleProcessCompile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Tom/Documents/GitHub/Flight-Sim/Unbuilt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tom/Documents/GitHub/Flight-Sim/Unbuilt -BC:/Users/Tom/Documents/GitHub/Flight-Sim/Built --check-stamp-file C:/Users/Tom/Documents/GitHub/Flight-Sim/Built/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeCCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeCXXCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeRCCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeSystem.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\CleanDirectoryList.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\CreateLaunchers.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\ListCombinations.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\MSVCMultipleProcessCompile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Tom/Documents/GitHub/Flight-Sim/Unbuilt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tom/Documents/GitHub/Flight-Sim/Unbuilt -BC:/Users/Tom/Documents/GitHub/Flight-Sim/Built --check-stamp-file C:/Users/Tom/Documents/GitHub/Flight-Sim/Built/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeCCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeCXXCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeRCCompiler.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\3.21.2\CMakeSystem.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\CleanDirectoryList.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\CreateLaunchers.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\ListCombinations.cmake;C:\Users\Tom\Documents\GitHub\Flight-Sim\Unbuilt\external\rpavlik-cmake-modules-fe2273\MSVCMultipleProcessCompile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\ZERO_CHECK.vcxproj">
+      <Project>{8D4C5E05-DC2F-300E-B17B-61AF00445669}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\ANTTWEAKBAR_116_OGLCORE_GLFW.vcxproj">
+      <Project>{32197E10-BECC-3F48-9247-B03B1CA80391}</Project>
+      <Name>ANTTWEAKBAR_116_OGLCORE_GLFW</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\BuildingYourOwnOpenglApp.vcxproj">
+      <Project>{14664876-3FB5-3545-B72F-139F1BD2E7BE}</Project>
+      <Name>BuildingYourOwnOpenglApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\bullet-2.81-rev2613\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>{7DB0F653-B23A-3802-A1D3-F9497677765C}</Project>
+      <Name>BulletCollision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\bullet-2.81-rev2613\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>{B5B7131C-A048-36DA-888F-33345B7BC4A9}</Project>
+      <Name>BulletDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\bullet-2.81-rev2613\src\BulletSoftBody\BulletSoftBody.vcxproj">
+      <Project>{6CE852B6-33A8-39B1-BA37-E1CCED7C4FBF}</Project>
+      <Name>BulletSoftBody</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\GLEW_1130.vcxproj">
+      <Project>{163ABF86-8BA8-3DA7-9E66-035482F781D0}</Project>
+      <Name>GLEW_1130</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\bullet-2.81-rev2613\src\LinearMath\LinearMath.vcxproj">
+      <Project>{B372EAEB-E95F-32DD-9162-DB3357AC8F1E}</Project>
+      <Name>LinearMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\assimp-3.0.1270\code\assimp.vcxproj">
+      <Project>{6B4D42F9-3296-3C4B-8C51-2490BFA826EB}</Project>
+      <Name>assimp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\examples\boing.vcxproj">
+      <Project>{36734CDE-862E-3C86-867A-4F6E4A9B51DD}</Project>
+      <Name>boing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\clipboard.vcxproj">
+      <Project>{9815474C-DF52-330F-9C75-FDCF03EE4E8A}</Project>
+      <Name>clipboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\cursor.vcxproj">
+      <Project>{3183D0E4-F9C9-33B3-83DC-388CE92807F2}</Project>
+      <Name>cursor</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\empty.vcxproj">
+      <Project>{6F884ED2-C6C3-3312-B45B-179F8AE581B6}</Project>
+      <Name>empty</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\events.vcxproj">
+      <Project>{5C3705E5-0EEB-38B2-87CD-BA73F849C180}</Project>
+      <Name>events</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\gamma.vcxproj">
+      <Project>{1AA67142-B32E-3343-AF32-33AA730D6551}</Project>
+      <Name>gamma</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\examples\gears.vcxproj">
+      <Project>{BF5A18CD-6801-3D0D-B01E-897816179767}</Project>
+      <Name>gears</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\src\glfw.vcxproj">
+      <Project>{33F1C372-A62C-3B21-8919-E561FA76A49E}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\glfwinfo.vcxproj">
+      <Project>{C0F6D2AF-9EA5-3E0E-BCAF-5117A2A35ABE}</Project>
+      <Name>glfwinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\examples\heightmap.vcxproj">
+      <Project>{93797C8A-7FEF-3028-B3E4-67E63F28C4E8}</Project>
+      <Name>heightmap</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\iconify.vcxproj">
+      <Project>{6235ECD6-695E-3B1D-9E8C-E8CD32FF5DF1}</Project>
+      <Name>iconify</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\joysticks.vcxproj">
+      <Project>{FE3AF003-1939-3787-B887-99E725CD773D}</Project>
+      <Name>joysticks</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\monitors.vcxproj">
+      <Project>{F66C1972-3DEE-3F04-97A2-7B20AB39401D}</Project>
+      <Name>monitors</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\msaa.vcxproj">
+      <Project>{C951DD6C-6F8C-3F1B-983F-D65B2BCDFB6F}</Project>
+      <Name>msaa</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\examples\particles.vcxproj">
+      <Project>{641843AC-0B67-3AD0-BDCB-5B2DB3EFF663}</Project>
+      <Name>particles</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\reopen.vcxproj">
+      <Project>{8C5FF6D8-24AA-3553-B1A6-E77F3C083872}</Project>
+      <Name>reopen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\sharing.vcxproj">
+      <Project>{2B68411C-346B-395C-B310-D28C81C09B2F}</Project>
+      <Name>sharing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\examples\simple.vcxproj">
+      <Project>{CC1012CF-A574-3367-BB81-41D49A1BC094}</Project>
+      <Name>simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\examples\splitview.vcxproj">
+      <Project>{03B67CC4-22E4-3D70-92FD-280FACAEC43C}</Project>
+      <Name>splitview</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\tearing.vcxproj">
+      <Project>{8A1BD8BD-A0E4-3318-B8E1-6176B63DF275}</Project>
+      <Name>tearing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\threads.vcxproj">
+      <Project>{F67D9DD4-F4FE-32C8-9623-A7168B0726F5}</Project>
+      <Name>threads</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\title.vcxproj">
+      <Project>{AD69EDD9-4EE5-3B55-B97A-9B2582C32866}</Project>
+      <Name>title</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\examples\wave.vcxproj">
+      <Project>{D897049D-1783-3D1A-A9A9-D01A0E383E26}</Project>
+      <Name>wave</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\glfw-3.1.2\tests\windows.vcxproj">
+      <Project>{C4FD1DDF-E580-33F5-B066-ABAE5B1DE3F2}</Project>
+      <Name>windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tom\Documents\GitHub\Flight-Sim\Built\external\assimp-3.0.1270\contrib\zlib\zlib.vcxproj">
+      <Project>{5569ECC5-CD00-32A7-A0A6-AB069D41A547}</Project>
+      <Name>zlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

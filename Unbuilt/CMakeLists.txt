@@ -1,12 +1,9 @@
 # CMake entry point
-
-# For an introduction to CMake, see
-# http://www.cmake.org/cmake/help/cmake_tutorial.html (at least steps 1 and 2)
-
 cmake_minimum_required (VERSION 2.6)
-project (BuildingYourOwnOpenglApp)
+project (FlightSim)
 
 find_package(OpenGL REQUIRED)
+
 
 if( CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR )
     message( FATAL_ERROR "Please select another Build Directory!" )
@@ -19,8 +16,13 @@ if( CMAKE_BINARY_DIR MATCHES " " )
 endif()
 
 
+
 # Compile external dependencies 
 add_subdirectory (external)
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/rpavlik-cmake-modules-fe2273")
+include(CreateLaunchers)
+include(MSVCMultipleProcessCompile) # /MP
 
 include_directories(
    external/AntTweakBar-1.16/include/
@@ -55,7 +57,7 @@ set(MY_HEADER_FILES
 
 set(MY_SOURCE_FILES
 	# put all your .c/.cpp here.
-	playground2.cpp
+	src/main.cpp
 	# ../common/shader.cpp
 )
 
@@ -67,6 +69,7 @@ target_link_libraries(BuildingYourOwnOpenglApp
 	${OPENGL_LIBRARY} # filled by "find_package(OpenGL REQUIRED)"
 	${GLFW_LIBRARY}
 	${GLEW_LIBRARY}
+	${ALL_LIBS}
 )
 
 
@@ -75,8 +78,8 @@ target_link_libraries(BuildingYourOwnOpenglApp
 
 # Add a preprocessor define : 
 
-if(SOME_STUFF)
-	add_definitions(
-		-DCOMPILE_WITH_SOME_PREPROCESSOR_DIRECTIVE
-	)
-endif(SOME_STUFF)
+#if(SOME_STUFF)
+#	add_definitions(
+#		-DCOMPILE_WITH_SOME_PREPROCESSOR_DIRECTIVE
+#	)
+#endif(SOME_STUFF)
