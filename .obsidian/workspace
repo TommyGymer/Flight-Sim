@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Building/CMake.md",
+            "file": "README.md",
             "mode": "preview"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Building/CMake.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "README.md",
+    "Language/README.md",
     "Building/CMake.md",
-    "Building/Requirements.md",
-    "Untitled.md",
-    "Building/Libraries/GLEW.md",
-    "Building/Libraries/Bullet.md",
-    "Building/Libraries/Assimp.md",
-    "Building/Libraries/AntTweakBar.md",
+    "Input/GLFW Inputs.md",
+    "Language/Java.md",
+    "OpenGL/Opening a Window.md",
+    "OpenGL/3D Rendering.md",
     "Index.md",
-    "Building/Libraries/GLM.md",
-    "Building/Libraries/GLFW.md"
+    "Building/Requirements.md",
+    "Untitled.md"
   ]
 }
