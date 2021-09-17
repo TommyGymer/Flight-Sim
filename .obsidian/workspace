@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OpenGL/Shaders/Fragment Shaders.md",
-            "mode": "source"
+            "file": "Building/Libraries/Assimp.md",
+            "mode": "preview"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OpenGL/Shaders/Fragment Shaders.md",
+                "file": "Building/Libraries/Assimp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Building/Libraries/Assimp.md",
+    "Building/Requirements.md",
+    "OpenGL/3D Rendering.md",
     "OpenGL/Shaders/Fragment Shaders.md",
     "OpenGL/Shaders/Vertex Shaders.md",
     "Untitled.md",
-    "OpenGL/3D Rendering.md",
     "README.md",
     "Language/README.md",
     "Building/CMake.md",
-    "Input/GLFW Inputs.md",
-    "Language/Java.md",
-    "OpenGL/Opening a Window.md"
+    "Input/GLFW Inputs.md"
   ]
 }

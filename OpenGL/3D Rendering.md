@@ -7,6 +7,10 @@
 
 Using C++ and OpenGL for the heavy lifting will reduce the need to focus on the required parts of any 3D software
 
+The camera will always be looking at the aircraft, so keyboard inputs for movement shouldn't be required
+
+Although this might add another dimention to the experience if the user can  move their perspective around the map
+
 ### Object files
 
 ^8b37fe
