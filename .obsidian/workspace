@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Building/Libraries/Assimp.md",
+            "file": "OpenGL/Opening a Window.md",
             "mode": "preview"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Building/Libraries/Assimp.md",
+                "file": "OpenGL/Opening a Window.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "Building/Libraries/Assimp.md",
-    "Building/Requirements.md",
+    "OpenGL/Opening a Window.md",
+    "Language/C++.md",
     "OpenGL/3D Rendering.md",
+    "Language/README.md",
+    "Language/Java.md",
+    "Building/Requirements.md",
+    "Building/Libraries/Assimp.md",
     "OpenGL/Shaders/Fragment Shaders.md",
     "OpenGL/Shaders/Vertex Shaders.md",
-    "Untitled.md",
-    "README.md",
-    "Language/README.md",
-    "Building/CMake.md",
-    "Input/GLFW Inputs.md"
+    "Untitled.md"
   ]
 }
