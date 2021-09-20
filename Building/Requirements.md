@@ -34,3 +34,7 @@ using namespace glm;
 ```
 
 This also includes the standard C++ libraries for IO and other basic methods
+
+### vcpkg
+---
+Vcpkg is a package manager maintained by Microsoft which allows the installing a linking of C++ libraries

@@ -1,9 +1,12 @@
 # CMake entry point
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.0)
+
+#vcpkg init
+#set(CMAKE_TOOLCHAIN_FILE "C:/Users/Tom/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+
 project (FlightSim)
 
 find_package(OpenGL REQUIRED)
-
 
 if( CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR )
     message( FATAL_ERROR "Please select another Build Directory!" )
@@ -29,15 +32,19 @@ include_directories(
    external/glfw-3.1.2/include/
    external/glm-0.9.7.1/
    external/glew-1.13.0/include/
-   external/assimp-3.0.1270/include/
    external/bullet-2.81-rev2613/src/
+   external/assimp/include/
    .
 )
+
+#vcpkg dependencies
+#find_package(assimp CONFIG REQUIRED)
 
 set(ALL_LIBS
    ${OPENGL_LIBRARY}
    glfw
    GLEW_1130
+   assimp
 )
 
 add_definitions(

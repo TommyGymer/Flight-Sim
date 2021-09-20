@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OpenGL/Opening a Window.md",
-            "mode": "preview"
+            "file": "Building/Requirements.md",
+            "mode": "source"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OpenGL/Opening a Window.md",
+                "file": "Building/Requirements.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,12 +88,12 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Building/Requirements.md",
     "OpenGL/Opening a Window.md",
     "Language/C++.md",
     "OpenGL/3D Rendering.md",
     "Language/README.md",
     "Language/Java.md",
-    "Building/Requirements.md",
     "Building/Libraries/Assimp.md",
     "OpenGL/Shaders/Fragment Shaders.md",
     "OpenGL/Shaders/Vertex Shaders.md",
