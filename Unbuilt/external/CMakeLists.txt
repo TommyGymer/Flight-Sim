@@ -18,6 +18,7 @@ add_subdirectory (glfw-3.1.2)
 include_directories(
 	glfw-3.1.2/include/GLFW/
 	glew-1.13.0/include/
+	assimp/include
 )
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
@@ -148,10 +149,10 @@ target_link_libraries(ANTTWEAKBAR_116_OGLCORE_GLFW
 # AssImp already has a CMakeLists.txt so let's use these
 
 # Compile built-in, modified version of Zlib
-include(CheckIncludeFile)
-include(CheckTypeSize)
-include(CheckFunctionExists)
-add_subdirectory( assimp/contrib/zlib )
+#include(CheckIncludeFile)
+#include(CheckTypeSize)
+#include(CheckFunctionExists)
+#add_subdirectory( assimp/contrib/zlib )
 
 # Compile without Boost
 #include_directories( assimp-3.0.1270/code/BoostWorkaround )
@@ -160,10 +161,10 @@ add_subdirectory( assimp/contrib/zlib )
 # Compile AssImp
 #set( LIB_INSTALL_DIR "lib")
 #set(LIBASSIMP_COMPONENT libassimp3.0-r1270-OGLtuts)
-set(ZLIB_LIBRARIES zlib)
-set(BUILD_STATIC_LIB ON)
+#set(ZLIB_LIBRARIES zlib)
+#set(BUILD_STATIC_LIB ON)
 #set(ZLIB_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/zlib)
-add_subdirectory( assimp/code )
+#add_subdirectory( assimp/code )
 
 
 ### BULLET ###
