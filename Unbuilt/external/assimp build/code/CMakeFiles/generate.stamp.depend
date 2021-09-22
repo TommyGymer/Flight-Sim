@@ -1,5 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageMessage.cmake
-D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/cmake-modules/FindRT.cmake
-D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/code/CMakeLists.txt
