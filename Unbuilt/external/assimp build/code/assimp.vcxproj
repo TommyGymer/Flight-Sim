@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{82365051-597D-3E35-B86D-82D7F592DDE6}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>assimp</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">assimp.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">assimp-vc142-mtd</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">assimp.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">assimp-vc142-mt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">assimp.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">assimp-vc142-mt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">assimp.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">assimp-vc142-mt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_DEBUG;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;ASSIMP_BUILD_NO_C4D_IMPORTER;MINIZ_USE_UNALIGNED_LOADS_AND_STORES=0;ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1;RAPIDJSON_HAS_STDSTRING=1;RAPIDJSON_NOMEMBERITERATORCLASS;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR="Debug";assimp_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;ASSIMP_BUILD_NO_C4D_IMPORTER;MINIZ_USE_UNALIGNED_LOADS_AND_STORES=0;ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1;RAPIDJSON_HAS_STDSTRING=1;RAPIDJSON_NOMEMBERITERATORCLASS;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR=\"Debug\";assimp_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\contrib\zlib\Debug\zlibstaticd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/lib/Debug/assimp-vc142-mtd.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/bin/Debug/assimp-vc142-mtd.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;ASSIMP_BUILD_NO_C4D_IMPORTER;MINIZ_USE_UNALIGNED_LOADS_AND_STORES=0;ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1;RAPIDJSON_HAS_STDSTRING=1;RAPIDJSON_NOMEMBERITERATORCLASS;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR="Release";assimp_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;ASSIMP_BUILD_NO_C4D_IMPORTER;MINIZ_USE_UNALIGNED_LOADS_AND_STORES=0;ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1;RAPIDJSON_HAS_STDSTRING=1;RAPIDJSON_NOMEMBERITERATORCLASS;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR=\"Release\";assimp_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\contrib\zlib\Release\zlibstatic.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /PDBALTPATH:%%_PDB%%</AdditionalOptions>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/lib/Release/assimp-vc142-mt.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/bin/Release/assimp-vc142-mt.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableSpecificWarnings>4244</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;ASSIMP_BUILD_NO_C4D_IMPORTER;MINIZ_USE_UNALIGNED_LOADS_AND_STORES=0;ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1;RAPIDJSON_HAS_STDSTRING=1;RAPIDJSON_NOMEMBERITERATORCLASS;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR="MinSizeRel";assimp_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;ASSIMP_BUILD_NO_C4D_IMPORTER;MINIZ_USE_UNALIGNED_LOADS_AND_STORES=0;ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1;RAPIDJSON_HAS_STDSTRING=1;RAPIDJSON_NOMEMBERITERATORCLASS;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR=\"MinSizeRel\";assimp_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\contrib\zlib\MinSizeRel\zlibstatic.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/lib/MinSizeRel/assimp-vc142-mt.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/bin/MinSizeRel/assimp-vc142-mt.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;ASSIMP_BUILD_NO_C4D_IMPORTER;MINIZ_USE_UNALIGNED_LOADS_AND_STORES=0;ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1;RAPIDJSON_HAS_STDSTRING=1;RAPIDJSON_NOMEMBERITERATORCLASS;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR="RelWithDebInfo";assimp_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;ASSIMP_BUILD_NO_C4D_IMPORTER;MINIZ_USE_UNALIGNED_LOADS_AND_STORES=0;ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1;RAPIDJSON_HAS_STDSTRING=1;RAPIDJSON_NOMEMBERITERATORCLASS;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR=\"RelWithDebInfo\";assimp_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\.;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\pugixml\src;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\rapidjson\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\unzip;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\contrib\openddlparser\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\..\include;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\contrib\zlib\RelWithDebInfo\zlibstatic.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/lib/RelWithDebInfo/assimp-vc142-mt.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/bin/RelWithDebInfo/assimp-vc142-mt.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy" "-BD:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build" --check-stamp-file "D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/code/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\cmake-modules\FindRT.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy" "-BD:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build" --check-stamp-file "D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/code/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\cmake-modules\FindRT.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy" "-BD:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build" --check-stamp-file "D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/code/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\cmake-modules\FindRT.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy" "-BD:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build" --check-stamp-file "D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/code/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\cmake-modules\FindRT.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\Assimp.cpp" />
+    <ResourceCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\res\assimp.rc" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\CApi\CInterfaceIOWrapper.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\CApi\CInterfaceIOWrapper.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\BaseImporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\BaseProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\BaseProcess.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\Importer.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\ScenePrivate.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\PostStepRegistry.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\ImporterRegistry.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\DefaultProgressHandler.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\DefaultIOStream.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\DefaultIOSystem.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\ZipArchiveIOSystem.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\PolyTools.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\Importer.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\IFF.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\SGSpatialSort.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\VertexTriangleAdjacency.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\VertexTriangleAdjacency.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\SpatialSort.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\SceneCombiner.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\ScenePreprocessor.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\ScenePreprocessor.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\SkeletonMeshBuilder.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\StandardShapes.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\TargetAnimation.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\TargetAnimation.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\RemoveComments.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\Subdivision.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\scene.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\Bitmap.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\Version.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\CreateAnimMesh.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\simd.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\simd.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\material.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\AssertHandler.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\Exceptional.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\DefaultLogger.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\LogStream.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Logger.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\NullLogger.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\Win32DebugLogStream.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\DefaultLogger.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\FileLogStream.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\StdOStreamLogStream.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Common\Exporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\CApi\AssimpCExport.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\BlobIOSystem.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\CalcTangentsProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\CalcTangentsProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ComputeUVMappingProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ComputeUVMappingProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ConvertToLHProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ConvertToLHProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\EmbedTexturesProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\EmbedTexturesProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\FindDegenerates.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\FindDegenerates.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\FindInstancesProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\FindInstancesProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\FindInvalidDataProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\FindInvalidDataProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\FixNormalsStep.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\FixNormalsStep.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\DropFaceNormalsProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\DropFaceNormalsProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\GenFaceNormalsProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\GenFaceNormalsProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\GenVertexNormalsProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\GenVertexNormalsProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\PretransformVertices.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\PretransformVertices.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ImproveCacheLocality.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ImproveCacheLocality.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\JoinVerticesProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\JoinVerticesProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\LimitBoneWeightsProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\LimitBoneWeightsProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\RemoveRedundantMaterials.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\RemoveRedundantMaterials.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\RemoveVCProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\RemoveVCProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\SortByPTypeProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\SortByPTypeProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\SplitLargeMeshes.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\SplitLargeMeshes.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\TextureTransform.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\TextureTransform.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\TriangulateProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\TriangulateProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ValidateDataStructure.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ValidateDataStructure.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\OptimizeGraph.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\OptimizeGraph.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\OptimizeMeshes.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\OptimizeMeshes.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\DeboneProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\DeboneProcess.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ProcessHelper.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ProcessHelper.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\MakeVerboseFormat.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\MakeVerboseFormat.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ScaleProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ScaleProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ArmaturePopulate.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\ArmaturePopulate.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\GenBoundingBoxesProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\GenBoundingBoxesProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\SplitByBoneCountProcess.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\PostProcessing\SplitByBoneCountProcess.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Material\MaterialSystem.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Material\MaterialSystem.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\STEPParser\STEPFileReader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\STEPParser\STEPFileReader.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\STEPParser\STEPFileEncoding.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\STEPParser\STEPFileEncoding.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\AMF\AMFImporter.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\AMF\AMFImporter_Node.hpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\AMF\AMFImporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\AMF\AMFImporter_Geometry.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\AMF\AMFImporter_Material.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\AMF\AMFImporter_Postprocess.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3DS\3DSConverter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3DS\3DSHelper.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3DS\3DSLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3DS\3DSLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\AC\ACLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\AC\ACLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\ASE\ASELoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\ASE\ASELoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\ASE\ASEParser.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\ASE\ASEParser.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assbin\AssbinLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assbin\AssbinLoader.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\B3D\B3DImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\B3D\B3DImporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\BVH\BVHLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\BVH\BVHLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Collada\ColladaHelper.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Collada\ColladaHelper.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Collada\ColladaLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Collada\ColladaLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Collada\ColladaParser.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Collada\ColladaParser.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\DXF\DXFLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\DXF\DXFLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\DXF\DXFHelper.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\CSM\CSMLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\CSM\CSMLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\HMP\HMPFileData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\HMP\HMPLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\HMP\HMPLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\HMP\HalfLifeFileData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Irr\IRRMeshLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Irr\IRRMeshLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Irr\IRRShared.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Irr\IRRShared.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Irr\IRRLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Irr\IRRLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\LWO\LWOAnimation.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\LWO\LWOAnimation.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\LWO\LWOBLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\LWO\LWOFileData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\LWO\LWOLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\LWO\LWOLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\LWO\LWOMaterial.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\LWS\LWSLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\LWS\LWSLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\M3D\M3DMaterials.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\M3D\M3DImporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\M3D\M3DImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\M3D\M3DWrapper.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\M3D\M3DWrapper.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\M3D\m3d.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD2\MD2FileData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD2\MD2Loader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD2\MD2Loader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD2\MD2NormalTable.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD3\MD3FileData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD3\MD3Loader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD3\MD3Loader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD5\MD5Loader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD5\MD5Loader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD5\MD5Parser.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MD5\MD5Parser.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDC\MDCFileData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDC\MDCLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDC\MDCLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDC\MDCNormalTable.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\MDLDefaultColorMap.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\MDLFileData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\MDLLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\MDLLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\MDLMaterialLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\HalfLifeMDLBaseHeader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\HL1FileData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\HL1MDLLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\HL1MDLLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\HL1ImportDefinitions.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\HL1ImportSettings.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\HL1MeshTrivert.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\LogFunctions.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\UniqueNameGenerator.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MDL\HalfLife\UniqueNameGenerator.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\NFF\NFFLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\NFF\NFFLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\NDO\NDOLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\NDO\NDOLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\OFF\OFFLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\OFF\OFFLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjFileData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjFileImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjFileImporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjFileMtlImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjFileMtlImporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjFileParser.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjFileParser.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjTools.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreImporter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreStructs.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreParsingUtils.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreBinarySerializer.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreXmlSerializer.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreImporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreStructs.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreBinarySerializer.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreXmlSerializer.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ogre\OgreMaterial.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\OpenGEX\OpenGEXImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\OpenGEX\OpenGEXImporter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\OpenGEX\OpenGEXStructs.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ply\PlyLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ply\PlyLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ply\PlyParser.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ply\PlyParser.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MS3D\MS3DLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MS3D\MS3DLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\COB\COBLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\COB\COBLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\COB\COBScene.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderDNA.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderDNA.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderDNA.inl" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderScene.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderScene.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderSceneGen.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderIntermediate.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderModifier.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderModifier.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderBMesh.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderBMesh.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderTessellator.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderTessellator.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderCustomData.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Blender\BlenderCustomData.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCReaderGen1_2x3.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCReaderGen2_2x3.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCReaderGen_2x3.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCUtil.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCUtil.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCGeometry.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCMaterial.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCProfile.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCCurve.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCBoolean.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\IFC\IFCOpenings.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\XGL\XGLLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\XGL\XGLLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXCompileConfig.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXImporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXParser.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXParser.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXTokenizer.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXTokenizer.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXImportSettings.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXConverter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXConverter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXUtil.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXUtil.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXDocument.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXDocument.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXProperties.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXProperties.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXMeshGeometry.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXMeshGeometry.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXMaterial.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXModel.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXAnimation.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXNodeAttribute.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXDeformer.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXBinaryTokenizer.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXDocumentUtil.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXCommon.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Q3D\Q3DLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Q3D\Q3DLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Q3BSP\Q3BSPFileData.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Q3BSP\Q3BSPFileParser.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Q3BSP\Q3BSPFileParser.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Q3BSP\Q3BSPFileImporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Q3BSP\Q3BSPFileImporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Raw\RawLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Raw\RawLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\SIB\SIBImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\SIB\SIBImporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\SMD\SMDLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\SMD\SMDLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\STL\STLLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\STL\STLLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Terragen\TerragenLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Terragen\TerragenLoader.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Unreal\UnrealLoader.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Unreal\UnrealLoader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X\XFileHelper.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X\XFileImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X\XFileImporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X\XFileParser.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X\XFileParser.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X3D\X3DImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X3D\X3DImporter.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFCommon.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFCommon.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFAsset.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFAsset.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFAssetWriter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFAssetWriter.inl" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFImporter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF2\glTF2Asset.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF2\glTF2Asset.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF2\glTF2AssetWriter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF2\glTF2AssetWriter.inl" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF2\glTF2Importer.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF2\glTF2Importer.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\3MFTypes.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\XmlSerializer.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\XmlSerializer.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\D3MFImporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\D3MFImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\D3MFOpcPackage.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\D3MFOpcPackage.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\3MFXmlTags.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MMD\MMDCpp14.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MMD\MMDImporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MMD\MMDImporter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MMD\MMDPmdParser.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MMD\MMDPmxParser.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MMD\MMDPmxParser.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\MMD\MMDVmdParser.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Obj\ObjExporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\OpenGEX\OpenGEXExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\OpenGEX\OpenGEXExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ply\PlyExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Ply\PlyExporter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3DS\3DSExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3DS\3DSExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assbin\AssbinExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assbin\AssbinExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assbin\AssbinFileWriter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assbin\AssbinFileWriter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assxml\AssxmlExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assxml\AssxmlExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assxml\AssxmlFileWriter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assxml\AssxmlFileWriter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\M3D\M3DExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\M3D\M3DExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Collada\ColladaExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Collada\ColladaExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXExportNode.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXExportNode.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXExportProperty.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\FBX\FBXExportProperty.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\STL\STLExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\STL\STLExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X\XFileExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X\XFileExporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X3D\X3DExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\X3D\X3DExporter.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF\glTFExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF2\glTF2Exporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\glTF2\glTF2Exporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\D3MFExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\3MF\D3MFExporter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Pbrt\PbrtExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\Pbrt\PbrtExporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assjson\cencode.c" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assjson\cencode.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assjson\json_exporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assjson\mesh_splitter.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Assjson\mesh_splitter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Step\StepExporter.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\code\AssetLib\Step\StepExporter.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\unzip\crypt.c" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\unzip\crypt.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\unzip\ioapi.c" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\unzip\ioapi.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\unzip\unzip.c" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\unzip\unzip.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\common\shapes.cc" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\common\shapes.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\common\utils.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\sweep\advancing_front.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\sweep\advancing_front.cc" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\sweep\cdt.cc" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\sweep\cdt.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\sweep\sweep.cc" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\sweep\sweep.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\sweep\sweep_context.cc" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\poly2tri\poly2tri\sweep\sweep_context.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\clipper\clipper.hpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\clipper\clipper.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\code\OpenDDLParser.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\code\DDLNode.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\code\OpenDDLCommon.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\code\OpenDDLExport.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\code\Value.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\code\OpenDDLStream.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\include\openddlparser\OpenDDLParser.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\include\openddlparser\OpenDDLParserUtils.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\include\openddlparser\OpenDDLCommon.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\include\openddlparser\OpenDDLExport.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\include\openddlparser\OpenDDLStream.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\include\openddlparser\DDLNode.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\openddlparser\include\openddlparser\Value.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcAdjacencyInfo.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcArithmeticCodec.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcArithmeticCodec.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcBinaryStream.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcCommon.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcDVEncodeParams.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcDynamicVectorDecoder.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcDynamicVectorDecoder.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcDynamicVectorEncoder.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcDynamicVectorEncoder.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcDynamicVector.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcFIFO.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcIndexedFaceSet.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcIndexedFaceSet.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcSC3DMCDecoder.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcSC3DMCDecoder.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcSC3DMCEncodeParams.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcSC3DMCEncoder.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcSC3DMCEncoder.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcTimer.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcTools.cpp" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcTriangleFans.cpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcTriangleFans.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcTriangleListDecoder.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcTriangleListDecoder.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcTriangleListEncoder.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcTriangleListEncoder.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcVector.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\Open3DGC\o3dgcVector.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zip\src\miniz.h" />
+    <ClCompile Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zip\src\zip.c" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\zip\src\zip.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\pugixml\src\pugiconfig.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\pugixml\src\pugixml.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\contrib\stb\stb_image.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\anim.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\aabb.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\ai_assert.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\camera.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\color4.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\color4.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\include\assimp\config.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\ColladaMetaData.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\commonMetaData.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\defs.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\cfileio.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\light.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\material.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\material.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\matrix3x3.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\matrix3x3.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\matrix4x4.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\matrix4x4.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\mesh.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\pbrmaterial.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\postprocess.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\quaternion.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\quaternion.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\scene.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\metadata.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\texture.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\types.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\vector2.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\vector2.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\vector3.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\vector3.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\version.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\cimport.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\importerdesc.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Importer.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\ProgressHandler.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\IOStream.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\IOSystem.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\cexport.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Exporter.hpp" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\DefaultIOStream.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\DefaultIOSystem.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\ZipArchiveIOSystem.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\SceneCombiner.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\fast_atof.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\qnan.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\BaseImporter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Hash.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\MemoryIOWrapper.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\ParsingUtils.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\StreamReader.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\StreamWriter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\StringComparison.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\StringUtils.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\SGSpatialSort.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\GenericProperty.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\SpatialSort.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\SkeletonMeshBuilder.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\SmallVector.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\SmoothingGroups.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\SmoothingGroups.inl" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\StandardShapes.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\RemoveComments.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Subdivision.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Vertex.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\LineSplitter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\TinyFormatter.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Profiler.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\LogAux.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Bitmap.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\XMLTools.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\IOStreamBuffer.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\CreateAnimMesh.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\XmlParser.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\MathFunctions.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Exceptional.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\ByteSwapper.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Compiler\pushpack1.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Compiler\poppack1.h" />
+    <ClInclude Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp - Copy\include\assimp\Compiler\pstdint.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\ZERO_CHECK.vcxproj">
+      <Project>{0EAA0FB6-4DDA-3148-877E-565EAE9C6F15}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\contrib\zlib\zlibstatic.vcxproj">
+      <Project>{5D645C66-0D5A-3646-9F7D-6DEA58CA4BDA}</Project>
+      <Name>zlibstatic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

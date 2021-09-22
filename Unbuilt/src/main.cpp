@@ -15,6 +15,8 @@ GLFWwindow* window;
 #include <glm/gtc/matrix_transform.hpp>
 using namespace glm;
 
+#include <imgui>
+
 int main( void )
 {
 	// Initialise GLFW

@@ -1,0 +1,41 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.21/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckFunctionExists.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckTypeSize.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindPkgConfig.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/WriteBasicConfigVersionFile.cmake
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/CMakeLists.txt
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/assimp.pc.in
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/cmake-modules/FindPkgMacros.cmake
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/cmake-modules/FindZLIB.cmake
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/cmake-modules/PrecompiledHeader.cmake
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/cmake-modules/assimp-plain-config.cmake.in
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/cmake-modules/cmake_uninstall.cmake.in
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/include/assimp/config.h.in
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/revision.h.in
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/CMakeFiles/3.21.0/CMakeCCompiler.cmake
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/CMakeFiles/3.21.0/CMakeCXXCompiler.cmake
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/CMakeFiles/3.21.0/CMakeRCCompiler.cmake
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/CMakeFiles/3.21.0/CMakeSystem.cmake

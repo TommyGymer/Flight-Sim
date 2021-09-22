@@ -1,14 +1,21 @@
 # CMake entry point
 cmake_minimum_required (VERSION 3.0)
 
-#vcpkg init
-set(CMAKE_TOOLCHAIN_FILE "C:\\Users\\Tom\\Documents\\GitHub\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
-
 project (FlightSim)
+
+SET(CMAKE_POLICY_DEFAULT_CMP0074 NEW)
+
+#vcpkg init
+set(CMAKE_TOOLCHAIN_FILE C:\\Users\\Tom\\Documents\\GitHub\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
+
+include(C:\\Users\\Tom\\Documents\\GitHub\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake)
 
 find_package(OpenGL REQUIRED)
 #vcpkg dependencies
 find_package(assimp CONFIG REQUIRED)
+find_package(GLEW REQUIRED)
+find_package(imgui CONFIG REQUIRED)
+find_package(glm CONFIG REQUIRED)
 
 
 if( CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR )
@@ -21,7 +28,7 @@ if( CMAKE_BINARY_DIR MATCHES " " )
    message( "Your Build Directory contains spaces. If you experience problems when compiling, this can be the cause." )
 endif()
 
-
+list(APPEND CMAKE_PREFIX_PATH "C:/Users/Tom/Documents/GitHub/vcpkg/packages/curl_x64-windows/share/curl/")
 
 # Compile external dependencies 
 add_subdirectory (external)
@@ -45,7 +52,10 @@ set(ALL_LIBS
    ${OPENGL_LIBRARY}
    glfw
    GLEW_1130
+   GLEW::GLEW
    assimp::assimp
+   imgui::imgui
+   glm::glm
 )
 
 add_definitions(
@@ -79,6 +89,7 @@ target_link_libraries(FlightSim
 	${GLEW_LIBRARY}
 	${ALL_LIBS}
    ${ASSIMP_LIBRARIES}
+   ${ASSIMP_LIBRARY}
 )
 
 

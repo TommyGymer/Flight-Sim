@@ -1,0 +1,10 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckFunctionExists.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckTypeSize.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/contrib/zlib/CMakeLists.txt
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/contrib/zlib/zconf.h.cmakein
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp - Copy/contrib/zlib/zlib.pc.cmakein

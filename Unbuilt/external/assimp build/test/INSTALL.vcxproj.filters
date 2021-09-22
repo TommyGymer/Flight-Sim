@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Obsidian\Programs\Flight Sim\Unbuilt\external\assimp build\CMakeFiles\8bd6dd396cc7f1f86fcc7267fd3932a4\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{ED12DA7D-BD21-3FB0-B99E-27F380CDE7CE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,15 @@
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/CMakeFiles/uninstall.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/CMakeFiles/UpdateAssimpLibsDebugSymbolsAndDLLs.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/CMakeFiles/INSTALL.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/CMakeFiles/ALL_BUILD.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/CMakeFiles/ZERO_CHECK.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/contrib/zlib/CMakeFiles/zlibstatic.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/contrib/zlib/CMakeFiles/INSTALL.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/contrib/zlib/CMakeFiles/ALL_BUILD.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/code/CMakeFiles/assimp.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/code/CMakeFiles/INSTALL.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/tools/assimp_cmd/CMakeFiles/assimp_cmd.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/tools/assimp_cmd/CMakeFiles/INSTALL.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/test/CMakeFiles/unit.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/test/CMakeFiles/INSTALL.dir
+D:/Obsidian/Programs/Flight Sim/Unbuilt/external/assimp build/test/headercheck/CMakeFiles/INSTALL.dir
