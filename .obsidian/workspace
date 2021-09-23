@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Building/vcpkg.md",
+            "file": "Building/Libraries/Assimp.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Building/vcpkg.md",
+                "file": "Building/Libraries/Assimp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Building/Libraries/Assimp.md",
+    "Building/vcpkg.md",
     "Untitled.md",
     "Building/Libraries/AntTweakBar.md",
-    "Building/Libraries/Assimp.md",
     "Building/Libraries/GLFW.md",
     "Building/Libraries/GLEW.md",
     "Building/CMake.md",
     "Building/Requirements.md",
     "OpenGL/Opening a Window.md",
-    "Language/C++.md",
-    "OpenGL/3D Rendering.md"
+    "Language/C++.md"
   ]
 }

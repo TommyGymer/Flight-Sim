@@ -20,8 +20,6 @@ using namespace glm;
 
 int main()
 {
-    std::cout << "Hello World!\n";
-
 	// Initialise GLFW
 	if (!glfwInit())
 	{
