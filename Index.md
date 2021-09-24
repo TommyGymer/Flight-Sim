@@ -24,11 +24,17 @@
 	- ###### [[GLEW]]
 	- ###### [[GLFW]]
 	- ###### [[GLM]]
+	- ###### [[Imgui]]
+- ##### [[CMake]]
+- ##### [[vcpkg]]
 
 ---
 ### OpenGL
 - ##### [[3D Rendering]]
 - ##### [[Opening a Window]]
+- ##### Shaders
+	- ###### [[Fragment Shaders]]
+	- ###### [[Vertex Shaders]]
 
 ---
 ### Input

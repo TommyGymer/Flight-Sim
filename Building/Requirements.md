@@ -5,12 +5,13 @@
 2. Visual Studio
 
 #### Libraries
-1. [[AntTweakBar]]
+1. ~~[[AntTweakBar]]~~
 2. [[assimp]]
 3. [[bullet]]
 4. [[glew]]
 5. [[glfw]]
 6. [[glm]]
+7. [[Imgui]]
 
 These are imported from a local `/external` folder using
 ```C++
