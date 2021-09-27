@@ -19,6 +19,9 @@ using namespace glm;
 #include <imgui.h>
 #include "shader.hpp"
 
+#include <assimp/Importer.hpp>
+#include <assimp/postprocess.h>
+
 int main()
 {
 	// Initialise GLFW
@@ -100,7 +103,26 @@ int main()
 	glm::mat4 MVP = Projection * View * Model; // Remember, matrix multiplication is the other way around
 
 	//attempt load of vertecies from a file
+	//create an instance of the importer
+	Assimp::Importer importer;
 
+	const std::string pFile = "C:\\Users\\Tom\\Documents\\GitHub\\Flight-Sim\\RC-PC\\RC-PC\\cube.obj";
+
+	//read file and apply some post
+	const aiScene* scene = importer.ReadFile(pFile,
+		aiProcess_CalcTangentSpace |
+		aiProcess_Triangulate |
+		aiProcess_JoinIdenticalVertices |
+		aiProcess_SortByPType
+	);
+
+	//check import for null
+	if (scene == nullptr) {
+		std::cout << "failed to read the file";
+		return false;
+	}
+
+	scene->mMeshes[0];
 
 	// A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
 	static const GLfloat g_vertex_buffer_data[] = {
