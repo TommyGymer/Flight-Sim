@@ -14,6 +14,7 @@ using namespace std;
 #include <assimp/postprocess.h>
 #include <assimp/mesh.h>
 #include <gl/glew.h>
+#include "Loader.hpp"
 
 bool Loader::LoadMesh(const std::string& filename)
 {
@@ -38,5 +39,5 @@ bool Loader::LoadMesh(const std::string& filename)
 }
 
 bool Loader::InitFromScene(const aiScene*, const std::string& filename) {
-
+	return 0;
 }

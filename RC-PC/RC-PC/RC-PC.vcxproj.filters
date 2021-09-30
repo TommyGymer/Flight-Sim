@@ -21,7 +21,7 @@
     <ClCompile Include="shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="loader.cpp">
+    <ClCompile Include="Loader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="shader.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="loader.hpp">
+    <ClInclude Include="Loader.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

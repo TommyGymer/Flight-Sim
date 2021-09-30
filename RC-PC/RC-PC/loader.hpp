@@ -5,7 +5,6 @@
 #include <fstream>
 #include <algorithm>
 #include <sstream>
-using namespace std;
 
 #include <stdlib.h>
 #include <string.h>
@@ -36,8 +35,8 @@ private:
 
 		~MeshEntry();
 
-		bool Init(const std::vector& Vertices,
-			const std::vector& Indices);
+		bool Init(const std::vector<std::vector<int>>& Vertices,
+			const std::vector<int>& Indices);
 
 		GLuint VB;
 		GLuint IB;
@@ -45,6 +44,6 @@ private:
 		unsigned int MaterialIndex;
 	};
 
-	std::vector m_Entries;
-	std::vector m_Textures;
+	std::vector<int> m_Entries;
+	std::vector<int> m_Textures;
 };
