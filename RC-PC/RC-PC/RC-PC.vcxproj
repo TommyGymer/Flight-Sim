@@ -141,10 +141,10 @@
   <ItemGroup>
     <ClCompile Include="RC-PC.cpp" />
     <ClCompile Include="shader.cpp" />
-    <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="ObjLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Loader.hpp" />
+    <ClInclude Include="ObjLoader.hpp" />
     <ClInclude Include="shader.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
