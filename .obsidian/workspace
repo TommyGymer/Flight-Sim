@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Project Proposal.md",
+            "file": "Analysis.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project Proposal.md",
+                "file": "Analysis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,6 +88,8 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Analysis.md",
+    "Project Proposal.md",
     "Untitled.md",
     "README.md",
     "Index.md",
@@ -95,8 +97,6 @@
     "Building/Libraries/GLEW.md",
     "Building/Libraries/GLFW.md",
     "Building/Libraries/GLM.md",
-    "Building/Libraries/Assimp.md",
-    "Language/README.md",
-    "Building/Requirements.md"
+    "Building/Libraries/Assimp.md"
   ]
 }
