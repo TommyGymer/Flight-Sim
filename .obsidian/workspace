@@ -89,14 +89,14 @@
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
     "Analysis.md",
+    "Input/GLFW Inputs.md",
+    "Input/XInput.md",
     "Project Proposal.md",
     "Untitled.md",
     "README.md",
     "Index.md",
-    "Input/XInput.md",
     "Building/Libraries/GLEW.md",
     "Building/Libraries/GLFW.md",
-    "Building/Libraries/GLM.md",
-    "Building/Libraries/Assimp.md"
+    "Building/Libraries/GLM.md"
   ]
 }
