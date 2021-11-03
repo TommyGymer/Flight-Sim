@@ -61,3 +61,8 @@ My target market will include:
 
 ### Brief
 ---
+- Realistic flight performance of aircraft
+- Can be controlled with a variety of different input devices
+- Runs at least 30fps, prefereably more than 60fps
+- Runs with sufficient resolusion to allow easy control of a distance aircraft
+- Included or built in tools to make new aircraft models
