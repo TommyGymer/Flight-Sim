@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Analysis.md",
-            "mode": "source"
+            "file": "Index.md",
+            "mode": "preview"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Analysis.md",
+                "file": "Index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Index.md",
+    "OpenGL/3D Rendering.md",
     "Analysis.md",
     "Input/GLFW Inputs.md",
     "Input/XInput.md",
     "Project Proposal.md",
     "Untitled.md",
     "README.md",
-    "Index.md",
     "Building/Libraries/GLEW.md",
-    "Building/Libraries/GLFW.md",
-    "Building/Libraries/GLM.md"
+    "Building/Libraries/GLFW.md"
   ]
 }
