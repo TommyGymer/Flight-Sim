@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Index.md",
-            "mode": "preview"
+            "file": "Project Proposal.md",
+            "mode": "source"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Index.md",
+                "file": "Project Proposal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "Index.md",
-    "OpenGL/3D Rendering.md",
-    "Analysis.md",
-    "Input/GLFW Inputs.md",
-    "Input/XInput.md",
     "Project Proposal.md",
-    "Untitled.md",
-    "README.md",
-    "Building/Libraries/GLEW.md",
-    "Building/Libraries/GLFW.md"
+    "rc-desk-pilot.jpg",
+    "ms-flight-sim.jpg",
+    "The Process/Testing the Application.md",
+    "The Process/Documentation and Understanding.md",
+    "The Process/Research and Initial Development.md",
+    "Index.md",
+    "Analysis.md",
+    "The Process/Building the Application.md",
+    "README.md"
   ]
 }
