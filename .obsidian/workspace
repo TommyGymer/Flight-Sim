@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Building/Libraries/Assimp.md",
+            "file": "Project Proposal.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Building/Libraries/Assimp.md",
+                "file": "Project Proposal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "Building/Libraries/Assimp.md",
+    "Project Proposal.md",
+    "rc-desk-pilot.jpg",
+    "ms-flight-sim.jpg",
+    "The Process/Testing the Application.md",
+    "The Process/Documentation and Understanding.md",
+    "The Process/Research and Initial Development.md",
     "Index.md",
-    "Language/README.md",
-    "Building/Requirements.md",
-    "Untitled.md",
-    "Building/Libraries/AntTweakBar.md",
-    "Building/Libraries/Bullet.md",
-    "Building/vcpkg.md",
-    "Building/Libraries/GLFW.md",
-    "Building/Libraries/GLEW.md"
+    "Analysis.md",
+    "The Process/Building the Application.md",
+    "README.md"
   ]
 }

@@ -1,2 +1,5 @@
 ﻿  RC-PC.cpp
-  RC-PC.vcxproj -> C:\Users\Tom\Documents\GitHub\Flight-Sim\RC-PC\x64\Debug\RC-PC.exe
+C:\Users\Tom\Documents\GitHub\Flight-Sim\RC-PC\RC-PC\RC-PC.cpp(26,10): fatal error C1083: Cannot open include file: 'Loader.hpp': No such file or directory
+  ObjLoader.cpp
+  Generating Code...
+C:\Users\Tom\Documents\GitHub\Flight-Sim\RC-PC\RC-PC\ObjLoader.cpp(52): error C4716: 'ObjLoader::InitFromScene': must return a value

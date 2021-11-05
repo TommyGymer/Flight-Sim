@@ -40,3 +40,10 @@
 ### Input
 - ##### [[GLFW Inputs]]
 - ##### [[XInput]]
+
+---
+### The Process
+- ##### [[Research and Initial Development]]
+- ##### [[Documentation and Understanding]]
+- ##### [[Building the Application]]
+- ##### [[Testing the Application]]

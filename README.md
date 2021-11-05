@@ -9,7 +9,6 @@ Writen in C++ and compiled using CMake using OpenGL
 
 Documentation written in MarkDown using the [Obsidian](https://obsidian.md/) note taker
 
-
 ## Project Outline
 ---
 
@@ -28,7 +27,6 @@ Documentation written in MarkDown using the [Obsidian](https://obsidian.md/) not
 - A method of editing the files
 
 ### Potential to add complexity
-
 - Shaders
 - Performance
 - Calculate flight characteristics based on the 3D model file
@@ -36,14 +34,12 @@ Documentation written in MarkDown using the [Obsidian](https://obsidian.md/) not
 - Support for the use of a VR headset using OpenVR
 
 ### Suitability
-
 - 3D rendering and physics engine for flight should provide complexity
 - Definition of file formats, reading and writing will add file handling
 - Physics engine for the flight aspects will add physics beyond the rigid body engine built into one of the libraries I will use
 - Interaction with different input devices will add the need for a number of configuration menus
 
 ### Success criteria
-
 - Aircraft is simulated using predifined/prebaked characteristics from a file
 - Aircraft is controlled using an input device besides a keyboard and mouse
 - Aircraft is rendered in full colour from a .obj and related texture files

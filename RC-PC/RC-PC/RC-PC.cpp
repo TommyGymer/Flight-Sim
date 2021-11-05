@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <vector>
 #include <iostream>
+using namespace std;
 
 // Include GLEW
 #include <GL/glew.h>
@@ -19,14 +20,19 @@ using namespace glm;
 #include <imgui.h>
 #include "shader.hpp"
 
+#include <assimp/Importer.hpp>
+#include <assimp/postprocess.h>
+
+#include "Loader.hpp"
+
 int main()
 {
 	// Initialise GLFW
 	if (!glfwInit())
-	{
+	{   
 		fprintf(stderr, "Failed to initialize GLFW\n");
 		getchar();
-		return -1;
+		return -1;                                                                                                             
 	}
 
 	glfwWindowHint(GLFW_SAMPLES, 4);
@@ -98,6 +104,12 @@ int main()
 	glm::mat4 Model = glm::mat4(1.0f);
 	// Our ModelViewProjection : multiplication of our 3 matrices
 	glm::mat4 MVP = Projection * View * Model; // Remember, matrix multiplication is the other way around
+
+	//attempt load of vertecies from a file
+
+	const std::string pFile = "C:\\Users\\Tom\\Documents\\GitHub\\Flight-Sim\\RC-PC\\RC-PC\\cube.obj";
+
+	
 
 	// A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
 	static const GLfloat g_vertex_buffer_data[] = {
