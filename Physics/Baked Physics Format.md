@@ -5,7 +5,7 @@ Even without the use of the Physics flight profile calculator, data of this type
 ---
 #### .bpf
 
-The simplest way of achiving this would be to create an xml file using a C++ library, then edit the file extension to be .bpf
+The simplest way of achieving this would be to create an xml file using a C++ library, then edit the file extension to be .bpf
 
 This would allow me to determine which files are correct when allowing a user to select one of these files
 

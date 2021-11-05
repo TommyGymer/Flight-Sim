@@ -9,7 +9,7 @@ Following an [OpenGL in C++](http://www.opengl-tutorial.org/beginners-tutorials/
 - Libraries (beyond built-ins):
 	- OpenGL
 
-The tutorial contains guides and examples of all the concepts I will need to implement the 3D renderer for the sim. The only concept not covered is bones, which I want to use for the movable flight surfaces to remove the need for liniked objects.
+The tutorial contains guides and examples of all the concepts I will need to implement the 3D renderer for the sim. The only concept not covered is bones, which I want to use for the movable flight surfaces to remove the need for linked objects.
 
 The use of the .obj format and bones will make it easy to load a different file and make use of a different aircraft.
 

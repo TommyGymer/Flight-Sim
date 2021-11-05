@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Project Proposal.md",
+            "file": "The Process/Building the Application.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project Proposal.md",
+                "file": "The Process/Building the Application.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "Project Proposal.md",
-    "rc-desk-pilot.jpg",
-    "ms-flight-sim.jpg",
-    "The Process/Testing the Application.md",
-    "The Process/Documentation and Understanding.md",
-    "The Process/Research and Initial Development.md",
-    "Index.md",
-    "Analysis.md",
     "The Process/Building the Application.md",
-    "README.md"
+    "Physics/Flight Characteristics.md",
+    "Physics/Baked Physics Format.md",
+    "OpenGL/Opening a Window.md",
+    "OpenGL/3D Rendering.md",
+    "OpenGL/Shaders/Vertex Shaders.md",
+    "OpenGL/Shaders/Fragment Shaders.md",
+    "Language/C++.md",
+    "Language/README.md",
+    "Language/Java.md"
   ]
 }

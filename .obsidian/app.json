@@ -1,5 +1,25 @@
 {
   "showLineNumber": true,
   "alwaysUpdateLinks": true,
-  "attachmentFolderPath": "Built"
+  "attachmentFolderPath": "Built",
+  "spellcheck": true,
+  "spellcheckDictionary": [
+    "colour",
+    "CMake",
+    "OpenGL",
+    "Shaders",
+    "OpenVR",
+    "XInput",
+    "renderer",
+    "shaders",
+    "colours",
+    "specular",
+    "normals",
+    "Initialise",
+    "initialisation",
+    "fullscreen",
+    "glfw",
+    "xml",
+    "bpf"
+  ]
 }

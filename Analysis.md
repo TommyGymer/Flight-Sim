@@ -7,6 +7,16 @@
 - It should be capable of allowing a user to create their own aircraft.
 - This process should be possible using only knowledge of Blender.
 
+#### A market gap for a model flight sim
+
+The available flight sims currently on the market are designed with full scale aircraft in mind, making them unsuitable for people wishing to increase their flight hours on model aircraft.
+
+All currently available model flight sims are either designed for Windows XP or require proprietary hardware.
+
+A modern flight sim designed on a base of OpenGL 4.0 and C++ will provide full performance on modern hardware and sufficient resolution for flying a model aircraft.
+
+To fill this market space, the sim will need to have sufficient game textures available to approach the detail of a modern sim and sufficiently accurate physics to act as practice for flying read model aircraft.
+
 #### Stakeholders
 
 My target market will include:
@@ -29,40 +39,40 @@ My target market will include:
 ![[ms-flight-sim.jpg]][image from "Rock Paper Shotgun"](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rockpapershotgun.com%2Fall-341-photorealistic-cities-in-microsoft-flight-simulator-2020&psig=AOvVaw2-aPVRGJ0CPWs3C3HYoOUM&ust=1636021274292000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKj1par8-_MCFQAAAAAdAAAAABAE)
 - Range of very detailed aircraft models available
 - Highly detailed environment
-- Unresonably accurate physics and weather
-- Use of Windows libraries allows wide range of input device compatability
+- Unreasonably accurate physics and weather
+- Use of Windows libraries allows wide range of input device compatibility
 
 ### Features
 ---
-- Premade models available
+- Pre-made models available
 - Tools to make new models
 - Loading these models
 - Animation of these models with the input
-- Compatability with a number of input devices (including keyboard and mouse)
+- Compatibility with a number of input devices (including keyboard and mouse)
 - Accurate physics while maintaining performance
-- Resonable environment
+- Reasonable environment
 
-### Implementaion
+### Implementation
 ---
 - OpenGL based rendering with C++/C#
-- Using prebaked physics to remove the need for real time CFD
+- Using pre-baked physics to remove the need for real time CFD
 - GLFW input (or XInput for extra compatibility) API
 - Models stored and loaded from a custom file format
 
 #### Limitations of implementation
 - Fairly resource intensive due to the full frame rate rendering
-- Prebaked physics will be slightly inaccurate compared to a real time CFD simulation
+- Pre-baked physics will be slightly inaccurate compared to a real time CFD simulation
 - 
 
 ### Hardware requirements
 ---
 - Capable of running an OpenGL application at a usable frame rate
-- A compatable controller
+- A compatible controller
 
 ### Brief
 ---
 - Realistic flight performance of aircraft
 - Can be controlled with a variety of different input devices
-- Runs at least 30fps, prefereably more than 60fps
-- Runs with sufficient resolusion to allow easy control of a distance aircraft
+- Runs at least 30fps, preferably more than 60fps
+- Runs with sufficient resolution to allow easy control of a distance aircraft
 - Included or built in tools to make new aircraft models
