@@ -2,11 +2,6 @@
 ---
 ### Overview
 ---
-- RC-PC will be a model aircraft flight simulation.
-- It is intended as both a game and a realistic simulator.
-- It should be capable of allowing a user to create their own aircraft.
-- This process should be possible using only knowledge of Blender.
-
 #### A market gap for a model flight sim
 
 The available flight sims currently on the market are designed with full scale aircraft in mind, making them unsuitable for people wishing to increase their flight hours on model aircraft.
@@ -17,11 +12,24 @@ A modern flight sim designed on a base of OpenGL 4.0 and C++ will provide full p
 
 To fill this market space, the sim will need to have sufficient game textures available to approach the detail of a modern sim and sufficiently accurate physics to act as practice for flying read model aircraft.
 
+#### Extracted points
+
+- RC-PC will be a model aircraft flight simulation.
+- It is intended as both a game and a realistic simulator.
+- To fit as a game, it may be beneficial to add some form of competition
+- It should be capable of allowing a user to create their own aircraft.
+- This process should be possible using only knowledge of Blender.
+- It will be built in C++ using OpenGL
+
 #### Stakeholders
 
 My target market will include:
 - People interested in simulators as games (a similar demographic to Microsoft Flight Sim)
 - People interested in realistic simulation for flight practice
+
+#### First steps
+- Find similar products
+- Build an application in C++ and OpenGL following tutorials to gain an understanding of the architecture
 
 ### Existing products and projects
 ---
