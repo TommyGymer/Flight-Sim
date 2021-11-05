@@ -27,6 +27,11 @@ My target market will include:
 - People interested in simulators as games (a similar demographic to Microsoft Flight Sim)
 - People interested in realistic simulation for flight practice
 
+As such, I intend to ask a few people in each demographic to gauge usability and satisfaction with the physics and visuals of the application
+
+I also plan to ask some people outside of this target market to gauge usability and to possible add some form of tutorial
+- To expand this, the tutorial could try to detect the type of input device in use and tailor the information to fit the input device
+
 #### First steps
 - Find similar products
 - Build an application in C++ and OpenGL following tutorials to gain an understanding of the architecture
