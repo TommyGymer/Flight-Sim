@@ -25,7 +25,15 @@ To fill this market space, the sim will need to have sufficient game textures av
 
 My target market will include:
 - People interested in simulators as games (a similar demographic to Microsoft Flight Sim)
+	- They would be looking for a simulator with a range of features beyond an accurate physics engine
+	- A lighter flight sim or one with options which allow the application to run without requiring cutting edge hardware would be preferable for this market to allow a wider demographic
+	- A mostly seamless experience without needing to fiddle with settings for setup
+	- A range of pre-made aircraft, preventing the need to understand how to define their own
+	- A multiplayer aspect would be preferable to fit this demographic, though adds significant complexity with the need for a fast server along with a domain
 - People interested in realistic simulation for flight practice
+	- Mainly focused on the accuracy and realism of the simulator
+	- Completely robust through all orientations and movements
+	- Tools to represent their own aircraft in the sim
 
 As such, I intend to ask a few people in each demographic to gauge usability and satisfaction with the physics and visuals of the application
 
@@ -35,6 +43,7 @@ I also plan to ask some people outside of this target market to gauge usability 
 #### First steps
 - Find similar products
 - Build an application in C++ and OpenGL following tutorials to gain an understanding of the architecture
+- Document the architecture to begin work on the application
 
 ### Existing products and projects
 ---
@@ -68,13 +77,13 @@ I also plan to ask some people outside of this target market to gauge usability 
 ### Implementation
 ---
 - OpenGL based rendering with C++/C#
-- Using pre-baked physics to remove the need for real time CFD
+- Using pre-baked physics to remove the need for real time [[CFD]]
 - GLFW input (or XInput for extra compatibility) API
 - Models stored and loaded from a custom file format
 
 #### Limitations of implementation
 - Fairly resource intensive due to the full frame rate rendering
-- Pre-baked physics will be slightly inaccurate compared to a real time CFD simulation
+- Pre-baked physics will be slightly inaccurate compared to a real time [[CFD]] simulation
 - 
 
 ### Hardware requirements
