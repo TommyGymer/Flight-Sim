@@ -69,7 +69,7 @@ void ObjLoader::InitMesh(unsigned int Index, const aiMesh* paiMesh) {
 
 	const aiVector3D Origin(0.0f, 0.0f, 0.0f);
 
-	//loop through each vertex in the mesh and extract it's data
+	//loop through each vertex in the mesh and extract its data
 	for (unsigned int i = 0; i < paiMesh->mNumVertices; i++) {
 		const aiVector3D* pPos = &(paiMesh->mVertices[i]);
 		const aiVector3D* pNormal = paiMesh->HasNormals() ? &(paiMesh->mNormals[i]) : &Origin;
