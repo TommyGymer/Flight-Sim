@@ -37,7 +37,7 @@
 - ##### [[3D Rendering]]
 - ##### [[Opening a Window]]
 - ##### Shaders
-	- ###### [[Fragment Shaders]]
+	- ###### [[Shaders]]
 	- ###### [[Vertex Shaders]]
 
 ---

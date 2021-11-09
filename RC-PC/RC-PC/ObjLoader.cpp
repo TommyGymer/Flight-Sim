@@ -18,6 +18,14 @@ using namespace std;
 
 #include "ObjLoader.hpp"
 
+ObjLoader::ObjLoader()
+{
+}
+
+ObjLoader::~ObjLoader()
+{
+}
+
 bool ObjLoader::LoadMesh(const std::string& filename)
 {
 	bool Ret = false;
@@ -61,12 +69,18 @@ void ObjLoader::InitMesh(unsigned int Index, const aiMesh* paiMesh) {
 
 	const aiVector3D Origin(0.0f, 0.0f, 0.0f);
 
+	//loop through each vertex in the mesh and extract it's data
 	for (unsigned int i = 0; i < paiMesh->mNumVertices; i++) {
 		const aiVector3D* pPos = &(paiMesh->mVertices[i]);
 		const aiVector3D* pNormal = paiMesh->HasNormals() ? &(paiMesh->mNormals[i]) : &Origin;
-		const aiVector3D* pTexture = paiMesh->HasTextureCoords(0) ? &(paiMesh->mTextureCoords[0][i
-		]) : &Origin;
+		const aiVector3D* pTexture = paiMesh->HasTextureCoords(0) ? &(paiMesh->mTextureCoords[0][i]) : &Origin;
 
-		Vertex v(aiVector3D)
+		cout << "(" << pPos->x << ", " << pPos->y << ", " << pPos->z << ")\n";
+
+		//Vertex v(aiVector3D)
 	}
+}
+
+bool ObjLoader::InitMaterials(const aiScene* aiScene, const std::string& filename) {
+	return false;
 }

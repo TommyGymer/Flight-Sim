@@ -31,13 +31,9 @@ private:
 #define TEXTURE_NF 0xFFFFFFFF
 
 	struct MeshEntry {
-		MeshEntry();
-
-		~MeshEntry();
-
-		bool Init(const std::vector<std::vector<int>>& Vertices,
+		/*bool Init(const std::vector<std::vector<int>>& Vertices,
 			const std::vector<int>& Indices);
-
+		*/
 		GLuint VB;
 		GLuint IB;
 		unsigned int NumIndices;

@@ -23,7 +23,7 @@ using namespace glm;
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
 
-#include "Loader.hpp"
+#include "ObjLoader.hpp"
 
 int main()
 {
@@ -78,7 +78,7 @@ int main()
 	glDepthFunc(GL_LESS);
 
 	// Cull triangles which normal is not towards the camera
-	//glEnable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 
 
 	//create an array to hold an object
@@ -109,7 +109,8 @@ int main()
 
 	const std::string pFile = "C:\\Users\\Tom\\Documents\\GitHub\\Flight-Sim\\RC-PC\\RC-PC\\cube.obj";
 
-	
+	ObjLoader loader = ObjLoader();
+	loader.LoadMesh(pFile);
 
 	// A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
 	static const GLfloat g_vertex_buffer_data[] = {
@@ -220,7 +221,7 @@ int main()
 			3,                  // size
 			GL_FLOAT,           // type
 			GL_FALSE,           // normalized?
-			0,                  // stride
+			0,				    // stride
 			(void*)0            // array buffer offset
 		);
 
@@ -232,8 +233,8 @@ int main()
 			3,                                // size
 			GL_FLOAT,                         // type
 			GL_FALSE,                         // normalized?
-			0,                                // stride
-			(void*)0                          // array buffer offset
+			0,								  // stride
+			(void*)0				          // array buffer offset
 		);
 
 		// draw triangles
