@@ -34,6 +34,8 @@ private:
 		/*bool Init(const std::vector<std::vector<int>>& Vertices,
 			const std::vector<int>& Indices);
 		*/
+		const std::vector<std::vector<int>>& Vertices;
+		const std::vector<int>& Indices;
 		GLuint VB;
 		GLuint IB;
 		unsigned int NumIndices;

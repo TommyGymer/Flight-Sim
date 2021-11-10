@@ -1,6 +1,7 @@
 ## Shaders
 ---
 [GLSL Tutorial](https://learnopengl.com/Getting-started/Shaders)
+[OpenGL Shader documentation](https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language)
 
 ### Fragment Shaders
 ---

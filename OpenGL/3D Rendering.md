@@ -30,3 +30,4 @@ The same .obj should be used for calculation of flight characteristic baking; th
 ---
 [OpenGL Tutorial](http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/particles-instancing/)
 [OpenGL Bones](https://learnopengl.com/Guest-Articles/2020/Skeletal-Animation)
+[GLSL Shaders](https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders)

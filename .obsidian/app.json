@@ -21,6 +21,7 @@
     "glfw",
     "xml",
     "bpf",
-    "predefine"
+    "predefine",
+    "Shader"
   ]
 }
