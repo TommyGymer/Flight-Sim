@@ -23,6 +23,8 @@ public:
 
 	bool LoadMesh(const std::string& Filename);
 
+	bool DebugMaterial();
+
 private:
 	bool InitFromScene(const aiScene* pScene, const std::string& filename);
 	void InitMesh(unsigned int index, const aiMesh* paiMesh);
@@ -31,11 +33,18 @@ private:
 #define TEXTURE_NF 0xFFFFFFFF
 
 	struct MeshEntry {
-		/*bool Init(const std::vector<std::vector<int>>& Vertices,
-			const std::vector<int>& Indices);
-		*/
-		const std::vector<std::vector<int>>& Vertices;
-		const std::vector<int>& Indices;
+		MeshEntry();
+
+		MeshEntry(std::vector<std::vector<float>>& _Vertices);
+
+		MeshEntry(std::vector<std::vector<float>>& _Vertices,
+			std::vector<int>& _Indices);
+
+		~MeshEntry();
+
+		std::vector<std::vector<float>>* Vertices;
+		std::vector<int>* Indices;
+
 		GLuint VB;
 		GLuint IB;
 		unsigned int NumIndices;

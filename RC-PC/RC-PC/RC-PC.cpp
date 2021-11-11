@@ -111,6 +111,7 @@ int main()
 
 	ObjLoader loader = ObjLoader();
 	loader.LoadMesh(pFile);
+	loader.DebugMaterial();
 
 	// A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
 	static const GLfloat g_vertex_buffer_data[] = {
