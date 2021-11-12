@@ -23,7 +23,7 @@ public:
 
 	bool LoadMesh(const std::string& Filename);
 
-	bool DebugMaterial();
+	GLfloat* DebugMesh();
 
 private:
 	bool InitFromScene(const aiScene* pScene, const std::string& filename);
@@ -35,14 +35,14 @@ private:
 	struct MeshEntry {
 		MeshEntry();
 
-		MeshEntry(std::vector<std::vector<float>>& _Vertices);
+		MeshEntry(std::vector<std::vector<GLfloat>>& _Vertices);
 
-		MeshEntry(std::vector<std::vector<float>>& _Vertices,
+		MeshEntry(std::vector<std::vector<GLfloat>>& _Vertices,
 			std::vector<int>& _Indices);
 
 		~MeshEntry();
 
-		std::vector<std::vector<float>>* Vertices;
+		std::vector<std::vector<GLfloat>> Vertices;
 		std::vector<int>* Indices;
 
 		GLuint VB;

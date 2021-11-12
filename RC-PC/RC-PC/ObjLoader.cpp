@@ -48,17 +48,20 @@ bool ObjLoader::LoadMesh(const std::string& filename)
 	return Ret;
 }
 
-bool ObjLoader::DebugMaterial()
+GLfloat* ObjLoader::DebugMesh()
 {
-	cout << "Is this being run?\n";
-	int length = m_Entries[0].Vertices->size();
-	cout << length;
+	int length = m_Entries[0].Vertices.size();
+	std::vector<GLfloat> buffer;
 	for (int i = 0; i < length; i++) {
-		vector<float> pPos = m_Entries[0].Vertices->at(i);
+		vector<float> pPos = m_Entries[0].Vertices[i];
 		cout << "(" << pPos[0] << ", " << pPos[1] << ", " << pPos[2] << ")\n";
+		buffer.push_back(pPos[0] * 1.0f);
+		buffer.push_back(pPos[1] * 1.0f);
+		buffer.push_back(pPos[2] * 1.0f);
 	}
-	cout << "It was runned\n";
-	return false;
+	GLfloat* vertices = new GLfloat[length * 3];
+	std::copy(buffer.begin(), buffer.end(), vertices);
+	return vertices;
 }
 
 bool ObjLoader::InitFromScene(const aiScene *pScene, const std::string& filename) {
@@ -77,7 +80,8 @@ bool ObjLoader::InitFromScene(const aiScene *pScene, const std::string& filename
 }
 
 void ObjLoader::InitMesh(unsigned int Index, const aiMesh* paiMesh) {
-	m_Entries[Index].MaterialIndex = paiMesh->mMaterialIndex;
+	MeshEntry me;
+	me.MaterialIndex = paiMesh->mMaterialIndex;
 
 	std::vector<std::vector<float>> _Verticies{ paiMesh->mNumVertices, {0, 0, 0} };
 	std::vector<int> _Indices; //not sure what this is for yet
@@ -96,7 +100,9 @@ void ObjLoader::InitMesh(unsigned int Index, const aiMesh* paiMesh) {
 		//cout << "(" << pPos->x << ", " << pPos->y << ", " << pPos->z << ")\n";
 	}
 
-	m_Entries[Index] = _Verticies;
+	me.Vertices = _Verticies;
+
+	m_Entries[Index] = me;
 }
 
 bool ObjLoader::InitMaterials(const aiScene* aiScene, const std::string& filename) {
@@ -107,15 +113,15 @@ ObjLoader::MeshEntry::MeshEntry() {
 
 }
 
-ObjLoader::MeshEntry::MeshEntry(std::vector<std::vector<float>>& _Vertices)
+ObjLoader::MeshEntry::MeshEntry(std::vector<std::vector<GLfloat>>& _Vertices)
 {
-	ObjLoader::MeshEntry::Vertices = &_Vertices;
+	ObjLoader::MeshEntry::Vertices = _Vertices;
 }
 
-ObjLoader::MeshEntry::MeshEntry(std::vector<std::vector<float>>& _Vertices,
+ObjLoader::MeshEntry::MeshEntry(std::vector<std::vector<GLfloat>>& _Vertices,
 	std::vector<int>& _Indices)
 {
-	ObjLoader::MeshEntry::Vertices = &_Vertices;
+	ObjLoader::MeshEntry::Vertices = _Vertices;
 	ObjLoader::MeshEntry::Indices = &_Indices;
 }
 

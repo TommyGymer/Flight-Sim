@@ -1,5 +1,2 @@
-﻿  ObjLoader.cpp
-C:\Users\Tom\Documents\GitHub\Flight-Sim\RC-PC\RC-PC\ObjLoader.cpp(54,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  RC-PC.cpp
-  Generating Code...
+﻿  RC-PC.cpp
   RC-PC.vcxproj -> C:\Users\Tom\Documents\GitHub\Flight-Sim\RC-PC\x64\Debug\RC-PC.exe

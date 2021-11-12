@@ -111,10 +111,16 @@ int main()
 
 	ObjLoader loader = ObjLoader();
 	loader.LoadMesh(pFile);
-	loader.DebugMaterial();
+	//currently only getting the first value in the array
+	GLfloat g_vertex_buffer_data[]{ *loader.DebugMesh() };
+
+	cout << "\n";
+	for (GLfloat a : g_vertex_buffer_data) {
+		cout << a << " ";
+	}
 
 	// A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
-	static const GLfloat g_vertex_buffer_data[] = {
+	/*static const GLfloat g_vertex_buffer_data[] = {
 		-1.0f,-1.0f,-1.0f,
 		-1.0f,-1.0f, 1.0f,
 		-1.0f, 1.0f, 1.0f,
@@ -151,7 +157,7 @@ int main()
 		 1.0f, 1.0f, 1.0f,
 		-1.0f, 1.0f, 1.0f,
 		 1.0f,-1.0f, 1.0f
-	};
+	};*/
 
 	// One color for each vertex. They were generated randomly.
 	static const GLfloat g_color_buffer_data[] = {
