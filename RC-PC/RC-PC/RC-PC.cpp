@@ -112,11 +112,15 @@ int main()
 	ObjLoader loader = ObjLoader();
 	loader.LoadMesh(pFile);
 	//currently only getting the first value in the array
-	GLfloat g_vertex_buffer_data[]{ *loader.DebugMesh() };
+	GLfloat* meshPointer = loader.GetMesh(0);
+	int meshLength = loader.GetMeshLength(0);
+	cout << meshLength;
+	GLfloat g_vertex_buffer_data[]{ meshLength, 0 };
+	std::copy(meshPointer, meshPointer + meshLength, g_vertex_buffer_data);
 
 	cout << "\n";
-	for (GLfloat a : g_vertex_buffer_data) {
-		cout << a << " ";
+	for (int i = 0; i < meshLength; i++) {
+		cout << g_vertex_buffer_data[i] << " ";
 	}
 
 	// A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
@@ -202,7 +206,9 @@ int main()
 	GLuint vertexbuffer;
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+	//glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+	//glBufferData(GL_ARRAY_BUFFER, meshLength, g_vertex_buffer_data, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, meshLength, g_vertex_buffer_data, GL_DYNAMIC_DRAW);
 
 	GLuint colorbuffer;
 	glGenBuffers(1, &colorbuffer);

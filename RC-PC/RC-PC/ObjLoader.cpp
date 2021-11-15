@@ -33,9 +33,9 @@ bool ObjLoader::LoadMesh(const std::string& filename)
 
 	const aiScene* pScene = importer.ReadFile(filename.c_str(),
 		aiProcess_CalcTangentSpace |
-		aiProcess_Triangulate |
-		aiProcess_JoinIdenticalVertices |
-		aiProcess_SortByPType
+		aiProcess_Triangulate //|
+		//aiProcess_JoinIdenticalVertices |
+		//aiProcess_SortByPType
 	);
 
 	if (pScene) {
@@ -48,12 +48,12 @@ bool ObjLoader::LoadMesh(const std::string& filename)
 	return Ret;
 }
 
-GLfloat* ObjLoader::DebugMesh()
+GLfloat* ObjLoader::GetMesh(int meshIndex)
 {
-	int length = m_Entries[0].Vertices.size();
+	int length = m_Entries[meshIndex].Vertices.size();
 	std::vector<GLfloat> buffer;
 	for (int i = 0; i < length; i++) {
-		vector<float> pPos = m_Entries[0].Vertices[i];
+		vector<float> pPos = m_Entries[meshIndex].Vertices[i];
 		cout << "(" << pPos[0] << ", " << pPos[1] << ", " << pPos[2] << ")\n";
 		buffer.push_back(pPos[0] * 1.0f);
 		buffer.push_back(pPos[1] * 1.0f);
@@ -62,6 +62,10 @@ GLfloat* ObjLoader::DebugMesh()
 	GLfloat* vertices = new GLfloat[length * 3];
 	std::copy(buffer.begin(), buffer.end(), vertices);
 	return vertices;
+}
+
+int ObjLoader::GetMeshLength(int meshIndex) {
+	return m_Entries[meshIndex].Vertices.size();
 }
 
 bool ObjLoader::InitFromScene(const aiScene *pScene, const std::string& filename) {
@@ -101,6 +105,7 @@ void ObjLoader::InitMesh(unsigned int Index, const aiMesh* paiMesh) {
 	}
 
 	me.Vertices = _Verticies;
+	me.NumIndices = paiMesh->mNumVertices;
 
 	m_Entries[Index] = me;
 }

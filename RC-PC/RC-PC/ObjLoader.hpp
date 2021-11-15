@@ -23,7 +23,8 @@ public:
 
 	bool LoadMesh(const std::string& Filename);
 
-	GLfloat* DebugMesh();
+	GLfloat* GetMesh(int meshIndex);
+	int GetMeshLength(int meshIndex);
 
 private:
 	bool InitFromScene(const aiScene* pScene, const std::string& filename);
