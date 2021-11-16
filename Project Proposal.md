@@ -31,7 +31,7 @@
 
 ### Success criteria
 ---
-- Aircraft is simulated using predifined/prebaked characteristics from a file
+- Aircraft is simulated using predefined/pre-baked characteristics from a file
 - Aircraft is controlled using an input device besides a keyboard and mouse
 - Aircraft is rendered in full colour from a .obj and related texture files
 - Flight control surfaces can be moved and are animated beyond the simulation

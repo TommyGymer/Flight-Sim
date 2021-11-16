@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Project Proposal.md",
-            "mode": "source"
+            "file": "Analysis.md",
+            "mode": "preview"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project Proposal.md",
+                "file": "Analysis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -78,8 +78,17 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "c5dbc05730b3a3a6",
+            "type": "leaf",
+            "state": {
+              "type": "dictionary-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -88,15 +97,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "Project Proposal.md",
-    "rc-desk-pilot.jpg",
-    "ms-flight-sim.jpg",
-    "The Process/Testing the Application.md",
-    "The Process/Documentation and Understanding.md",
+    "Analysis.md",
+    "Language/C++.md",
     "The Process/Research and Initial Development.md",
     "Index.md",
-    "Analysis.md",
+    "The Process/Testing the Application.md",
     "The Process/Building the Application.md",
-    "README.md"
+    "The Process/Documentation and Understanding.md",
+    "Cube points.png",
+    "Pasted image 20211111120756.png",
+    "OpenGL/3D Rendering.md"
   ]
 }

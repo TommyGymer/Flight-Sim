@@ -5,7 +5,7 @@
  - [[Baked Physics Format|File reading and writing]]
  - [[XInput|Controls from different input devices]]
  
-Writen in C++ and compiled using CMake using OpenGL
+Written in C++ and compiled using CMake using OpenGL
 
 Documentation written in MarkDown using the [Obsidian](https://obsidian.md/) note taker
 
@@ -40,7 +40,7 @@ Documentation written in MarkDown using the [Obsidian](https://obsidian.md/) not
 - Interaction with different input devices will add the need for a number of configuration menus
 
 ### Success criteria
-- Aircraft is simulated using predifined/prebaked characteristics from a file
+- Aircraft is simulated using predefined/pre-baked characteristics from a file
 - Aircraft is controlled using an input device besides a keyboard and mouse
 - Aircraft is rendered in full colour from a .obj and related texture files
 - Flight control surfaces can be moved and are animated beyond the simulation

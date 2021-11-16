@@ -1,5 +1,7 @@
 ﻿  RC-PC.cpp
-C:\Users\Tom\Documents\GitHub\Flight-Sim\RC-PC\RC-PC\RC-PC.cpp(26,10): fatal error C1083: Cannot open include file: 'Loader.hpp': No such file or directory
+  shader.cpp
   ObjLoader.cpp
+D:\Obsidian\Programs\Flight Sim\RC-PC\RC-PC\ObjLoader.cpp(53,51): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Obsidian\Programs\Flight Sim\RC-PC\RC-PC\ObjLoader.cpp(68,49): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   Generating Code...
-C:\Users\Tom\Documents\GitHub\Flight-Sim\RC-PC\RC-PC\ObjLoader.cpp(52): error C4716: 'ObjLoader::InitFromScene': must return a value
+  RC-PC.vcxproj -> D:\Obsidian\Programs\Flight Sim\RC-PC\x64\Debug\RC-PC.exe

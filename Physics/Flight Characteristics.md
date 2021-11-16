@@ -4,7 +4,7 @@
 In order of difficultly:
 1. Direct coefficients on the input device axies
 2. Manually entered flight characteristics
-	- Itertia
+	- Inertia
 	- Mass
 	- Thrust
 3. Auto calculation based on a 3D model
