@@ -15,3 +15,7 @@ I will be following an [OpenGL in C++](http://www.opengl-tutorial.org/beginners-
 ![[Cube points.png]]
 
 A .obj stores the points within the mesh of an object. These can be extracted form the file using Assimp and then loaded into the mesh array for the renderer.
+
+### Swapping Architecture
+---
+#### [Raylib](https://github.com/raysan5/raylib)

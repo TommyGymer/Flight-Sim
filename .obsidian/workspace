@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Analysis.md",
-            "mode": "preview"
+            "file": "Language/Java.md",
+            "mode": "source"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Analysis.md",
+                "file": "Language/Java.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,15 +97,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "Analysis.md",
-    "Language/C++.md",
+    "Language/Java.md",
     "The Process/Research and Initial Development.md",
+    "Language/C++.md",
+    "Project Proposal.md",
+    "Analysis.md",
     "Index.md",
     "The Process/Testing the Application.md",
     "The Process/Building the Application.md",
     "The Process/Documentation and Understanding.md",
-    "Cube points.png",
-    "Pasted image 20211111120756.png",
-    "OpenGL/3D Rendering.md"
+    "Cube points.png"
   ]
 }
