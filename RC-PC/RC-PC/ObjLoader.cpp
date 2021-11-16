@@ -55,9 +55,9 @@ GLfloat* ObjLoader::GetMesh(int meshIndex)
 	for (int i = 0; i < length; i++) {
 		vector<float> pPos = m_Entries[meshIndex].Vertices[i];
 		cout << "(" << pPos[0] << ", " << pPos[1] << ", " << pPos[2] << ")\n";
-		buffer.push_back(pPos[0] * 1.0f);
-		buffer.push_back(pPos[1] * 1.0f);
-		buffer.push_back(pPos[2] * 1.0f);
+		buffer.push_back(pPos[0]);
+		buffer.push_back(pPos[1]);
+		buffer.push_back(pPos[2]);
 	}
 	GLfloat* vertices = new GLfloat[length * 3];
 	std::copy(buffer.begin(), buffer.end(), vertices);
@@ -87,7 +87,7 @@ void ObjLoader::InitMesh(unsigned int Index, const aiMesh* paiMesh) {
 	MeshEntry me;
 	me.MaterialIndex = paiMesh->mMaterialIndex;
 
-	std::vector<std::vector<float>> _Verticies{ paiMesh->mNumVertices, {0, 0, 0} };
+	std::vector<std::vector<float>> _Verticies(paiMesh->mNumVertices);
 	std::vector<int> _Indices; //not sure what this is for yet
 
 	const aiVector3D Origin(0.0f, 0.0f, 0.0f);
@@ -107,7 +107,9 @@ void ObjLoader::InitMesh(unsigned int Index, const aiMesh* paiMesh) {
 	me.Vertices = _Verticies;
 	me.NumIndices = paiMesh->mNumVertices;
 
-	m_Entries[Index] = me;
+	const MeshEntry asdf = me;
+
+	m_Entries.push_back(asdf);
 }
 
 bool ObjLoader::InitMaterials(const aiScene* aiScene, const std::string& filename) {
