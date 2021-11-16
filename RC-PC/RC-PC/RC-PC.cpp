@@ -75,10 +75,10 @@ int main()
 	// Enable depth test
 	//glEnable(GL_DEPTH_TEST);
 	// Accept fragment if it closer to the camera than the former one
-	glDepthFunc(GL_LESS);
+	////glDepthFunc(GL_LESS);
 
 	// Cull triangles which normal is not towards the camera
-	glEnable(GL_CULL_FACE);
+	////glEnable(GL_CULL_FACE);
 
 
 	//create an array to hold an object
@@ -111,7 +111,7 @@ int main()
 
 	ObjLoader loader = ObjLoader();
 	loader.LoadMesh(pFile);
-	//currently only getting the first value in the array
+	
 	GLfloat* meshPointer = loader.GetMesh(0);
 	int meshLength = loader.GetMeshLength(0);
 	cout << meshLength;
