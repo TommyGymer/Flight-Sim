@@ -49,7 +49,8 @@ I also plan to ask some people outside of this target market to gauge usability 
 ---
 #### RC Desk Pilot
 
-![[rc-desk-pilot.jpg]][image from "RC Desk Pilot"](https://www.google.com/url?sa=i&url=https%3A%2F%2Frcdeskpilot.com%2F&psig=AOvVaw3fUM5iRx5TZjbsY1iT7Jar&ust=1636021407916000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKC-6vb8-_MCFQAAAAAdAAAAABAU)
+![[Pasted image 20211116205330.png]]
+
 - Range of model aircraft available
 - Tools to make your own aircraft
 - Connects to a range of different controllers

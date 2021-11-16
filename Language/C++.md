@@ -23,3 +23,7 @@ int main(void){
 ```
 
 This defines a method `main` with no parameters which returns an int; the returned int is 0 if the program returns with no errors
+
+# Why would anyone do this to themselves
+
+# Time to leave

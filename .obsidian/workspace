@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OpenGL/Opening a Window.md",
-            "mode": "source"
+            "file": "Analysis.md",
+            "mode": "preview"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OpenGL/Opening a Window.md",
+                "file": "Analysis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,15 +97,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "OpenGL/Opening a Window.md",
+    "Analysis.md",
     "Language/C++.md",
-    "Building/Requirements.md",
-    "Building/Libraries/GLM.md",
-    "Building/Libraries/GLEW.md",
-    "Building/Libraries/GLFW.md",
-    "Building/Libraries/Assimp.md",
-    "Physics/Baked Physics/CFD.md",
-    "Physics/Baked Physics/Baked Physics Format.md",
+    "The Process/Research and Initial Development.md",
+    "Index.md",
+    "The Process/Testing the Application.md",
+    "The Process/Building the Application.md",
+    "The Process/Documentation and Understanding.md",
+    "Cube points.png",
+    "Pasted image 20211111120756.png",
     "OpenGL/3D Rendering.md"
   ]
 }

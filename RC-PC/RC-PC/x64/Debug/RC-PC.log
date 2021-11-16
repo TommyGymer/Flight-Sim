@@ -1,1 +1,7 @@
-﻿  RC-PC.vcxproj -> C:\Users\Tom\Documents\GitHub\Flight-Sim\RC-PC\x64\Debug\RC-PC.exe
+﻿  RC-PC.cpp
+  shader.cpp
+  ObjLoader.cpp
+D:\Obsidian\Programs\Flight Sim\RC-PC\RC-PC\ObjLoader.cpp(53,51): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Obsidian\Programs\Flight Sim\RC-PC\RC-PC\ObjLoader.cpp(68,49): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  RC-PC.vcxproj -> D:\Obsidian\Programs\Flight Sim\RC-PC\x64\Debug\RC-PC.exe
