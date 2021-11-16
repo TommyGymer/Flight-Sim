@@ -65,7 +65,7 @@ GLfloat* ObjLoader::GetMesh(int meshIndex)
 }
 
 int ObjLoader::GetMeshLength(int meshIndex) {
-	return m_Entries[meshIndex].Vertices.size();
+	return m_Entries[meshIndex].Vertices.size() * 3;
 }
 
 bool ObjLoader::InitFromScene(const aiScene *pScene, const std::string& filename) {
@@ -85,7 +85,7 @@ bool ObjLoader::InitFromScene(const aiScene *pScene, const std::string& filename
 
 void ObjLoader::InitMesh(unsigned int Index, const aiMesh* paiMesh) {
 	MeshEntry me;
-	me.MaterialIndex = paiMesh->mMaterialIndex;
+	me.MaterialIndex = *(&(paiMesh->mMaterialIndex));
 
 	std::vector<std::vector<float>> _Verticies(paiMesh->mNumVertices);
 	std::vector<int> _Indices; //not sure what this is for yet
@@ -109,7 +109,7 @@ void ObjLoader::InitMesh(unsigned int Index, const aiMesh* paiMesh) {
 
 	const MeshEntry asdf = me;
 
-	m_Entries.push_back(asdf);
+	m_Entries[0] = asdf;
 }
 
 bool ObjLoader::InitMaterials(const aiScene* aiScene, const std::string& filename) {
