@@ -8,3 +8,5 @@ Since OpenGL is written for C and C++, all resources and libraries for Java Open
 [JOGL](https://jogamp.org/jogl/www/) and [LWJGL](https://www.lwjgl.org/) are two decent examples of Java mappings for the OpenGL libraries. However, both are a number of years old and not in any particularly active development.
 
 [jaylib](https://github.com/electronstudio/jaylib/)
+
+## Deciding to use Java
