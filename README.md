@@ -1,7 +1,7 @@
 # Flight-Sim
 ---
  A CS project that will contain:
- - [[3D Rendering]]
+ - [[3D Rendering]](https://github.com/TommyGymer/Flight-Sim/blob/main/OpenGL/3D%20Rendering.md)
  - [[Baked Physics Format|File reading and writing]]
  - [[XInput|Controls from different input devices]]
  
