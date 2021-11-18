@@ -2,8 +2,8 @@
 ---
  A CS project that will contain:
  - [[3D Rendering]](https://github.com/TommyGymer/Flight-Sim/blob/main/OpenGL/3D%20Rendering.md)
- - [[Baked Physics Format|File reading and writing]]
- - [[XInput|Controls from different input devices]]
+ - [[Baked Physics Format|File reading and writing]](https://github.com/TommyGymer/Flight-Sim/blob/main/Physics/Baked%20Physics/Baked%20Physics%20Format.md)
+ - [[XInput|Controls from different input devices]](https://github.com/TommyGymer/Flight-Sim/blob/main/Input/XInput.md)
  
 Written in C++ and compiled using CMake using OpenGL
 
