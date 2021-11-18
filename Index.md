@@ -21,7 +21,7 @@
 
 ---
 ### Building
-- ##### [[Requirements]]
+- ##### [[Building/Old Requirements/Requirements]]
 	- ###### [[AntTweakBar]]
 	- ###### [[Assimp]]
 	- ###### [[Bullet]]

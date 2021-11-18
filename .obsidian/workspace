@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "README.md",
+            "file": "Building/Requirements.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Building/Requirements.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,15 +97,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Building/Requirements.md",
+    "Building/Old Requirements/Requirements.md",
+    "Building/Old Requirements/vcpkg.md",
     "README.md",
     "AntTweakBar.md",
     "Index.md",
     "Project Proposal.md",
     "Analysis.md",
     "Physics/Flight Characteristics.md",
-    "Physics/Baked Physics/CFD.md",
-    "Input/XInput.md",
-    "Physics/Baked Physics/Baked Physics Format.md",
-    "OpenGL/3D Rendering.md"
+    "Physics/Baked Physics/CFD.md"
   ]
 }
