@@ -15,10 +15,12 @@ int main(void)
 {
     // Initialization
     //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+    const int screenWidth = 1600;
+    const int screenHeight = 900;
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - 3d camera free");
+
+    SetWindowState(FLAG_WINDOW_RESIZABLE);
 
     // Define the camera to look into our 3d world
     Camera3D camera = { 0 };
