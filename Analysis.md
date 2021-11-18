@@ -109,3 +109,7 @@ I also plan to ask some people outside of this target market to gauge usability 
 - Runs at least 30fps, preferably more than 60fps
 - Runs with sufficient resolution to allow easy control of a distance aircraft
 - Included or built in tools to make new aircraft models
+
+### Structure overview
+---
+![[Pasted image 20211118110231.png]]
