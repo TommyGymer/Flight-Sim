@@ -19,3 +19,11 @@ A .obj stores the points within the mesh of an object. These can be extracted fo
 ### Swapping Architecture
 ---
 #### [Raylib](https://github.com/raysan5/raylib)
+
+#### Setting up [VSCodium](https://vscodium.com/) to facilitate development
+
+![[Pasted image 20211118094537.png]]
+
+Added a shortcut to build and run the active file to allow for easier and quicker testing.
+
+Above shows one of the RayLib examples I have used to test that the shortcut functions as expected.

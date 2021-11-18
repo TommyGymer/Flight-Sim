@@ -13,7 +13,7 @@
             "windows": {
                 "command": "./raylib_compile_execute.bat",
                 "args": [
-                    "${fileBasenameNoExtension}.c",
+                    "${file}",
                 ],
             },
             "osx": {

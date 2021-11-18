@@ -57,6 +57,8 @@ I also plan to ask some people outside of this target market to gauge usability 
 - Weather features
 - Sufficiently accurate physics
 
+
+
 #### Microsoft Flight Sim 2020
 
 ![[ms-flight-sim.jpg]][image from "Rock Paper Shotgun"](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rockpapershotgun.com%2Fall-341-photorealistic-cities-in-microsoft-flight-simulator-2020&psig=AOvVaw2-aPVRGJ0CPWs3C3HYoOUM&ust=1636021274292000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKj1par8-_MCFQAAAAAdAAAAABAE)
@@ -80,6 +82,14 @@ I also plan to ask some people outside of this target market to gauge usability 
 - OpenGL based rendering with C++/C#
 - Using pre-baked physics to remove the need for real time [[CFD]]
 - GLFW input (or XInput for extra compatibility) API
+- Models stored and loaded from a custom file format
+
+---
+#### Update to implementation
+---
+- OpenGL based rendering in C/C++ using RayLib as an API
+- Using pre-baked physics to remove the need for real time [[CFD]]
+- RayLib contains libraries to act as interfaces for XInput
 - Models stored and loaded from a custom file format
 
 #### Limitations of implementation
