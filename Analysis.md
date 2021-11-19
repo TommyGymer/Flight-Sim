@@ -180,3 +180,5 @@ Both the 3D rendering and physics involved with flight can be abstracted down to
 Concurrency of the physics and rendering will improve performance by splitting the two most intensive tasks into independent threads. As only the rendering thread needs access to the physics data, and not the other way round, the complexity is kept minimal for a large performance gain.
 
 The precalculation of a number of the physical values for how the aircraft flies is a form of caching, removing the need to be able to calculate these on the fly; without this, it is likely a large part of the GPU's processing would be required to run a full CFD simulation, removing extra headroom for the rendering to expand into.
+
+OpenGL handles the distribution of the 3D rendering to the GPU, reduce the complexity of 3D graphics. I will still need to provide the required models, textures and object locations to render the scene; the best solution here is to write a helper class that handles the object, animations, textures and data to make it easier to have multiple objects in the scene.
