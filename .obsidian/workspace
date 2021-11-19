@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "raylib/README.md",
+            "file": "Analysis.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raylib/README.md",
+                "file": "Analysis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -78,17 +78,8 @@
                 "unlinkedCollapsed": true
               }
             }
-          },
-          {
-            "id": "c5dbc05730b3a3a6",
-            "type": "leaf",
-            "state": {
-              "type": "dictionary-view",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -97,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Analysis.md",
+    "Index.md",
+    "Cube points.png",
     "raylib/README.md",
     "Pasted image 20211116205330.png",
     "Cheat sheet.md",
     "Building/Requirements.md",
     "Building/Old Requirements/Requirements.md",
     "Building/Old Requirements/vcpkg.md",
-    "README.md",
-    "AntTweakBar.md",
-    "Index.md",
-    "Project Proposal.md"
+    "README.md"
   ]
 }
