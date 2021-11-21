@@ -17,21 +17,21 @@ int main(void)
 {
     // Initialization
     //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+    const int screenWidth = 1600;
+    const int screenHeight = 900;
 
     InitWindow(screenWidth, screenHeight, "raylib [models] example - first person maze");
 
     // Define the camera to look into our 3d world
     Camera camera = { { 0.2f, 0.4f, 0.2f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f, 0.0f }, 45.0f, 0 };
 
-    Image imMap = LoadImage("resources/cubicmap.png");      // Load cubicmap image (RAM)
+    Image imMap = LoadImage("raylib/examples/models/resources/cubicmap.png");      // Load cubicmap image (RAM)
     Texture2D cubicmap = LoadTextureFromImage(imMap);       // Convert image to texture to display (VRAM)
     Mesh mesh = GenMeshCubicmap(imMap, (Vector3){ 1.0f, 1.0f, 1.0f });
     Model model = LoadModelFromMesh(mesh);
 
     // NOTE: By default each cube is mapped to one part of texture atlas
-    Texture2D texture = LoadTexture("resources/cubicmap_atlas.png");    // Load map texture
+    Texture2D texture = LoadTexture("raylib/examples/models/resources/cubicmap_atlas.png");    // Load map texture
     model.materials[0].maps[MAP_DIFFUSE].texture = texture;             // Set map diffuse texture
 
     // Get map image data to be used for collision detection
@@ -43,7 +43,7 @@ int main(void)
 
     SetCameraMode(camera, CAMERA_FIRST_PERSON);     // Set camera mode
 
-    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    SetTargetFPS(120);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop

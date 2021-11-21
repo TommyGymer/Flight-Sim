@@ -15,8 +15,8 @@ int main(void)
 {
     // Initialization
     //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+    const int screenWidth = 1600;
+    const int screenHeight = 900;
 
     InitWindow(screenWidth, screenHeight, "raylib [models] example - skybox loading and drawing");
 
@@ -30,24 +30,24 @@ int main(void)
     // Load skybox shader and set required locations
     // NOTE: Some locations are automatically set at shader loading
 #if defined(PLATFORM_DESKTOP)
-    skybox.materials[0].shader = LoadShader("resources/shaders/glsl330/skybox.vs", "resources/shaders/glsl330/skybox.fs");
+    skybox.materials[0].shader = LoadShader("raylib/examples/models/resources/shaders/glsl330/skybox.vs", "raylib/examples/models/resources/shaders/glsl330/skybox.fs");
 #else   // PLATFORM_RPI, PLATFORM_ANDROID, PLATFORM_WEB
-    skybox.materials[0].shader = LoadShader("resources/shaders/glsl100/skybox.vs", "resources/shaders/glsl100/skybox.fs");
+    skybox.materials[0].shader = LoadShader("raylib/examples/models/resources/shaders/glsl100/skybox.vs", "raylib/examples/models/resources/shaders/glsl100/skybox.fs");
 #endif
     SetShaderValue(skybox.materials[0].shader, GetShaderLocation(skybox.materials[0].shader, "environmentMap"), (int[1]){ MAP_CUBEMAP }, UNIFORM_INT);
     SetShaderValue(skybox.materials[0].shader, GetShaderLocation(skybox.materials[0].shader, "vflipped"), (int[1]){ 1 }, UNIFORM_INT);
 
     // Load cubemap shader and setup required shader locations
 #if defined(PLATFORM_DESKTOP)
-    Shader shdrCubemap = LoadShader("resources/shaders/glsl330/cubemap.vs", "resources/shaders/glsl330/cubemap.fs");
+    Shader shdrCubemap = LoadShader("raylib/examples/models/resources/shaders/glsl330/cubemap.vs", "raylib/examples/models/resources/shaders/glsl330/cubemap.fs");
 #else   // PLATFORM_RPI, PLATFORM_ANDROID, PLATFORM_WEB
-    Shader shdrCubemap = LoadShader("resources/shaders/glsl100/cubemap.vs", "resources/shaders/glsl100/cubemap.fs");
+    Shader shdrCubemap = LoadShader("raylib/examples/models/resources/shaders/glsl100/cubemap.vs", "raylib/examples/models/resources/shaders/glsl100/cubemap.fs");
 #endif
     SetShaderValue(shdrCubemap, GetShaderLocation(shdrCubemap, "equirectangularMap"), (int[1]){ 0 }, UNIFORM_INT);
 
     // Load HDR panorama (sphere) texture
     char panoFileName[256] = { 0 };
-    TextCopy(panoFileName, "resources/dresden_square_2k.hdr");
+    TextCopy(panoFileName, "raylib/examples/models/resources/dresden_square_2k.hdr");
     Texture2D panorama = LoadTexture(panoFileName);
 
     // Generate cubemap (texture with 6 quads-cube-mapping) from panorama HDR texture

@@ -8,6 +8,7 @@ set RAYLIB_INCLUDE_DIR=".\raylib\src"
 set RAYLIB_LIB_DIR=".\raylib\src"
 set RAYLIB_RES_FILE=".\raylib\src\raylib.rc.data"
 set COMPILER_DIR=".\tcc"
+set COMPILER_LIBS=-lmsvcrt -lraylib -lopengl32 -lgdi32 -lwinmm -lkernel32 -lshell32 -luser32 -Wl,-subsystem=gui
 set PATH=%PATH%;%COMPILER_DIR%
 :: Get full filename path for input file %1
 set FILENAME=%~f1
@@ -25,7 +26,7 @@ cmd /c if exist %NAMEPART%.exe del /F %NAMEPART%.exe
 :: -std=c99  : Use C99 language standard
 :: -Wall     : Enable all compilation Warnings
 :: -mwindows : Compile a Windows executable, no cmd window
-tcc -o %NAMEPART%.exe %FILENAME% %RAYLIB_RES_FILE% -s -O2 -I%RAYLIB_INCLUDE_DIR% -I%RAYLIB_LIB_DIR% -lmsvcrt -lraylib -lopengl32 -lgdi32 -lwinmm -lkernel32 -lshell32 -luser32 -Wl,-subsystem=gui
+tcc -o %NAMEPART%.exe %FILENAME% %RAYLIB_RES_FILE% -s -O2 -std=c99 -Wall -Iexternal -DPLATFORM_DESKTOP -I%RAYLIB_INCLUDE_DIR% -I%RAYLIB_LIB_DIR% %COMPILER_LIBS%
 :: .
 :: > Executing program
 :: -------------------------
