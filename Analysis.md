@@ -25,6 +25,7 @@ To fill this market space, the sim will need to have sufficient game textures av
 - OpenGL options in C/C++
 - Physics of flight
 
+---
 #### Stakeholders
 
 My stakeholders will include:
@@ -51,7 +52,8 @@ As such, I will get a number of people within these groups to test the applicati
 	- Exit to a menu to load another aircraft or map, or receive input from a different device, or configure the sim or input device
 - This interface will require not only a 2D menu renderer and interface, but also a 3D renderer and paired interface
 - It should be possible to use as wide a range of input devices as possible; allowing for not only the use of dedicated flight control hardware, but also mouse and keyboard prevents limiting the number of users
----
+
+##### Usage
 - Inputs and outputs from each of the parts of the application:
 	- Flight
 		- The flight part of the application will require the 3D model of the aircraft, the pre-calculated physics of the model and a map model
@@ -70,22 +72,25 @@ As such, I will get a number of people within these groups to test the applicati
 I also plan to ask some people outside of this target market to gauge usability and to possible add some form of tutorial
 - To expand this, the tutorial could try to detect the type of input device in use and tailor the information to fit the input device
 
+---
 #### First steps
 - Build an application in C++ and OpenGL following tutorials to gain an understanding of the architecture
 - Document the architecture to begin work on the application
 - Research into the physics of flight to understand what inputs would be required for directly input properties or properties calculated from a .obj
 - Research the scope of full CFD on an arbitrary .obj file
 
+---
 #### Possible expansions
 If I find time to add more features, I would like to add support for OpenVR to allow the use of VR headsets with the application to assist with immersion in the sim.
 
 If possible, it would also be preferable to try to find some way of fully, or at least partially including the CFD in the physics calculations each frame using a separate thread for the physics engine. This would improve the accuracy of the sim while maintaining the same, or similar, performance.
 
+---
 ### Existing products and projects
 ---
 #### RC Desk Pilot
 
-![[Pasted image 20211116205330.png]]
+![[RC-PC image.png]]
 
 - Range of model aircraft available
 - Tools to make your own aircraft
@@ -97,6 +102,7 @@ One of the major problems with RC Desk Pilot is the limitations imposed by the t
 
 It also has a number of bugs and edge cases which have not been fully accounted for, partly due to its open source nature and end of active development. There are a number of configurations which can result in unrealistic results from the physics engine.
 
+---
 #### Microsoft Flight Sim 2020
 
 ![[ms-flight-sim.jpg]]
@@ -111,6 +117,7 @@ Microsoft Flight Sim 2020 is the current flag ship product of the Microsoft Flig
 
 The main issue with Microsoft Flight Sim 2020 for the problem I am trying to solve is, beside the almost triple A title cost, are the high hardware requirements for a decent experience.
 
+---
 ### Features
 ---
 - Pre-made models available
@@ -121,6 +128,7 @@ The main issue with Microsoft Flight Sim 2020 for the problem I am trying to sol
 - Accurate physics while maintaining performance
 - Reasonable environment
 
+---
 ### Implementation
 ---
 - OpenGL based rendering with C++/C#
@@ -130,17 +138,18 @@ The main issue with Microsoft Flight Sim 2020 for the problem I am trying to sol
 
 ---
 #### Update to implementation
----
 - OpenGL based rendering in C/C++ using RayLib as an API
 - Using pre-baked physics to remove the need for real time [[CFD]]
 - RayLib contains libraries to act as interfaces for XInput
 - Models stored and loaded from a custom file format
 
+---
 #### Limitations of implementation
 - Fairly resource intensive due to the full frame rate rendering
 - Pre-baked physics will be slightly inaccurate compared to a real time [[CFD]] simulation
 - 
 
+---
 ### Hardware requirements
 ---
 - A computer capable of running an OpenGL application at a usable frame rate; this should include almost any computer from the 6 or 7 years and probably longer
@@ -150,6 +159,7 @@ The main issue with Microsoft Flight Sim 2020 for the problem I am trying to sol
 - I will be developing the project in [VSCodium](https://vscodium.com/) which gives syntax highlighting, error highlighting, suggestions, built in terminal, and debug features
 - This results in a fully portable development environment, allowing me to make use of GitHub to store and version my code in a private repository
 
+---
 ### Brief
 ---
 - Realistic flight performance of aircraft
@@ -174,7 +184,9 @@ VR Support | RayLib workaround | Not required by stakeholders and not natively s
 Real time CFD | Handcrafted implementation | Only required for hyper accuracy and would place a similar load as Microsoft Flight Sim 2020, which is not performant enough for my stakeholders.
 Built in 3D editor | Recommend use of Blender | Not required to edit the aircraft models as Blender can be used to edit these which prevents the need for me to implement a full mesh editor.
 
+---
 ### Computational methods
+---
 Both the 3D rendering and physics involved with flight can be abstracted down to lower poly models along with an argument based physics engine rather than a real time flow simulator. This vastly reduces the complexity of the problem, allowing it to be run at reasonable frame rates on consumer hardware.
 
 Concurrency of the physics and rendering will improve performance by splitting the two most intensive tasks into independent threads. As only the rendering thread needs access to the physics data, and not the other way round, the complexity is kept minimal for a large performance gain.

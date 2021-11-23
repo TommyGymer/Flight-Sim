@@ -29,8 +29,9 @@
 	- ###### [[GLFW]]
 	- ###### [[GLM]]
 	- ###### [[Imgui]]
-- ##### [[CMake]]
-- ##### [[vcpkg]]
+	- ##### [[CMake]]
+	- ##### [[vcpkg]]
+- ##### [[Building/Requirements]]
 
 ---
 ### OpenGL

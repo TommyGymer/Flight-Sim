@@ -89,14 +89,14 @@
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
     "Analysis.md",
-    "Building/Old Requirements/Requirements.md",
-    "Index.md",
+    "Input/XInput.md",
+    "Input/GLFW Inputs.md",
+    "Building/Requirements.md",
     "The Process/Research and Initial Development.md",
-    "The Process/Building the Application.md",
-    "The Process/Documentation and Understanding.md",
-    "The Process/Testing the Application.md",
-    "Physics/Baked Physics/Baked Physics Format.md",
-    "Physics/Baked Physics/CFD.md",
-    "Physics/Flight Characteristics.md"
+    "Diagram.png",
+    "Objects demo.png",
+    "RC-PC image.png",
+    "rc-desk-pilot.jpg",
+    "Index.md"
   ]
 }
