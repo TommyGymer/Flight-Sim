@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Analysis.md",
+            "file": "Index.md",
             "mode": "preview"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Analysis.md",
+                "file": "Index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Index.md",
+    "Project Proposal.md",
+    "README.md",
     "Analysis.md",
-    "Input/XInput.md",
-    "Input/GLFW Inputs.md",
-    "Building/Requirements.md",
-    "The Process/Research and Initial Development.md",
-    "Diagram.png",
-    "Objects demo.png",
-    "RC-PC image.png",
-    "rc-desk-pilot.jpg",
-    "Index.md"
+    "Physics/Flight Characteristics.md",
+    "OpenGL/3D Rendering.md",
+    "Building/Old Requirements/CMake.md",
+    "raylib/HISTORY.md",
+    "Language/C-C++.md",
+    "Input/XInput.md"
   ]
 }

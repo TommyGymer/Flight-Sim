@@ -10,7 +10,7 @@ All currently available model flight sims are either designed for Windows XP or 
 
 A modern flight sim designed on a base of OpenGL 4.0 will provide full performance on modern hardware and sufficient resolution for flying a model aircraft.
 
-To fill this market space, the sim will need to have sufficient game textures available to approach the detail of a modern sim and sufficiently accurate physics to act as practice for flying read model aircraft.
+To fill this market gap, the sim will need to have sufficient game textures available to approach the detail of a modern sim and sufficiently accurate physics to act as practice for flying read model aircraft.
 
 ##### Extracted points
 
