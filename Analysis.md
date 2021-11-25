@@ -69,6 +69,17 @@ As such, I will get a number of people within these groups to test the applicati
 		- Enter values for the animations and bones for debugging
 		- Option to edit the physics values directly; some of these, such as thrust, will need to be edited manually regardless
 
+##### Meeting stakeholder requirements
+- As a game:
+Modern graphics with the performance to run on most systems
+Variety of built in quality models; remove the need to spend too much time to get the best experience from a casual perspective
+Stable: stakeholders looking to play as a game will want the application to be stable and not require any modification to make it run on their system. This is best achieved with a standard framework, as this will have industry tools that will allow the application to be run on a multitude of architectures
+
+- As a flight simulator:
+Simulator quality flight physics to allow use of the simulator as a substitute for real practice
+Variety of specialist input devices to allow the use of the most suitable, or currently owned by the stakeholder, one for the best experience for the user
+Ability to make their own aircraft models; this will allow more experienced and enthused users to import a model of any aircraft they may have built and be able to fly it in the sim
+
 I also plan to ask some people outside of this target market to gauge usability and to possible add some form of tutorial
 - To expand this, the tutorial could try to detect the type of input device in use and tailor the information to fit the input device
 
@@ -98,7 +109,7 @@ If possible, it would also be preferable to try to find some way of fully, or at
 - Weather features
 - Sufficiently accurate physics
 
-One of the major problems with RC Desk Pilot is the limitations imposed by the technology available when it began development; it is build using the DirectX 9 platform and lacks any shaders that would be expected with a modern solution.
+One of the major problems with RC Desk Pilot is the limitations imposed by the technology available when it began development; it is build using the DirectX platform and lacks any shaders that would be expected with a modern solution.
 
 It also has a number of bugs and edge cases which have not been fully accounted for, partly due to its open source nature and end of active development. There are a number of configurations which can result in unrealistic results from the physics engine.
 
@@ -116,6 +127,18 @@ It also has a number of bugs and edge cases which have not been fully accounted 
 Microsoft Flight Sim 2020 is the current flag ship product of the Microsoft Flight Sim lineup and is a fully furnished and refined product as would be expected from a Microsoft product.
 
 The main issue with Microsoft Flight Sim 2020 for the problem I am trying to solve is, beside the almost triple A title cost, are the high hardware requirements for a decent experience.
+
+---
+#### Requirements to compete
+- High quality models and rendering
+- Detailed environment
+- Accurate physics
+- Wide range of compatibility
+- Weather
+
+Performance is also a major take away from this research, as it will need to run faster in some way than Microsoft Flight Sim while still completing with modern graphics and physics.
+
+To complete in terms of performance, I will need to make use of a modern 3D rendering library to ensure that I do not spend the entire project only on optimising a sub par implementation.
 
 ---
 ### Features
@@ -160,7 +183,7 @@ The main issue with Microsoft Flight Sim 2020 for the problem I am trying to sol
 - This results in a fully portable development environment, allowing me to make use of GitHub to store and version my code in a private repository
 
 ---
-### Brief
+### Brief: success criteria
 ---
 - Realistic flight performance of aircraft
 - Can be controlled with a variety of different input devices

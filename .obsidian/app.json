@@ -30,6 +30,7 @@
     "RayLib",
     "natively",
     "performant",
-    "precalculation"
+    "precalculation",
+    "optimising"
   ]
 }
