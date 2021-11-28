@@ -1,9 +1,14 @@
 ## Index
 ###### to be read using [Obsidian](https://obsidian.md/)
 ---
+### Sections
+- ##### [[Project Proposal]]
+- ##### [[Analysis]]
+
+---
 ### [Language](/Language/README)
 ##### [[Java]]
-##### [[C++]]
+##### [[C-C++]]
 
 ---
 ### [[3D Rendering]]
@@ -21,7 +26,7 @@
 
 ---
 ### Building
-- ##### [[Requirements]]
+- ##### [[Building/Old Requirements/Requirements]]
 	- ###### [[AntTweakBar]]
 	- ###### [[Assimp]]
 	- ###### [[Bullet]]
@@ -29,8 +34,9 @@
 	- ###### [[GLFW]]
 	- ###### [[GLM]]
 	- ###### [[Imgui]]
-- ##### [[CMake]]
-- ##### [[vcpkg]]
+	- ##### [[CMake]]
+	- ##### [[vcpkg]]
+- ##### [[Building/Requirements]]
 
 ---
 ### OpenGL

@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Analysis.md",
-            "mode": "preview"
+            "mode": "source"
           }
         }
       }
@@ -52,7 +52,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 280
   },
   "right": {
     "id": "f34da92fec5bbda2",
@@ -78,17 +78,8 @@
                 "unlinkedCollapsed": true
               }
             }
-          },
-          {
-            "id": "c5dbc05730b3a3a6",
-            "type": "leaf",
-            "state": {
-              "type": "dictionary-view",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -98,14 +89,14 @@
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
     "Analysis.md",
-    "Language/C++.md",
-    "The Process/Research and Initial Development.md",
+    "Project Proposal.md",
+    "Objects demo.png",
+    "ms-flight-sim.jpg",
     "Index.md",
-    "The Process/Testing the Application.md",
-    "The Process/Building the Application.md",
-    "The Process/Documentation and Understanding.md",
-    "Cube points.png",
-    "Pasted image 20211111120756.png",
-    "OpenGL/3D Rendering.md"
+    "README.md",
+    "Building/Requirements.md",
+    "Building/Old Requirements/Requirements.md",
+    "Building/Old Requirements/vcpkg.md",
+    "Building/Old Requirements/CMake.md"
   ]
 }

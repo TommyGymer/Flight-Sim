@@ -1,3 +1,5 @@
 [
-  "obsidian-dictionary-plugin"
+  "obsidian-dictionary-plugin",
+  "obsidian-pandoc",
+  "obsidian-discordrpc"
 ]

@@ -1,41 +1,9 @@
-## Build Requirements
+## Requirements
 ---
-#### Programs
-1. [[CMake]]
-2. Visual Studio
+### Programs
+- Designed to be edited and run from [VSCodium](https://vscodium.com/)
+- Included [Raylib](https://github.com/raysan5/raylib) dependencies
 
-#### Libraries
-1. ~~[[AntTweakBar]]~~
-2. [[assimp]]
-3. [[bullet]]
-4. [[glew]]
-5. [[glfw]]
-6. [[glm]]
-7. [[Imgui]]
-
-These are imported from a local `/external` folder using
-```C++
-// Include standard headers
-#include <stdio.h>
-#include <stdlib.h>
-#include <vector>
-
-// Include GLEW
-#include <GL/glew.h>
-
-// Include GLFW
-#include <GLFW/glfw3.h>
-GLFWwindow* window;
-
-// Include GLM
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-
-using namespace glm;
-```
-
-This also includes the standard C++ libraries for IO and other basic methods
-
-### vcpkg
 ---
-Vcpkg is a package manager maintained by Microsoft which allows the installing a linking of C++ libraries
+### Dependencies
+- The only dependency is [Raylib](https://github.com/raysan5/raylib) which is included within the repository

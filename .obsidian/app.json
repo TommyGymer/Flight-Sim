@@ -22,6 +22,20 @@
     "xml",
     "bpf",
     "predefine",
-    "Shader"
+    "Shader",
+    "customisation",
+    "toggleable",
+    "personalisation",
+    "quaternion",
+    "RayLib",
+    "natively",
+    "performant",
+    "precalculation",
+<<<<<<< Updated upstream
+    "optimising"
+=======
+    "initialised",
+    "resizable"
+>>>>>>> Stashed changes
   ]
 }
