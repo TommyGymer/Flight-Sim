@@ -101,11 +101,7 @@ If possible, it would also be preferable to try to find some way of fully, or at
 ---
 #### RC Desk Pilot
 
-<<<<<<< Updated upstream
-![[RC-PC image.png]]
-=======
 ![[RCDeskPilot.png]]
->>>>>>> Stashed changes
 
 - Range of model aircraft available
 - Tools to make your own aircraft
