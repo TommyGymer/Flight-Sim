@@ -9,7 +9,11 @@
         "state": {
           "type": "markdown",
           "state": {
+<<<<<<< Updated upstream
             "file": "Analysis.md",
+=======
+            "file": "The Process/Documentation and Understanding.md",
+>>>>>>> Stashed changes
             "mode": "source"
           }
         }
@@ -68,7 +72,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Analysis.md",
+                "file": "The Process/Documentation and Understanding.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,6 +92,7 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+<<<<<<< Updated upstream
     "Analysis.md",
     "Index.md",
     "Project Proposal.md",
@@ -98,5 +103,17 @@
     "raylib/HISTORY.md",
     "Language/C-C++.md",
     "Input/XInput.md"
+=======
+    "The Process/Documentation and Understanding.md",
+    "The Process/Testing the Application.md",
+    "The Process/Research and Initial Development.md",
+    "First window.png",
+    "System overview.png",
+    "ms-flight-sim.jpg",
+    "RCDeskPilot.png",
+    "Shapes.png",
+    "Analysis.md",
+    "Building/Old Requirements/Requirements.md"
+>>>>>>> Stashed changes
   ]
 }

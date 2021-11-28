@@ -24,7 +24,11 @@ A .obj stores the points within the mesh of an object. These can be extracted fo
 ---
 #### Setting up [VSCodium](https://vscodium.com/) to facilitate development
 
+<<<<<<< Updated upstream
 ![[Objects demo.png]]
+=======
+![[Shapes.png]]
+>>>>>>> Stashed changes
 
 Added a shortcut to build and run the active file to allow for easier and quicker testing.
 
