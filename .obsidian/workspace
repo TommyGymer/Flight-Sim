@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Building/Requirements.md",
-            "mode": "preview"
+            "file": "Analysis.md",
+            "mode": "source"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Building/Requirements.md",
+                "file": "Analysis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
+    "Analysis.md",
+    "Project Proposal.md",
+    "Objects demo.png",
+    "ms-flight-sim.jpg",
+    "Index.md",
+    "README.md",
     "Building/Requirements.md",
     "Building/Old Requirements/Requirements.md",
     "Building/Old Requirements/vcpkg.md",
-    "Building/Old Requirements/CMake.md",
-    "Input/XInput.md",
-    "Input/GLFW Inputs.md",
-    "Language/README.md",
-    "Language/Java.md",
-    "Language/C-C++.md",
-    "OpenGL/Opening a Window.md"
+    "Building/Old Requirements/CMake.md"
   ]
 }
