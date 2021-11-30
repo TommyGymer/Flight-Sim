@@ -9,6 +9,8 @@ Written in C++ and compiled using CMake using OpenGL
 
 Documentation written in MarkDown using the [Obsidian](https://obsidian.md/) note taker
 
+Making use of the [Raylib C++ wrapper](https://robloach.github.io/raylib-cpp/index.html)
+
 ---
 ## Project Outline
 ---
@@ -18,7 +20,6 @@ Documentation written in MarkDown using the [Obsidian](https://obsidian.md/) not
 
 ---
 ### Overview
-
 - Use of OpenGL for 3D rendering
 - Inputs from joystick type controllers
 - Definition of file formats to store aircraft .aircraft (.zip file)
