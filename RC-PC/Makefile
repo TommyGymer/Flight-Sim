@@ -13,11 +13,12 @@ compileFlags := -std=c++17 -I include
 linkFlags = -L lib/$(platform) -l raylib
 
 # Check for Windows
+#  -mwindows -lwinmm-static link flag ; not sure what this does
 ifeq ($(OS), Windows_NT)
 	# Set Windows macros
 	platform := Windows
 	CXX ?= g++
-	linkFlags += -Wl,--allow-multiple-definition -pthread -lopengl32 -lgdi32 -lwinmm -mwindows -static -static-libgcc -static-libstdc++
+	linkFlags += -Wl,--allow-multiple-definition -pthread -lopengl32 -lgdi32 -lwinmm -static-libgcc -static-libstdc++
 	libGenDir := src
 	THEN := &&
 	PATHSEP := \$(BLANK)

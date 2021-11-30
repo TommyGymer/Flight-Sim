@@ -29,6 +29,7 @@ cmd /c if exist %NAMEPART%.exe del /F %NAMEPART%.exe
 ::gcc -o %NAMEPART%.exe %FILENAME% %RAYLIB_RES_FILE% -s -O2 -Wall -Iexternal -DPLATFORM_DESKTOP -I%RAYLIB_INCLUDE_DIR% -I%RAYLIB_LIB_DIR% %COMPILER_LIBS%
 ::gcc -Wall %FILENAME% -o %NAMEPART%.exe -I%RAYLIB_INCLUDE_DIR%
 cd RC-PC
+mingw32-make setup
 mingw32-make
 :: .
 :: > Executing program
