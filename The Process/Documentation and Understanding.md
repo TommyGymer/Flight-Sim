@@ -31,3 +31,8 @@ camera.up = (Vector3){0.0f, 1.0f, 0.0f};
 camera.fovy = 45.0f;
 camera.type = CAMERA_PERSPECTIVE;
 ```
+
+---
+#### Shaders
+
+![[Shaders.png]]
