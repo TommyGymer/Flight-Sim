@@ -7,7 +7,7 @@ int main() {
     int screenHeight = 450;
 
     raylib::Color textColor(LIGHTGRAY);
-    raylib::Window w(screenWidth, screenHeight, "Raylib C++ Starter Kit Example");
+    raylib::Window w(screenWidth, screenHeight, "Raylib C++ Starter Kit Example: does it work?");
     
     SetTargetFPS(60);
 

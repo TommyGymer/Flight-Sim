@@ -28,9 +28,8 @@ cmd /c if exist %NAMEPART%.exe del /F %NAMEPART%.exe
 :: -mwindows : Compile a Windows executable, no cmd window
 ::gcc -o %NAMEPART%.exe %FILENAME% %RAYLIB_RES_FILE% -s -O2 -Wall -Iexternal -DPLATFORM_DESKTOP -I%RAYLIB_INCLUDE_DIR% -I%RAYLIB_LIB_DIR% %COMPILER_LIBS%
 ::gcc -Wall %FILENAME% -o %NAMEPART%.exe -I%RAYLIB_INCLUDE_DIR%
-g++ -MMD -MP -c -std=c++17 -I include src/main.cpp -o bin/main.o
-g++  bin/main.o -o bin/app -L lib/Windows -l raylib -Wl,--allow-multiple-definition -pthread -lopengl32 -lgdi32 -lwinmm -mwindows -static -static-libgcc -static-libstdc++
-bin/app.exe
+cd RC-PC
+mingw32-make
 :: .
 :: > Executing program
 :: -------------------------
