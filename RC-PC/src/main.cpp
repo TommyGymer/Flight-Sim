@@ -32,6 +32,11 @@ int main() {
         plane.GetMaterials()[i].shader = shader;
     }
 
+    // might need to set some of the shader values:
+    //https://blog.weghos.com/raylib/raylib/examples/shaders/shaders_basic_lighting.c.html
+    //https://github.com/MrOneTwo/Raylib-shaders/blob/master/src/main.cpp
+    //https://github.com/MrOneTwo/Raylib-shaders/tree/master/build/resources/shaders
+
     SetTargetFPS(60);
 
     // Main game loop
