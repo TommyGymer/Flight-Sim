@@ -51,7 +51,7 @@ int main() {
 
             camera.BeginMode();
             {
-                //DrawGrid(10, 1.0f);
+                DrawGrid(10, 1.0f);
                 plane.Draw(raylib::Vector3(0.0f, 0.0f, 0.0f), 1.0f);
             }
             camera.EndMode();
