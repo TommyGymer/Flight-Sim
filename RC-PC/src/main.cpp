@@ -37,6 +37,9 @@ int main() {
     //https://github.com/MrOneTwo/Raylib-shaders/blob/master/src/main.cpp
     //https://github.com/MrOneTwo/Raylib-shaders/tree/master/build/resources/shaders
 
+    //considering using tiny object loader to load in the objects as this seems to be more powerful
+    //https://github.com/tinyobjloader/tinyobjloader
+
     SetTargetFPS(60);
 
     // Main game loop
