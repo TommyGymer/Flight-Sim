@@ -14,7 +14,7 @@ int main() {
 
     //raylib::Mesh mesh("obj/cube.obj");
     //raylib::Model plane("D:\\RC-PC\\obj\\box plane.obj");
-    raylib::Model plane("..\\obj\\omega - testing.obj");    
+    raylib::Model plane("..\\obj\\materials.obj");    
 
     raylib::Camera3D camera(
         raylib::Vector3(5.0f, 4.0f, 5.0f),
