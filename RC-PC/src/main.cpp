@@ -14,7 +14,7 @@ int main() {
 
     //raylib::Mesh mesh("obj/cube.obj");
     //raylib::Model plane("D:\\RC-PC\\obj\\box plane.obj");
-    raylib::Model plane("..\\obj\\omega - testing.obj");    
+    raylib::Model plane("..\\obj\\materials.obj");    
 
     raylib::Camera3D camera(
         raylib::Vector3(5.0f, 4.0f, 5.0f),
@@ -25,7 +25,7 @@ int main() {
 
     camera.SetMode(CAMERA_ORBITAL);
 
-    raylib::Shader shader("vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.vs", "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\blur.fs");
+    raylib::Shader shader("vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.vs", "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.fs");
     //raylib::Shader shader("D:\\RC-PC\\RC-PC\\vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.vs", "D:\\RC-PC\\RC-PC\\vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\grayscale.fs");
 
     for(int i = 0; i < plane.GetMaterialCount(); i++){
