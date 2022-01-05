@@ -14,13 +14,13 @@ int main() {
 
     //raylib::Mesh mesh("obj/cube.obj");
     //raylib::Model plane("D:\\RC-PC\\obj\\box plane.obj");
-    raylib::Model plane("..\\obj\\bean.obj");    
+    raylib::Model plane("..\\obj\\materials.obj");    
 
     raylib::Camera3D camera(
-        raylib::Vector3(5.0f, 4.0f, 5.0f),
-        raylib::Vector3(0.0f, 0.0f, 0.0f),
+        raylib::Vector3(5.0f, 4.0f, 5.0f), //camera location
+        raylib::Vector3(0.0f, 0.0f, 0.0f), //camera look
         raylib::Vector3(0.0f, 1.0f, 0.0f),
-        45.0f,
+        60.0f, //fov
         CAMERA_PERSPECTIVE);
 
     camera.SetMode(CAMERA_ORBITAL);
@@ -40,7 +40,7 @@ int main() {
     //considering using tiny object loader to load in the objects as this seems to be more powerful
     //https://github.com/tinyobjloader/tinyobjloader
 
-    SetTargetFPS(60);
+    SetTargetFPS(120);
 
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
