@@ -22,9 +22,15 @@ with screenWidth/Height as int's
 ![[First window.png]]
 
 ---
+#### C++ rather than C
+
+Using a port of raylib to c++ will provide access to the OOP features that will help to formalise the structure of the program
+
+---
 #### Setting up 3D rendering
 
-```Camera3D camera = {0};
+```
+Camera3D camera = {0};
 camera.position = (Vector3){10.0f, 10.0f, 10.0f};
 camera.target = (Vector3){0.0f, 0.0f, 0.0f};
 camera.up = (Vector3){0.0f, 1.0f, 0.0f};
@@ -36,3 +42,14 @@ camera.type = CAMERA_PERSPECTIVE;
 #### Shaders
 
 ![[Shaders.png]]
+
+---
+#### Object loading
+
+Raylib contains helper methods for parsing .obj files and allows the easy import of a .obj and its related material files
+
+```
+raylib::Model plane("..\\obj\\materials.obj");
+```
+
+![[Imported cube.png]]

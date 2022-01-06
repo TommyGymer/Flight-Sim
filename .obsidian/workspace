@@ -10,7 +10,8 @@
           "type": "markdown",
           "state": {
             "file": "The Process/Documentation and Understanding.md",
-            "mode": "source"
+            "mode": "preview",
+            "source": true
           }
         }
       }
@@ -89,14 +90,14 @@
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
     "The Process/Documentation and Understanding.md",
-    "The Process/Building the Application.md",
     "The Process/Research and Initial Development.md",
     "The Process/Testing the Application.md",
-    "Objects demo.png",
-    "Shapes.png",
-    "System overview.png",
-    "RCDeskPilot.png",
-    "ms-flight-sim.jpg",
-    "First window.png"
+    "Analysis.md",
+    "Imported cube.png",
+    "The Process/Building the Application.md",
+    "Building/Requirements.md",
+    "OpenGL/Shaders/Shaders.md",
+    "OpenGL/Opening a Window.md",
+    "OpenGL/3D Rendering.md"
   ]
 }

@@ -1,4 +1,5 @@
 ## Opening a Window
+###### no longer in use
 ---
 Using glfw:
 1. Initialise glfw and confirm initialisation

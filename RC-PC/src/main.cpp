@@ -1,7 +1,6 @@
 #include <iostream>
 #include <raylib-cpp.hpp>
 
-
 int main() {
     // Initialization
     int screenWidth = 400;
@@ -20,7 +19,7 @@ int main() {
         raylib::Vector3(5.0f, 4.0f, 5.0f), //camera location
         raylib::Vector3(0.0f, 0.0f, 0.0f), //camera look
         raylib::Vector3(0.0f, 1.0f, 0.0f),
-        60.0f, //fov
+        120.0f, //fov
         CAMERA_PERSPECTIVE);
 
     camera.SetMode(CAMERA_ORBITAL);
