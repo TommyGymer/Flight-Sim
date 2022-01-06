@@ -39,7 +39,7 @@ int main() {
     //considering using tiny object loader to load in the objects as this seems to be more powerful
     //https://github.com/tinyobjloader/tinyobjloader
 
-    SetTargetFPS(120);
+    SetTargetFPS(60);
 
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
