@@ -1,10 +1,17 @@
 #include <iostream>
+//import main raylib header file
 #include <raylib-cpp.hpp>
+//import chrono for timers to keep track of elapsed time
+#include <chrono>
+
+#include <math.h>
 
 int main() {
     // Initialization
-    int screenWidth = 400;
-    int screenHeight = 300;
+    int screenWidth = 1600;
+    int screenHeight = 1200;
+
+    auto start = std::chrono::high_resolution_clock::now();
 
     raylib::Color textColor(LIGHTGRAY);
     raylib::Window window(screenWidth, screenHeight, "RC-PC");
@@ -13,13 +20,13 @@ int main() {
 
     //raylib::Mesh mesh("obj/cube.obj");
     //raylib::Model plane("D:\\RC-PC\\obj\\box plane.obj");
-    raylib::Model plane("..\\obj\\materials.obj");    
+    raylib::Model plane("..\\obj\\materials.obj");
 
     raylib::Camera3D camera(
         raylib::Vector3(5.0f, 4.0f, 5.0f), //camera location
         raylib::Vector3(0.0f, 0.0f, 0.0f), //camera look
         raylib::Vector3(0.0f, 1.0f, 0.0f),
-        120.0f, //fov
+        60.0f, //fov
         CAMERA_PERSPECTIVE);
 
     camera.SetMode(CAMERA_ORBITAL);
@@ -51,10 +58,13 @@ int main() {
         {
             ClearBackground(RAYWHITE);
 
+            auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start);
+            float obj_y = sin(duration.count() / 1000.0f);
+
             camera.BeginMode();
             {
                 DrawGrid(10, 1.0f);
-                plane.Draw(raylib::Vector3(0.0f, 0.0f, 0.0f), 1.0f);
+                plane.Draw(raylib::Vector3(0.0f, obj_y, 0.0f), 1.0f);
             }
             camera.EndMode();
 
