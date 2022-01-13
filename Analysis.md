@@ -51,7 +51,7 @@ As such, I will get a number of people within these groups to test the applicati
 	- Fly the aircraft within the map
 	- Exit to a menu to load another aircraft or map, or receive input from a different device, or configure the sim or input device
 - This interface will require not only a 2D menu renderer and interface, but also a 3D renderer and paired interface
-- It should be possible to use as wide a range of input devices as possible; allowing for not only the use of dedicated flight control hardware, but also mouse and keyboard prevents limiting the number of users
+- It should be possible to use as wide a range of input devices as possible, allowing for not only the use of dedicated flight control hardware, but also mouse and keyboard prevents limiting the number of users
 
 ##### Usage
 - Inputs and outputs from each of the parts of the application:
