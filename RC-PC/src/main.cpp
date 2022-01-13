@@ -59,12 +59,14 @@ int main() {
             ClearBackground(RAYWHITE);
 
             auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start);
-            float obj_y = sin(duration.count() / 1000.0f);
+            float obj_y = sin(duration.count() / 700.0f);
+            float obj_x = sin(duration.count() / 350.0f);
+            float obj_z = sin(duration.count() / 1400.0f);
 
             camera.BeginMode();
             {
                 DrawGrid(10, 1.0f);
-                plane.Draw(raylib::Vector3(0.0f, obj_y, 0.0f), 1.0f);
+                plane.Draw(raylib::Vector3(obj_x, obj_y, obj_z), 1.0f);
             }
             camera.EndMode();
 
