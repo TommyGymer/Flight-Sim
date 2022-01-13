@@ -59,11 +59,11 @@ int main() {
             ClearBackground(RAYWHITE);
 
             auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start);
-            float obj_y = sin(duration.count() / 700.0f);
+            float obj_y = -(-50 - 0.5f * pow(duration.count() / 1000.0f, 2) * -9.81f) / 10.0;
             float obj_x = sin(duration.count() / 350.0f);
             float obj_z = sin(duration.count() / 1400.0f);
 
-            camera.SetTarget(raylib::Vector3(obj_x, obj_y, obj_z));
+            //camera.SetTarget(raylib::Vector3(obj_x, obj_y, obj_z));
 
             camera.BeginMode();
             {
