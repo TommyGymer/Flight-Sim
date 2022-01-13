@@ -63,6 +63,8 @@ int main() {
             float obj_x = sin(duration.count() / 350.0f);
             float obj_z = sin(duration.count() / 1400.0f);
 
+            camera.SetTarget(raylib::Vector3(obj_x, obj_y, obj_z));
+
             camera.BeginMode();
             {
                 DrawGrid(10, 1.0f);
