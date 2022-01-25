@@ -69,7 +69,7 @@ int main() {
             {
                 DrawGrid(10, 1.0f);
                 
-                plane.Draw(raylib::Vector3(obj_x, obj_y, obj_z), raylib::Vector3(0, 1, 0), duration.count() * 1000, raylib::Vector3(1, 1, 1));
+                plane.Draw(raylib::Vector3(obj_x, obj_y, obj_z), raylib::Vector3(0, 1, 0), duration.count(), raylib::Vector3(1, 1, 1));
                 //camera.SetTarget(raylib::Vector3(obj_x, obj_y, obj_z))
             }
             camera.EndMode();
