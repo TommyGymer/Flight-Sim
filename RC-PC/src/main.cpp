@@ -15,18 +15,23 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        raylib::Vector3 pos;
-        raylib::Vector3 vel;
+        raylib::Vector3 pos(0, 0, 0);
+        raylib::Vector3 vel(0, 0, 0);
 
         //rotation
-        raylib::Vector3 rot;
-        float angle;
+        raylib::Vector3 rot(0, 0, 0);
+        float angle = 0.0f;
 
         //scale
-        raylib::Vector3 scale;
+        raylib::Vector3 scale(1, 1, 1);
 
         Object3D(const std::string& fileName) {
             model = new raylib::Model(fileName.c_str());
+        }
+
+        //posistion, rotation axis, rotation angle, scale
+        void Draw(){
+            model->Draw(pos, rot, angle, scale);
         }
 };
 
@@ -102,7 +107,8 @@ int main() {
             camera.BeginMode();
             {
                 DrawGrid(10, 1.0f);
-                obj.model->Draw(raylib::Vector3(0, obj_y, 0), 5.0f);
+                obj.Draw();
+                //obj.model->Draw(raylib::Vector3(0, obj_y, 0), 5.0f);
                 plane.Draw(raylib::Vector3(obj_x, obj_y, obj_z), raylib::Vector3(0, 1, 0), duration.count(), raylib::Vector3(1, 1, 1));
             }
             camera.EndMode();
