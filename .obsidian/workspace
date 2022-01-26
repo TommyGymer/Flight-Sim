@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Design.md",
-            "mode": "source",
+            "mode": "preview",
             "source": true
           }
         }
@@ -91,13 +91,13 @@
   "lastOpenFiles": [
     "Design.md",
     "Analysis.md",
-    "System overview.png",
+    "Images/Main Menu.png",
+    "The Process/Testing the Application.md",
     "The Process/Research and Initial Development.md",
     "The Process/Documentation and Understanding.md",
     "The Process/Building the Application.md",
-    "The Process/Testing the Application.md",
-    "Imported cube.png",
-    "Building/Requirements.md",
-    "OpenGL/Shaders/Shaders.md"
+    "Images/Shapes.png",
+    "Images/Shaders.png",
+    "Images/System overview.png"
   ]
 }
