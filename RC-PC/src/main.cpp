@@ -14,8 +14,8 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        raylib::Vector3 pos = raylib::Vector3(0, 2, 0);
-        raylib::Vector3 vel = raylib::Vector3(0, 10, 0);
+        raylib::Vector3 pos = raylib::Vector3(0, 10, 0);
+        raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
 
         //rotation: need to be able to interface with this format
@@ -42,7 +42,7 @@ class Object3D {
             //temporary collision detection
             if(pos.GetY() < 1){
                 pos.SetY(1);
-                vel.SetY(0);
+                vel.SetY(-vel.GetY() * 0.25);
             }
         }
 };
@@ -93,8 +93,14 @@ int main() {
         {
             ClearBackground(RAYWHITE);
 
+            if(IsKeyPressed(32)){
+                obj.pos.SetY(9);
+                obj.vel.SetY(0);
+            }
+
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
-            float dt = duration.count() / 1000000000.0f;
+            float dt = duration.count() / 1000000.0f;
+            start = std::chrono::high_resolution_clock::now();
 
             obj.Update(dt);
 
