@@ -15,15 +15,16 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        raylib::Vector3 pos(0, 0, 0);
-        raylib::Vector3 vel(0, 0, 0);
+        raylib::Vector3 pos = raylib::Vector3(0, 2, 0);
+        raylib::Vector3 vel = raylib::Vector3(1, 10, 0);
+        raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
 
         //rotation
-        raylib::Vector3 rot(0, 0, 0);
+        raylib::Vector3 rot = raylib::Vector3(0, 0, 0);
         float angle = 0.0f;
 
         //scale
-        raylib::Vector3 scale(1, 1, 1);
+        raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
 
         Object3D(const std::string& fileName) {
             model = new raylib::Model(fileName.c_str());
@@ -32,6 +33,15 @@ class Object3D {
         //posistion, rotation axis, rotation angle, scale
         void Draw(){
             model->Draw(pos, rot, angle, scale);
+        }
+
+        void Update(float dt){
+            vel = vel + (acc * dt);
+            pos = pos + (vel * dt);
+            if(pos.GetY() < 1){
+                pos.SetY(1);
+                vel.SetY(0);
+            }
         }
 };
 
@@ -52,10 +62,9 @@ int main() {
     raylib::Model plane("..\\obj\\omega.obj");
 
     Object3D obj("..\\obj\\materials.obj");
-    obj.pos = raylib::Vector3(0, 0, 0);
 
     raylib::Camera3D camera(
-        raylib::Vector3(50.0f, 20.0f, 50.0f), //camera location
+        raylib::Vector3(10.0f, 2.0f, 10.0f), //camera location
         raylib::Vector3(0.0f, 0.0f, 0.0f), //camera look
         raylib::Vector3(0.0f, 1.0f, 0.0f),
         60.0f, //fov
@@ -97,19 +106,26 @@ int main() {
         {
             ClearBackground(RAYWHITE);
 
-            auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start);
-            float obj_y = -(-50 - 0.5f * pow(duration.count() / 1000.0f, 2) * -9.81f); //fmod(-(-50 - 0.5f * pow(duration.count() / 1000.0f, 2) * -9.81f), 20.0);
-            float obj_x = 0;//sin(duration.count() / 350.0f);
-            float obj_z = 0;//sin(duration.count() / 1400.0f);
+            auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
+            float dt = duration.count() / 1000000000.0f;
 
-            camera.SetTarget(raylib::Vector3(obj_x, obj_y, obj_z));
+            // float obj_y = -(-50 - 0.5f * pow(dt, 2) * -9.81f); //fmod(-(-50 - 0.5f * pow(duration.count() / 1000.0f, 2) * -9.81f), 20.0);
+            // float obj_x = 0;//sin(duration.count() / 350.0f);
+            // float obj_z = 0;//sin(duration.count() / 1400.0f);
+
+            //get object to move in circle using the acceleration vector
+            // obj.acc = raylib::Vector3(1, 0, 0);
+
+            obj.Update(dt);
+
+            //camera.SetTarget(raylib::Vector3(obj_x, obj_y, obj_z));
+            camera.SetTarget(obj.pos);
 
             camera.BeginMode();
             {
-                DrawGrid(10, 1.0f);
+                DrawGrid(1000, 10.0f);
                 obj.Draw();
-                //obj.model->Draw(raylib::Vector3(0, obj_y, 0), 5.0f);
-                plane.Draw(raylib::Vector3(obj_x, obj_y, obj_z), raylib::Vector3(0, 1, 0), duration.count(), raylib::Vector3(1, 1, 1));
+                //plane.Draw(raylib::Vector3(obj_x, obj_y, obj_z), raylib::Vector3(0, 1, 0), duration.count(), raylib::Vector3(1, 1, 1));
             }
             camera.EndMode();
 
