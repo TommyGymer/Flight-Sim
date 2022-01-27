@@ -39,3 +39,33 @@
 	- Sensitivity
 	- Channels
 - Language?
+
+---
+### Objects
+
+#### Structure
+- Movement
+	- Vector3D: position
+	- Vector3D: velocity
+	- Vector3D: acceleration
+- Rotation
+	- Vector3D: axis
+	- Float: angle
+- Size
+	- Vector3D: scale
+- Model
+	- raylib::Model model
+
+#### Functions
+
+- Initialiser
+	- Take a string from which to load the object data into the model attribute
+- Draw
+	- Use the attributes to draw the object to the world
+- Update
+	- Use numerical integration on the movement attributes
+
+#### Other
+
+To make full use of the axis-angle rotation, quaternions will be required
+This will allow full use of angular velocity and accelerations
