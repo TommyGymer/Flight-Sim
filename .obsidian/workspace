@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "The Process/Quaternions.md",
-            "mode": "source",
+            "file": "The Process/Documentation and Understanding.md",
+            "mode": "preview",
             "source": true
           }
         }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 280
+    "width": 280,
+    "collapsed": true
   },
   "right": {
     "id": "f34da92fec5bbda2",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Process/Quaternions.md",
+                "file": "The Process/Documentation and Understanding.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,8 +90,8 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "The Process/Quaternions.md",
     "The Process/Documentation and Understanding.md",
+    "The Process/Quaternions.md",
     "The Process/Building the Application.md",
     "The Process/Testing the Application.md",
     "The Process/Research and Initial Development.md",

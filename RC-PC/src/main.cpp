@@ -20,8 +20,9 @@ class Object3D {
 
         //rotation: need to be able to interface with this format
         //          this will probably require quaternions
-        raylib::Vector3 rot = raylib::Vector3(0, 0, 0);
-        float angle = 0.0f;
+        // raylib::Vector3 rot = raylib::Vector3(0, 0, 0);
+        // float angle = 0.0f;
+        raylib::Vector4 quat = raylib::Vector4(1, 0, 0, 0);
 
         //scale
         raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
@@ -32,7 +33,9 @@ class Object3D {
 
         //posistion, rotation axis, rotation angle, scale
         void Draw(){
-            model->Draw(pos, rot, angle, scale);
+            quat.Normalize();
+            std::pair<raylib::Vector3, float> rot = quat.ToAxisAngle();
+            model->Draw(pos, std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
         }
 
         void Update(float dt){
@@ -53,6 +56,7 @@ int main() {
     int screenHeight = 1200;
 
     auto start = std::chrono::high_resolution_clock::now();
+    float total = 0;
 
     raylib::Color textColor(LIGHTGRAY);
     raylib::Window window(screenWidth, screenHeight, "RC-PC");
@@ -102,8 +106,11 @@ int main() {
 
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
             float dt = duration.count() / 1000000.0f;
+            total += dt;
             start = std::chrono::high_resolution_clock::now();
 
+            obj.quat.SetY(fmod(total, 2) - 1);
+                
             obj.Update(dt);
 
             camera.SetTarget(obj.pos);

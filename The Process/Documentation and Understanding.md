@@ -64,3 +64,7 @@ Now making use of an object class and instancing to keep track of objects and re
 This will help keep the code clean, as it removes the need to hard code each object required
 
 [[Quaternions]]
+
+Raylib contains some helpers for working with quaternions, such as a quaternion to axis-angle conversion, but will require the implementing of some way to integrate a quaternion velocity and possible quaternion acceleration
+
+![[Pasted image 20220127161553.png]]
