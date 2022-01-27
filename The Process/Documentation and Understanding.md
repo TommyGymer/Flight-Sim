@@ -62,3 +62,5 @@ raylib::Model plane("..\\obj\\materials.obj");
 Now making use of an object class and instancing to keep track of objects and render them
 
 This will help keep the code clean, as it removes the need to hard code each object required
+
+[[Quaternions]]

@@ -14,7 +14,7 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        raylib::Vector3 pos = raylib::Vector3(0, 10, 0);
+        raylib::Vector3 pos = raylib::Vector3(0, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
 
@@ -94,8 +94,10 @@ int main() {
             ClearBackground(RAYWHITE);
 
             if(IsKeyPressed(32)){
-                obj.pos.SetY(9);
-                obj.vel.SetY(0);
+                // obj.pos.SetY(9);
+                if(obj.pos.GetY() < 1.01){
+                    obj.vel.SetY(10);
+                }
             }
 
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
