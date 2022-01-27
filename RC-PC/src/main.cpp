@@ -16,7 +16,7 @@ class Object3D {
 
         //physics
         raylib::Vector3 pos = raylib::Vector3(0, 2, 0);
-        raylib::Vector3 vel = raylib::Vector3(1, 10, 0);
+        raylib::Vector3 vel = raylib::Vector3(0, 10, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
 
         //rotation
@@ -38,6 +38,8 @@ class Object3D {
         void Update(float dt){
             vel = vel + (acc * dt);
             pos = pos + (vel * dt);
+
+            //temporary collision detection
             if(pos.GetY() < 1){
                 pos.SetY(1);
                 vel.SetY(0);
@@ -59,7 +61,7 @@ int main() {
 
     //raylib::Mesh mesh("obj/cube.obj");
     //raylib::Model plane("D:\\RC-PC\\obj\\box plane.obj");
-    raylib::Model plane("..\\obj\\omega.obj");
+    //raylib::Model plane("..\\obj\\omega.obj");
 
     Object3D obj("..\\obj\\materials.obj");
 
@@ -78,9 +80,9 @@ int main() {
         );
     //raylib::Shader shader("D:\\RC-PC\\RC-PC\\vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.vs", "D:\\RC-PC\\RC-PC\\vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\grayscale.fs");
 
-    for(int i = 0; i < plane.GetMaterialCount(); i++){
-        plane.GetMaterials()[i].shader = shader;
-    }
+    // for(int i = 0; i < plane.GetMaterialCount(); i++){
+    //     plane.GetMaterials()[i].shader = shader;
+    // }
 
     //for(int i = 0; i < obj.model->GetMaterialCount(); i++){
     //    obj.model->GetMaterials()[i].shader = shader;
