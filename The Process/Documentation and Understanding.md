@@ -57,7 +57,7 @@ raylib::Model plane("..\\obj\\materials.obj");
 ---
 #### Object based rendering
 
-![[2022-01-27 13-04-46_Trim.mp4]]
+![[OOP demo.mp4]]
 
 Now making use of an object class and instancing to keep track of objects and render them
 
