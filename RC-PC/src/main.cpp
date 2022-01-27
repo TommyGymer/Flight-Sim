@@ -4,7 +4,6 @@
 //import chrono for timers to keep track of elapsed time
 #include <chrono>
 #include <string>
-
 #include <math.h>
 
 //#include "object.cpp"
@@ -19,7 +18,8 @@ class Object3D {
         raylib::Vector3 vel = raylib::Vector3(0, 10, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
 
-        //rotation
+        //rotation: need to be able to interface with this format
+        //          this will probably require quaternions
         raylib::Vector3 rot = raylib::Vector3(0, 0, 0);
         float angle = 0.0f;
 
@@ -59,10 +59,6 @@ int main() {
     
     window.SetState(FLAG_WINDOW_RESIZABLE);
 
-    //raylib::Mesh mesh("obj/cube.obj");
-    //raylib::Model plane("D:\\RC-PC\\obj\\box plane.obj");
-    //raylib::Model plane("..\\obj\\omega.obj");
-
     Object3D obj("..\\obj\\materials.obj");
 
     raylib::Camera3D camera(
@@ -72,21 +68,10 @@ int main() {
         60.0f, //fov
         CAMERA_PERSPECTIVE);
 
-    //camera.SetMode(CAMERA_ORBITAL);
-
     raylib::Shader shader(
         "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.vs",
         "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.fs"
         );
-    //raylib::Shader shader("D:\\RC-PC\\RC-PC\\vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.vs", "D:\\RC-PC\\RC-PC\\vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\grayscale.fs");
-
-    // for(int i = 0; i < plane.GetMaterialCount(); i++){
-    //     plane.GetMaterials()[i].shader = shader;
-    // }
-
-    //for(int i = 0; i < obj.model->GetMaterialCount(); i++){
-    //    obj.model->GetMaterials()[i].shader = shader;
-    //}
 
     // might need to set some of the shader values:
     //https://blog.weghos.com/raylib/raylib/examples/shaders/shaders_basic_lighting.c.html
@@ -111,23 +96,14 @@ int main() {
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
             float dt = duration.count() / 1000000000.0f;
 
-            // float obj_y = -(-50 - 0.5f * pow(dt, 2) * -9.81f); //fmod(-(-50 - 0.5f * pow(duration.count() / 1000.0f, 2) * -9.81f), 20.0);
-            // float obj_x = 0;//sin(duration.count() / 350.0f);
-            // float obj_z = 0;//sin(duration.count() / 1400.0f);
-
-            //get object to move in circle using the acceleration vector
-            // obj.acc = raylib::Vector3(1, 0, 0);
-
             obj.Update(dt);
 
-            //camera.SetTarget(raylib::Vector3(obj_x, obj_y, obj_z));
             camera.SetTarget(obj.pos);
 
             camera.BeginMode();
             {
                 DrawGrid(1000, 10.0f);
                 obj.Draw();
-                //plane.Draw(raylib::Vector3(obj_x, obj_y, obj_z), raylib::Vector3(0, 1, 0), duration.count(), raylib::Vector3(1, 1, 1));
             }
             camera.EndMode();
 
