@@ -18,7 +18,7 @@ class Object3D {
 
         //rotation
         raylib::Vector4 qRot = raylib::Vector4(0, 0, 0, 1);
-        raylib::Vector3 qOme = raylib::Vector3(0.3, 0.7, -1);
+        raylib::Vector3 qOme = raylib::Vector3(0, 0, 0);
 
         //scale
         raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
@@ -47,7 +47,8 @@ class Object3D {
             //temporary collision detection
             if(pos.GetY() < 1){
                 pos.SetY(1);
-                vel.SetY(-vel.GetY() * 0.25);
+                //vel.SetY(-vel.GetY() * 0.25);
+                vel.SetY(0);
             }
         }
 };
@@ -66,6 +67,9 @@ int main() {
     window.SetState(FLAG_WINDOW_RESIZABLE);
 
     Object3D obj("..\\obj\\materials.obj");
+    Object3D artifact("..\\obj\\materials.obj");
+    artifact.scale = raylib::Vector3(0.5, 1, 0.5);
+    artifact.qOme = raylib::Vector3(0, 1, 0);
 
     raylib::Camera3D camera(
         raylib::Vector3(10.0f, 2.0f, 10.0f), //camera location
@@ -99,14 +103,14 @@ int main() {
         {
             ClearBackground(RAYWHITE);
 
-            if(IsKeyPressed(32)){
+            if(IsKeyDown(32)){
                 if(obj.pos.GetY() < 1.01){
                     obj.vel.SetY(10);
                 }
             }
-            
-            obj.vel.SetX(obj.vel.GetX() * 0.1);
-            obj.vel.SetZ(obj.vel.GetY() * 0.1);
+
+            obj.vel.SetX(obj.vel.GetX() * 0.8);
+            obj.vel.SetZ(obj.vel.GetZ() * 0.8);
             if(IsKeyDown(65)){ //a
                 obj.vel.SetX(-10);
             }
@@ -126,13 +130,16 @@ int main() {
             start = std::chrono::high_resolution_clock::now();
                 
             obj.Update(dt);
+            artifact.Update(dt);
 
-            camera.SetTarget(obj.pos);
+            //camera.SetTarget(obj.pos);
+            camera.SetPosition(obj.pos);
 
             camera.BeginMode();
             {
-                DrawGrid(1000, 10.0f);
+                DrawGrid(1000, 1.0f);
                 obj.Draw();
+                artifact.Draw();
             }
             camera.EndMode();
 
