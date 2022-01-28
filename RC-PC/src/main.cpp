@@ -18,7 +18,7 @@ class Object3D {
 
         //rotation
         raylib::Vector4 qRot = raylib::Vector4(0, 0, 0, 1);
-        raylib::Vector3 qOme = raylib::Vector3(1, 1, 0);
+        raylib::Vector3 qOme = raylib::Vector3(0.3, 0.7, -1);
 
         //scale
         raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
@@ -104,18 +104,19 @@ int main() {
                     obj.vel.SetY(10);
                 }
             }
-            obj.vel.SetX(0);
-            obj.vel.SetZ(0);
-            if(IsKeyDown(65)){
+            
+            obj.vel.SetX(obj.vel.GetX() * 0.1);
+            obj.vel.SetZ(obj.vel.GetY() * 0.1);
+            if(IsKeyDown(65)){ //a
                 obj.vel.SetX(-10);
             }
-            if(IsKeyDown(68)){
+            if(IsKeyDown(68)){ //d
                 obj.vel.SetX(10);
             }
-            if(IsKeyDown(83)){
+            if(IsKeyDown(83)){ //s
                 obj.vel.SetZ(10);
             }
-            if(IsKeyDown(87)){
+            if(IsKeyDown(87)){ //w
                 obj.vel.SetZ(-10);
             }
 
