@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "The Process/Documentation and Understanding.md",
-            "mode": "preview",
+            "mode": "source",
             "source": true
           }
         }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 280,
-    "collapsed": true
+    "width": 280
   },
   "right": {
     "id": "f34da92fec5bbda2",

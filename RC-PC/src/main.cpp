@@ -6,8 +6,6 @@
 #include <string>
 #include <math.h>
 
-//#include "object.cpp"
-
 class Object3D {
     public:
         //object
@@ -18,11 +16,9 @@ class Object3D {
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
 
-        //rotation: need to be able to interface with this format
-        //          this will probably require quaternions
-        // raylib::Vector3 rot = raylib::Vector3(0, 0, 0);
-        // float angle = 0.0f;
-        raylib::Vector4 quat = raylib::Vector4(1, 0, 0, 0);
+        //rotation
+        raylib::Vector4 qRot = raylib::Vector4(0, 0, 0, 1);
+        raylib::Vector3 qOme = raylib::Vector3(1, 1, 0);
 
         //scale
         raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
@@ -33,14 +29,20 @@ class Object3D {
 
         //posistion, rotation axis, rotation angle, scale
         void Draw(){
-            quat.Normalize();
-            std::pair<raylib::Vector3, float> rot = quat.ToAxisAngle();
+            qRot = qRot.Normalize();
+            std::pair<raylib::Vector3, float> rot = qRot.ToAxisAngle();
             model->Draw(pos, std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
         }
 
         void Update(float dt){
             vel = vel + (acc * dt);
             pos = pos + (vel * dt);
+
+            //update quaternion with the angular velocity
+            float angle = cos((qOme.Length() * dt)/2);
+            raylib::Vector3 v = qOme.Normalize().Scale(sin((qOme.Length() * dt)/2));
+            raylib::Vector4 update(v.GetX(), v.GetY(), v.GetZ(), angle);
+            qRot = qRot * update;
 
             //temporary collision detection
             if(pos.GetY() < 1){
@@ -98,18 +100,29 @@ int main() {
             ClearBackground(RAYWHITE);
 
             if(IsKeyPressed(32)){
-                // obj.pos.SetY(9);
                 if(obj.pos.GetY() < 1.01){
                     obj.vel.SetY(10);
                 }
+            }
+            obj.vel.SetX(0);
+            obj.vel.SetZ(0);
+            if(IsKeyDown(65)){
+                obj.vel.SetX(-10);
+            }
+            if(IsKeyDown(68)){
+                obj.vel.SetX(10);
+            }
+            if(IsKeyDown(83)){
+                obj.vel.SetZ(10);
+            }
+            if(IsKeyDown(87)){
+                obj.vel.SetZ(-10);
             }
 
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
             float dt = duration.count() / 1000000.0f;
             total += dt;
             start = std::chrono::high_resolution_clock::now();
-
-            obj.quat.SetY(fmod(total, 2) - 1);
                 
             obj.Update(dt);
 

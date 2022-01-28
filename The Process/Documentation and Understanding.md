@@ -67,4 +67,8 @@ This will help keep the code clean, as it removes the need to hard code each obj
 
 Raylib contains some helpers for working with quaternions, such as a quaternion to axis-angle conversion, but will require the implementing of some way to integrate a quaternion velocity and possible quaternion acceleration
 
-![[Pasted image 20220127161553.png]]
+![[Quaternions complete.png]]
+
+![[2022-01-28 10-46-40.mp4]]
+
+Now able to rotate an object using an Euler 3D vector for angular velocity
