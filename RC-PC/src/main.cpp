@@ -6,6 +6,18 @@
 #include <string>
 #include <math.h>
 
+raylib::Vector3 qRotate(raylib::Vector4 rot, raylib::Vector3 vect){
+    raylib::Matrix mat = (raylib::Matrix) rot.ToMatrix();
+    
+    raylib::Vector3 rtn(0, 0, 0);
+
+    rtn.SetX();
+    rtn.SetY();
+    rtn.SetZ();
+
+    return rtn;
+}
+
 class Object3D {
     public:
         //object
@@ -36,7 +48,9 @@ class Object3D {
 
         void Update(float dt){
             vel = vel + (acc * dt);
-            pos = pos + ((qRot.ToMatrix().RotateXYZ(vel)) * dt);
+            pos = pos + (vel * dt);
+            qRotate(qRot, vel);
+            //((raylib::Matrix) qRot.ToMatrix()) used to rotate vel
 
             //update quaternion with the angular velocity
             float angle = cos((qOme.Length() * dt)/2);
