@@ -104,6 +104,15 @@ While raylib already implements many of these, it may be beneficial to write my 
 
 #### Vector and Matrix Maths Lib
 
+- Simulating a 2D array using a 1D array
+```
+double[] array = new array[width * height]
+
+double get(x, y):
+	return array[x * width + y]
+
+void set(x, y, val):
+	array[x * width + y] = val
 ```
 
-```
+This will allow me to make use of a dynamic 2D array in C++ as there is no built in structures to allow this

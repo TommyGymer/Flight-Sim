@@ -6,6 +6,52 @@
 #include <string>
 #include <math.h>
 
+class fullMatrix {
+    private:
+        double* array;
+    public:
+        int m;
+        int n;
+
+        double Get(const int x, const int y) {
+            if(x >= m || y >= n){
+                throw ("Index out of bounds");
+            }
+            return array[x * n + y];
+        }
+
+        void Set(const int x, const int y, const double val) {
+            if(x >= m || y >= n){
+                throw ("Index out of bounds");
+            }
+            array[x * n + y] = val;
+        }
+
+        fullMatrix(const int _m, const int _n) {
+            array = new double[_m * _n];
+            m = _m;
+            n = _n;
+        }
+
+        ~fullMatrix() {
+            delete array;
+        }
+
+        fullMatrix operator+(fullMatrix& other){
+            if(this->m == other.m && this->n == other.n){
+                fullMatrix rtn(this->m, this->n);
+                for(int i = 0; i < this->m; i++){
+                    for(int j = 0; j < this->n; j++){
+                        rtn.Set(i, j, this->Get(i, j) + other.Get(i, j));
+                    }
+                }
+                return rtn;
+            }else{
+                throw ("Dimension error: " + std::to_string(m) + "." + std::to_string(n) + "with" + std::to_string(other.m) + "." + std::to_string(other.n));
+            }
+        }
+};
+
 class Object3D {
     public:
         //object
@@ -57,6 +103,14 @@ int main() {
     // Initialization
     int screenWidth = 1600;
     int screenHeight = 1200;
+
+    fullMatrix test1(1, 2);
+    test1.Set(0, 0, 5);
+    test1.Set(0, 1, 4);
+    fullMatrix test2(1, 2);
+    test2.Set(0, 0, 5);
+    test2.Set(0, 1, 4);
+    std::cout << (test1 + test2).Get(0, 1) << "\n";
 
     auto start = std::chrono::high_resolution_clock::now();
     float total = 0;
