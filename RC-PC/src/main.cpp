@@ -15,16 +15,22 @@ class fullMatrix {
 
         double Get(const int x, const int y) {
             if(x >= m || y >= n){
-                throw ("Index out of bounds");
+                std::cout << "Invalid index (" << x << ", " << y << ") outside (" << m << ", " << n << ")\n";
+                throw -1;
+            }else{
+                return array[x * n + y];
             }
-            return array[x * n + y];
         }
 
         void Set(const int x, const int y, const double val) {
             if(x >= m || y >= n){
-                throw ("Index out of bounds");
+                std::cout << m << " " << n << "\n";
+                std::cout << x << " " << y << "\n";
+                std::cout << "Invalid index (" << x << ", " << y << ") outside (" << m << ", " << n << ")\n";
+                throw -1;
+            }else{
+                array[x * n + y] = val;
             }
-            array[x * n + y] = val;
         }
 
         fullMatrix(const int _m, const int _n) {
@@ -47,7 +53,7 @@ class fullMatrix {
                 }
                 return rtn;
             }else{
-                throw ("Dimension error: " + std::to_string(m) + "." + std::to_string(n) + "with" + std::to_string(other.m) + "." + std::to_string(other.n));
+                throw -1;
             }
         }
 };
