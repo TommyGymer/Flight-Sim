@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "The Process/Documentation and Understanding.md",
+            "file": "Design.md",
             "mode": "source",
             "source": true
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Process/Documentation and Understanding.md",
+                "file": "Design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "The Process/Documentation and Understanding.md",
+    "Design.md",
     "The Process/Quaternions.md",
+    "The Process/Documentation and Understanding.md",
+    "Images/Rotation demo.mp4",
     "The Process/Building the Application.md",
     "The Process/Testing the Application.md",
     "The Process/Research and Initial Development.md",
-    "Design.md",
     "Analysis.md",
     "Images/Main Menu.png",
-    "Images/Shapes.png",
-    "Images/Shaders.png"
+    "Images/Shapes.png"
   ]
 }

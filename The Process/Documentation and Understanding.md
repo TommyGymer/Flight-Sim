@@ -69,6 +69,6 @@ Raylib contains some helpers for working with quaternions, such as a quaternion 
 
 ![[Quaternions complete.png]]
 
-![[2022-01-28 10-46-40.mp4]]
+![[Rotation demo.mp4]]
 
 Now able to rotate an object using an Euler 3D vector for angular velocity

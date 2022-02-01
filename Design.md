@@ -49,8 +49,8 @@
 	- Vector3D: velocity
 	- Vector3D: acceleration
 - Rotation
-	- Vector3D: axis
-	- Float: angle
+	- Vector4D: rotation
+	- Vector3D: angular velocity
 - Size
 	- Vector3D: scale
 - Model
