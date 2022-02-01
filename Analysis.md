@@ -113,6 +113,14 @@ One of the major problems with RC Desk Pilot is the limitations imposed by the t
 
 It also has a number of bugs and edge cases which have not been fully accounted for, partly due to its open source nature and end of active development. There are a number of configurations which can result in unrealistic results from the physics engine.
 
+![[Pasted image 20220201102416.png]]
+
+> Need to replace this
+
+It has a simple and easy to use interface while managing to provide all of the options required for a flight sim. The button and menu design appears outdated, though also includes a number of novel features such as weather and other aircraft.
+
+Many times the sim will require use of the menus to even be able to connect and use a controller, as a keyboard cannot be used. While some controllers may simply work, many require knowledge of drivers and other hardware management systems. Fixing this from the perspective of the application would either require a refresh for the device selection list along with an explanation of the most common issues.
+
 ---
 #### Microsoft Flight Sim 2020
 
@@ -124,9 +132,17 @@ It also has a number of bugs and edge cases which have not been fully accounted 
 - Unreasonably accurate physics and weather
 - Use of Windows libraries allows wide range of input device compatibility
 
-Microsoft Flight Sim 2020 is the current flag ship product of the Microsoft Flight Sim lineup and is a fully furnished and refined product as would be expected from a Microsoft product.
+Microsoft Flight Sim 2020 is the current flag ship product of the Microsoft Flight Sim line-up and is a fully furnished and refined product as would be expected from a Microsoft product.
 
 The main issue with Microsoft Flight Sim 2020 for the problem I am trying to solve is, beside the almost triple A title cost, are the high hardware requirements for a decent experience.
+
+![[Microsoft Flight Sim interface.png]]
+
+[image from Engadget](https://s.yimg.com/os/creatr-uploaded-images/2020-08/dcfd7710-e332-11ea-be8e-bfeddd85c18b)
+
+Microsoft Flight Sim provides a huge number of options and input methods, while managing to maintain a clean and modern interface. This wide range of input methods ensures that different levels of difficulty and skill levels of users can be accounted for.
+
+This huge number of options and features would be imposing for any new user, so ensuring that the sim will function without the ned to browse these menus is important. This allows the user to explore the menus and features at their own pace.
 
 ---
 #### Requirements to compete

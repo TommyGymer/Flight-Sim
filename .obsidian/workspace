@@ -92,12 +92,12 @@
     "Design.md",
     "The Process/Quaternions.md",
     "The Process/Documentation and Understanding.md",
-    "Images/Rotation demo.mp4",
     "The Process/Building the Application.md",
+    "Analysis.md",
+    "Images/Microsoft Flight Sim interface.png",
+    "Images/Rotation demo.mp4",
     "The Process/Testing the Application.md",
     "The Process/Research and Initial Development.md",
-    "Analysis.md",
-    "Images/Main Menu.png",
-    "Images/Shapes.png"
+    "Images/Main Menu.png"
   ]
 }

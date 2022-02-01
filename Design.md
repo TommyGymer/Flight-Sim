@@ -28,6 +28,8 @@
 
 ![[Settings.png]]
 
+By reducing and fully categorising all available options 
+
 - Graphics
 	- Texture quality
 	- Model quality
@@ -39,6 +41,13 @@
 	- Sensitivity
 	- Channels
 - Language?
+
+#### 3D Simulator
+
+- After selecting an aircraft and location, the simulator will be loaded
+- This will be a rearrangement of the 3D scene used in the background of the menus
+	- This will remove the need to either hide, or load, extra assets for the sim
+	- This should help reduce load times into the sim once the application has been started
 
 ---
 ### Objects
@@ -54,7 +63,10 @@
 - Size
 	- Vector3D: scale
 - Model
-	- raylib::Model model
+	- raylib::Model: model
+		- Contains the mesh and other object data
+		- Such as animations
+		- And bones
 
 #### Functions
 
@@ -69,3 +81,14 @@
 
 To make full use of the axis-angle rotation, quaternions will be required
 This will allow full use of angular velocity and accelerations
+
+While raylib already implements many of these, it may be beneficial to write my own vector and matrix lib to allow full use of all required overloads
+
+---
+### Algorithms
+
+#### Vector and Matrix Maths Lib
+
+```
+
+```
