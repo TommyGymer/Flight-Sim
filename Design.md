@@ -52,30 +52,45 @@ By reducing and fully categorising all available options
 ---
 ### Objects
 
-#### Structure
-- Movement
-	- Vector3D: position
-	- Vector3D: velocity
-	- Vector3D: acceleration
-- Rotation
-	- Vector4D: rotation
-	- Vector3D: angular velocity
-- Size
-	- Vector3D: scale
-- Model
-	- raylib::Model: model
-		- Contains the mesh and other object data
-		- Such as animations
-		- And bones
+#### Objects
+- Attributes
+	- Movement
+		- Vector3D: position
+		- Vector3D: velocity
+		- Vector3D: acceleration
+	- Rotation
+		- Vector4D: rotation
+		- Vector3D: angular velocity
+	- Size
+		- Vector3D: scale
+	- Model
+		- raylib::Model: model
+			- Contains the mesh and other object data
+			- Such as animations
+			- And bones
+- Functions
+	- Initialiser
+		- Take a string from which to load the object data into the model attribute
+	- Draw
+		- Use the attributes to draw the object to the world
+	- Update
+		- Use numerical integration on the movement attributes
 
-#### Functions
+#### Vectors and Matrices
 
-- Initialiser
-	- Take a string from which to load the object data into the model attribute
-- Draw
-	- Use the attributes to draw the object to the world
-- Update
-	- Use numerical integration on the movement attributes
+Use a 2D array to allow dynamic sizes of vectors and matrices
+Will need to consider how to invert / find the conjunction of square matrices; probably using an if statement and accounting for specific cases would be best
+
+- Attributes
+	- 1D element array
+	- integer columns
+	- integer rows
+- Functions
+	- Indexing
+	- Basic arithmetic
+	- Powers
+	- Inverse
+	- Normalise
 
 #### Other
 
