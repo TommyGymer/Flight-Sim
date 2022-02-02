@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Design.md",
-            "mode": "source",
+            "mode": "preview",
             "source": true
           }
         }
@@ -91,13 +91,13 @@
   "lastOpenFiles": [
     "Design.md",
     "The Process/Quaternions.md",
+    "Pasted image 20220201102416.png",
     "The Process/Documentation and Understanding.md",
     "The Process/Building the Application.md",
     "Analysis.md",
     "Images/Microsoft Flight Sim interface.png",
     "Images/Rotation demo.mp4",
     "The Process/Testing the Application.md",
-    "The Process/Research and Initial Development.md",
-    "Images/Main Menu.png"
+    "The Process/Research and Initial Development.md"
   ]
 }

@@ -117,3 +117,22 @@ void set(x, y, val):
 
 This will allow me to make use of a dynamic 2D array in C++ as there is no built in structures to allow this
 
+```
+matrix add(other):
+	for i in range(columns):
+		for j in range(rows):
+			self(i, j) += other(i, j)
+
+matrix sub(other):
+	for i in range(columns):
+		for j in range(rows):
+			self(i, j) -= other(i, j)
+
+matrix mult(other):
+	for i in range(columns):
+		for j in range(rows):
+			sum = 0
+			for k in range(columns):
+				sum += self(k, j) * other(i, k)
+			self(i, j) = sum
+```

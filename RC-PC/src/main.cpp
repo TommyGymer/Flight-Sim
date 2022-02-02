@@ -102,6 +102,10 @@ class fullMatrix {
                 throw -1;
             }
         }
+
+        fullMatrix Transpose(){
+            
+        }
 };
 
 class Object3D {
@@ -190,9 +194,6 @@ int main() {
     //https://github.com/tinyobjloader/tinyobjloader
 
     SetTargetFPS(120);
-
-    fullMatrix test(3, 3);
-    test.Debug();
 
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
