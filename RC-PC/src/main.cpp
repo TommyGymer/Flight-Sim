@@ -37,10 +37,24 @@ class fullMatrix {
             array = new double[_m * _n];
             m = _m;
             n = _n;
+            if(_m == _n){
+                for(int i = 0; i < _m; i++){
+                    this->Set(i, i, 1);
+                }
+            }
         }
 
         ~fullMatrix() {
             delete array;
+        }
+
+        void Debug(){
+            for(int i = 0; i < this->m; i++){
+                for(int j = 0; j < this->n; j++){
+                    std::cout << this->Get(i, j) << " ";
+                }
+                std::cout << "\n";
+            }
         }
 
         fullMatrix operator+(fullMatrix& other){
@@ -49,6 +63,38 @@ class fullMatrix {
                 for(int i = 0; i < this->m; i++){
                     for(int j = 0; j < this->n; j++){
                         rtn.Set(i, j, this->Get(i, j) + other.Get(i, j));
+                    }
+                }
+                return rtn;
+            }else{
+                throw -1;
+            }
+        }
+
+        fullMatrix operator-(fullMatrix& other){
+            if(this->m == other.m && this->n == other.n){
+                fullMatrix rtn(this->m, this->n);
+                for(int i = 0; i < this->m; i++){
+                    for(int j = 0; j < this->n; j++){
+                        rtn.Set(i, j, this->Get(i, j) - other.Get(i, j));
+                    }
+                }
+                return rtn;
+            }else{
+                throw -1;
+            }
+        }
+
+        fullMatrix operator*(fullMatrix& other){
+            if(this->n == other.m){
+                fullMatrix rtn(this->m, this->n);
+                for(int i = 0; i < this->m; i++){
+                    for(int j = 0; j < this->n; j++){
+                        double sum = 0;
+                        for(int k = 0; k < this->n; k++){
+                            sum += this->Get(k, j) * other.Get(i, k);
+                        }
+                        rtn.Set(i, j, sum);
                     }
                 }
                 return rtn;
@@ -110,14 +156,6 @@ int main() {
     int screenWidth = 1600;
     int screenHeight = 1200;
 
-    fullMatrix test1(1, 2);
-    test1.Set(0, 0, 5);
-    test1.Set(0, 1, 4);
-    fullMatrix test2(1, 2);
-    test2.Set(0, 0, 5);
-    test2.Set(0, 1, 4);
-    std::cout << (test1 + test2).Get(0, 1) << "\n";
-
     auto start = std::chrono::high_resolution_clock::now();
     float total = 0;
 
@@ -152,6 +190,9 @@ int main() {
     //https://github.com/tinyobjloader/tinyobjloader
 
     SetTargetFPS(120);
+
+    fullMatrix test(3, 3);
+    test.Debug();
 
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
