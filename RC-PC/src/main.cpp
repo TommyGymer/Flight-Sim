@@ -103,8 +103,77 @@ class fullMatrix {
             }
         }
 
+        fullMatrix operator*(double scale){
+            fullMatrix rtn(this->m, this->n);
+            for(int i = 0; i < this->m; i++){
+                for(int j = 0; j < this->n; j++){
+                    rtn.Set(i, j, this->Get(i, j) * scale);
+                }
+            }
+            return rtn;
+        }
+
+        fullMatrix operator/(double scale){
+            fullMatrix rtn(this->m, this->n);
+            for(int i = 0; i < this->m; i++){
+                for(int j = 0; j < this->n; j++){
+                    rtn.Set(i, j, this->Get(i, j) / scale);
+                }
+            }
+            return rtn;
+        }
+
+        fullMatrix Minor(const int x, const int y){
+            fullMatrix minor(this->m - 1, this->n - 1);
+
+            int a = 0; //x-index into minor matrix
+            int b = 0; //y-index into minor matrix
+
+            for(int i = 0; i < this->m; i++){
+                for(int j = 0; j < this->n; j++){
+                    if(!(x == i | y == j | a >= minor.m | b >= minor.n)){
+                        std::cout << a << ", " << b << " | " << i << ", " << j << "\n";
+                        minor.Set(a, b, this->Get(i, j));
+                        b++;
+                    }
+                }
+                a++;
+            }
+
+            return minor;
+        }
+
+        double Det(){
+            if(this->m == this->n){
+                if(this->m == 2){
+                    return (this->Get(0,0) * this->Get(1,1) - this->Get(0,1) * this->Get(1,0));
+                }else{
+                    //split down into reduced parts using each element in a row * its minor
+                    double det = 0;
+                    for(int i = 0; i < this->m; i++){
+                        //alternates between adding and subtracting
+                        if(i % 2 == 0){
+                            //add
+                            det += this->Get(i, 0) * this->Minor(i, 0).Det();
+                        }else{
+                            //sub
+                        }
+                    }
+                    return det;
+                }
+            }else{
+                return -1;
+            }
+        }
+
         fullMatrix Transpose(){
-            
+            if(this->n==this->m){
+                //need to split down into recursive steps for 2.2 matrix transpose
+
+                //1) Calculate determinant
+                //2) Move and invert signs of elements
+                //3) Multiply
+            }
         }
 };
 
@@ -194,6 +263,15 @@ int main() {
     //https://github.com/tinyobjloader/tinyobjloader
 
     SetTargetFPS(120);
+
+    fullMatrix test(3, 3);
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            test.Set(i, j, i * 3 + j);
+        }
+    }
+    test.Debug();
+    test.Minor(0, 0).Debug();
 
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
