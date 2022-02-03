@@ -44,17 +44,32 @@ class fullMatrix {
             }
         }
 
+        fullMatrix(fullMatrix& other){
+            int _m = other.m;
+            int _n = other.n;
+            array = new double[_m * _n];
+            m = _m;
+            n = _n;
+            for(int i = 0; i < other.m; i++){
+                for(int j = 0; j < other.n; j++){
+                    this->Set(i, j, other.Get(i, j));
+                }
+            }
+        }
+
         ~fullMatrix() {
             delete array;
         }
 
         void Debug(){
+            std::cout << "Dubugging " << this->m << " by " << this-> n << " matrix\n";
             for(int i = 0; i < this->m; i++){
                 for(int j = 0; j < this->n; j++){
                     std::cout << this->Get(i, j) << " ";
                 }
                 std::cout << "\n";
             }
+            std::cout << "Finished debug\n";
         }
 
         fullMatrix operator+(fullMatrix& other){
@@ -128,16 +143,21 @@ class fullMatrix {
 
             int a = 0; //x-index into minor matrix
             int b = 0; //y-index into minor matrix
+            bool a_inc = false;
 
             for(int i = 0; i < this->m; i++){
                 for(int j = 0; j < this->n; j++){
-                    if(!(x == i | y == j | a >= minor.m | b >= minor.n)){
-                        std::cout << a << ", " << b << " | " << i << ", " << j << "\n";
+                    if(!(x == i | y == j)){
                         minor.Set(a, b, this->Get(i, j));
                         b++;
+                        a_inc = true;
                     }
                 }
-                a++;
+                if(a_inc){
+                    a++;
+                    a_inc = false;
+                    b = 0;
+                }
             }
 
             return minor;
@@ -157,23 +177,63 @@ class fullMatrix {
                             det += this->Get(i, 0) * this->Minor(i, 0).Det();
                         }else{
                             //sub
+                            det -= this->Get(i, 0) * this->Minor(i, 0).Det();
                         }
                     }
                     return det;
                 }
             }else{
+                std::cout << "Matrix not square\n";
                 return -1;
             }
         }
 
+        fullMatrix MatOfMinors(){
+            fullMatrix rtn(this->m, this->n);
+            if(this->m == this->n){
+                for(int i = 0; i < this->m; i++){
+                    for(int j = 0; j < this->n; j++){
+                        rtn.Set(i, j, this->Minor(i, j).Det());
+                    }
+                }
+            }else{
+                std::cout << "Matrix not square\n";
+            }
+            return rtn;
+        }
+
+        fullMatrix Cofactors(){
+            fullMatrix rtn(this->m, this->n);
+            if(this->m == this->n){
+                fullMatrix minors = this->MatOfMinors();
+                for(int i = 0; i < this->m; i++){
+                    for(int j = 0; j < this->n; j++){
+                        if((i * this->n + j) % 2 == 1){
+                            rtn.Set(i, j, -minors.Get(j, i));
+                        }else{
+                            rtn.Set(i , j, minors.Get(j, i));
+                        }
+                    }
+                }
+            }else{
+                std::cout << "Matrix not square\n";
+            }
+            return rtn;
+        }
+
         fullMatrix Transpose(){
+            fullMatrix rtn(this->Cofactors());
             if(this->n==this->m){
                 //need to split down into recursive steps for 2.2 matrix transpose
 
                 //1) Calculate determinant
                 //2) Move and invert signs of elements
                 //3) Multiply
+                rtn = rtn * (1/this->Det());
+            }else{
+                std::cout << "Matrix not square\n";
             }
+            return rtn;
         }
 };
 
@@ -265,13 +325,21 @@ int main() {
     SetTargetFPS(120);
 
     fullMatrix test(3, 3);
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
-            test.Set(i, j, i * 3 + j);
-        }
-    }
-    test.Debug();
-    test.Minor(0, 0).Debug();
+    test.Set(0, 0, 1);
+    test.Set(0, 1, -1);
+    test.Set(0, 2, 0);
+
+    test.Set(1, 0, 1);
+    test.Set(1, 1, 1);
+    test.Set(1, 2, 1);
+
+    test.Set(2, 0, 1.01);
+    test.Set(2, 1, 1.025);
+    test.Set(2, 2, 0.985);
+
+    test.Transpose().Debug();
+
+    std::cout << "why\n";
 
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
