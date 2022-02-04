@@ -7,11 +7,10 @@
 #include <math.h>
 
 class fullMatrix {
-    private:
-        double* array;
     public:
         int m;
         int n;
+        double* array;
 
         double Get(const int x, const int y) {
             if(x >= m || y >= n){
@@ -50,11 +49,7 @@ class fullMatrix {
             array = new double[_m * _n];
             m = _m;
             n = _n;
-            for(int i = 0; i < other.m; i++){
-                for(int j = 0; j < other.n; j++){
-                    this->Set(i, j, other.Get(i, j));
-                }
-            }
+            memcpy(array, other.array, m*n);
         }
 
         ~fullMatrix() {
