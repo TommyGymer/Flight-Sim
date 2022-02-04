@@ -337,9 +337,10 @@ int main() {
     test.Set(2, 1, 1.025);
     test.Set(2, 2, 0.985);
 
-    test.Transpose().Debug();
+    fullMatrix test2(test.Transpose());
+    test2.Debug();
 
-    std::cout << "why\n";
+    std::cout << "Entering event loop\n";
 
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
