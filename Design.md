@@ -136,3 +136,15 @@ matrix mult(other):
 				sum += self(k, j) * other(i, k)
 			self(i, j) = sum
 ```
+
+I will also need to be able to calculate a matrix inverse for rotating quaternions and normal vectors
+Doing this will require:
+- A function to produce the minor matrix from a matrix and element location within the matrix
+- A function to produce the full minor matrix
+- A recursive function to calculate the determinant of a matrix
+- A function to calculate the cofactors
+- A function to calculate the final inverse/transpose of the matrix
+
+```
+
+```
