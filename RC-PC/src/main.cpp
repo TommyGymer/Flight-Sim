@@ -250,7 +250,7 @@ class Object3D {
         raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
 
         //look vector
-        raylib::Vector3 look = raylib::Vector3(1, 0, 0);
+        raylib::Vector3 look = raylib::Vector3(0, 0, 0);
 
         Object3D(const std::string& fileName) {
             model = new raylib::Model(fileName.c_str());
@@ -267,13 +267,15 @@ class Object3D {
             vel = vel + (acc * dt);
             pos = pos + (vel.RotateByQuaternion(qRot) * dt); //rotates object space to global space
 
-            look = raylib::Vector3(1, 0, 0).RotateByQuaternion(qRot);
-
             //update quaternion with the angular velocity
             float angle = cos((qOme.Length() * dt)/2);
             raylib::Vector3 v = qOme.Normalize().Scale(sin((qOme.Length() * dt)/2));
             raylib::Vector4 update(v.GetX(), v.GetY(), v.GetZ(), angle);
             qRot = qRot * update;
+
+            look = qRot.ToEuler();
+            look.SetX(cos(look.GetY()));
+            look.SetZ(sin(look.GetY()));
 
             //temporary collision detection
             if(pos.GetY() < 1){
@@ -360,8 +362,12 @@ int main() {
 
             obj.vel.SetX(obj.vel.GetX() * 0.8);
             obj.vel.SetZ(obj.vel.GetZ() * 0.8);
+            obj.qOme.SetX(0);
+            obj.qOme.SetY(0);
+            obj.qOme.SetZ(0);
             if(IsKeyDown(65)){ //a
-                obj.vel.SetX(-10);
+                //obj.vel.SetX(-10);
+                obj.qOme.SetY(1);
             }
             if(IsKeyDown(68)){ //d
                 obj.vel.SetX(10);
@@ -380,6 +386,8 @@ int main() {
                 
             obj.Update(dt);
             artifact.Update(dt);
+
+            std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
 
             camera.SetTarget(obj.pos + obj.look);
             camera.SetPosition(obj.pos);
