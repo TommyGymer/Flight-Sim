@@ -249,6 +249,9 @@ class Object3D {
         //scale
         raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
 
+        //look vector
+        raylib::Vector3 look = raylib::Vector3(1, 0, 0);
+
         Object3D(const std::string& fileName) {
             model = new raylib::Model(fileName.c_str());
         }
@@ -263,6 +266,8 @@ class Object3D {
         void Update(float dt){
             vel = vel + (acc * dt);
             pos = pos + (vel.RotateByQuaternion(qRot) * dt); //rotates object space to global space
+
+            look = raylib::Vector3(1, 0, 0).RotateByQuaternion(qRot);
 
             //update quaternion with the angular velocity
             float angle = cos((qOme.Length() * dt)/2);
@@ -376,7 +381,7 @@ int main() {
             obj.Update(dt);
             artifact.Update(dt);
 
-            //camera.SetTarget(obj.pos);
+            camera.SetTarget(obj.pos + obj.look);
             camera.SetPosition(obj.pos);
 
             obj.qRot = raylib::Vector4::FromMatrix(camera.GetMatrix());
