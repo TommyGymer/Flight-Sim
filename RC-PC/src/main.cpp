@@ -273,9 +273,7 @@ class Object3D {
             raylib::Vector4 update(v.GetX(), v.GetY(), v.GetZ(), angle);
             qRot = qRot * update;
 
-            look = qRot.ToEuler();
-            look.SetX(cos(look.GetY()));
-            look.SetZ(sin(look.GetY()));
+            look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
 
             //temporary collision detection
             if(pos.GetY() < 1){
@@ -367,10 +365,11 @@ int main() {
             obj.qOme.SetZ(0);
             if(IsKeyDown(65)){ //a
                 //obj.vel.SetX(-10);
-                obj.qOme.SetY(1);
+                obj.qOme.SetY(2);
             }
             if(IsKeyDown(68)){ //d
-                obj.vel.SetX(10);
+                //obj.vel.SetX(10);
+                obj.qOme.SetY(-2);
             }
             if(IsKeyDown(83)){ //s
                 obj.vel.SetZ(10);
@@ -387,12 +386,13 @@ int main() {
             obj.Update(dt);
             artifact.Update(dt);
 
-            std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
+            //std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
 
-            camera.SetTarget(obj.pos + obj.look);
             camera.SetPosition(obj.pos);
 
-            obj.qRot = raylib::Vector4::FromMatrix(camera.GetMatrix());
+            //obj.qRot = raylib::Vector4::FromMatrix(camera.GetMatrix());
+
+            camera.SetTarget(obj.pos + obj.look);
 
             camera.BeginMode();
             {
