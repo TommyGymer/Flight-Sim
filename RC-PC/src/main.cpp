@@ -358,8 +358,8 @@ int main() {
                 }
             }
 
-            obj.vel.SetX(obj.vel.GetX() * 0.8);
-            obj.vel.SetZ(obj.vel.GetZ() * 0.8);
+            obj.vel.SetX(obj.vel.GetX() * 0.95);
+            obj.vel.SetZ(obj.vel.GetZ() * 0.95);
             obj.qOme.SetX(0);
             obj.qOme.SetY(0);
             obj.qOme.SetZ(0);
