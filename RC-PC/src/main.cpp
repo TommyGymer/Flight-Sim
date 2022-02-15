@@ -288,7 +288,7 @@ int main() {
     // Initialization
     int screenWidth = 1600;
     int screenHeight = 1200;
-
+    
     auto start = std::chrono::high_resolution_clock::now();
     float total = 0;
 
