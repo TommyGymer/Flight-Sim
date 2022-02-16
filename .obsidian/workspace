@@ -7,9 +7,11 @@
         "id": "06c71da559f95b34",
         "type": "leaf",
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "Pasted image 20220201102416.png"
+            "file": "Design.md",
+            "mode": "preview",
+            "source": true
           }
         }
       }
@@ -67,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pasted image 20220201102416.png",
+                "file": "Design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,8 +89,8 @@
   },
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
-    "Pasted image 20220201102416.png",
     "Design.md",
+    "Pasted image 20220201102416.png",
     "The Process/Quaternions.md",
     "The Process/Documentation and Understanding.md",
     "The Process/Building the Application.md",

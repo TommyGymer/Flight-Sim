@@ -68,6 +68,10 @@ By reducing and fully categorising all available options
 			- Contains the mesh and other object data
 			- Such as animations
 			- And bones
+
+> make this a table with explanation: why
+> Variable | datatype | justification
+
 - Functions
 	- Initialiser
 		- Take a string from which to load the object data into the model attribute
@@ -146,5 +150,63 @@ Doing this will require:
 - A function to calculate the final inverse/transpose of the matrix
 
 ```
+matrix minor(x, y):
+	minor = matrix(this.m - 1, this.n - 1)
+	a = 0
+	b = 0
+	a_inc = False
 
+	for i in range(this.m):
+		for j in range(this.n):
+			if not (x == i or y == j):
+				minor[a, b] = this[i, j]
+				b += 1
+				a_inc = True
+		if a_inc:
+			a += 1
+			a_inc = False
+			b = 0
+	return minor
+
+double det():
+	if this.m == this.n:
+		if this.m == 2:
+			return this[0,0] * this[1,1] - this[0,1] * this[1,0]
+		else:
+			det = 0.0f
+			for i in range(this.m):
+				if i % 2 == 0:
+					det += this[i, 0] * this.minor(i, 0).det()
+				else:
+					det -= this[i, 0] * this.minor(i, 0).det()
+			return det
+
+matrix matOfMinors():
+	rtn = matrix(this.m, this.n)
+	if this.m == this.n:
+		for i in range(this.m):
+			for j in range(this.n):
+				rtn[i, j] = this.minor(i, j).det()
+	return rtn
+
+matrix cofactors():
+	rtn = matrix(this.m, this.n)
+	if this.m == this.n:
+		minors = this.matOfMinors();
+		for i in range(this.m):
+			for j in range(this.n):
+				if (i * this.n + j) % 2 == 1:
+					rtn(i, j) = -minors[j, i]
+				else:
+					rtn[i, j] = minors[j, i]
+	return rtn
+
+matrix inverse():
+	return this.cofactors() * (1/this.det())
+	
 ```
+
+---
+### Input Validation
+
+- Combinations of keys: e.g. Ctrl, Shift, Caps Lock, etc.
