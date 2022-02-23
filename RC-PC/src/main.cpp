@@ -369,7 +369,7 @@ int main() {
             //get mouse pos
             if(!paused){
                 raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
-                std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
+                //std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
 
                 obj.qOme.SetY(-mouse.GetX() * 0.5f);
                 obj.qOme.SetX(-mouse.GetY() * 0.5f);
