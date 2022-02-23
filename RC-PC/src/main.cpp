@@ -342,6 +342,8 @@ int main() {
 
     std::cout << "Entering event loop\n";
 
+    bool paused = false;
+
     HideCursor();
     DisableCursor();
 
@@ -365,11 +367,21 @@ int main() {
             */
 
             //get mouse pos
-            raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
-            std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
+            if(!paused){
+                raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
+                std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
 
-            if(IsCursorOnScreen()){
+                obj.qOme.SetY(-mouse.GetX() * 0.5f);
+                obj.qOme.SetX(-mouse.GetY() * 0.5f);
+            }
+
+            if(IsCursorOnScreen() && !paused){
                 raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
+                HideCursor();
+                DisableCursor();
+            }else{
+                ShowCursor();
+                EnableCursor();
             }
 
             if(IsKeyDown(32)){ //space
@@ -378,18 +390,28 @@ int main() {
                 }
             }
 
+            if(paused){
+                if(IsKeyPressed(80)){ //p
+                    paused = false;
+                }
+            }else{
+                if(IsKeyPressed(80)){ //p
+                    paused = true;
+                }
+            }
+
             obj.vel.SetX(obj.vel.GetX() * 0.95);
             obj.vel.SetZ(obj.vel.GetZ() * 0.95);
-            obj.qOme.SetX(0);
-            obj.qOme.SetY(0);
+            //obj.qOme.SetX(0);
+            //obj.qOme.SetY(0);
             obj.qOme.SetZ(0);
             if(IsKeyDown(65)){ //a
-                //obj.vel.SetX(-10);
-                obj.qOme.SetY(2);
+                obj.vel.SetX(-10);
+                //obj.qOme.SetY(2);
             }
             if(IsKeyDown(68)){ //d
-                //obj.vel.SetX(10);
-                obj.qOme.SetY(-2);
+                obj.vel.SetX(10);
+                //obj.qOme.SetY(-2);
             }
             if(IsKeyDown(83)){ //s
                 obj.vel.SetZ(10);
