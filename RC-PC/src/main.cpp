@@ -342,6 +342,9 @@ int main() {
 
     std::cout << "Entering event loop\n";
 
+    HideCursor();
+    DisableCursor();
+
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
     {
@@ -352,7 +355,24 @@ int main() {
         {
             ClearBackground(RAYWHITE);
 
-            if(IsKeyDown(32)){
+            /* keyboard and mouse control scheme
+            - mouse horizontal for alieron role
+            - mouse vertical for elevator role
+                - mouse top-left justified
+            - a and d for rudder
+            - w and s for throttle
+                - throttle as accerleration along with air resistance proportianal to square of velocity
+            */
+
+            //get mouse pos
+            raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
+            std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
+
+            if(IsCursorOnScreen()){
+                raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
+            }
+
+            if(IsKeyDown(32)){ //space
                 if(obj.pos.GetY() < 1.01){
                     obj.vel.SetY(10);
                 }
