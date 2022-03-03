@@ -12,6 +12,12 @@ class fullMatrix {
         int n;
         double* array;
 
+        //1   2   3   ...   n
+        //2     
+        //3     
+        //...   
+        //m     
+
         double Get(const int x, const int y) {
             if(x >= m || y >= n){
                 std::cout << "Invalid index (" << x << ", " << y << ") outside (" << m << ", " << n << ")\n";
@@ -238,6 +244,11 @@ class Object3D {
         raylib::Model* model;
 
         //physics
+        fullMatrix* test_pos = new fullMatrix(3, 1);
+        test_pos->Set(0, 0, 10);
+        test_pos->Set(0, 1, 1);
+        test_pos->Set(0, 2, 0);
+        test_pos->Debug();
         raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
