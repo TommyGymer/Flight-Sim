@@ -271,9 +271,9 @@ class Object3D {
             float angle = cos((qOme.Length() * dt)/2);
             raylib::Vector3 v = qOme.Normalize().Scale(sin((qOme.Length() * dt)/2));
             raylib::Vector4 update(v.GetX(), v.GetY(), v.GetZ(), angle);
-            qRot = update * qRot;
+            qRot = qRot * update;
 
-            look = raylib::Vector3(0, 0, 1).RotateByQuaternion(qRot);
+            look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
 
             //temporary collision detection
             if(pos.GetY() < 1){
