@@ -244,11 +244,11 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        fullMatrix* test_pos = new fullMatrix(3, 1);
-        test_pos->Set(0, 0, 10);
-        test_pos->Set(0, 1, 1);
-        test_pos->Set(0, 2, 0);
-        test_pos->Debug();
+        fullMatrix test_pos = fullMatrix(3, 1);
+        test_pos.Set(0, 0, 10);
+        test_pos.Set(0, 1, 1);
+        test_pos.Set(0, 2, 0);
+        test_pos.Debug();
         raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
