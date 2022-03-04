@@ -245,10 +245,10 @@ class Object3D {
 
         //physics
         fullMatrix test_pos = fullMatrix(3, 1);
-        test_pos.Set(0, 0, 10);
-        test_pos.Set(0, 1, 1);
-        test_pos.Set(0, 2, 0);
-        test_pos.Debug();
+        // test_pos.Set(0, 0, 10);
+        // test_pos.Set(0, 1, 1);
+        // test_pos.Set(0, 2, 0);
+        // test_pos.Debug();
         raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
@@ -279,9 +279,13 @@ class Object3D {
             pos = pos + (vel.RotateByQuaternion(qRot) * dt); //rotates object space to global space
 
             //update quaternion with the angular velocity
+            float theta = qOme.Length() * dt;
+            raylib::Vector3 u = qOme.Normalize();
+            raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
+
             float angle = cos((qOme.Length() * dt)/2);
             raylib::Vector3 v = qOme.Normalize().Scale(sin((qOme.Length() * dt)/2));
-            raylib::Vector4 update(v.GetX(), v.GetY(), v.GetZ(), angle);
+            //raylib::Vector4 update(v.GetX(), v.GetY(), v.GetZ(), angle);
             qRot = qRot * update;
 
             look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
