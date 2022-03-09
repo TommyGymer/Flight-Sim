@@ -291,6 +291,7 @@ class Object3D {
                 float theta = qOme.Length() * dt;
                 raylib::Vector3 u = qOme.Normalize();
                 raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
+                qRot = qRot * update;
             }
             
             //float angle = cos((qOme.Length() * dt)/2);
