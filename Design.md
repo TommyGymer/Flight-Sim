@@ -53,24 +53,16 @@ By reducing and fully categorising all available options
 ### Objects
 
 #### Objects
-- Attributes
-	- Movement
-		- Vector3D: position
-		- Vector3D: velocity
-		- Vector3D: acceleration
-	- Rotation
-		- Vector4D: rotation
-		- Vector3D: angular velocity
-	- Size
-		- Vector3D: scale
-	- Model
-		- raylib::Model: model
-			- Contains the mesh and other object data
-			- Such as animations
-			- And bones
 
-> make this a table with explanation: why
-> Variable | datatype | justification
+|Variable|Datatype|Reason|
+|:---|:---|:---|
+|position|3D Vector|for object location in 3D space|
+|velocity|3D Vector|to integrate to location in 3D space|
+|acceleration|3D Vector|to integrate to velocuty; simplifies gravity|
+|rotation|Quaternion|avoids gimble lock present in Euler implementations|
+|angular velocity|3D Vector|to integrate to rotation|
+|scale|3D Vector|for the x, y and z scale of each object|
+|model|raylib::Model|the model data: textures, meshes, etc.|
 
 - Functions
 	- Initialiser
