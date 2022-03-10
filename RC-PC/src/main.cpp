@@ -263,6 +263,9 @@ class Object3D {
         //look vector
         raylib::Vector3 look = raylib::Vector3(0, 0, 0);
 
+        //debug
+        bool debug = false;
+
         Object3D(const std::string& fileName) {
             model = new raylib::Model(fileName.c_str());
         }
@@ -275,13 +278,19 @@ class Object3D {
         }
 
         void Update(float dt){
-            vel = vel + (acc * dt);
+            vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
+            //std::cout << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << "\n";
             pos = pos + (vel.RotateByQuaternion(qRot) * dt); //rotates object space to global space
 
             //update quaternion with the angular velocity
             //float theta = qOme.Length() * dt;
             //raylib::Vector3 u = qOme.Normalize();
             //raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
+
+            if(debug){
+                std::cout << qOme.GetX() << ", " << qOme.GetY() << ", " << qOme.GetZ() << "\n";
+                //std::cout << qRot.GetX() << ", " << qRot.GetY() << ", " << qRot.GetZ() << ", " << qRot.GetW() << "\n";
+            }
 
             if(qOme.Length() != 0){
                 // raylib::Vector3 norm = qOme.Normalize();
@@ -328,6 +337,8 @@ int main() {
     artifact.scale = raylib::Vector3(0.5, 1, 0.5);
     artifact.qOme = raylib::Vector3(0, 1, 0);
 
+    obj.debug = true;
+
     raylib::Camera3D camera(
         raylib::Vector3(10.0f, 2.0f, 10.0f), //camera location
         raylib::Vector3(0.0f, 0.0f, 0.0f), //camera look
@@ -372,6 +383,7 @@ int main() {
 
     HideCursor();
     DisableCursor();
+    raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
 
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
