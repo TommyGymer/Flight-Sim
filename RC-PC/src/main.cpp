@@ -260,8 +260,9 @@ class Object3D {
         //scale
         raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
 
-        //look vector
-        raylib::Vector3 look = raylib::Vector3(0, 0, 0);
+        //look and up vectors
+        raylib::Vector3 look = raylib::Vector3(1, 0, 0);
+        raylib::Vector3 up = raylib::Vector3(0, 1, 0);
 
         //debug
         bool debug = false;
@@ -309,6 +310,7 @@ class Object3D {
             //qRot = qRot * update;
 
             look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
+            up = raylib::Vector3(0, -1, 0).RotateByQuaternion(qRot);
 
             //temporary collision detection
             if(pos.GetY() < 1){
@@ -473,6 +475,7 @@ int main() {
             //obj.qRot = raylib::Vector4::FromMatrix(camera.GetMatrix());
 
             camera.SetTarget(obj.pos + obj.look);
+            camera.up = obj.up;
 
             camera.BeginMode();
             {
