@@ -261,8 +261,8 @@ class Object3D {
         raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
 
         //look and up vectors
-        raylib::Vector3 look = raylib::Vector3(1, 0, 0);
-        raylib::Vector3 up = raylib::Vector3(0, 1, 0);
+        raylib::Vector3 look = raylib::Vector3(0, 0, -1);
+        raylib::Vector3 up = raylib::Vector3(0, -1, 0);
 
         //debug
         bool debug = false;
@@ -279,10 +279,6 @@ class Object3D {
         }
 
         void Update(float dt){
-            vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
-            //std::cout << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << "\n";
-            pos = pos + (vel.RotateByQuaternion(qRot) * dt); //rotates object space to global space
-
             //update quaternion with the angular velocity
             //float theta = qOme.Length() * dt;
             //raylib::Vector3 u = qOme.Normalize();
@@ -303,6 +299,10 @@ class Object3D {
                 raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
                 qRot = qRot * update;
             }
+
+            vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
+            //std::cout << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << "\n";
+            pos = pos + (vel.RotateByQuaternion(qRot) * dt); //rotates object space to global space
             
             //float angle = cos((qOme.Length() * dt)/2);
             //raylib::Vector3 v = qOme.Normalize().Scale(sin((qOme.Length() * dt)/2));
@@ -310,7 +310,7 @@ class Object3D {
             //qRot = qRot * update;
 
             look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
-            up = raylib::Vector3(0, -1, 0).RotateByQuaternion(qRot);
+            up = raylib::Vector3(0, 1, 0).RotateByQuaternion(qRot);
 
             //temporary collision detection
             if(pos.GetY() < 1){
