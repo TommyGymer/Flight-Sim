@@ -101,6 +101,9 @@ While raylib already implements many of these, it may be beneficial to write my 
 #### Vector and Matrix Maths Lib
 
 - Simulating a 2D array using a 1D array
+
+---
+
 ```
 double[] array = new array[width * height]
 
@@ -111,7 +114,11 @@ void set(x, y, val):
 	array[x * width + y] = val
 ```
 
+---
+
 This will allow me to make use of a dynamic 2D array in C++ as there is no built in structures to allow this
+
+---
 
 ```
 matrix add(other):
@@ -133,6 +140,8 @@ matrix mult(other):
 			self(i, j) = sum
 ```
 
+---
+
 I will also need to be able to calculate a matrix inverse for rotating quaternions and normal vectors
 Doing this will require:
 - A function to produce the minor matrix from a matrix and element location within the matrix
@@ -140,6 +149,8 @@ Doing this will require:
 - A recursive function to calculate the determinant of a matrix
 - A function to calculate the cofactors
 - A function to calculate the final inverse/transpose of the matrix
+
+---
 
 ```
 matrix minor(x, y):
@@ -197,6 +208,8 @@ matrix inverse():
 	return this.cofactors() * (1/this.det())
 	
 ```
+
+---
 
 ---
 ### Input Validation
