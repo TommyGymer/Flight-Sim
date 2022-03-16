@@ -285,8 +285,8 @@ class Object3D {
             //raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
 
             if(debug){
-                std::cout << qOme.GetX() << ", " << qOme.GetY() << ", " << qOme.GetZ() << "\n";
-                //std::cout << qRot.GetX() << ", " << qRot.GetY() << ", " << qRot.GetZ() << ", " << qRot.GetW() << "\n";
+                //std::cout << qOme.GetX() << ", " << qOme.GetY() << ", " << qOme.GetZ() << "\n";
+                std::cout << qRot.GetX() << ", " << qRot.GetY() << ", " << qRot.GetZ() << ", " << qRot.GetW() << "\n";
             }
 
             if(qOme.Length() != 0){
@@ -298,6 +298,7 @@ class Object3D {
                 raylib::Vector3 u = qOme.Normalize();
                 raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
                 qRot = qRot * update;
+                qRot.Normalize();
             }
 
             vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
@@ -310,7 +311,7 @@ class Object3D {
             //qRot = qRot * update;
 
             look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
-            up = raylib::Vector3(0, 1, 0).RotateByQuaternion(qRot);
+            up = raylib::Vector3(0, -1, 0).RotateByQuaternion(qRot);
 
             //temporary collision detection
             if(pos.GetY() < 1){
@@ -407,7 +408,7 @@ int main() {
             */
 
             //get mouse pos
-            if(!paused){
+            if(!paused && total > 1){
                 raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
                 //std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
 

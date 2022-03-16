@@ -1,13 +1,13 @@
 ## Design
 ---
-![[System overview.png]]
+![[Images/System overview.png]]
 
 ---
 ### Menus
 
 #### Main Menu
 
-![[Main Menu.png]]
+![[Images/Main Menu.png]]
 
 - "Start Sim" button to open the location and plane select menu
 - "Settings" button to open the settings menu
@@ -16,7 +16,7 @@
 
 #### Start Sim
 
-![[Start Sim.png]]
+![[Images/Start Sim.png]]
 
 - Show most commonly used in order
 - Select a location and plane
@@ -26,7 +26,7 @@
 
 #### Settings
 
-![[Settings.png]]
+![[Images/Settings.png]]
 
 By reducing and fully categorising all available options 
 
