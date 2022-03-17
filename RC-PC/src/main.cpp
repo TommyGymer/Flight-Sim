@@ -245,6 +245,7 @@ class Object3D {
 
         //physics
         fullMatrix test_pos = fullMatrix(3, 1);
+        //these aren't being run in a function so do not work
         //test_pos.Set(0, 0, 5);
         // test_pos.Set(0, 0, 10);
         // test_pos.Set(0, 1, 1);
