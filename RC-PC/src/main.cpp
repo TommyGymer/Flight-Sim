@@ -27,6 +27,48 @@ class fullMatrix {
             }
         }
 
+        double const w(){
+            if((m == 4 && n ==1) || (m == 1 && n ==4)){
+                return array[0];
+            }else{
+                std::cout << "Not a vector or coordinate\n";
+                throw -1;
+            }
+        }
+
+        double const x(){
+            if((m == 3 && n == 1) || (m == 1 && n == 3)){
+                return array[0];
+            }else if((m == 4 && n ==1) || (m == 1 && n ==4)){
+                return array[1];
+            }else{
+                std::cout << "Not a vector or coordinate\n";
+                throw -1;
+            }
+        }
+
+        double const y(){
+            if((m == 3 && n == 1) || (m == 1 && n == 3)){
+                return array[1];
+            }else if((m == 4 && n ==1) || (m == 1 && n ==4)){
+                return array[2];
+            }else{
+                std::cout << "Not a vector or coordinate\n";
+                throw -1;
+            }
+        }
+
+        double const z(){
+            if((m == 3 && n == 1) || (m == 1 && n == 3)){
+                return array[2];
+            }else if((m == 4 && n ==1) || (m == 1 && n == 4)){
+                return array[3];
+            }else{
+                std::cout << "Not a vector or coordinate\n";
+                throw -1;
+            }
+        }
+
         void Set(const int x, const int y, const double val) {
             if(x >= m || y >= n){
                 std::cout << m << " " << n << "\n";
@@ -59,12 +101,14 @@ class fullMatrix {
         }
 
         fullMatrix(const bool vector, const double x, const double y, const double z){
+            int _m = 0;
+            int _n = 0;
             if(vector){
-                int _m = 3;
-                int _n = 1;
+                _m = 3;
+                _n = 1;
             }else{
-                int _m = 1;
-                int _n = 3;
+                _m = 1;
+                _n = 3;
             }
             
             array = new double[_m * _n];
@@ -76,14 +120,16 @@ class fullMatrix {
         }
 
         fullMatrix(const bool vector,const double w, const double x, const double y, const double z){
+            int _m = 0;
+            int _n = 0;
             if(vector){
-                int _m = 3;
-                int _n = 1;
+                _m = 3;
+                _n = 1;
             }else{
-                int _m = 1;
-                int _n = 3;
+                _m = 1;
+                _n = 3;
             }
-            
+
             array = new double[_m * _n];
             m = _m;
             n = _n;
@@ -279,7 +325,7 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        fullMatrix test_pos = fullMatrix(true, 1, 0, 0, 0);
+        fullMatrix test_pos = fullMatrix(true, 10, 1, 0);
         
         raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
