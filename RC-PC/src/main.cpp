@@ -61,7 +61,7 @@ class fullMatrix {
         double const z(){
             if((m == 3 && n == 1) || (m == 1 && n == 3)){
                 return array[2];
-            }else if((m == 4 && n ==1) || (m == 1 && n == 4)){
+            }else if((m == 4 && n == 1) || (m == 1 && n == 4)){
                 return array[3];
             }else{
                 std::cout << "Not a vector or coordinate\n";
@@ -71,9 +71,7 @@ class fullMatrix {
 
         void Set(const int x, const int y, const double val) {
             if(x >= m || y >= n){
-                std::cout << m << " " << n << "\n";
-                std::cout << x << " " << y << "\n";
-                std::cout << "Invalid index (" << x << ", " << y << ") outside (" << m << ", " << n << ")\n";
+                std::cout << "Invalid index during set, (" << x << ", " << y << ") outside (" << m << ", " << n << ")\n";
                 throw -1;
             }else{
                 array[x * n + y] = val;
@@ -98,6 +96,33 @@ class fullMatrix {
             m = _m;
             n = _n;
             memcpy(array, other.array, m*n);
+        }
+
+        fullMatrix(raylib::Vector3 other){
+            m = 3;
+            n = 1;
+            array = new double[m * n];
+            array[0] = other.GetX();
+            array[1] = other.GetY();
+            array[2] = other.GetZ();
+        }
+
+        fullMatrix(raylib::Vector4 other){
+            m = 4;
+            n = 1;
+            array = new double[m * n];
+            array[0] = other.GetW();
+            array[1] = other.GetX();
+            array[2] = other.GetY();
+            array[3] = other.GetZ();
+        }
+
+        raylib::Vector3 GetVec3(){
+            if((m == 3 && n == 1) || (m == 1 && n ==3)){
+                return raylib::Vector3(array[0], array[1], array[2]);
+            }else{
+                throw -1;
+            }
         }
 
         fullMatrix(const bool vector, const double x, const double y, const double z){
@@ -154,7 +179,7 @@ class fullMatrix {
             std::cout << "Finished debug\n";
         }
 
-        fullMatrix operator+(fullMatrix& other){
+        fullMatrix operator+(fullMatrix other){
             if(this->m == other.m && this->n == other.n){
                 fullMatrix rtn(this->m, this->n);
                 for(int i = 0; i < this->m; i++){
@@ -168,7 +193,7 @@ class fullMatrix {
             }
         }
 
-        fullMatrix operator-(fullMatrix& other){
+        fullMatrix operator-(fullMatrix other){
             if(this->m == other.m && this->n == other.n){
                 fullMatrix rtn(this->m, this->n);
                 for(int i = 0; i < this->m; i++){
@@ -182,7 +207,7 @@ class fullMatrix {
             }
         }
 
-        fullMatrix operator*(fullMatrix& other){
+        fullMatrix operator*(fullMatrix other){
             if(this->n == other.m){
                 fullMatrix rtn(this->m, this->n);
                 for(int i = 0; i < this->m; i++){
@@ -325,9 +350,9 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        fullMatrix test_pos = fullMatrix(true, 10, 1, 0);
+        fullMatrix pos = fullMatrix(true, 10, 1, 0);
         
-        raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
+        //raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
 
@@ -353,7 +378,7 @@ class Object3D {
         void Draw(){
             qRot = qRot.Normalize();
             std::pair<raylib::Vector3, float> rot = qRot.ToAxisAngle();
-            model->Draw(pos, std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
+            model->Draw(pos.GetVec3(), std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
         }
 
         void Update(float dt){
@@ -381,7 +406,7 @@ class Object3D {
 
             vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
             //std::cout << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << "\n";
-            pos = pos + (vel.RotateByQuaternion(qRot) * dt); //rotates object space to global space
+            pos = pos + (fullMatrix(vel.RotateByQuaternion(qRot)) * dt); //rotates object space to global space
             
             //float angle = cos((qOme.Length() * dt)/2);
             //raylib::Vector3 v = qOme.Normalize().Scale(sin((qOme.Length() * dt)/2));
@@ -392,8 +417,8 @@ class Object3D {
             up = raylib::Vector3(0, 1, 0).RotateByQuaternion(qRot);
 
             //temporary collision detection
-            if(pos.GetY() < 1){
-                pos.SetY(1);
+            if(pos.y() < 1){
+                pos.Set(1, 0, 1);
                 //vel.SetY(-vel.GetY() * 0.25);
                 vel.SetY(0);
             }
@@ -504,7 +529,7 @@ int main() {
             }
 
             if(IsKeyDown(32)){ //space
-                if(obj.pos.GetY() < 1.01){
+                if(obj.pos.y() < 1.01){
                     obj.vel.SetY(10);
                 }
             }
@@ -549,11 +574,11 @@ int main() {
 
             //std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
 
-            camera.SetPosition(obj.pos);
+            camera.SetPosition(obj.pos.GetVec3());
 
             //obj.qRot = raylib::Vector4::FromMatrix(camera.GetMatrix());
 
-            camera.SetTarget(obj.pos + obj.look);
+            camera.SetTarget(obj.pos.GetVec3() + obj.look);
             camera.up = obj.up;
 
             camera.BeginMode();
