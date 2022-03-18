@@ -58,6 +58,41 @@ class fullMatrix {
             memcpy(array, other.array, m*n);
         }
 
+        fullMatrix(const bool vector, const double x, const double y, const double z){
+            if(vector){
+                int _m = 3;
+                int _n = 1;
+            }else{
+                int _m = 1;
+                int _n = 3;
+            }
+            
+            array = new double[_m * _n];
+            m = _m;
+            n = _n;
+            array[0] = x;
+            array[1] = y;
+            array[2] = z;
+        }
+
+        fullMatrix(const bool vector,const double w, const double x, const double y, const double z){
+            if(vector){
+                int _m = 3;
+                int _n = 1;
+            }else{
+                int _m = 1;
+                int _n = 3;
+            }
+            
+            array = new double[_m * _n];
+            m = _m;
+            n = _n;
+            array[0] = w;
+            array[1] = x;
+            array[2] = y;
+            array[3] = z;
+        }
+
         ~fullMatrix() {
             delete array;
         }
@@ -244,13 +279,8 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        fullMatrix test_pos = fullMatrix(3, 1);
-        //these aren't being run in a function so do not work
-        //test_pos.Set(0, 0, 5);
-        // test_pos.Set(0, 0, 10);
-        // test_pos.Set(0, 1, 1);
-        // test_pos.Set(0, 2, 0);
-        // test_pos.Debug();
+        fullMatrix test_pos = fullMatrix(true, 1, 0, 0, 0);
+        
         raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
