@@ -383,9 +383,6 @@ class Object3D {
 
         void Update(float dt){
             //update quaternion with the angular velocity
-            //float theta = qOme.Length() * dt;
-            //raylib::Vector3 u = qOme.Normalize();
-            //raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
 
             if(debug){
                 //std::cout << qOme.GetX() << ", " << qOme.GetY() << ", " << qOme.GetZ() << "\n";
@@ -393,10 +390,6 @@ class Object3D {
             }
 
             if(qOme.Length() != 0){
-                // raylib::Vector3 norm = qOme.Normalize();
-                // raylib::Vector4 qDelta = raylib::Vector4(norm.GetX(), norm.GetY(), norm.GetY(), qOme.Length() * dt);
-                // qRot = qRot * qDelta;
-
                 float theta = qOme.Length() * dt;
                 raylib::Vector3 u = qOme.Normalize();
                 raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
@@ -407,11 +400,6 @@ class Object3D {
             vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
             //std::cout << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << "\n";
             pos = pos + (fullMatrix(vel.RotateByQuaternion(qRot)) * dt); //rotates object space to global space
-            
-            //float angle = cos((qOme.Length() * dt)/2);
-            //raylib::Vector3 v = qOme.Normalize().Scale(sin((qOme.Length() * dt)/2));
-            //raylib::Vector4 update(v.GetX(), v.GetY(), v.GetZ(), angle);
-            //qRot = qRot * update;
 
             look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
             up = raylib::Vector3(0, 1, 0).RotateByQuaternion(qRot);
@@ -467,21 +455,23 @@ int main() {
 
     SetTargetFPS(120);
 
-    // fullMatrix test(3, 3);
-    // test.Set(0, 0, 1);
-    // test.Set(0, 1, -1);
-    // test.Set(0, 2, 0);
+    /**
+    fullMatrix test(3, 3);
+    test.Set(0, 0, 1);
+    test.Set(0, 1, -1);
+    test.Set(0, 2, 0);
 
-    // test.Set(1, 0, 1);
-    // test.Set(1, 1, 1);
-    // test.Set(1, 2, 1);
+    test.Set(1, 0, 1);
+    test.Set(1, 1, 1);
+    test.Set(1, 2, 1);
 
-    // test.Set(2, 0, 1.01);
-    // test.Set(2, 1, 1.025);
-    // test.Set(2, 2, 0.985);
+    test.Set(2, 0, 1.01);
+    test.Set(2, 1, 1.025);
+    test.Set(2, 2, 0.985);
 
-    // fullMatrix test2(test.Transpose());
-    // test2.Debug();
+    fullMatrix test2(test.Transpose());
+    test2.Debug();
+    **/
 
     std::cout << "Entering event loop\n";
 
