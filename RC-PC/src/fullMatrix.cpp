@@ -16,6 +16,14 @@ class fullMatrix {
         //...   
         //m     
 
+        /**
+         * Returns the value at the given x, y in the matrix
+         *
+         * @param x the x coordinate in the matrix of n
+         * @param y the y coordinate in the matrix of m
+         * @returns the value at x, y in the matrix
+         *
+         */
         double Get(const int x, const int y) {
             if(x >= m || y >= n){
                 std::cout << "Invalid index (" << x << ", " << y << ") outside (" << m << ", " << n << ")\n";
