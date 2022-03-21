@@ -127,22 +127,22 @@ int main() {
     SetTargetFPS(120);
 
     /**
-    fullMatrix test(3, 3);
-    test.Set(0, 0, 1);
-    test.Set(0, 1, -1);
-    test.Set(0, 2, 0);
-
-    test.Set(1, 0, 1);
-    test.Set(1, 1, 1);
-    test.Set(1, 2, 1);
-
-    test.Set(2, 0, 1.01);
-    test.Set(2, 1, 1.025);
-    test.Set(2, 2, 0.985);
-
-    fullMatrix test2(test.Transpose());
-    test2.Debug();
-    **/
+     *fullMatrix test(3, 3);
+     *test.Set(0, 0, 1);
+     *test.Set(0, 1, -1);
+     *test.Set(0, 2, 0);
+     *
+     *test.Set(1, 0, 1);
+     *test.Set(1, 1, 1);
+     *test.Set(1, 2, 1);
+     *
+     *test.Set(2, 0, 1.01);
+     *test.Set(2, 1, 1.025);
+     *test.Set(2, 2, 0.985);
+     *
+     *fullMatrix test2(test.Transpose());
+     *test2.Debug();
+     */
 
     std::cout << "Entering event loop\n";
 
@@ -162,14 +162,15 @@ int main() {
         {
             ClearBackground(RAYWHITE);
 
-            /* keyboard and mouse control scheme
-            - mouse horizontal for alieron role
-            - mouse vertical for elevator role
-                - mouse top-left justified
-            - a and d for rudder
-            - w and s for throttle
-                - throttle as accerleration along with air resistance proportianal to square of velocity
-            */
+            /**
+             *keyboard and mouse control scheme
+             *- mouse horizontal for alieron role
+             *- mouse vertical for elevator role
+             *    - mouse top-left justified
+             *- a and d for rudder
+             *- w and s for throttle
+             *    - throttle as accerleration along with air resistance proportianal to square of velocity
+             */
 
             //get mouse pos
             if(!paused && total > 1){
