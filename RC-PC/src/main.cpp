@@ -370,6 +370,9 @@ class Object3D {
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
 
         //rotation
+        fullMatrix test_qRot = fullMatrix(MatrixType::Vector, 1, 0, 0, 0);
+        fullMatrix test_angV = fullMatrix(MatrixType::Vector, 0, 0, 0);
+
         raylib::Vector4 qRot = raylib::Vector4(0, 0, 0, 1);
         raylib::Vector3 qOme = raylib::Vector3(0, 0, 0);
 
