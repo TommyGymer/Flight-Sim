@@ -6,6 +6,8 @@
 #include <string>
 #include <math.h>
 
+enum class MatrixType {Vector, Coord, Matrix};
+
 class fullMatrix {
     public:
         int m;
@@ -135,13 +137,13 @@ class fullMatrix {
             }
         }
 
-        fullMatrix(const bool vector, const double x, const double y, const double z){
+        fullMatrix(MatrixType type, const double x, const double y, const double z){
             int _m = 0;
             int _n = 0;
-            if(vector){
+            if(type == MatrixType::Vector){
                 _m = 3;
                 _n = 1;
-            }else{
+            }else if(type == MatrixType::Coord){
                 _m = 1;
                 _n = 3;
             }
@@ -154,13 +156,13 @@ class fullMatrix {
             array[2] = z;
         }
 
-        fullMatrix(const bool vector,const double w, const double x, const double y, const double z){
+        fullMatrix(MatrixType type, const double w, const double x, const double y, const double z){
             int _m = 0;
             int _n = 0;
-            if(vector){
+            if(type == MatrixType::Vector){
                 _m = 3;
                 _n = 1;
-            }else{
+            }else if(type == MatrixType::Coord){
                 _m = 1;
                 _n = 3;
             }
@@ -360,7 +362,8 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        fullMatrix pos = fullMatrix(true, 10, 1, 0);
+        fullMatrix pos = fullMatrix(MatrixType::Vector, 10, 1, 0);
+        fullMatrix test_vel = fullMatrix(MatrixType::Vector, 0, 0, 0);
         
         //raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
