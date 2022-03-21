@@ -118,9 +118,19 @@ class fullMatrix {
         }
 
         raylib::Vector3 GetVec3(){
-            if((m == 3 && n == 1) || (m == 1 && n ==3)){
+            if((m == 3 && n == 1) || (m == 1 && n == 3)){
                 return raylib::Vector3(array[0], array[1], array[2]);
             }else{
+                std::cout << "Matrix wrong size\n";
+                throw -1;
+            }
+        }
+
+        raylib::Vector4 GetVec4(){
+            if((m == 4 && n == 1) || (m == 1 && n == 4)){
+                return raylib::Vector4(array[1], array[2], array[3], array[0]);
+            }else{
+                std::cout << "Matrix wrong size\n";
                 throw -1;
             }
         }
@@ -565,8 +575,6 @@ int main() {
             //std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
 
             camera.SetPosition(obj.pos.GetVec3());
-
-            //obj.qRot = raylib::Vector4::FromMatrix(camera.GetMatrix());
 
             camera.SetTarget(obj.pos.GetVec3() + obj.look);
             camera.up = obj.up;
