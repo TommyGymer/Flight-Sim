@@ -9,7 +9,7 @@
 //local class file imports
 #include "fullMatrix.cpp"
 
-
+enum class GameState{Menu, Playing, Paused};
 
 class Object3D {
     public:
@@ -146,7 +146,7 @@ int main() {
 
     std::cout << "Entering event loop\n";
 
-    bool paused = false;
+    GameState state = GameState::Paused;
 
     HideCursor();
     DisableCursor();
@@ -173,7 +173,7 @@ int main() {
              */
 
             //get mouse pos
-            if(!paused && total > 1){
+            if((state == GameState::Playing) && total > 1){
                 raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
                 //std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
 
@@ -181,7 +181,7 @@ int main() {
                 obj.qOme.SetX(-mouse.GetY() * 0.1f);
             }
 
-            if(IsCursorOnScreen() && !paused){
+            if(IsCursorOnScreen() && (state == GameState::Playing)){
                 raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
                 HideCursor();
                 DisableCursor();
@@ -196,13 +196,13 @@ int main() {
                 }
             }
 
-            if(paused){
+            if(state == GameState::Paused){
                 if(IsKeyPressed(80)){ //p
-                    paused = false;
+                    state = GameState::Playing;
                 }
             }else{
                 if(IsKeyPressed(80)){ //p
-                    paused = true;
+                    state = GameState::Paused;
                 }
             }
 
