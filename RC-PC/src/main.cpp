@@ -107,6 +107,7 @@ int main() {
 
             if(state == GameState::Paused){
                 if(IsKeyPressed(80)){ //p
+                    raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
                     state = GameState::Playing;
                 }
             }else{
