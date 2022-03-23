@@ -194,6 +194,10 @@ class fullMatrix {
             std::cout << "Finished debug\n";
         }
 
+        void flipMN(){
+            
+        }
+
         fullMatrix operator+(fullMatrix other){
             if(this->m == other.m && this->n == other.n){
                 fullMatrix rtn(this->m, this->n);
