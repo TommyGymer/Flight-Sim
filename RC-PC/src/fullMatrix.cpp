@@ -379,4 +379,16 @@ class fullMatrix {
             }
             return rtn;
         }
+
+        fullMatrix Conjugate(){
+            if((m == 4 && n ==1) || (m == 1 && n ==4)){
+                fullMatrix rtn(this);
+                rtn = rtn * -1;
+                rtn.Set(0, 0, rtn.w());
+                return rtn;
+            }else{
+                std::cout << "Not a quaternion\n";
+                throw -1;
+            }
+        }
 };
