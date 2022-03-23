@@ -4,6 +4,24 @@
 
 enum class MatrixType {Vector, Coord, Matrix};
 
+/** Test of the fullMatrix class
+     *fullMatrix test(3, 3);
+     *test.Set(0, 0, 1);
+     *test.Set(0, 1, -1);
+     *test.Set(0, 2, 0);
+     *
+     *test.Set(1, 0, 1);
+     *test.Set(1, 1, 1);
+     *test.Set(1, 2, 1);
+     *
+     *test.Set(2, 0, 1.01);
+     *test.Set(2, 1, 1.025);
+     *test.Set(2, 2, 0.985);
+     *
+     *fullMatrix test2(test.Transpose());
+     *test2.Debug();
+     */
+
 class fullMatrix {
     public:
         int m;
