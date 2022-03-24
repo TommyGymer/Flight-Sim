@@ -380,11 +380,26 @@ class fullMatrix {
             return rtn;
         }
 
+        float Magnitude(){
+            return sqrt(pow(w,2) + pow(x,2) + pow(y,2) + pow(z,2));
+        }
+
         fullMatrix Conjugate(){
             if((m == 4 && n ==1) || (m == 1 && n ==4)){
                 fullMatrix rtn(this);
                 rtn = rtn * -1;
                 rtn.Set(0, 0, rtn.w());
+                return rtn;
+            }else{
+                std::cout << "Not a quaternion\n";
+                throw -1;
+            }
+        }
+
+        fullMatrix Inverse(){
+            if((m == 4 && n ==1) || (m == 1 && n ==4)){
+                fullMatrix rtn(Conjugate());
+                rtn = rtn / rtn.Magnitude();
                 return rtn;
             }else{
                 std::cout << "Not a quaternion\n";
