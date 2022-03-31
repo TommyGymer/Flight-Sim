@@ -55,7 +55,11 @@ class Object3D {
 
             if(debug){
                 //std::cout << qOme.GetX() << ", " << qOme.GetY() << ", " << qOme.GetZ() << "\n";
-                std::cout << qRot.GetX() << ", " << qRot.GetY() << ", " << qRot.GetZ() << ", " << qRot.GetW() << "\n";
+                //std::cout << qRot.GetX() << ", " << qRot.GetY() << ", " << qRot.GetZ() << ", " << qRot.GetW() << "\n";
+                //std::cout << "(" << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << ")" << "\n";
+                (fullMatrix(vel.RotateByQuaternion(qRot)) * dt).Debug();
+                //std::cout << "(" << pos.GetVec3().GetX() << ", " << pos.GetVec3().GetY() << ", " << pos.GetVec3().GetZ() << ")" << "\n";
+                //std::cout << "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ")" << "\n";
             }
 
             if(qOme.Length() != 0){
@@ -67,7 +71,6 @@ class Object3D {
             }
 
             vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
-            //std::cout << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << "\n";
             pos = pos + (fullMatrix(vel.RotateByQuaternion(qRot)) * dt); //rotates object space to global space
 
             look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
