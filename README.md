@@ -11,7 +11,7 @@ Documentation written in MarkDown using the [Obsidian](https://obsidian.md/) not
 
 Making use of the [Raylib C++ wrapper](https://robloach.github.io/raylib-cpp/index.html)
 
-Using [Trello](https://trello.com/b/XooBmFz1/project) to manage time and things that need doing
+Using [Trello](https://trello.com/b/XooBmFz1/project) for task tracking
 
 ---
 ## Project Outline
