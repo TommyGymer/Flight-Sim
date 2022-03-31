@@ -146,10 +146,12 @@ int main() {
 
             //std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
 
-            camera.SetPosition(obj.pos.GetVec3());
+            camera.SetPosition(raylib::Vector3(10, 10, 0));
+            camera.SetTarget(raylib::Vector3(0, 0, 0));
 
-            camera.SetTarget(obj.pos.GetVec3() + obj.look);
-            camera.up = obj.up;
+            //camera.SetPosition(obj.pos.GetVec3());
+            //camera.SetTarget(obj.pos.GetVec3() + obj.look);
+            //camera.up = obj.up;
 
             camera.BeginMode();
             {
