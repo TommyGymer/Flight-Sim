@@ -101,7 +101,7 @@ If possible, it would also be preferable to try to find some way of fully, or at
 ---
 #### RC Desk Pilot
 
-![[RCDeskPilot.png]]
+![[Images/RCDeskPilot.png]]
 
 - Range of model aircraft available
 - Tools to make your own aircraft
@@ -124,7 +124,7 @@ Many times the sim will require use of the menus to even be able to connect and 
 ---
 #### Microsoft Flight Sim 2020
 
-![[ms-flight-sim.jpg]]
+![[Images/ms-flight-sim.jpg]]
 
 [image from "Rock Paper Shotgun"](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rockpapershotgun.com%2Fall-341-photorealistic-cities-in-microsoft-flight-simulator-2020&psig=AOvVaw2-aPVRGJ0CPWs3C3HYoOUM&ust=1636021274292000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKj1par8-_MCFQAAAAAdAAAAABAE)
 - Range of very detailed aircraft models available
@@ -136,7 +136,7 @@ Microsoft Flight Sim 2020 is the current flag ship product of the Microsoft Flig
 
 The main issue with Microsoft Flight Sim 2020 for the problem I am trying to solve is, beside the almost triple A title cost, are the high hardware requirements for a decent experience.
 
-![[Microsoft Flight Sim interface.png]]
+![[Images/Microsoft Flight Sim interface.png]]
 
 [image from Engadget](https://s.yimg.com/os/creatr-uploaded-images/2020-08/dcfd7710-e332-11ea-be8e-bfeddd85c18b)
 

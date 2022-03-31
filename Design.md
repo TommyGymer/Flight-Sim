@@ -1,13 +1,13 @@
 ## Design
 ---
-![[System overview.png]]
+![[Images/System overview.png]]
 
 ---
 ### Menus
 
 #### Main Menu
 
-![[Main Menu.png]]
+![[Images/Main Menu.png]]
 
 - "Start Sim" button to open the location and plane select menu
 - "Settings" button to open the settings menu
@@ -16,7 +16,7 @@
 
 #### Start Sim
 
-![[Start Sim.png]]
+![[Images/Start Sim.png]]
 
 - Show most commonly used in order
 - Select a location and plane
@@ -26,7 +26,7 @@
 
 #### Settings
 
-![[Settings.png]]
+![[Images/Settings.png]]
 
 By reducing and fully categorising all available options 
 
@@ -53,24 +53,16 @@ By reducing and fully categorising all available options
 ### Objects
 
 #### Objects
-- Attributes
-	- Movement
-		- Vector3D: position
-		- Vector3D: velocity
-		- Vector3D: acceleration
-	- Rotation
-		- Vector4D: rotation
-		- Vector3D: angular velocity
-	- Size
-		- Vector3D: scale
-	- Model
-		- raylib::Model: model
-			- Contains the mesh and other object data
-			- Such as animations
-			- And bones
 
-> make this a table with explanation: why
-> Variable | datatype | justification
+|Variable|Datatype|Reason|
+|:---|:---|:---|
+|position|3D Vector|for object location in 3D space|
+|velocity|3D Vector|to integrate to location in 3D space|
+|acceleration|3D Vector|to integrate to velocuty; simplifies gravity|
+|rotation|Quaternion|avoids gimble lock present in Euler implementations|
+|angular velocity|3D Vector|to integrate to rotation|
+|scale|3D Vector|for the x, y and z scale of each object|
+|model|raylib::Model|the model data: textures, meshes, etc.|
 
 - Functions
 	- Initialiser
@@ -109,6 +101,9 @@ While raylib already implements many of these, it may be beneficial to write my 
 #### Vector and Matrix Maths Lib
 
 - Simulating a 2D array using a 1D array
+
+---
+
 ```
 double[] array = new array[width * height]
 
@@ -119,7 +114,11 @@ void set(x, y, val):
 	array[x * width + y] = val
 ```
 
+---
+
 This will allow me to make use of a dynamic 2D array in C++ as there is no built in structures to allow this
+
+---
 
 ```
 matrix add(other):
@@ -141,6 +140,8 @@ matrix mult(other):
 			self(i, j) = sum
 ```
 
+---
+
 I will also need to be able to calculate a matrix inverse for rotating quaternions and normal vectors
 Doing this will require:
 - A function to produce the minor matrix from a matrix and element location within the matrix
@@ -148,6 +149,8 @@ Doing this will require:
 - A recursive function to calculate the determinant of a matrix
 - A function to calculate the cofactors
 - A function to calculate the final inverse/transpose of the matrix
+
+---
 
 ```
 matrix minor(x, y):
@@ -205,6 +208,8 @@ matrix inverse():
 	return this.cofactors() * (1/this.det())
 	
 ```
+
+---
 
 ---
 ### Input Validation

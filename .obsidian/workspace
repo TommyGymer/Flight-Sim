@@ -10,8 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Design.md",
-            "mode": "preview",
-            "source": true
+            "mode": "preview"
           }
         }
       }
@@ -90,14 +89,14 @@
   "active": "06c71da559f95b34",
   "lastOpenFiles": [
     "Design.md",
+    "Analysis.md",
+    "Images/System overview.png",
     "Pasted image 20220201102416.png",
+    "Index.md",
     "The Process/Quaternions.md",
     "The Process/Documentation and Understanding.md",
     "The Process/Building the Application.md",
-    "Analysis.md",
     "Images/Microsoft Flight Sim interface.png",
-    "Images/Rotation demo.mp4",
-    "The Process/Testing the Application.md",
-    "The Process/Research and Initial Development.md"
+    "Images/Rotation demo.mp4"
   ]
 }
