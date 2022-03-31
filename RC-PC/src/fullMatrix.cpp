@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <raylib-cpp.hpp>
+#include "catch.hpp"
 
 enum class MatrixType {Vector, Coord, Matrix};
 
