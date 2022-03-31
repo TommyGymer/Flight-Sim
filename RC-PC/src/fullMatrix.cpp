@@ -213,7 +213,10 @@ class fullMatrix {
         }
 
         void flipMN(){
-            
+            //this is probably not sufficient for anything beyond vectors and coordinates
+            int tmp = m;
+            m = n;
+            n = tmp;
         }
 
         fullMatrix operator+(fullMatrix other){
