@@ -1,10 +1,11 @@
 #include <iostream>
 #include <math.h>
 #include <raylib-cpp.hpp>
+#include <assert.h>
 
 enum class MatrixType {Vector, Coord, Matrix};
 
-/** Test of the fullMatrix class
+/** Test of the fullMatrix class;
      *fullMatrix test(3, 3);
      *test.Set(0, 0, 1);
      *test.Set(0, 1, -1);
@@ -112,13 +113,13 @@ class fullMatrix {
             }
         }
 
-        fullMatrix(fullMatrix& other){
-            int _m = other.m;
-            int _n = other.n;
-            array = new double[_m * _n];
-            m = _m;
-            n = _n;
-            memcpy(array, other.array, m*n);
+        //copy constructor
+        fullMatrix(const fullMatrix& other){
+            m = other.m;
+            n = other.n;
+            array = new double[m * n];
+            memcpy(&array, &(other.array), m*n);
+            std::cout << m << ", " << n << "\n";
         }
 
         fullMatrix(raylib::Vector3 other){
@@ -175,6 +176,7 @@ class fullMatrix {
             array[0] = x;
             array[1] = y;
             array[2] = z;
+            std::cout << &array << "\n";
         }
 
         fullMatrix(MatrixType type, const double w, const double x, const double y, const double z){
@@ -222,11 +224,17 @@ class fullMatrix {
         fullMatrix operator+(fullMatrix other){
             if(this->m == other.m && this->n == other.n){
                 fullMatrix rtn(this->m, this->n);
+                other.Debug();
+                std::cout << &(this->array) << "\n" << &(other.array) << "\n";
+                std::cout << other.x() << ", " << other.y() << ", " << other.z() << "\n";
                 for(int i = 0; i < this->m; i++){
                     for(int j = 0; j < this->n; j++){
+                        std::cout << this->Get(i, j) << " + " << other.Get(i, j);
                         rtn.Set(i, j, this->Get(i, j) + other.Get(i, j));
+                        std::cout << " = " << rtn.Get(i, j) << "\n";
                     }
                 }
+                rtn.Debug();
                 return rtn;
             }else{
                 throw -1;
@@ -413,4 +421,23 @@ class fullMatrix {
         /*fullMatrix Update(fullMatrix update){
 
         }*/
+
+        static void Test(){
+            std::cout << "Testing fullMatrix\n";
+            fullMatrix a = fullMatrix(MatrixType::Vector, 1, 2, 3);
+            fullMatrix b = fullMatrix(MatrixType::Vector, 4, 5, 6);
+
+            std::cout << "Vector get\n";
+            assert(a.x() == 1);
+            assert(a.y() == 2);
+            assert(a.z() == 3);
+
+            std::cout << "Vector add\n";
+            b.Debug();
+            fullMatrix c = a + b;
+            std::cout << c.x() << "\n";
+            assert(c.x() == 5);
+            assert(c.y() == 7);
+            assert(c.z() == 9);
+        }
 };

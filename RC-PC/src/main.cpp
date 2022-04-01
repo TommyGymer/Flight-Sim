@@ -12,6 +12,9 @@
 enum class GameState{Menu, Playing, Paused};
 
 int main() {
+    //tests
+    fullMatrix::Test();
+
     // Initialization
     int screenWidth = 1600;
     int screenHeight = 1200;
