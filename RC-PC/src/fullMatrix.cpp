@@ -5,7 +5,7 @@
 
 enum class MatrixType {Vector, Coord, Matrix};
 
-/** Test of the fullMatrix class
+/** Test of the fullMatrix class;
      *fullMatrix test(3, 3);
      *test.Set(0, 0, 1);
      *test.Set(0, 1, -1);
@@ -115,12 +115,11 @@ class fullMatrix {
 
         //copy constructor
         fullMatrix(const fullMatrix& other){
-            int _m = other.m;
-            int _n = other.n;
-            array = new double[_m * _n];
-            m = _m;
-            n = _n;
-            memcpy(array, other.array, m*n);
+            m = other.m;
+            n = other.n;
+            array = new double[m * n];
+            memcpy(&array, &(other.array), m*n);
+            std::cout << m << ", " << n << "\n";
         }
 
         fullMatrix(raylib::Vector3 other){
@@ -230,10 +229,12 @@ class fullMatrix {
                 std::cout << other.x() << ", " << other.y() << ", " << other.z() << "\n";
                 for(int i = 0; i < this->m; i++){
                     for(int j = 0; j < this->n; j++){
-                        std::cout << this->Get(i, j) << " + " << other.Get(i, j) << "\n";
+                        std::cout << this->Get(i, j) << " + " << other.Get(i, j);
                         rtn.Set(i, j, this->Get(i, j) + other.Get(i, j));
+                        std::cout << " = " << rtn.Get(i, j) << "\n";
                     }
                 }
+                rtn.Debug();
                 return rtn;
             }else{
                 throw -1;
