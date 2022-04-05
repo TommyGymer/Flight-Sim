@@ -215,3 +215,9 @@ matrix inverse():
 ### Input Validation
 
 - Combinations of keys: e.g. Ctrl, Shift, Caps Lock, etc.
+
+---
+### Unit testing
+
+- Testing specific functions with specific test cases
+- Set up test functions to be run at program start while in debug mode to test the basic functions of classes and functions

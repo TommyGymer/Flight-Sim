@@ -2,5 +2,9 @@
   "alwaysUpdateLinks": true,
   "legacyEditor": true,
   "livePreview": true,
-  "spellcheck": true
+  "spellcheck": true,
+  "spellcheckDictionary": [
+    "initialiser",
+    "redecleared"
+  ]
 }

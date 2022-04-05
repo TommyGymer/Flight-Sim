@@ -72,3 +72,21 @@ Raylib contains some helpers for working with quaternions, such as a quaternion 
 ![[Rotation demo.mp4]]
 
 Now able to rotate an object using an Euler 3D vector for angular velocity
+
+---
+### Pointers
+---
+#### Working with the copy object constructor
+```
+fullMatrix(const fullMatrix& other){
+   m = other.m;
+   n = other.n;
+   array = new double[m * n];
+   memcpy(&array, &(other.array), m*n);
+   std::cout << m << ", " << n << "\n";
+ }
+```
+
+When an object is passed into a function or returned from a function, the object is redecleared through the copy constructor
+
+This caused a number of problems before I rewrote this function to correctly copy the attributes of the object. As the array was not being copied correctly, the data was lost seemingly without reason.
