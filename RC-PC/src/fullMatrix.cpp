@@ -235,6 +235,7 @@ class fullMatrix {
                     }
                 }
                 rtn.Debug();
+                std::cout << &(rtn.array) << "\n";
                 return rtn;
             }else{
                 throw -1;
@@ -435,7 +436,8 @@ class fullMatrix {
             std::cout << "Vector add\n";
             b.Debug();
             fullMatrix c = a + b;
-            std::cout << c.x() << "\n";
+            std::cout << &(c.array) << "\n";
+            c.Debug();
             assert(c.x() == 5);
             assert(c.y() == 7);
             assert(c.z() == 9);
