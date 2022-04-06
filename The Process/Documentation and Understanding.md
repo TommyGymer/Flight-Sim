@@ -90,3 +90,19 @@ fullMatrix(const fullMatrix& other){
 When an object is passed into a function or returned from a function, the object is redecleared through the copy constructor
 
 This caused a number of problems before I rewrote this function to correctly copy the attributes of the object. As the array was not being copied correctly, the data was lost seemingly without reason.
+
+Making correct use of array copying gives:
+
+```
+fullMatrix(const fullMatrix& other){
+   m = other.m;
+   n = other.n;
+   array = new double[m * n];
+}
+```
+
+As this avoids the need to understand how many bytes each of the elements is using, along with the number and values of the bytes used to keep track of the array size used during delete[] array.
+
+After these changes, the matrix class can now be used for vector addition.
+
+Further unit tests need to be written before the use of the rest of the functions to ensure they are working correctly before attempting to implement anything complicated.
