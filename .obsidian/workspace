@@ -4,14 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "06c71da559f95b34",
+        "id": "9ade13f2751cf0eb",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "The Process/Documentation and Understanding.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -68,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Process/Documentation and Understanding.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,7 +82,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "06c71da559f95b34",
+  "active": "9ade13f2751cf0eb",
   "lastOpenFiles": [
     "The Process/Documentation and Understanding.md",
     "Design.md",

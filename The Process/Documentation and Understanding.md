@@ -106,3 +106,5 @@ As this avoids the need to understand how many bytes each of the elements is usi
 After these changes, the matrix class can now be used for vector addition.
 
 Further unit tests need to be written before the use of the rest of the functions to ensure they are working correctly before attempting to implement anything complicated.
+
+The matrix class' delete function, ``~fullMatrix``, simply calls delete[] on the object's array. This is probably not necessary as this should be the default behaviour.
