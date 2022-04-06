@@ -435,7 +435,7 @@ class fullMatrix {
         }*/
 
         static void Test(){
-            std::cout << "Testing fullMatrix\n";
+            std::cout << "\n\nTesting fullMatrix\n";
             fullMatrix a = fullMatrix(MatrixType::Vector, 1, 2, 3);
             fullMatrix b = fullMatrix(MatrixType::Vector, 4, 5, 6);
 
@@ -454,7 +454,7 @@ class fullMatrix {
             assert(c.x() == 5);
             assert(c.y() == 7);
             assert(c.z() == 9);
-            std::cout << "Testing complete\n";
+            std::cout << "Testing complete\n\n\n";
 
             //assert(1 == 2);
         }
