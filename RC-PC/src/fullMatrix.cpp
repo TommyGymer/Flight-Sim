@@ -122,7 +122,7 @@ class fullMatrix {
             array = new double[m * n];
             //std::cout << "size at creation: " << sizeof(array) << " bytes m*n: " << m*n << "\n"; //array has length 72bytes
             //memcpy(&array, &(other.array), m*n*sizeof(array)+1);
-            //std::copy(other.array, other.array + (n * m), array);
+            std::copy(other.array, other.array + (n * m), array);
             //std::cout << "Pointer to prev data: " << &(other.array) << "\n";
             //std::cout << m*n << "\n";
             //std::cout << m << ", " << n << "\n";
@@ -240,9 +240,9 @@ class fullMatrix {
                 std::cout << other.x() << ", " << other.y() << ", " << other.z() << "\n";
                 for(int i = 0; i < m; i++){
                     for(int j = 0; j < n; j++){
-                        //std::cout << Get(i, j) << " + " << other.Get(i, j);
+                        std::cout << Get(i, j) << " + " << other.Get(i, j);
                         rtn.Set(i, j, Get(i, j) + other.Get(i, j));
-                        //std::cout << " = " << rtn.Get(i, j) << "\n";
+                        std::cout << " = " << rtn.Get(i, j) << "\n";
                     }
                 }
                 rtn.Debug();
