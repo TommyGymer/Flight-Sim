@@ -7,24 +7,6 @@
 
 enum class MatrixType {Vector, Coord, Matrix};
 
-/** Test of the fullMatrix class;
-     *fullMatrix test(3, 3);
-     *test.Set(0, 0, 1);
-     *test.Set(0, 1, -1);
-     *test.Set(0, 2, 0);
-     *
-     *test.Set(1, 0, 1);
-     *test.Set(1, 1, 1);
-     *test.Set(1, 2, 1);
-     *
-     *test.Set(2, 0, 1.01);
-     *test.Set(2, 1, 1.025);
-     *test.Set(2, 2, 0.985);
-     *
-     *fullMatrix test2(test.Transpose());
-     *test2.Debug();
-     */
-
 class fullMatrix {
     public:
         int m;
@@ -120,13 +102,7 @@ class fullMatrix {
             m = other.m;
             n = other.n;
             array = new double[m * n];
-            //std::cout << "size at creation: " << sizeof(array) << " bytes m*n: " << m*n << "\n"; //array has length 72bytes
-            //memcpy(&array, &(other.array), m*n*sizeof(array)+1);
             std::copy(other.array, other.array + (n * m), array);
-            //std::cout << "Pointer to prev data: " << &(other.array) << "\n";
-            //std::cout << m*n << "\n";
-            //std::cout << m << ", " << n << "\n";
-            //std::cout << "Data from the copied array(" << &array << "): " << array[0] << ", " << array[1] << ", " << array[2] << "\n";
         }
 
         fullMatrix(raylib::Vector3 other){
@@ -183,7 +159,6 @@ class fullMatrix {
             array[0] = x;
             array[1] = y;
             array[2] = z;
-            //std::cout << &array << "\n";
         }
 
         fullMatrix(MatrixType type, const double w, const double x, const double y, const double z){
@@ -207,10 +182,6 @@ class fullMatrix {
         }
 
         ~fullMatrix() {
-            //std::cout << "Deleting: " << &array << "\n";
-            //std::cout << n << ", " << m << "\n";
-            //std::cout << "Size: " << sizeof(array) << " bytes" << "\n";
-            //std::cout << array[0] << ", " << array[1] << ", " << array[2] << ", " << array[3] << ", " << array[4] << ", " << array[5] << ", " << array[6] << "\n";
             delete[] array;
         }
 
@@ -235,18 +206,11 @@ class fullMatrix {
         fullMatrix operator+(fullMatrix other){
             if(m == other.m && n == other.n){
                 fullMatrix rtn(m, n);
-                //other.Debug();
-                //std::cout << &(array) << "\n" << &(other.array) << "\n";
-                //std::cout << other.x() << ", " << other.y() << ", " << other.z() << "\n";
                 for(int i = 0; i < m; i++){
                     for(int j = 0; j < n; j++){
-                        //std::cout << Get(i, j) << " + " << other.Get(i, j);
                         rtn.Set(i, j, Get(i, j) + other.Get(i, j));
-                        //std::cout << " = " << rtn.Get(i, j) << "\n";
                     }
                 }
-                //rtn.Debug();
-                //std::cout << &(rtn.array) << "\n";
                 return rtn;
             }else{
                 throw -1;
@@ -449,12 +413,30 @@ class fullMatrix {
             b.Debug();
             fullMatrix c = a + b;
             std::cout << "Data from the returned array(" << &(c.array) << "): " << (c.array)[0] << ", " << (c.array)[1] << ", " << (c.array)[2] << "\n";
-            std::cout << &(c.array) << "\n";
             c.Debug();
             assert(c.x() == 5);
             assert(c.y() == 7);
             assert(c.z() == 9);
-            std::cout << "Testing complete\n\n\n";
+            std::cout << "Testing complete\n";
+
+            std::cout << "Matrix transpose\n";
+            fullMatrix test(3, 3);
+            test.Set(0, 0, 1);
+            test.Set(0, 1, -1);
+            test.Set(0, 2, 0);
+            
+            test.Set(1, 0, 1);
+            test.Set(1, 1, 1);
+            test.Set(1, 2, 1);
+            
+            test.Set(2, 0, 1.01);
+            test.Set(2, 1, 1.025);
+            test.Set(2, 2, 0.985);
+            
+            fullMatrix test2(test.Transpose());
+            std::cout << "Matrix transpose: checked\n";
+
+            std::cout << "\n\n";
 
             //assert(1 == 2);
         }
