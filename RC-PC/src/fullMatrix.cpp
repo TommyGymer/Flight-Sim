@@ -235,7 +235,7 @@ class fullMatrix {
         fullMatrix operator+(fullMatrix other){
             if(m == other.m && n == other.n){
                 fullMatrix rtn(m, n);
-                other.Debug();
+                //other.Debug();
                 std::cout << &(array) << "\n" << &(other.array) << "\n";
                 std::cout << other.x() << ", " << other.y() << ", " << other.z() << "\n";
                 for(int i = 0; i < m; i++){
@@ -245,7 +245,7 @@ class fullMatrix {
                         std::cout << " = " << rtn.Get(i, j) << "\n";
                     }
                 }
-                rtn.Debug();
+                //rtn.Debug();
                 //std::cout << &(rtn.array) << "\n";
                 return rtn;
             }else{
