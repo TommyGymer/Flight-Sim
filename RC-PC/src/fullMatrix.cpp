@@ -236,13 +236,13 @@ class fullMatrix {
             if(m == other.m && n == other.n){
                 fullMatrix rtn(m, n);
                 //other.Debug();
-                std::cout << &(array) << "\n" << &(other.array) << "\n";
-                std::cout << other.x() << ", " << other.y() << ", " << other.z() << "\n";
+                //std::cout << &(array) << "\n" << &(other.array) << "\n";
+                //std::cout << other.x() << ", " << other.y() << ", " << other.z() << "\n";
                 for(int i = 0; i < m; i++){
                     for(int j = 0; j < n; j++){
-                        std::cout << Get(i, j) << " + " << other.Get(i, j);
+                        //std::cout << Get(i, j) << " + " << other.Get(i, j);
                         rtn.Set(i, j, Get(i, j) + other.Get(i, j));
-                        std::cout << " = " << rtn.Get(i, j) << "\n";
+                        //std::cout << " = " << rtn.Get(i, j) << "\n";
                     }
                 }
                 //rtn.Debug();
