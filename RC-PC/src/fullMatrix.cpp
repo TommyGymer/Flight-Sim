@@ -120,13 +120,13 @@ class fullMatrix {
             m = other.m;
             n = other.n;
             array = new double[m * n];
-            std::cout << "size at creation: " << sizeof(array) << " bytes m*n: " << m*n << "\n"; //array has length 72bytes
+            //std::cout << "size at creation: " << sizeof(array) << " bytes m*n: " << m*n << "\n"; //array has length 72bytes
             //memcpy(&array, &(other.array), m*n*sizeof(array)+1);
-            std::copy(other.array, other.array + (n * m), array);
-            std::cout << "Pointer to prev data: " << &(other.array) << "\n";
+            //std::copy(other.array, other.array + (n * m), array);
+            //std::cout << "Pointer to prev data: " << &(other.array) << "\n";
             //std::cout << m*n << "\n";
             //std::cout << m << ", " << n << "\n";
-            std::cout << "Data from the copied array(" << &array << "): " << array[0] << ", " << array[1] << ", " << array[2] << "\n";
+            //std::cout << "Data from the copied array(" << &array << "): " << array[0] << ", " << array[1] << ", " << array[2] << "\n";
         }
 
         fullMatrix(raylib::Vector3 other){
@@ -183,7 +183,7 @@ class fullMatrix {
             array[0] = x;
             array[1] = y;
             array[2] = z;
-            std::cout << &array << "\n";
+            //std::cout << &array << "\n";
         }
 
         fullMatrix(MatrixType type, const double w, const double x, const double y, const double z){
@@ -207,9 +207,9 @@ class fullMatrix {
         }
 
         ~fullMatrix() {
-            std::cout << "Deleting: " << &array << "\n";
-            std::cout << n << ", " << m << "\n";
-            std::cout << "Size: " << sizeof(array) << " bytes" << "\n";
+            //std::cout << "Deleting: " << &array << "\n";
+            //std::cout << n << ", " << m << "\n";
+            //std::cout << "Size: " << sizeof(array) << " bytes" << "\n";
             //std::cout << array[0] << ", " << array[1] << ", " << array[2] << ", " << array[3] << ", " << array[4] << ", " << array[5] << ", " << array[6] << "\n";
             delete[] array;
         }
@@ -240,13 +240,13 @@ class fullMatrix {
                 std::cout << other.x() << ", " << other.y() << ", " << other.z() << "\n";
                 for(int i = 0; i < m; i++){
                     for(int j = 0; j < n; j++){
-                        std::cout << Get(i, j) << " + " << other.Get(i, j);
+                        //std::cout << Get(i, j) << " + " << other.Get(i, j);
                         rtn.Set(i, j, Get(i, j) + other.Get(i, j));
-                        std::cout << " = " << rtn.Get(i, j) << "\n";
+                        //std::cout << " = " << rtn.Get(i, j) << "\n";
                     }
                 }
                 rtn.Debug();
-                std::cout << &(rtn.array) << "\n";
+                //std::cout << &(rtn.array) << "\n";
                 return rtn;
             }else{
                 throw -1;
