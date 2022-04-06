@@ -456,6 +456,6 @@ class fullMatrix {
             assert(c.z() == 9);
             std::cout << "Testing complete\n";
 
-            assert(1 == 2);
+            //assert(1 == 2);
         }
 };
