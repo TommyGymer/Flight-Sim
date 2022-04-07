@@ -437,11 +437,15 @@ class fullMatrix {
                     std::cout << "  ┣Testing identity mat\n";
                     {
                         double values[9] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
+                        std::cout << "why\n";
                         std::copy(values, values + 9, mat.array);
+                        std::cout << "is\n";
                         fullMatrix inv(mat.Transpose());
+                        std::cout << "this\n";
                         for(int i = 0; i < 9; i++){
                             assert(mat.array[i] == values[i]);
                         }
+                        std::cout << "crashing\n";
                     }
                     std::cout << "  ┣Testing identity mat: checked\n";
 
