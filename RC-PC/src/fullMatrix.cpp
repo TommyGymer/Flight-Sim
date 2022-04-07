@@ -404,37 +404,56 @@ class fullMatrix {
                 fullMatrix a = fullMatrix(MatrixType::Vector, 1, 2, 3);
                 fullMatrix b = fullMatrix(MatrixType::Vector, 4, 5, 6);
 
-                std::cout << " ┣Vector get\n";
+                std::cout << "┣━Vector get\n";
                 {
                     assert(a.x() == 1);
                     assert(a.y() == 2);
                     assert(a.z() == 3);
                 }
-                std::cout << " ┣Vector get: checked\n";
+                std::cout << "┣━Vector get: checked\n";
 
-                std::cout << " ┣Vector add\n";
+                std::cout << "┣━Vector add\n";
                 {
                     fullMatrix c = a + b;
                     assert(c.x() == 5);
                     assert(c.y() == 7);
                     assert(c.z() == 9);
                 }
-                std::cout << " ┣Vector add: checked\n";
+                std::cout << "┣━Vector add: checked\n";
 
-                std::cout << " ┣Vector subtract\n";
+                std::cout << "┣━Vector subtract\n";
                 {
                     fullMatrix c = b - a;
                     assert(c.x() == 3);
                     assert(c.y() == 3);
                     assert(c.z() == 3);
                 }
-                std::cout << " ┣Vector subtract: checked\n";
+                std::cout << "┣━Vector subtract: checked\n";
 
-                std::cout << " ┣Matrix transpose\n";
+                std::cout << "┣━Matrix multiply\n";
+                {
+                    fullMatrix matA(3, 3);
+                    fullMatrix matB(3, 3);
+
+                    double valuesA[9] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
+                    double valuesB[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+                    std::copy(valuesA, valuesA + 9, matA.array);
+                    std::copy(valuesB, valuesB + 9, matB.array);
+
+                    fullMatrix matC(matA * matB);
+
+                    for(int i = 0; i < 9; i++){
+                        assert(matC.array[i] == valuesB[i]);
+                    }
+                }
+                std::cout << "┣━Matrix multiply: checked\n";
+
+                std::cout << "┣━Matrix transpose\n";
                 {
                     fullMatrix mat(3, 3);
 
-                    std::cout << "  ┣Testing identity mat\n";
+                    std::cout << "┣━━Testing identity mat\n";
                     {
                         double values[9] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
                         std::copy(values, values + 9, mat.array);
@@ -443,9 +462,9 @@ class fullMatrix {
                             assert(mat.array[i] == values[i]);
                         }
                     }
-                    std::cout << "  ┣Testing identity mat: checked\n";
+                    std::cout << "┣━━Testing identity mat: checked\n";
 
-                    std::cout << "  ┣Testing a matrix\n";
+                    std::cout << "┣━━Testing a matrix\n";
                     {
                         double values[9] = {-3, 0, -1, 0, 1, 0, 1, 0, 2};
                         std::copy(values, values + 9, mat.array);
@@ -455,9 +474,9 @@ class fullMatrix {
                             assert(abs(inv.array[i] - correct[i]) < 0.0001);
                         }
                     }
-                    std::cout << "  ┣Testing a matrix: checked\n";
+                    std::cout << "┣━━Testing a matrix: checked\n";
                 }
-                std::cout << " ┣Matrix transpose: checked\n";
+                std::cout << "┣━Matrix transpose: checked\n";
 
             }
             std::cout << "┗Testing complete\n";

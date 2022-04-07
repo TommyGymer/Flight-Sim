@@ -7,8 +7,11 @@
         "id": "9ade13f2751cf0eb",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Design.md",
+            "mode": "preview"
+          }
         }
       }
     ],
@@ -65,6 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -84,8 +88,8 @@
   },
   "active": "9ade13f2751cf0eb",
   "lastOpenFiles": [
-    "The Process/Documentation and Understanding.md",
     "Design.md",
+    "The Process/Documentation and Understanding.md",
     "Analysis.md",
     "Images/System overview.png",
     "Pasted image 20220201102416.png",

@@ -209,7 +209,6 @@ matrix inverse():
 	
 ```
 
----
 
 ---
 ### Input Validation
