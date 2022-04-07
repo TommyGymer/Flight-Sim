@@ -399,33 +399,42 @@ class fullMatrix {
         }*/
 
         static void Test(){
-            std::cout << "\n\nTesting fullMatrix\n";
+            std::cout << "\n\n┏Testing fullMatrix\n";
             {
                 fullMatrix a = fullMatrix(MatrixType::Vector, 1, 2, 3);
                 fullMatrix b = fullMatrix(MatrixType::Vector, 4, 5, 6);
 
-                std::cout << "┠Vector get\n";
+                std::cout << " ┣Vector get\n";
                 {
                     assert(a.x() == 1);
                     assert(a.y() == 2);
                     assert(a.z() == 3);
                 }
-                std::cout << "┠Vector get: checked\n";
+                std::cout << " ┣Vector get: checked\n";
 
-                std::cout << "┠Vector add\n";
+                std::cout << " ┣Vector add\n";
                 {
                     fullMatrix c = a + b;
                     assert(c.x() == 5);
                     assert(c.y() == 7);
                     assert(c.z() == 9);
                 }
-                std::cout << "┠Vector add: checked\n";
+                std::cout << " ┣Vector add: checked\n";
 
-                std::cout << "┠Matrix transpose\n";
+                std::cout << " ┣Vector subtract\n";
+                {
+                    fullMatrix c = b - a;
+                    assert(c.x() == 3);
+                    assert(c.y() == 3);
+                    assert(c.z() == 3);
+                }
+                std::cout << " ┣Vector subtract: checked\n";
+
+                std::cout << " ┣Matrix transpose\n";
                 {
                     fullMatrix mat(3, 3);
 
-                    std::cout << " ┠Testing identity mat\n";
+                    std::cout << "  ┣Testing identity mat\n";
                     {
                         double values[9] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
                         std::copy(values, values + 9, mat.array);
@@ -434,9 +443,9 @@ class fullMatrix {
                             assert(mat.array[i] == values[i]);
                         }
                     }
-                    std::cout << " ┠Testing identity mat: checked\n";
+                    std::cout << "  ┣Testing identity mat: checked\n";
 
-                    std::cout << " ┠Testing a matrix\n";
+                    std::cout << "  ┣Testing a matrix\n";
                     {
                         double values[9] = {-3, 0, -1, 0, 1, 0, 1, 0, 2};
                         std::copy(values, values + 9, mat.array);
@@ -446,14 +455,14 @@ class fullMatrix {
                             assert(abs(inv.array[i] - correct[i]) < 0.0001);
                         }
                     }
-                    std::cout << " ┠Testing a matrix: checked\n";
+                    std::cout << "  ┣Testing a matrix: checked\n";
                 }
-                std::cout << "┠Matrix transpose: checked\n";
+                std::cout << " ┣Matrix transpose: checked\n";
 
             }
-            std::cout << "Testing complete\n";
+            std::cout << "┗Testing complete\n";
             std::cout << "\n\n";
 
-            assert(1 == 2);
+            //assert(1 == 2);
         }
 };
