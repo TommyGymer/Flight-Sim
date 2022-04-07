@@ -449,6 +449,23 @@ class fullMatrix {
                 }
                 std::cout << "┣━Matrix multiply: checked\n";
 
+                std::cout << "┣━Matrix scale\n";
+                {
+                    fullMatrix mat(3, 3);
+
+                    double values[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+                    double correct[9] = {2, 4, 6, 8, 10, 12, 14, 16, 18};
+
+                    std::copy(values, values + 9, mat.array);
+
+                    fullMatrix matS(mat * 2);
+
+                    for(int i = 0; i < 9; i++){
+                        assert(matS.array[i] == correct[i]);
+                    }
+                }
+                std::cout << "┣━Matrix scale: checked\n";
+
                 std::cout << "┣━Matrix transpose\n";
                 {
                     fullMatrix mat(3, 3);

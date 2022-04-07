@@ -158,7 +158,7 @@ int main() {
 
             camera.BeginMode();
             {
-                DrawGrid(1000, 1.0f)
+                DrawGrid(1000, 1.0f);
                 obj.Draw();
                 artifact.Draw();
             }
