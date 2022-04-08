@@ -510,6 +510,13 @@ class fullMatrix {
                         assert(quatC.z() == 12);
                     }
                     std::cout << "┣━━Quaternion addition:checked\n";
+
+                    std::cout << "┣━━Quaternion multiply\n";
+                    {
+                        fullMatrix quatA(MatrixType::Vector, 1, 2, 3, 4);
+                        fullMatrix quatB(MatrixType::Vector, 5, 6, 7, 8);
+                    }
+                    std::cout << "┣━━Quaternion multiply: checked\n";
                 }
                 std::cout << "┣━Testing quaternion operations: checked\n";
             }
