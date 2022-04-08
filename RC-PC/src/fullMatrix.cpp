@@ -495,6 +495,23 @@ class fullMatrix {
                 }
                 std::cout << "┣━Matrix transpose: checked\n";
 
+                std::cout << "┣━Testing quaternion operations\n";
+                {
+                    std::cout << "┣━━Quaternion addition\n"
+                    {
+                        fullMatrix quatA(MatrixType::Vector, 1, 2, 3, 4);
+                        fullMatrix quatB(MatrixType::Vector, 5, 6, 7, 8);
+
+                        fullMatrix quatC(quatA + quatB);
+
+                        assert(quatC.w() == 6);
+                        assert(quatC.x() == 8);
+                        assert(quatC.y() == 10);
+                        assert(quatC.z() == 12);
+                    }
+                    std::cout << "┣━━Quaternion addition:checked\n";
+                }
+                std::cout << "┣━Testing quaternion operations: checked\n";
             }
             std::cout << "┗Testing complete\n";
             std::cout << "\n\n";
