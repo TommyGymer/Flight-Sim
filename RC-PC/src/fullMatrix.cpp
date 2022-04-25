@@ -207,11 +207,11 @@ class fullMatrix {
             int _m = 0;
             int _n = 0;
             if(type == MatrixType::Vector){
-                _m = 3;
+                _m = 4;
                 _n = 1;
             }else if(type == MatrixType::Coord){
                 _m = 1;
-                _n = 3;
+                _n = 4;
             }
 
             array = new double[_m * _n];
@@ -278,7 +278,10 @@ class fullMatrix {
             if((this->n == 1 && this->m == 4) && (other.n==1 && other.m == 4)){
                 fullMatrix rtn(this->m, this->n);
 
-
+                rtn.w(w() * other.w() - x() * other.x() - y() * other.y() - z() * other.z());
+                rtn.x(w() * other.x() + x() * other.w() + y() * other.z() - z() * other.y());
+                rtn.y(w() * other.y() - x() * other.z() + y() * other.w() + z() * other.x());
+                rtn.z(w() * other.z() + x() * other.y() - y() * other.x() + z() * other.w());
 
                 return rtn;
             }
@@ -492,6 +495,32 @@ class fullMatrix {
                     assert(c.z() == 3);
                 }
                 std::cout << "┣━Vector subtract: checked\n";
+
+                a = fullMatrix(MatrixType::Vector, 9, 10, 11, 12);
+                b = fullMatrix(MatrixType::Vector, 5, 6, 7, 8);
+
+                std::cout << "┣━Quaternion get\n";
+                {
+                    assert(a.w() == 9);
+                    assert(a.x() == 10);
+                    assert(a.y() == 11);
+                    assert(a.z() == 12);
+                }
+                std::cout << "┣━Quaternion get: checked\n";
+
+                std::cout << "┣━Quaternion set\n";
+                {
+                    a.w(1);
+                    a.x(2);
+                    a.y(3);
+                    a.z(4);
+
+                    assert(a.w() == 1);
+                    assert(a.x() == 2);
+                    assert(a.y() == 3);
+                    assert(a.z() == 4);
+                }
+                std::cout << "┣━Quaternion set: checked\n";
 
                 std::cout << "┣━Matrix multiply\n";
                 {

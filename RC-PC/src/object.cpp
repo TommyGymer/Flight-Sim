@@ -15,7 +15,7 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        fullMatrix pos = fullMatrix(MatrixType::Vector, 10, 1, 0);
+        fullMatrix pos = fullMatrix(MatrixType::Vector, 0, 1, 0);
         fullMatrix test_vel = fullMatrix(MatrixType::Vector, 0, 0, 0);
         
         //raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
@@ -57,9 +57,9 @@ class Object3D {
                 //std::cout << qOme.GetX() << ", " << qOme.GetY() << ", " << qOme.GetZ() << "\n";
                 //std::cout << qRot.GetX() << ", " << qRot.GetY() << ", " << qRot.GetZ() << ", " << qRot.GetW() << "\n";
                 //std::cout << "(" << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << ")" << "\n";
-                (fullMatrix(vel.RotateByQuaternion(qRot)) * dt).Debug();
+                //(fullMatrix(vel.RotateByQuaternion(qRot)) * dt).Debug();
                 //std::cout << "(" << pos.GetVec3().GetX() << ", " << pos.GetVec3().GetY() << ", " << pos.GetVec3().GetZ() << ")" << "\n";
-                //std::cout << "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ")" << "\n";
+                std::cout << "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ")" << "\n";
             }
 
             if(qOme.Length() != 0){

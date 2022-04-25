@@ -32,7 +32,7 @@ int main() {
     artifact.scale = raylib::Vector3(0.5, 1, 0.5);
     artifact.qOme = raylib::Vector3(0, 1, 0);
 
-    obj.debug = false;
+    obj.debug = true;
 
     raylib::Camera3D camera(
         raylib::Vector3(10.0f, 2.0f, 10.0f), //camera location
