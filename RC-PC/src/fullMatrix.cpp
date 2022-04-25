@@ -39,7 +39,16 @@ class fullMatrix {
             if((m == 4 && n ==1) || (m == 1 && n ==4)){
                 return array[0];
             }else{
-                std::cout << "Not a vector or coordinate\n";
+                std::cout << "Not a quaternion\n";
+                throw -1;
+            }
+        }
+
+        void const w(double val){
+            if((m == 4 && n ==1) || (m == 1 && n ==4)){
+                array[0] = val;
+            }else{
+                std::cout << "Not a quaternion\n";
                 throw -1;
             }
         }
@@ -49,6 +58,17 @@ class fullMatrix {
                 return array[0];
             }else if((m == 4 && n ==1) || (m == 1 && n ==4)){
                 return array[1];
+            }else{
+                std::cout << "Not a vector or coordinate\n";
+                throw -1;
+            }
+        }
+
+        void const x(double val){
+            if((m == 3 && n == 1) || (m == 1 && n == 3)){
+                array[0] = val;
+            }else if((m == 4 && n ==1) || (m == 1 && n ==4)){
+                array[1] = val;
             }else{
                 std::cout << "Not a vector or coordinate\n";
                 throw -1;
@@ -66,11 +86,33 @@ class fullMatrix {
             }
         }
 
+        void const y(double val){
+            if((m == 3 && n == 1) || (m == 1 && n == 3)){
+                array[1] = val;
+            }else if((m == 4 && n ==1) || (m == 1 && n ==4)){
+                array[2] = val;
+            }else{
+                std::cout << "Not a vector or coordinate\n";
+                throw -1;
+            }
+        }
+
         double const z(){
             if((m == 3 && n == 1) || (m == 1 && n == 3)){
                 return array[2];
             }else if((m == 4 && n == 1) || (m == 1 && n == 4)){
                 return array[3];
+            }else{
+                std::cout << "Not a vector or coordinate\n";
+                throw -1;
+            }
+        }
+
+        void const z(double val){
+            if((m == 3 && n == 1) || (m == 1 && n == 3)){
+                array[2] = val;
+            }else if((m == 4 && n ==1) || (m == 1 && n ==4)){
+                array[3] = val;
             }else{
                 std::cout << "Not a vector or coordinate\n";
                 throw -1;
@@ -182,7 +224,7 @@ class fullMatrix {
         }
 
         ~fullMatrix() {
-            delete[] array;
+            delete array;
         }
 
         void Debug(){
@@ -232,7 +274,16 @@ class fullMatrix {
         }
 
         fullMatrix operator*(fullMatrix other){
-            if(this->n == other.m){
+            //quaternion multiplication
+            if((this->n == 1 && this->m == 4) && (other.n==1 && other.m == 4)){
+                fullMatrix rtn(this->m, this->n);
+
+
+
+                return rtn;
+            }
+            //generic matrix multiplication
+            else if(this->n == other.m){
                 fullMatrix rtn(this->m, this->n);
                 for(int i = 0; i < this->m; i++){
                     for(int j = 0; j < this->n; j++){
@@ -401,16 +452,28 @@ class fullMatrix {
         static void Test(){
             std::cout << "\n\n┏Testing fullMatrix\n";
             {
-                fullMatrix a = fullMatrix(MatrixType::Vector, 1, 2, 3);
+                fullMatrix a = fullMatrix(MatrixType::Vector, 7, 8, 9);
                 fullMatrix b = fullMatrix(MatrixType::Vector, 4, 5, 6);
 
                 std::cout << "┣━Vector get\n";
                 {
+                    assert(a.x() == 7);
+                    assert(a.y() == 8);
+                    assert(a.z() == 9);
+                }
+                std::cout << "┣━Vector get: checked\n";
+
+                std::cout << "┣━Vector set\n";
+                {
+                    a.x(1);
+                    a.y(2);
+                    a.z(3);
+
                     assert(a.x() == 1);
                     assert(a.y() == 2);
                     assert(a.z() == 3);
                 }
-                std::cout << "┣━Vector get: checked\n";
+                std::cout << "┣━Vector set: checked\n";
 
                 std::cout << "┣━Vector add\n";
                 {
@@ -474,10 +537,14 @@ class fullMatrix {
                     {
                         double values[9] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
                         std::copy(values, values + 9, mat.array);
+                        std::cout << "┣━━Testing identity mat: mat init complete\n";
                         fullMatrix inv(mat.Transpose());
+                        std::cout << "┣━━Testing identity mat: mat inverse computed\n";
                         for(int i = 0; i < 9; i++){
                             assert(mat.array[i] == values[i]);
                         }
+                        std::cout << "┣━━Testing identity mat: mat asserts finished\n";
+                        delete values;
                     }
                     std::cout << "┣━━Testing identity mat: checked\n";
 
@@ -497,7 +564,7 @@ class fullMatrix {
 
                 std::cout << "┣━Testing quaternion operations\n";
                 {
-                    std::cout << "┣━━Quaternion addition\n"
+                    std::cout << "┣━━Quaternion addition\n";
                     {
                         fullMatrix quatA(MatrixType::Vector, 1, 2, 3, 4);
                         fullMatrix quatB(MatrixType::Vector, 5, 6, 7, 8);
@@ -515,6 +582,8 @@ class fullMatrix {
                     {
                         fullMatrix quatA(MatrixType::Vector, 1, 2, 3, 4);
                         fullMatrix quatB(MatrixType::Vector, 5, 6, 7, 8);
+
+
                     }
                     std::cout << "┣━━Quaternion multiply: checked\n";
                 }
