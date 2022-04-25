@@ -59,7 +59,7 @@ class Object3D {
                 //std::cout << "(" << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << ")" << "\n";
                 //(fullMatrix(vel.RotateByQuaternion(qRot)) * dt).Debug();
                 //std::cout << "(" << pos.GetVec3().GetX() << ", " << pos.GetVec3().GetY() << ", " << pos.GetVec3().GetZ() << ")" << "\n";
-                std::cout << "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ")" << "\n";
+                //std::cout << "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ")" << "\n";
             }
 
             if(qOme.Length() != 0){

@@ -33,3 +33,11 @@ $$ w = \cos{\frac{\theta}{2}} $$
 $$ i = x\sin{\frac{\theta}{2}} $$
 $$ j = y\sin{\frac{\theta}{2}} $$
 $$ k = z\sin{\frac{\theta}{2}} $$
+
+---
+### Multiplication
+
+$$ w = w_1 w_2 - x_1 x_2 - y_1 y_2 - z_1 z_2 $$
+$$ i = w_1 x_2 + x_1 w_2 + y_1 z_2 - z_1 y_2 $$
+$$ j = w_1 y_2 - x_1 z_2 + y_1 w_2 + z_1 x_2 $$
+$$ k = w_1 z_2 + x_1 y_2 - y_1 x_2 + z_1 w_2 $$
