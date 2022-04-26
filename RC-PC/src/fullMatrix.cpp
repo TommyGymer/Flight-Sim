@@ -442,7 +442,7 @@ class fullMatrix {
         fullMatrix Inverse(){
             if((m == 4 && n == 1) || (m == 1 && n == 4)){
                 fullMatrix rtn(Conjugate());
-                rtn = rtn / rtn.Magnitude();
+                rtn = rtn.Normalize();
                 return rtn;
             }else{
                 std::cout << "Not a quaternion\n";

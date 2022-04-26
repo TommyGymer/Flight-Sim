@@ -17,6 +17,7 @@ class Object3D {
         //physics
         fullMatrix pos = fullMatrix(MatrixType::Vector, 0, 1, 0);
         fullMatrix test_vel = fullMatrix(MatrixType::Vector, 0, 0, 0);
+        fullMatrix test_acc = fullMatrix(MatrixType::Vector, 0, -9.81, 0);
         
         //raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
@@ -80,8 +81,8 @@ class Object3D {
             }
 
             vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
-            test_vel = test_vel + (fullMatrix(acc).RotateByQuaternion(test_qRot.Inverse()) * dt);
-            pos = pos + (fullMatrix(test_vel).RotateByQuaternion(test_qRot) * dt); //rotates object space to global space
+            test_vel = test_vel + (test_acc.RotateByQuaternion(test_qRot.Inverse()) * dt);
+            pos = pos + (test_vel.RotateByQuaternion(test_qRot) * dt); //rotates object space to global space
 
             //look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
             up = raylib::Vector3(0, 1, 0).RotateByQuaternion(qRot);
