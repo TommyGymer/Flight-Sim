@@ -85,7 +85,7 @@ int main() {
              */
 
             //get mouse pos
-            if((state == GameState::Playing) && total > 1){
+            if((state == GameState::Playing) && total > 0.5){
                 raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
                 //std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
 
@@ -107,7 +107,7 @@ int main() {
 
             if(IsKeyDown(32)){ //space
                 if(obj.pos.y() < 1.01){
-                    obj.vel.SetY(10);
+                    //obj.vel.SetY(10);
 
                     obj.test_vel.y(10);
                 }
@@ -124,8 +124,8 @@ int main() {
                 }
             }
 
-            obj.vel.SetX(obj.vel.GetX() * 0.95);
-            obj.vel.SetZ(obj.vel.GetZ() * 0.95);
+            //obj.vel.SetX(obj.vel.GetX() * 0.95);
+            //obj.vel.SetZ(obj.vel.GetZ() * 0.95);
             obj.test_vel.x(obj.test_vel.x() * 0.95);
             obj.test_vel.z(obj.test_vel.z() * 0.95);
             //obj.qOme.SetX(0);
@@ -133,21 +133,21 @@ int main() {
             obj.qOme.SetZ(0);
             obj.test_angV.z(0);
             if(IsKeyDown(65)){ //a
-                obj.vel.SetX(-10);
+                //obj.vel.SetX(-10);
                 obj.test_vel.x(-10);
                 //obj.qOme.SetY(2);
             }
             if(IsKeyDown(68)){ //d
-                obj.vel.SetX(10);
+                //obj.vel.SetX(10);
                 obj.test_vel.x(10);
                 //obj.qOme.SetY(-2);
             }
             if(IsKeyDown(83)){ //s
-                obj.vel.SetZ(10);
+                //obj.vel.SetZ(10);
                 obj.test_vel.z(10);
             }
             if(IsKeyDown(87)){ //w
-                obj.vel.SetZ(-10);
+                //obj.vel.SetZ(-10);
                 obj.test_vel.z(-10);
             }
 
