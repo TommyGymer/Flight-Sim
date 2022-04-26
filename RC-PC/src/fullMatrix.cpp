@@ -445,7 +445,7 @@ class fullMatrix {
         fullMatrix Inverse(){
             if((m == 4 && n == 1) || (m == 1 && n == 4)){
                 fullMatrix rtn(Conjugate());
-                rtn = rtn.Normalize();
+                rtn = rtn / pow(rtn.Length(), 2);
                 return rtn;
             }else{
                 std::cout << "Not a quaternion\n";
@@ -457,10 +457,7 @@ class fullMatrix {
             if(m == 3 && n ==1){
                 fullMatrix p(MatrixType::Vector, 0, x(), y(), z());
 
-                fullMatrix i(quat);
-                quat.x(-quat.x());
-                quat.y(-quat.y());
-                quat.z(-quat.z());
+                fullMatrix i(quat.Inverse());
 
                 fullMatrix res((quat * p) * i);
 
@@ -477,10 +474,7 @@ class fullMatrix {
             if(m == 3 && n ==1){
                 fullMatrix p(MatrixType::Vector, 0, x(), y(), z());
 
-                fullMatrix i(quat);
-                quat.x(-quat.x());
-                quat.y(-quat.y());
-                quat.z(-quat.z());
+                fullMatrix i(quat.Inverse());
 
                 fullMatrix res((i * p) * quat);
 
@@ -727,7 +721,7 @@ class fullMatrix {
                         
                         assert(np.x() == 0);
                         assert(np.y() == 0);
-                        assert(abs(np.z() - 1) < 0.000001);
+                        assert(abs(np.z() + 1) < 0.000001);
                     }
                     std::cout << "┣━━Quaternion rotate\n";
 

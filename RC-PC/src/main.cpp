@@ -10,6 +10,7 @@
 #include "object.cpp"
 
 enum class GameState{Menu, Playing, Paused};
+enum class CameraState{First, Third};
 
 int main() {
     //tests
@@ -59,6 +60,7 @@ int main() {
     std::cout << "Entering event loop\n";
 
     GameState state = GameState::Paused;
+    CameraState cState = CameraState::Third;
 
     HideCursor();
     DisableCursor();
@@ -92,7 +94,7 @@ int main() {
                 //obj.qOme.SetY(-mouse.GetX() * 0.1f);
                 //obj.qOme.SetX(-mouse.GetY() * 0.1f);
 
-                obj.test_angV.y(-mouse.GetX() * 0.1f);
+                //obj.test_angV.y(-mouse.GetX() * 0.1f);
                 obj.test_angV.x(-mouse.GetY() * 0.1f);
             }
 
@@ -121,6 +123,16 @@ int main() {
             }else{
                 if(IsKeyPressed(80)){ //p
                     state = GameState::Paused;
+                }
+            }
+
+            if(cState == CameraState::First){
+                if(IsKeyPressed(70)){
+                    cState = CameraState::Third;
+                }
+            }else{
+                if(IsKeyPressed(70)){
+                    cState = CameraState::First;
                 }
             }
 
@@ -168,7 +180,7 @@ int main() {
 
             //std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
 
-            if(true){
+            if(cState == CameraState::Third){
                 camera.SetPosition(raylib::Vector3(10, 10, 0));
                 camera.SetTarget(raylib::Vector3(0, 0, 0));
             }else{

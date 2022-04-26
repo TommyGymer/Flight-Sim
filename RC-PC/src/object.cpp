@@ -74,10 +74,10 @@ class Object3D {
                 qRot = qRot.Normalize();
             }*/
             if(test_angV.Length() != 0){
-                float test_theta = test_angV.Length() * dt;
-                fullMatrix test_u(test_angV.Normalize());
-                fullMatrix test_update(MatrixType::Vector, cos(test_theta/2), test_u.x() * sin(test_theta/2), test_u.y() * sin(test_theta/2), test_u.z() * sin(test_theta/2));
-                test_qRot = test_qRot * test_update;
+                float theta = test_angV.Length() * dt;
+                fullMatrix u(test_angV.Normalize());
+                fullMatrix update(MatrixType::Vector, cos(theta/2), u.x() * sin(theta/2), u.y() * sin(theta/2), u.z() * sin(theta/2));
+                test_qRot = test_qRot * update;
                 test_qRot = test_qRot.Normalize();
             }
 
