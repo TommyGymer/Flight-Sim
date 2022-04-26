@@ -28,9 +28,9 @@ int main() {
     window.SetState(FLAG_WINDOW_RESIZABLE);
 
     Object3D obj("..\\obj\\materials.obj");
-    Object3D artifact("..\\obj\\materials.obj");
-    artifact.scale = raylib::Vector3(0.5, 1, 0.5);
-    artifact.qOme = raylib::Vector3(0, 1, 0);
+    //Object3D artifact("..\\obj\\materials.obj");
+    //artifact.scale = raylib::Vector3(0.5, 1, 0.5);
+    //artifact.qOme = raylib::Vector3(0, 1, 0);
 
     obj.debug = true;
 
@@ -89,8 +89,8 @@ int main() {
                 raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
                 //std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
 
-                obj.qOme.SetY(-mouse.GetX() * 0.1f);
-                obj.qOme.SetX(-mouse.GetY() * 0.1f);
+                //obj.qOme.SetY(-mouse.GetX() * 0.1f);
+                //obj.qOme.SetX(-mouse.GetY() * 0.1f);
 
                 obj.test_angV.y(-mouse.GetX() * 0.1f);
                 obj.test_angV.x(-mouse.GetY() * 0.1f);
@@ -130,7 +130,7 @@ int main() {
             obj.vel.z(obj.vel.z() * 0.95);
             //obj.qOme.SetX(0);
             //obj.qOme.SetY(0);
-            obj.qOme.SetZ(0);
+            //obj.qOme.SetZ(0);
             obj.test_angV.z(0);
             if(IsKeyDown(65)){ //a
                 //obj.vel.SetX(-10);
@@ -164,7 +164,7 @@ int main() {
             start = std::chrono::high_resolution_clock::now();
                 
             obj.Update(dt);
-            artifact.Update(dt);
+            //artifact.Update(dt);
 
             //std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
 
@@ -182,7 +182,7 @@ int main() {
                 DrawGrid(1000, 1.0f);
 
                 obj.Draw();
-                artifact.Draw();
+                //artifact.Draw();
             }
             camera.EndMode();
 

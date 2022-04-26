@@ -23,8 +23,8 @@ class Object3D {
         fullMatrix test_qRot = fullMatrix(MatrixType::Vector, 1, 0, 0, 0);
         fullMatrix test_angV = fullMatrix(MatrixType::Vector, 0, 0, 0);
 
-        raylib::Vector4 qRot = raylib::Vector4(0, 0, 0, 1);
-        raylib::Vector3 qOme = raylib::Vector3(0, 0, 0);
+        //raylib::Vector4 qRot = raylib::Vector4(0, 0, 0, 1);
+        //raylib::Vector3 qOme = raylib::Vector3(0, 0, 0);
 
         //scale
         raylib::Vector3 scale = raylib::Vector3(0.1, 0.1, 0.1);
@@ -42,12 +42,13 @@ class Object3D {
 
         //posistion, rotation axis, rotation angle, scale
         void Draw(){
-            qRot = qRot.Normalize();
-            std::pair<raylib::Vector3, float> rot = qRot.ToAxisAngle();
+            //qRot = qRot.Normalize();
+            std::pair<raylib::Vector3, float> rot = test_qRot.GetVec4().ToAxisAngle();
             model->Draw(pos.GetVec3(), std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
             if(debug){
                 DrawLine3D(pos.GetVec3(), (pos + (acc - fullMatrix(MatrixType::Vector, 0, -9.81, 0)) * 1000).GetVec3(), RED);
                 DrawLine3D(pos.GetVec3(), (pos + vel).GetVec3(), GOLD);
+                DrawLine3D(pos.GetVec3(), (pos + test_qRot.ToAxisAngle().GetComplex()).GetVec3(), LIME);
             }
         }
 
@@ -65,13 +66,13 @@ class Object3D {
                 //std::cout << vel.x() << ", " << vel.y() << ", " << vel.z() << "\n";
             }
 
-            if(qOme.Length() != 0){
+            /*if(qOme.Length() != 0){
                 float theta = qOme.Length() * dt;
                 raylib::Vector3 u = qOme.Normalize();
                 raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
                 qRot = qRot * update;
                 qRot = qRot.Normalize();
-            }
+            }*/
             if(test_angV.Length() != 0){
                 float test_theta = test_angV.Length() * dt;
                 fullMatrix test_u(test_angV.Normalize());
@@ -85,7 +86,7 @@ class Object3D {
             pos = pos + (vel.RotateByQuaternion(test_qRot) * dt); //rotates object space to global space
 
             //look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
-            up = raylib::Vector3(0, 1, 0).RotateByQuaternion(qRot);
+            up = fullMatrix(MatrixType::Vector, 0, 1, 0).RotateByQuaternion(test_qRot).GetVec3();
 
             //temporary collision detection
             if(pos.y() < 1){

@@ -256,6 +256,8 @@ class fullMatrix {
                 return rtn;
             }else{
                 std::cout << "Dimention error\n";
+                Debug();
+                other.Debug();
                 throw -1;
             }
         }
@@ -404,6 +406,7 @@ class fullMatrix {
                 }
             }else{
                 std::cout << "Matrix not square\n";
+                throw -1;
             }
             return rtn;
         }
@@ -502,6 +505,29 @@ class fullMatrix {
             double l = Length();
             fullMatrix rtn(*this);
             return (rtn / l);
+        }
+
+        fullMatrix ToAxisAngle(){
+            if(m == 4 && n ==1){
+                fullMatrix rtn(MatrixType::Vector, 0, 0, 0, 0);
+                rtn.w(2 * acos(w()));
+                rtn.x(x() / sqrt(1-w()*w()));
+                rtn.y(y() / sqrt(1-w()*w()));
+                rtn.z(z() / sqrt(1-w()*w()));
+                return rtn;
+            }else{
+                std::cout << "Not a quaternion\n";
+                throw -1;
+            }
+        }
+
+        fullMatrix GetComplex(){
+            if(m == 4 && n ==1){
+                return fullMatrix(MatrixType::Vector, x(), y(), z());
+            }else{
+                std::cout << "Not a quaternion\n";
+                throw -1;
+            }
         }
 
         /*fullMatrix Update(fullMatrix update){
