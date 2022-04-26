@@ -151,6 +151,11 @@ int main() {
                 obj.vel.z(-10);
             }
 
+            if(IsKeyDown(69)){
+                obj.pos.x(0);
+                obj.pos.z(0);
+            }
+
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
             float dt = duration.count() / 1000000.0f;
             total += dt;
