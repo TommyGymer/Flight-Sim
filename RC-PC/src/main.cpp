@@ -109,7 +109,7 @@ int main() {
                 if(obj.pos.y() < 1.01){
                     //obj.vel.SetY(10);
 
-                    obj.test_vel.y(10);
+                    obj.vel.y(10);
                 }
             }
 
@@ -126,29 +126,29 @@ int main() {
 
             //obj.vel.SetX(obj.vel.GetX() * 0.95);
             //obj.vel.SetZ(obj.vel.GetZ() * 0.95);
-            obj.test_vel.x(obj.test_vel.x() * 0.95);
-            obj.test_vel.z(obj.test_vel.z() * 0.95);
+            obj.vel.x(obj.vel.x() * 0.95);
+            obj.vel.z(obj.vel.z() * 0.95);
             //obj.qOme.SetX(0);
             //obj.qOme.SetY(0);
             obj.qOme.SetZ(0);
             obj.test_angV.z(0);
             if(IsKeyDown(65)){ //a
                 //obj.vel.SetX(-10);
-                obj.test_vel.x(-10);
+                obj.vel.x(-10);
                 //obj.qOme.SetY(2);
             }
             if(IsKeyDown(68)){ //d
                 //obj.vel.SetX(10);
-                obj.test_vel.x(10);
+                obj.vel.x(10);
                 //obj.qOme.SetY(-2);
             }
             if(IsKeyDown(83)){ //s
                 //obj.vel.SetZ(10);
-                obj.test_vel.z(10);
+                obj.vel.z(10);
             }
             if(IsKeyDown(87)){ //w
                 //obj.vel.SetZ(-10);
-                obj.test_vel.z(-10);
+                obj.vel.z(-10);
             }
 
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
@@ -173,6 +173,10 @@ int main() {
             camera.BeginMode();
             {
                 DrawGrid(1000, 1.0f);
+
+                DrawLine3D(obj.pos.GetVec3(), (obj.pos + (obj.acc - fullMatrix(MatrixType::Vector, 0, -9.81, 0)) * 1000).GetVec3(), RED);
+                DrawLine3D(obj.pos.GetVec3(), (obj.pos + obj.vel).GetVec3(), GOLD);
+
                 obj.Draw();
                 artifact.Draw();
             }

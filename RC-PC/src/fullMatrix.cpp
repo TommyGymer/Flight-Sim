@@ -470,6 +470,26 @@ class fullMatrix {
             }
         }
 
+        fullMatrix DeRotateByQuaternion(fullMatrix quat){
+            if(m == 3 && n ==1){
+                fullMatrix p(MatrixType::Vector, 0, x(), y(), z());
+
+                fullMatrix i(quat);
+                quat.x(-quat.x());
+                quat.y(-quat.y());
+                quat.z(-quat.z());
+
+                fullMatrix res((i * p) * quat);
+
+                fullMatrix rtn(MatrixType::Vector, res.x(), res.y(), res.z());
+
+                return rtn;
+            }else{
+                std::cout << "Not a vector\n";
+                throw -1;
+            }
+        }
+
         double Length(){
             double sqrSum = 0;
             for(int i = 0; i < m*n; i++){

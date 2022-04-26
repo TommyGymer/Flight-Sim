@@ -16,8 +16,8 @@ class Object3D {
 
         //physics
         fullMatrix pos = fullMatrix(MatrixType::Vector, 0, 1, 0);
-        fullMatrix test_vel = fullMatrix(MatrixType::Vector, 0, 0, 0);
-        fullMatrix test_acc = fullMatrix(MatrixType::Vector, 0, -9.81, 0);
+        fullMatrix vel = fullMatrix(MatrixType::Vector, 0, 0, 0);
+        fullMatrix acc = fullMatrix(MatrixType::Vector, 0, -9.81, 0);
 
         //rotation
         fullMatrix test_qRot = fullMatrix(MatrixType::Vector, 1, 0, 0, 0);
@@ -27,7 +27,7 @@ class Object3D {
         raylib::Vector3 qOme = raylib::Vector3(0, 0, 0);
 
         //scale
-        raylib::Vector3 scale = raylib::Vector3(1, 1, 1);
+        raylib::Vector3 scale = raylib::Vector3(0.1, 0.1, 0.1);
 
         //look and up vectors
         raylib::Vector3 look = raylib::Vector3(0, 0, -1);
@@ -58,7 +58,7 @@ class Object3D {
                 //std::cout << "(" << pos.GetVec3().GetX() << ", " << pos.GetVec3().GetY() << ", " << pos.GetVec3().GetZ() << ")" << "\n";
                 //std::cout << "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ")" << "\n";
                 std::cout << pos.x() << ", " << pos.y() << ", " << pos.z() << "\n";
-                //std::cout << test_vel.x() << ", " << test_vel.y() << ", " << test_vel.z() << "\n";
+                //std::cout << vel.x() << ", " << vel.y() << ", " << vel.z() << "\n";
             }
 
             if(qOme.Length() != 0){
@@ -77,8 +77,8 @@ class Object3D {
             }
 
             //vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
-            test_vel = test_vel + (test_acc.RotateByQuaternion(test_qRot.Inverse()) * dt);
-            pos = pos + (test_vel.RotateByQuaternion(test_qRot) * dt); //rotates object space to global space
+            vel = vel + (acc.DeRotateByQuaternion(test_qRot) * dt);
+            pos = pos + (vel.RotateByQuaternion(test_qRot) * dt); //rotates object space to global space
 
             //look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
             up = raylib::Vector3(0, 1, 0).RotateByQuaternion(qRot);
@@ -88,7 +88,7 @@ class Object3D {
                 pos.y(1);
                 //vel.SetY(-vel.GetY() * 0.25);
                 //vel.SetY(0);
-                test_vel.y(0);
+                vel.y(0);
             }
         }
 };
