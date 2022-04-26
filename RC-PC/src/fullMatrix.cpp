@@ -448,6 +448,22 @@ class fullMatrix {
             }
         }
 
+        fullMatrix RotateByQuaternion(fullMatrix quat){
+            if(m == 3 && n ==1){
+                fullMatrix p(MatrixType::Vector, 0, x(), y(), z());
+
+                fullMatrix i(quat);
+                quat.x(-quat.x());
+                quat.y(-quat.y());
+                quat.z(-quat.z());
+
+                return quat * p * i;
+            }else{
+                std::cout << "Not a vector\n";
+                throw -1;
+            }
+        }
+
         /*fullMatrix Update(fullMatrix update){
 
         }*/
@@ -496,29 +512,29 @@ class fullMatrix {
                 }
                 std::cout << "┣━Vector subtract: checked\n";
 
-                a = fullMatrix(MatrixType::Vector, 9, 10, 11, 12);
-                b = fullMatrix(MatrixType::Vector, 5, 6, 7, 8);
+                fullMatrix quatA(MatrixType::Vector, 9, 10, 11, 12);
+                fullMatrix quatB(MatrixType::Vector, 5, 6, 7, 8);
 
                 std::cout << "┣━Quaternion get\n";
                 {
-                    assert(a.w() == 9);
-                    assert(a.x() == 10);
-                    assert(a.y() == 11);
-                    assert(a.z() == 12);
+                    assert(quatA.w() == 9);
+                    assert(quatA.x() == 10);
+                    assert(quatA.y() == 11);
+                    assert(quatA.z() == 12);
                 }
                 std::cout << "┣━Quaternion get: checked\n";
 
                 std::cout << "┣━Quaternion set\n";
                 {
-                    a.w(1);
-                    a.x(2);
-                    a.y(3);
-                    a.z(4);
+                    quatA.w(1);
+                    quatA.x(2);
+                    quatA.y(3);
+                    quatA.z(4);
 
-                    assert(a.w() == 1);
-                    assert(a.x() == 2);
-                    assert(a.y() == 3);
-                    assert(a.z() == 4);
+                    assert(quatA.w() == 1);
+                    assert(quatA.x() == 2);
+                    assert(quatA.y() == 3);
+                    assert(quatA.z() == 4);
                 }
                 std::cout << "┣━Quaternion set: checked\n";
 
@@ -566,14 +582,13 @@ class fullMatrix {
                     {
                         double values[9] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
                         std::copy(values, values + 9, mat.array);
-                        std::cout << "┣━━Testing identity mat: mat init complete\n";
+                        std::cout << "┣━━━Testing identity mat: mat init complete\n";
                         fullMatrix inv(mat.Transpose());
-                        std::cout << "┣━━Testing identity mat: mat inverse computed\n";
+                        std::cout << "┣━━━Testing identity mat: mat inverse computed\n";
                         for(int i = 0; i < 9; i++){
                             assert(mat.array[i] == values[i]);
                         }
-                        std::cout << "┣━━Testing identity mat: mat asserts finished\n";
-                        delete values;
+                        std::cout << "┣━━━Testing identity mat: mat asserts finished\n";
                     }
                     std::cout << "┣━━Testing identity mat: checked\n";
 
@@ -612,9 +627,21 @@ class fullMatrix {
                         fullMatrix quatA(MatrixType::Vector, 1, 2, 3, 4);
                         fullMatrix quatB(MatrixType::Vector, 5, 6, 7, 8);
 
+                        fullMatrix result(quatA * quatB);
 
+                        //-60,12,30,24
+                        assert(result.w() == -60);
+                        assert(result.x() == 12);
+                        assert(result.y() == 30);
+                        assert(result.z() == 24);
                     }
                     std::cout << "┣━━Quaternion multiply: checked\n";
+
+                    std::cout << "┣━━Quaternion rotate\n";
+                    {
+                        
+                    }
+                    std::cout << "┣━━Quaternion rotate\n";
                 }
                 std::cout << "┣━Testing quaternion operations: checked\n";
             }
