@@ -23,9 +23,6 @@ class Object3D {
         fullMatrix test_qRot = fullMatrix(MatrixType::Vector, 1, 0, 0, 0);
         fullMatrix test_angV = fullMatrix(MatrixType::Vector, 0, 0, 0);
 
-        //raylib::Vector4 qRot = raylib::Vector4(0, 0, 0, 1);
-        //raylib::Vector3 qOme = raylib::Vector3(0, 0, 0);
-
         //scale
         raylib::Vector3 scale = raylib::Vector3(0.1, 0.1, 0.1);
 
@@ -42,7 +39,6 @@ class Object3D {
 
         //posistion, rotation axis, rotation angle, scale
         void Draw(){
-            //qRot = qRot.Normalize();
             std::pair<raylib::Vector3, float> rot = test_qRot.GetVec4().ToAxisAngle();
             model->Draw(pos.GetVec3(), std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
             if(debug){
