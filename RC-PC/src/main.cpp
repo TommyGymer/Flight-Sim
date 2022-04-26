@@ -151,9 +151,11 @@ int main() {
                 obj.vel.z(-10);
             }
 
-            if(IsKeyDown(69)){
+            if(IsKeyDown(69)){ //e
                 obj.pos.x(0);
                 obj.pos.z(0);
+                obj.vel.x(0);
+                obj.vel.z(0);
             }
 
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
@@ -178,9 +180,6 @@ int main() {
             camera.BeginMode();
             {
                 DrawGrid(1000, 1.0f);
-
-                DrawLine3D(obj.pos.GetVec3(), (obj.pos + (obj.acc - fullMatrix(MatrixType::Vector, 0, -9.81, 0)) * 1000).GetVec3(), RED);
-                DrawLine3D(obj.pos.GetVec3(), (obj.pos + obj.vel).GetVec3(), GOLD);
 
                 obj.Draw();
                 artifact.Draw();

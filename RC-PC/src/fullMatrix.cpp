@@ -704,6 +704,21 @@ class fullMatrix {
                         assert(abs(np.z() - 1) < 0.000001);
                     }
                     std::cout << "┣━━Quaternion rotate\n";
+
+                    std::cout << "┣━━Quaternion rotate continuity\n";
+                    {
+                        fullMatrix p(MatrixType::Vector, 0, 10, 0);
+                        fullMatrix quat(MatrixType::Vector, cos(PI/4), 0.0,  sin(PI/4), 0.0);
+                        quat.Normalize();
+                        fullMatrix np(p.DeRotateByQuaternion(quat).RotateByQuaternion(quat));
+
+                        np.Debug();
+                        
+                        assert(abs(np.x() - 0) < 0.000001);
+                        assert(abs(np.y() - 10) < 0.000001);
+                        assert(abs(np.z() - 0) < 0.000001);
+                    }
+                    std::cout << "┣━━Quaternion rotate continuity: checked\n";
                 }
                 std::cout << "┣━Testing quaternion operations: checked\n";
             }

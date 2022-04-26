@@ -45,6 +45,10 @@ class Object3D {
             qRot = qRot.Normalize();
             std::pair<raylib::Vector3, float> rot = qRot.ToAxisAngle();
             model->Draw(pos.GetVec3(), std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
+            if(debug){
+                DrawLine3D(pos.GetVec3(), (pos + (acc - fullMatrix(MatrixType::Vector, 0, -9.81, 0)) * 1000).GetVec3(), RED);
+                DrawLine3D(pos.GetVec3(), (pos + vel).GetVec3(), GOLD);
+            }
         }
 
         void Update(float dt){
@@ -57,7 +61,7 @@ class Object3D {
                 //(fullMatrix(vel.RotateByQuaternion(qRot)) * dt).Debug();
                 //std::cout << "(" << pos.GetVec3().GetX() << ", " << pos.GetVec3().GetY() << ", " << pos.GetVec3().GetZ() << ")" << "\n";
                 //std::cout << "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ")" << "\n";
-                std::cout << pos.x() << ", " << pos.y() << ", " << pos.z() << "\n";
+                //std::cout << pos.x() << ", " << pos.y() << ", " << pos.z() << "\n";
                 //std::cout << vel.x() << ", " << vel.y() << ", " << vel.z() << "\n";
             }
 
