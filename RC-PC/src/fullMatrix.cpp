@@ -255,6 +255,7 @@ class fullMatrix {
                 }
                 return rtn;
             }else{
+                std::cout << "Dimention error\n";
                 throw -1;
             }
         }
@@ -269,6 +270,7 @@ class fullMatrix {
                 }
                 return rtn;
             }else{
+                std::cout << "Dimention error\n";
                 throw -1;
             }
         }
@@ -429,7 +431,7 @@ class fullMatrix {
             if((m == 4 && n == 1) || (m == 1 && n == 4)){
                 fullMatrix rtn(*this);
                 rtn = rtn * -1;
-                rtn.Set(0, 0, rtn.w());
+                rtn.w(-rtn.w());
                 return rtn;
             }else{
                 std::cout << "Not a quaternion\n";
@@ -457,11 +459,29 @@ class fullMatrix {
                 quat.y(-quat.y());
                 quat.z(-quat.z());
 
-                return quat * p * i;
+                fullMatrix res((quat * p) * i);
+
+                fullMatrix rtn(MatrixType::Vector, res.x(), res.y(), res.z());
+
+                return rtn;
             }else{
                 std::cout << "Not a vector\n";
                 throw -1;
             }
+        }
+
+        double Length(){
+            double sqrSum = 0;
+            for(int i = 0; i < m*n; i++){
+                sqrSum += pow(array[i], 2);
+            }
+            return sqrt(sqrSum);
+        }
+
+        fullMatrix Normalize(){
+            double l = Length();
+            fullMatrix rtn(*this);
+            return (rtn / l);
         }
 
         /*fullMatrix Update(fullMatrix update){
@@ -637,9 +657,31 @@ class fullMatrix {
                     }
                     std::cout << "┣━━Quaternion multiply: checked\n";
 
+                    std::cout << "┣━━Quaternion multiply negative\n";
+                    {
+                        fullMatrix quatA(MatrixType::Vector, 0, 1, 0, 0);
+                        fullMatrix quatB(MatrixType::Vector, 0.707, 0.0,  0.707, 0.0);
+
+                        fullMatrix result(quatB * quatA);
+
+                        //0.0, 0.707, 0.0, -0.707
+                        assert(result.w() == 0);
+                        assert(result.x() == 0.707);
+                        assert(result.y() == 0);
+                        assert(result.z() == -0.707);
+                    }
+                    std::cout << "┣━━Quaternion multiply negative: checked\n";
+
                     std::cout << "┣━━Quaternion rotate\n";
                     {
+                        fullMatrix p(MatrixType::Vector, 1, 0, 0);
+                        fullMatrix quat(MatrixType::Vector, cos(PI/4), 0.0,  sin(PI/4), 0.0);
+                        quat.Normalize();
+                        fullMatrix np(p.RotateByQuaternion(quat));
                         
+                        assert(np.x() == 0);
+                        assert(np.y() == 0);
+                        assert(abs(np.z() - 1) < 0.000001);
                     }
                     std::cout << "┣━━Quaternion rotate\n";
                 }

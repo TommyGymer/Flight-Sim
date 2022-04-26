@@ -91,6 +91,9 @@ int main() {
 
                 obj.qOme.SetY(-mouse.GetX() * 0.1f);
                 obj.qOme.SetX(-mouse.GetY() * 0.1f);
+
+                obj.test_angV.y(-mouse.GetX() * 0.1f);
+                obj.test_angV.x(-mouse.GetY() * 0.1f);
             }
 
             if(IsCursorOnScreen() && (state == GameState::Playing)){
@@ -105,6 +108,8 @@ int main() {
             if(IsKeyDown(32)){ //space
                 if(obj.pos.y() < 1.01){
                     obj.vel.SetY(10);
+
+                    obj.test_vel.y(10);
                 }
             }
 
@@ -121,22 +126,29 @@ int main() {
 
             obj.vel.SetX(obj.vel.GetX() * 0.95);
             obj.vel.SetZ(obj.vel.GetZ() * 0.95);
+            obj.test_vel.x(obj.test_vel.x() * 0.95);
+            obj.test_vel.z(obj.test_vel.z() * 0.95);
             //obj.qOme.SetX(0);
             //obj.qOme.SetY(0);
             obj.qOme.SetZ(0);
+            obj.test_angV.z(0);
             if(IsKeyDown(65)){ //a
                 obj.vel.SetX(-10);
+                obj.test_vel.x(-10);
                 //obj.qOme.SetY(2);
             }
             if(IsKeyDown(68)){ //d
                 obj.vel.SetX(10);
+                obj.test_vel.x(10);
                 //obj.qOme.SetY(-2);
             }
             if(IsKeyDown(83)){ //s
                 obj.vel.SetZ(10);
+                obj.test_vel.z(10);
             }
             if(IsKeyDown(87)){ //w
                 obj.vel.SetZ(-10);
+                obj.test_vel.z(-10);
             }
 
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
@@ -149,7 +161,7 @@ int main() {
 
             //std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
 
-            if(false){
+            if(true){
                 camera.SetPosition(raylib::Vector3(10, 10, 0));
                 camera.SetTarget(raylib::Vector3(0, 0, 0));
             }else{

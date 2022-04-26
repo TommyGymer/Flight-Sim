@@ -60,6 +60,8 @@ class Object3D {
                 //(fullMatrix(vel.RotateByQuaternion(qRot)) * dt).Debug();
                 //std::cout << "(" << pos.GetVec3().GetX() << ", " << pos.GetVec3().GetY() << ", " << pos.GetVec3().GetZ() << ")" << "\n";
                 //std::cout << "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ")" << "\n";
+                std::cout << pos.x() << ", " << pos.y() << ", " << pos.z() << "\n";
+                //std::cout << test_vel.x() << ", " << test_vel.y() << ", " << test_vel.z() << "\n";
             }
 
             if(qOme.Length() != 0){
@@ -69,18 +71,27 @@ class Object3D {
                 qRot = qRot * update;
                 qRot = qRot.Normalize();
             }
+            if(test_angV.Length() != 0){
+                float test_theta = test_angV.Length() * dt;
+                fullMatrix test_u(test_angV.Normalize());
+                fullMatrix test_update(MatrixType::Vector, cos(test_theta/2), test_u.x() * sin(test_theta/2), test_u.y() * sin(test_theta/2), test_u.z() * sin(test_theta/2));
+                test_qRot = test_qRot * test_update;
+                test_qRot = test_qRot.Normalize();
+            }
 
             vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
-            pos = pos + (fullMatrix(vel.RotateByQuaternion(qRot)) * dt); //rotates object space to global space
+            test_vel = test_vel + (fullMatrix(acc).RotateByQuaternion(test_qRot.Inverse()) * dt);
+            pos = pos + (fullMatrix(test_vel).RotateByQuaternion(test_qRot) * dt); //rotates object space to global space
 
-            look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
+            //look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
             up = raylib::Vector3(0, 1, 0).RotateByQuaternion(qRot);
 
             //temporary collision detection
             if(pos.y() < 1){
-                pos.Set(1, 0, 1);
+                pos.y(1);
                 //vel.SetY(-vel.GetY() * 0.25);
                 vel.SetY(0);
+                test_vel.y(0);
             }
         }
 };
