@@ -45,6 +45,7 @@ class Object3D {
                 DrawLine3D(pos.GetVec3(), (pos + (acc - fullMatrix(MatrixType::Vector, 0, -9.81, 0)) * 1000).GetVec3(), RED);
                 DrawLine3D(pos.GetVec3(), (pos + vel).GetVec3(), GOLD);
                 DrawLine3D(pos.GetVec3(), (pos + test_qRot.ToAxisAngle().GetComplex()).GetVec3(), LIME);
+                DrawLine3D(pos.GetVec3(), (pos + look).GetVec3(), BLUE);
             }
         }
 
@@ -81,7 +82,7 @@ class Object3D {
             vel = vel + (acc.DeRotateByQuaternion(test_qRot) * dt);
             pos = pos + (vel.RotateByQuaternion(test_qRot) * dt); //rotates object space to global space
 
-            //look = raylib::Vector3(0, 0, -1).RotateByQuaternion(qRot);
+            look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(test_qRot).GetVec3();
             up = fullMatrix(MatrixType::Vector, 0, 1, 0).RotateByQuaternion(test_qRot).GetVec3();
 
             //temporary collision detection

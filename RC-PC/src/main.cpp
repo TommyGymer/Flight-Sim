@@ -95,7 +95,7 @@ int main() {
                 //obj.qOme.SetX(-mouse.GetY() * 0.1f);
 
                 obj.test_angV.y(-mouse.GetX() * 0.1f);
-                obj.test_angV.z(-mouse.GetY() * 0.1f);
+                obj.test_angV.x(-mouse.GetY() * 0.1f);
             }
 
             if(IsCursorOnScreen() && (state == GameState::Playing)){
