@@ -178,8 +178,6 @@ int main() {
             obj.Update(dt);
             //artifact.Update(dt);
 
-            //std::cout << obj.look.GetX() << ", " << obj.look.GetY() << ", " << obj.look.GetZ() << "\n";
-
             if(cState == CameraState::Third){
                 camera.SetPosition(raylib::Vector3(10, 10, 0));
                 camera.SetTarget(raylib::Vector3(0, 0, 0));

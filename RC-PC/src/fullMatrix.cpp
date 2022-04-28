@@ -457,7 +457,7 @@ class fullMatrix {
             if(m == 3 && n ==1){
                 fullMatrix p(MatrixType::Vector, 0, x(), y(), z());
 
-                fullMatrix i(quat.Inverse());
+                fullMatrix i(quat.Conjugate());
 
                 fullMatrix res((quat * p) * i);
 
@@ -474,7 +474,7 @@ class fullMatrix {
             if(m == 3 && n ==1){
                 fullMatrix p(MatrixType::Vector, 0, x(), y(), z());
 
-                fullMatrix i(quat.Inverse());
+                fullMatrix i(quat.Conjugate());
 
                 fullMatrix res((i * p) * quat);
 
@@ -731,8 +731,6 @@ class fullMatrix {
                         fullMatrix quat(MatrixType::Vector, cos(PI/4), 0.0,  sin(PI/4), 0.0);
                         quat.Normalize();
                         fullMatrix np(p.DeRotateByQuaternion(quat).RotateByQuaternion(quat));
-
-                        np.Debug();
                         
                         assert(abs(np.x() - 0) < 0.000001);
                         assert(abs(np.y() - 10) < 0.000001);

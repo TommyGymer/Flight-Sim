@@ -48,10 +48,10 @@ class Object3D {
             std::pair<raylib::Vector3, float> rot = test_qRot.GetVec4().ToAxisAngle();
             model->Draw(pos.GetVec3(), std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
             if(debug){
-                DrawLine3D(pos.GetVec3(), (pos + (acc - fullMatrix(MatrixType::Vector, 0, -9.81, 0)) * 1000).GetVec3(), RED);
-                DrawLine3D(pos.GetVec3(), (pos + vel).GetVec3(), GOLD);
+                DrawLine3D(pos.GetVec3(), (pos + vel + gvel).GetVec3(), GOLD);
                 DrawLine3D(pos.GetVec3(), (pos + test_qRot.ToAxisAngle().GetComplex()).GetVec3(), LIME);
                 DrawLine3D(pos.GetVec3(), (pos + look).GetVec3(), BLUE);
+                DrawLine3D(pos.GetVec3(), (pos + up).GetVec3(), RED);
             }
         }
 
@@ -73,6 +73,7 @@ class Object3D {
                 float theta = test_angV.Length() * dt;
                 fullMatrix u(test_angV.Normalize());
                 fullMatrix update(MatrixType::Vector, cos(theta/2), u.x() * sin(theta/2), u.y() * sin(theta/2), u.z() * sin(theta/2));
+
                 test_qRot = test_qRot * update;
                 test_qRot = test_qRot.Normalize();
             }
@@ -89,6 +90,7 @@ class Object3D {
             if(pos.y() < 1){
                 pos.y(1);
                 vel.y(0);
+                gvel.y(0);
             }
         }
 };
