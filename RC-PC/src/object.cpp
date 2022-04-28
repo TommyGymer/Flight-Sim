@@ -26,8 +26,8 @@ class Object3D {
         fullMatrix acc = fullMatrix(MatrixType::Vector, 0, 0, 0);
 
         //rotation
-        fullMatrix test_qRot = fullMatrix(MatrixType::Vector, 1, 0, 0, 0);
-        fullMatrix test_angV = fullMatrix(MatrixType::Vector, 0, 0, 0);
+        fullMatrix qRot = fullMatrix(MatrixType::Vector, 1, 0, 0, 0);
+        fullMatrix angV = fullMatrix(MatrixType::Vector, 0, 0, 0);
 
         //scale
         raylib::Vector3 scale = raylib::Vector3(0.1, 0.1, 0.1);
@@ -45,11 +45,11 @@ class Object3D {
 
         //posistion, rotation axis, rotation angle, scale
         void Draw(){
-            std::pair<raylib::Vector3, float> rot = test_qRot.GetVec4().ToAxisAngle();
+            std::pair<raylib::Vector3, float> rot = qRot.GetVec4().ToAxisAngle();
             model->Draw(pos.GetVec3(), std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
             if(debug){
                 DrawLine3D(pos.GetVec3(), (pos + vel + gvel).GetVec3(), GOLD);
-                DrawLine3D(pos.GetVec3(), (pos + test_qRot.ToAxisAngle().GetComplex()).GetVec3(), LIME);
+                DrawLine3D(pos.GetVec3(), (pos + qRot.ToAxisAngle().GetComplex()).GetVec3(), LIME);
                 DrawLine3D(pos.GetVec3(), (pos + look).GetVec3(), BLUE);
                 DrawLine3D(pos.GetVec3(), (pos + up).GetVec3(), RED);
             }
@@ -69,23 +69,22 @@ class Object3D {
                 //std::cout << vel.x() << ", " << vel.y() << ", " << vel.z() << "\n";
             }
 
-            if(test_angV.Length() != 0){
-                test_angV = test_angV.DeRotateByQuaternion(test_qRot);
-                float theta = test_angV.Length() * dt;
-                fullMatrix u(test_angV.Normalize());
+            if(angV.Length() != 0){
+                float theta = angV.Length() * dt;
+                fullMatrix u(angV.Normalize());
                 fullMatrix update(MatrixType::Vector, cos(theta/2), u.x() * sin(theta/2), u.y() * sin(theta/2), u.z() * sin(theta/2));
 
-                test_qRot = test_qRot * update;
-                test_qRot = test_qRot.Normalize();
+                qRot = qRot * update;
+                qRot = qRot.Normalize();
             }
 
             //integrating
             vel = vel + (acc * dt); //local space integration
             gvel = gvel + (gacc * dt); //global space integration
-            pos = pos + ((vel.RotateByQuaternion(test_qRot) + gvel) * dt); //rotates object space to global space
+            pos = pos + ((vel.RotateByQuaternion(qRot) + gvel) * dt); //rotates object space to global space
 
-            look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(test_qRot).GetVec3();
-            up = fullMatrix(MatrixType::Vector, 0, 1, 0).RotateByQuaternion(test_qRot).GetVec3();
+            look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(qRot).GetVec3();
+            up = fullMatrix(MatrixType::Vector, 0, 1, 0).RotateByQuaternion(qRot).GetVec3();
 
             //temporary collision detection
             if(pos.y() < 1){

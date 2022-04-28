@@ -86,16 +86,16 @@ int main() {
              *    - throttle as accerleration along with air resistance proportianal to square of velocity
              */
 
-            obj.test_angV.x(0);
-            obj.test_angV.y(0);
-            obj.test_angV.z(0);            
+            obj.angV.x(0);
+            obj.angV.y(0);
+            obj.angV.z(0);            
             //get mouse pos
             if((state == GameState::Playing) && total > 0.5){
                 raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
 
                 //this approach doesn't work as the axis are changed by each other
-                obj.test_angV.y(-mouse.GetX() * 0.1f);
-                obj.test_angV.z(-mouse.GetY() * 0.1f);
+                obj.angV.y(-mouse.GetX() * 0.1f);
+                //obj.angV.x(-mouse.GetY() * 0.1f);
             }
 
             if(IsCursorOnScreen() && (state == GameState::Playing)){
