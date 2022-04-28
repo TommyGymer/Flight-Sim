@@ -16,8 +16,14 @@ class Object3D {
 
         //physics
         fullMatrix pos = fullMatrix(MatrixType::Vector, 0, 1, 0);
+
+        //global space
+        fullMatrix gvel = fullMatrix(MatrixType::Vector, 0, 0, 0);
+        fullMatrix gacc = fullMatrix(MatrixType::Vector, 0, -9.81, 0);
+
+        //local space
         fullMatrix vel = fullMatrix(MatrixType::Vector, 0, 0, 0);
-        fullMatrix acc = fullMatrix(MatrixType::Vector, 0, -9.81, 0);
+        fullMatrix acc = fullMatrix(MatrixType::Vector, 0, 0, 0);
 
         //rotation
         fullMatrix test_qRot = fullMatrix(MatrixType::Vector, 1, 0, 0, 0);
@@ -79,8 +85,11 @@ class Object3D {
             }
 
             //vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
-            vel = vel + (acc.DeRotateByQuaternion(test_qRot) * dt);
-            pos = pos + (vel.RotateByQuaternion(test_qRot) * dt); //rotates object space to global space
+            vel = vel + (acc * dt);
+
+            gvel = gvel + (gacc * dt);
+
+            pos = pos + ((vel.RotateByQuaternion(test_qRot) + gvel) * dt); //rotates object space to global space
 
             look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(test_qRot).GetVec3();
             up = fullMatrix(MatrixType::Vector, 0, 1, 0).RotateByQuaternion(test_qRot).GetVec3();
