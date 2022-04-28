@@ -69,13 +69,6 @@ class Object3D {
                 //std::cout << vel.x() << ", " << vel.y() << ", " << vel.z() << "\n";
             }
 
-            /*if(qOme.Length() != 0){
-                float theta = qOme.Length() * dt;
-                raylib::Vector3 u = qOme.Normalize();
-                raylib::Vector4 update(u.GetX() * sin(theta/2), u.GetY() * sin(theta/2), u.GetZ() * sin(theta/2), cos(theta/2));
-                qRot = qRot * update;
-                qRot = qRot.Normalize();
-            }*/
             if(test_angV.Length() != 0){
                 float theta = test_angV.Length() * dt;
                 fullMatrix u(test_angV.Normalize());
@@ -84,11 +77,9 @@ class Object3D {
                 test_qRot = test_qRot.Normalize();
             }
 
-            //vel = vel + (acc.RotateByQuaternion(qRot.Invert()) * dt);
-            vel = vel + (acc * dt);
-
-            gvel = gvel + (gacc * dt);
-
+            //integrating
+            vel = vel + (acc * dt); //local space integration
+            gvel = gvel + (gacc * dt); //global space integration
             pos = pos + ((vel.RotateByQuaternion(test_qRot) + gvel) * dt); //rotates object space to global space
 
             look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(test_qRot).GetVec3();
@@ -97,8 +88,6 @@ class Object3D {
             //temporary collision detection
             if(pos.y() < 1){
                 pos.y(1);
-                //vel.SetY(-vel.GetY() * 0.25);
-                //vel.SetY(0);
                 vel.y(0);
             }
         }
