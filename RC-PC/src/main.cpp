@@ -86,16 +86,16 @@ int main() {
              *    - throttle as accerleration along with air resistance proportianal to square of velocity
              */
 
+            obj.test_angV.x(0);
+            obj.test_angV.y(0);
+            obj.test_angV.z(0);            
             //get mouse pos
             if((state == GameState::Playing) && total > 0.5){
                 raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
-                //std::cout << "(" << mouse.GetX() << ", " << mouse.GetY() << ")\n";
 
-                //obj.qOme.SetY(-mouse.GetX() * 0.1f);
-                //obj.qOme.SetX(-mouse.GetY() * 0.1f);
-
+                //this approach doesn't work as the axis are changed by each other
                 obj.test_angV.y(-mouse.GetX() * 0.1f);
-                obj.test_angV.x(-mouse.GetY() * 0.1f);
+                obj.test_angV.z(-mouse.GetY() * 0.1f);
             }
 
             if(IsCursorOnScreen() && (state == GameState::Playing)){
@@ -136,14 +136,8 @@ int main() {
                 }
             }
 
-            //obj.vel.SetX(obj.vel.GetX() * 0.95);
-            //obj.vel.SetZ(obj.vel.GetZ() * 0.95);
             obj.vel.x(obj.vel.x() * 0.95);
             obj.vel.z(obj.vel.z() * 0.95);
-            //obj.qOme.SetX(0);
-            //obj.qOme.SetY(0);
-            //obj.qOme.SetZ(0);
-            obj.test_angV.z(0);
             if(IsKeyDown(65)){ //a
                 //obj.vel.SetX(-10);
                 obj.vel.x(-10);

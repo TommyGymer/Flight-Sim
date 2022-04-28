@@ -70,6 +70,7 @@ class Object3D {
             }
 
             if(test_angV.Length() != 0){
+                test_angV = test_angV.DeRotateByQuaternion(test_qRot);
                 float theta = test_angV.Length() * dt;
                 fullMatrix u(test_angV.Normalize());
                 fullMatrix update(MatrixType::Vector, cos(theta/2), u.x() * sin(theta/2), u.y() * sin(theta/2), u.z() * sin(theta/2));
