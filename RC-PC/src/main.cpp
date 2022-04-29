@@ -30,7 +30,8 @@ int main() {
 
     Object3D obj("..\\obj\\materials.obj");
     Object3D ground("..\\obj\\surface.obj");
-    ground.scale = raylib::Vector3(0.25, 0.25, 0.25);
+    ground.scale = raylib::Vector3(10, 10, 10);
+    ground.pos.y(0);
     //Object3D artifact("..\\obj\\materials.obj");
     //artifact.scale = raylib::Vector3(0.5, 1, 0.5);
     //artifact.qOme = raylib::Vector3(0, 1, 0);
