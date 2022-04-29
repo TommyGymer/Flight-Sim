@@ -69,12 +69,28 @@ class Object3D {
                 //std::cout << vel.x() << ", " << vel.y() << ", " << vel.z() << "\n";
             }
 
-            if(angV.Length() != 0){
-                float theta = angV.Length() * dt;
-                fullMatrix u(angV.Normalize());
-                fullMatrix update(MatrixType::Vector, cos(theta/2), u.x() * sin(theta/2), u.y() * sin(theta/2), u.z() * sin(theta/2));
+            fullMatrix angVGlob(MatrixType::Vector, 0, angV.y(), 0);
+            fullMatrix angVLocl(MatrixType::Vector, angV.x(), 0, 0);
 
-                qRot = qRot * update;
+            if(angVGlob.Length() != 0){
+                float thetaGlob = angVGlob.Length() * dt;
+                fullMatrix uGlob(angVGlob.Normalize());
+                fullMatrix updateGlob(MatrixType::Vector, cos(thetaGlob/2), uGlob.x() * sin(thetaGlob/2), uGlob.y() * sin(thetaGlob/2), uGlob.z() * sin(thetaGlob/2));
+
+                //update first for global, update second for local
+                //rotate around z needs to be global, while rotation around x/y needs to be local
+                qRot = updateGlob * qRot;
+                qRot = qRot.Normalize();
+            }
+
+            if(angVLocl.Length() != 0){
+                float thetaLolc = angVLocl.Length() * dt;
+                fullMatrix uLocl(angVLocl.Normalize());
+                fullMatrix updateLocl(MatrixType::Vector, cos(thetaLolc/2), uLocl.x() * sin(thetaLolc/2), uLocl.y() * sin(thetaLolc/2), uLocl.z() * sin(thetaLolc/2));
+
+                //update first for global, update second for local
+                //rotate around z needs to be global, while rotation around x/y needs to be local
+                qRot = qRot * updateLocl;
                 qRot = qRot.Normalize();
             }
 

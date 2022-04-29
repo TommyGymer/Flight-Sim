@@ -88,14 +88,14 @@ int main() {
 
             obj.angV.x(0);
             obj.angV.y(0);
-            obj.angV.z(0);            
+            obj.angV.z(0);
             //get mouse pos
             if((state == GameState::Playing) && total > 0.5){
                 raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
 
                 //this approach doesn't work as the axis are changed by each other
                 obj.angV.y(-mouse.GetX() * 0.1f);
-                //obj.angV.x(-mouse.GetY() * 0.1f);
+                obj.angV.x(-mouse.GetY() * 0.1f);
             }
 
             if(IsCursorOnScreen() && (state == GameState::Playing)){
@@ -109,8 +109,6 @@ int main() {
 
             if(IsKeyDown(32)){ //space
                 if(obj.pos.y() < 1.01){
-                    //obj.vel.SetY(10);
-
                     obj.vel.y(10);
                 }
             }
