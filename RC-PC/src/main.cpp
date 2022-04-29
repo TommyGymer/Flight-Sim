@@ -29,6 +29,8 @@ int main() {
     window.SetState(FLAG_WINDOW_RESIZABLE);
 
     Object3D obj("..\\obj\\materials.obj");
+    Object3D ground("..\\obj\\surface.obj");
+    ground.scale = raylib::Vector3(0.25, 0.25, 0.25);
     //Object3D artifact("..\\obj\\materials.obj");
     //artifact.scale = raylib::Vector3(0.5, 1, 0.5);
     //artifact.qOme = raylib::Vector3(0, 1, 0);
@@ -109,7 +111,7 @@ int main() {
 
             if(IsKeyDown(32)){ //space
                 if(obj.pos.y() < 1.01){
-                    obj.vel.y(10);
+                    obj.gvel.y(10);
                 }
             }
 
@@ -136,22 +138,18 @@ int main() {
 
             obj.vel.x(obj.vel.x() * 0.95);
             obj.vel.z(obj.vel.z() * 0.95);
+            obj.gvel.x(obj.gvel.x() * 0.95);
+            obj.gvel.z(obj.gvel.z() * 0.95);
             if(IsKeyDown(65)){ //a
-                //obj.vel.SetX(-10);
                 obj.vel.x(-10);
-                //obj.qOme.SetY(2);
             }
             if(IsKeyDown(68)){ //d
-                //obj.vel.SetX(10);
                 obj.vel.x(10);
-                //obj.qOme.SetY(-2);
             }
             if(IsKeyDown(83)){ //s
-                //obj.vel.SetZ(10);
                 obj.vel.z(10);
             }
             if(IsKeyDown(87)){ //w
-                //obj.vel.SetZ(-10);
                 obj.vel.z(-10);
             }
 
@@ -185,6 +183,7 @@ int main() {
 
                 obj.Draw();
                 //artifact.Draw();
+                ground.Draw();
             }
             camera.EndMode();
 
