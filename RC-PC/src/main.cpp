@@ -14,7 +14,7 @@ enum class CameraState{First, Third};
 
 int main() {
     //tests
-    fullMatrix::Test();
+    fullMatrix::Test(true);
 
     SetTraceLogLevel(LOG_WARNING); //add LOG_INFO to show detailed debug
 

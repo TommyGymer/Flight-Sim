@@ -19,7 +19,7 @@ void main()
 {
     // Send vertex attributes to fragment shader
     fragTexCoord = vertexTexCoord;
-    fragColor = vertexColor;
+    fragColor.xyz = vertexNormal;// = vertexColor;
 
     // Calculate final vertex position
     gl_Position = mvp*vec4(vertexPosition, 1.0);

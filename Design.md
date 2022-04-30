@@ -220,3 +220,28 @@ matrix inverse():
 
 - Testing specific functions with specific test cases
 - Set up test functions to be run at program start while in debug mode to test the basic functions of classes and functions
+
+##### Testing the matrix class
+|Function to test|Given input|Expected output|
+|:---|:---|:---|
+|Vector get|![[matADef.png]]|![[vecGetTest.png]]|
+|Vector set|![[VecSetInp.png]]|![[VecSetOut.png]]|
+|Vector add|![[VecArithIn.png]]|![[VecAddOut.png]]|
+|Vector subtract|![[VecArithIn.png]]|![[VecSubOut.png]]|
+|Quaternion get|![[QuatDef.png]]|![[QuatGet.png]]|
+|Quaternion set|![[QuatSetIn.png]]|![[QuatSetOut.png]]|
+|Quaternion add|![[QuatAddIn.png]]|![[QuatAddOut.png]]|
+|Quaternion multiply|![[QuatMultIn.png]]|![[QuatMultOut.png]]|
+|Quaternion multiply with a negative|![[QuatMultNegIn.png]]|![[QuatMultNegOut.png]]|
+|Quaternion rotate|![[QuatRotIn.png]]|![[QuatRotOut.png]]|
+|Quaternion rotate continuity|![[QuatRotContIn.png]]|![[QuatRotContOut.png]]|
+|Matrix multiply|![[MatMultIn.png]]|![[matMultOut.png]]|
+|Matrix scale|![[MatScaleIn.png]]|![[MatScaleOut.png]]|
+|Identity matrix inverse|![[IMatInvIn.png]]|![[IMatInvOut.png]]|
+|Arbitrary matrix inverse|![[ArbMatInvIn.png]]|![[ArbMatInvOut.png]]|
+
+This testing is run at startup of the program
+![[Startup test.png]]
+This function outputs the debug results to the terminal if the boolean argument is set to true
+![[MatClassDebug.png]]
+This ensures that the class is functioning correctly before entering the main loop

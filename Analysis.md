@@ -113,11 +113,13 @@ One of the major problems with RC Desk Pilot is the limitations imposed by the t
 
 It also has a number of bugs and edge cases which have not been fully accounted for, partly due to its open source nature and end of active development. There are a number of configurations which can result in unrealistic results from the physics engine.
 
-![[Pasted image 20220201102416.png]]
+###### Menu interface
 
-> Need to replace this
+![[RCDeskPilotMenu1.png]]
 
 It has a simple and easy to use interface while managing to provide all of the options required for a flight sim. The button and menu design appears outdated, though also includes a number of novel features such as weather and other aircraft.
+
+![[RCDeskPilotMenu2.png]]
 
 Many times the sim will require use of the menus to even be able to connect and use a controller, as a keyboard cannot be used. While some controllers may simply work, many require knowledge of drivers and other hardware management systems. Fixing this from the perspective of the application would either require a refresh for the device selection list along with an explanation of the most common issues.
 

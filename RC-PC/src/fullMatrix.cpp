@@ -528,21 +528,21 @@ class fullMatrix {
 
         }*/
 
-        static void Test(){
-            std::cout << "\n\n┏Testing fullMatrix\n";
+        static void Test(bool output){
+            if(output)std::cout << "\n\n┏Testing fullMatrix\n";
             {
                 fullMatrix a = fullMatrix(MatrixType::Vector, 7, 8, 9);
                 fullMatrix b = fullMatrix(MatrixType::Vector, 4, 5, 6);
 
-                std::cout << "┣━Vector get\n";
+                if(output)std::cout << "┣━Vector get\n";
                 {
                     assert(a.x() == 7);
                     assert(a.y() == 8);
                     assert(a.z() == 9);
                 }
-                std::cout << "┣━Vector get: checked\n";
+                if(output)std::cout << "┣━Vector get: checked\n";
 
-                std::cout << "┣━Vector set\n";
+                if(output)std::cout << "┣━Vector set\n";
                 {
                     a.x(1);
                     a.y(2);
@@ -552,39 +552,39 @@ class fullMatrix {
                     assert(a.y() == 2);
                     assert(a.z() == 3);
                 }
-                std::cout << "┣━Vector set: checked\n";
+                if(output)std::cout << "┣━Vector set: checked\n";
 
-                std::cout << "┣━Vector add\n";
+                if(output)std::cout << "┣━Vector add\n";
                 {
                     fullMatrix c = a + b;
                     assert(c.x() == 5);
                     assert(c.y() == 7);
                     assert(c.z() == 9);
                 }
-                std::cout << "┣━Vector add: checked\n";
+                if(output)std::cout << "┣━Vector add: checked\n";
 
-                std::cout << "┣━Vector subtract\n";
+                if(output)std::cout << "┣━Vector subtract\n";
                 {
                     fullMatrix c = b - a;
                     assert(c.x() == 3);
                     assert(c.y() == 3);
                     assert(c.z() == 3);
                 }
-                std::cout << "┣━Vector subtract: checked\n";
+                if(output)std::cout << "┣━Vector subtract: checked\n";
 
                 fullMatrix quatA(MatrixType::Vector, 9, 10, 11, 12);
                 fullMatrix quatB(MatrixType::Vector, 5, 6, 7, 8);
 
-                std::cout << "┣━Quaternion get\n";
+                if(output)std::cout << "┣━Quaternion get\n";
                 {
                     assert(quatA.w() == 9);
                     assert(quatA.x() == 10);
                     assert(quatA.y() == 11);
                     assert(quatA.z() == 12);
                 }
-                std::cout << "┣━Quaternion get: checked\n";
+                if(output)std::cout << "┣━Quaternion get: checked\n";
 
-                std::cout << "┣━Quaternion set\n";
+                if(output)std::cout << "┣━Quaternion set\n";
                 {
                     quatA.w(1);
                     quatA.x(2);
@@ -596,9 +596,9 @@ class fullMatrix {
                     assert(quatA.y() == 3);
                     assert(quatA.z() == 4);
                 }
-                std::cout << "┣━Quaternion set: checked\n";
+                if(output)std::cout << "┣━Quaternion set: checked\n";
 
-                std::cout << "┣━Matrix multiply\n";
+                if(output)std::cout << "┣━Matrix multiply\n";
                 {
                     fullMatrix matA(3, 3);
                     fullMatrix matB(3, 3);
@@ -615,9 +615,9 @@ class fullMatrix {
                         assert(matC.array[i] == valuesB[i]);
                     }
                 }
-                std::cout << "┣━Matrix multiply: checked\n";
+                if(output)std::cout << "┣━Matrix multiply: checked\n";
 
-                std::cout << "┣━Matrix scale\n";
+                if(output)std::cout << "┣━Matrix scale\n";
                 {
                     fullMatrix mat(3, 3);
 
@@ -632,43 +632,44 @@ class fullMatrix {
                         assert(matS.array[i] == correct[i]);
                     }
                 }
-                std::cout << "┣━Matrix scale: checked\n";
+                if(output)std::cout << "┣━Matrix scale: checked\n";
 
-                std::cout << "┣━Matrix transpose\n";
+                if(output)std::cout << "┣━Matrix transpose\n";
                 {
                     fullMatrix mat(3, 3);
 
-                    std::cout << "┣━━Testing identity mat\n";
+                    if(output)std::cout << "┣━━Testing identity mat\n";
                     {
                         double values[9] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
                         std::copy(values, values + 9, mat.array);
-                        std::cout << "┣━━━Testing identity mat: mat init complete\n";
+                        
                         fullMatrix inv(mat.Transpose());
-                        std::cout << "┣━━━Testing identity mat: mat inverse computed\n";
+                        
                         for(int i = 0; i < 9; i++){
                             assert(mat.array[i] == values[i]);
                         }
-                        std::cout << "┣━━━Testing identity mat: mat asserts finished\n";
+                        if(output)std::cout << "┣━━━Testing identity mat: mat asserts finished\n";
                     }
-                    std::cout << "┣━━Testing identity mat: checked\n";
+                    if(output)std::cout << "┣━━Testing identity mat: checked\n";
 
-                    std::cout << "┣━━Testing a matrix\n";
+                    if(output)std::cout << "┣━━Testing a matrix\n";
                     {
                         double values[9] = {-3, 0, -1, 0, 1, 0, 1, 0, 2};
                         std::copy(values, values + 9, mat.array);
+
                         fullMatrix inv(mat.Transpose());
                         double correct[9] = {-0.4, 0, -0.2, 0, 1, 0, 0.2, 0, 0.6};
                         for(int i = 0; i < 9; i++){
                             assert(abs(inv.array[i] - correct[i]) < 0.0001);
                         }
                     }
-                    std::cout << "┣━━Testing a matrix: checked\n";
+                    if(output)std::cout << "┣━━Testing a matrix: checked\n";
                 }
-                std::cout << "┣━Matrix transpose: checked\n";
+                if(output)std::cout << "┣━Matrix transpose: checked\n";
 
-                std::cout << "┣━Testing quaternion operations\n";
+                if(output)std::cout << "┣━Testing quaternion operations\n";
                 {
-                    std::cout << "┣━━Quaternion addition\n";
+                    if(output)std::cout << "┣━━Quaternion addition\n";
                     {
                         fullMatrix quatA(MatrixType::Vector, 1, 2, 3, 4);
                         fullMatrix quatB(MatrixType::Vector, 5, 6, 7, 8);
@@ -680,9 +681,9 @@ class fullMatrix {
                         assert(quatC.y() == 10);
                         assert(quatC.z() == 12);
                     }
-                    std::cout << "┣━━Quaternion addition:checked\n";
+                    if(output)std::cout << "┣━━Quaternion addition:checked\n";
 
-                    std::cout << "┣━━Quaternion multiply\n";
+                    if(output)std::cout << "┣━━Quaternion multiply\n";
                     {
                         fullMatrix quatA(MatrixType::Vector, 1, 2, 3, 4);
                         fullMatrix quatB(MatrixType::Vector, 5, 6, 7, 8);
@@ -695,9 +696,9 @@ class fullMatrix {
                         assert(result.y() == 30);
                         assert(result.z() == 24);
                     }
-                    std::cout << "┣━━Quaternion multiply: checked\n";
+                    if(output)std::cout << "┣━━Quaternion multiply: checked\n";
 
-                    std::cout << "┣━━Quaternion multiply negative\n";
+                    if(output)std::cout << "┣━━Quaternion multiply negative\n";
                     {
                         fullMatrix quatA(MatrixType::Vector, 0, 1, 0, 0);
                         fullMatrix quatB(MatrixType::Vector, 0.707, 0.0,  0.707, 0.0);
@@ -710,37 +711,39 @@ class fullMatrix {
                         assert(result.y() == 0);
                         assert(result.z() == -0.707);
                     }
-                    std::cout << "┣━━Quaternion multiply negative: checked\n";
+                    if(output)std::cout << "┣━━Quaternion multiply negative: checked\n";
 
-                    std::cout << "┣━━Quaternion rotate\n";
+                    if(output)std::cout << "┣━━Quaternion rotate\n";
                     {
                         fullMatrix p(MatrixType::Vector, 1, 0, 0);
                         fullMatrix quat(MatrixType::Vector, cos(PI/4), 0.0,  sin(PI/4), 0.0);
                         quat.Normalize();
+
                         fullMatrix np(p.RotateByQuaternion(quat));
                         
                         assert(np.x() == 0);
                         assert(np.y() == 0);
                         assert(abs(np.z() + 1) < 0.000001);
                     }
-                    std::cout << "┣━━Quaternion rotate\n";
+                    if(output)std::cout << "┣━━Quaternion rotate\n";
 
-                    std::cout << "┣━━Quaternion rotate continuity\n";
+                    if(output)std::cout << "┣━━Quaternion rotate continuity\n";
                     {
                         fullMatrix p(MatrixType::Vector, 0, 10, 0);
                         fullMatrix quat(MatrixType::Vector, cos(PI/4), 0.0,  sin(PI/4), 0.0);
                         quat.Normalize();
+                        
                         fullMatrix np(p.DeRotateByQuaternion(quat).RotateByQuaternion(quat));
                         
                         assert(abs(np.x() - 0) < 0.000001);
                         assert(abs(np.y() - 10) < 0.000001);
                         assert(abs(np.z() - 0) < 0.000001);
                     }
-                    std::cout << "┣━━Quaternion rotate continuity: checked\n";
+                    if(output)std::cout << "┣━━Quaternion rotate continuity: checked\n";
                 }
-                std::cout << "┣━Testing quaternion operations: checked\n";
+                if(output)std::cout << "┣━Testing quaternion operations: checked\n";
             }
-            std::cout << "┗Testing complete\n";
+            if(output)std::cout << "┗Testing complete\n";
             std::cout << "\n\n";
 
             //assert(1 == 2);

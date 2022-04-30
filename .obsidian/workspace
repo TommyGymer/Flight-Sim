@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Index.md",
+            "file": "Design.md",
             "mode": "preview"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Index.md",
+                "file": "Design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "9ade13f2751cf0eb",
   "lastOpenFiles": [
-    "Index.md",
-    "The Process/Testing the Application.md",
-    "The Process/Research and Initial Development.md",
-    "The Process/Quaternions.md",
-    "The Process/Documentation and Understanding.md",
-    "The Process/Building the Application.md",
-    "Analysis.md",
     "Design.md",
-    "Images/System overview.png",
-    "Pasted image 20220201102416.png"
+    "Images/QuatSetOut.png",
+    "Images/QuatSetIn.png",
+    "Images/QuatGet.png",
+    "Images/QuatDef.png",
+    "Analysis.md",
+    "Images/VecAddIn.png",
+    "Images/VecSetOut.png",
+    "Images/VecSetInp.png",
+    "Images/RCDeskPilotMenu2.png"
   ]
 }

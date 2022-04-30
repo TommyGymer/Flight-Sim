@@ -6,6 +6,8 @@
   "spellcheckDictionary": [
     "initialiser",
     "redecleared",
-    "behaviour"
-  ]
+    "behaviour",
+    "Quaternion"
+  ],
+  "promptDelete": false
 }
