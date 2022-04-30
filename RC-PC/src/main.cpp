@@ -28,13 +28,10 @@ int main() {
     
     window.SetState(FLAG_WINDOW_RESIZABLE);
 
-    Object3D obj("..\\obj\\materials.obj");
-    Object3D ground("..\\obj\\surface.obj");
+    Object3D obj(".\\obj\\materials.obj");
+    Object3D ground(".\\obj\\surface.obj");
     ground.scale = raylib::Vector3(10, 10, 10);
     ground.pos.y(0);
-    //Object3D artifact("..\\obj\\materials.obj");
-    //artifact.scale = raylib::Vector3(0.5, 1, 0.5);
-    //artifact.qOme = raylib::Vector3(0, 1, 0);
 
     obj.debug = true;
 
@@ -46,9 +43,12 @@ int main() {
         CAMERA_PERSPECTIVE);
 
     raylib::Shader shader(
-        "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.vs",
+        "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base_lighting.vs",
         "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.fs"
         );
+
+    raylib::Material* mats = ground.model.GetMaterials();
+    std::cout << "material array pointer: " << mats << "\n";
 
     // might need to set some of the shader values:
     //https://blog.weghos.com/raylib/raylib/examples/shaders/shaders_basic_lighting.c.html
@@ -96,7 +96,6 @@ int main() {
             if((state == GameState::Playing) && total > 0.5){
                 raylib::Vector2 mouse = raylib::Mouse::GetPosition() - raylib::Vector2(window.GetWidth()/2, window.GetHeight()/2);
 
-                //this approach doesn't work as the axis are changed by each other
                 obj.angV.y(-mouse.GetX() * 0.1f);
                 obj.angV.x(-mouse.GetY() * 0.1f);
             }
@@ -167,7 +166,6 @@ int main() {
             start = std::chrono::high_resolution_clock::now();
                 
             obj.Update(dt);
-            //artifact.Update(dt);
 
             if(cState == CameraState::Third){
                 camera.SetPosition(raylib::Vector3(10, 10, 0));
@@ -183,7 +181,6 @@ int main() {
                 DrawGrid(1000, 1.0f);
 
                 obj.Draw();
-                //artifact.Draw();
                 ground.Draw();
             }
             camera.EndMode();
