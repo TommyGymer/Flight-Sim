@@ -55,24 +55,22 @@ As I will still be using raylib and the change is only from C to C++, much of th
 ### Setting up C++
 Starting with simply opening a window using C++ rather than C
 
-![[First C++ window.png]]
+![[First C++ window code.png]]
 
 The above shows a demo I found which simply opens a windows and displays some text on it
+
+![[First C++ window.png]]
+
+Allowing window resizing
+![[Window resizing.png]]
 
 ---
 #### Setting up 3D rendering
 
-```
-Camera3D camera = {0};
-camera.position = (Vector3){10.0f, 10.0f, 10.0f};
-camera.target = (Vector3){0.0f, 0.0f, 0.0f};
-camera.up = (Vector3){0.0f, 1.0f, 0.0f};
-camera.fovy = 45.0f;
-camera.type = CAMERA_PERSPECTIVE;
-```
+![[First render code.png]]
 
----
-
+Not currently rendering anything
+![[First render.png]]
 
 ---
 #### Shaders
@@ -86,11 +84,45 @@ Testing one of the example shaders with an object made in Blender
 
 Raylib contains helper methods for parsing .obj files and allows the easy import of a .obj and its related material files
 
-```
-raylib::Model plane("..\\obj\\materials.obj");
-```
+![[cube loading code.png]]
 
-![[Imported cube.png]]
+![[Loading a cube.png]]
+
+---
+
+#### Shaders
+Shaders must then be set for each material to allow the renderer to know what to draw to the screen
+![[material shaders.png]]
+The object can then be drawn during the loop
+![[first draw object.png]]
+A grid can also be rendered to show y=0
+![[cube rendered with grid.png]]
+![[render grid.png]]
+
+---
+
+#### Updating location during runtime
+![[Moving object at runtime.mp4]]
+![[Start time.png]]
+![[total time.png]]
+By recoding the start time of the program, the total run time can be determined
+This can then be used as a parameter of some function to determine location
+
+---
+
+#### Object tracking
+![[Tracking and parametrics.mp4]]
+A more complex movement can be traced by changing all three x, y and z components of the object's location
+![[parametric location.png]]
+The object can then be tracked by pointing the camera at this location
+![[camera targeting.png]]
+
+---
+
+#### Gravity
+![[SUVAT gravity.mp4]]
+Gravity can then be implemented using a SUVAT and the total elapsed time
+![[SUVAT gravity implementation.png]]
 
 ---
 #### Moving the model data to an object
@@ -100,19 +132,36 @@ raylib::Model plane("..\\obj\\materials.obj");
 Now making use of an object class and instancing to keep track of objects and render them
 This will help keep the code clean, as it removes the need to hard code each object required
 
+![[First object class.png]]
+
 Object definition
+
 |Variable name|Type|Usage|
 |:---|:---|:---|
 |model|raylib::model*|mesh and material data for the object|
 |pos|raylib::Vector3|location of the object in 3D space|
 |vel|raylib::Vector3|velocity of the object in 3D space|
-|acc|raylib::Vector3|acceleration of the object in 3D space|
-|qRot|raylib::Vector4|quaternion representing the rotation of the object in 3D space|
-|qOme|raylib::Vector3|angular velocity of the object|
+|rot|raylib::Vector3|axis around which to rotate|
+|angle|float|the angle to rotate around the above axis|
 |scale|raylib::Vector3|scale factor of the model|
-|look|raylib::Vector3|the look vector of the object|
 
-Many of these attributes are required by either the renderer during draw, or for the movement of the camera
+This initial design simply holds the data required for rendering the object
+
+It would be better to implement a number of the required function which are currently within the main function into this class as any object that needs rendering would require them
+Many of these attributes would also have standard values, which would be useful not to need to initialize for every object
+
+---
+#### Numerical integration
+Rather than using a predefined SUVAT for movement, integrating an acceleration for velocity and then integrating velocity for position allows the changing of both acceleration and velocity during runtime
+
+This can be easily achieved by tracking the previous frame time and subtracting this from the current time to find the change in time between the two frames
+This will make any physics based off this time entirely frame independent
+
+![[Finding dt.png]]
+
+The first version of this missed setting start to the current time at the end of dt, resulting in dt being found as the total time since the program started
+
+![[First pos based on integration.mp4]]
 
 ---
 ### Quaternions

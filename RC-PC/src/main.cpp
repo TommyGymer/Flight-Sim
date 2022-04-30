@@ -12,9 +12,11 @@
 enum class GameState{Menu, Playing, Paused};
 enum class CameraState{First, Third};
 
+//currently documenting: https://github.com/TommyGymer/Flight-Sim/commits/main?before=3745b21ce89bc7fbb89dfa7a8cf0cbd1ce6c7727+140&branch=main
+
 int main() {
     //tests
-    fullMatrix::Test(false);
+    fullMatrix::Test(true);
 
     SetTraceLogLevel(LOG_WARNING); //add LOG_INFO to show detailed debug
 

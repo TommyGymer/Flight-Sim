@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Developing a Coded Solution.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -89,14 +89,14 @@
   "active": "9ade13f2751cf0eb",
   "lastOpenFiles": [
     "Developing a Coded Solution.md",
+    "Images/finding dt.png",
+    "Images/camera targeting.png",
+    "Images/parametric location.png",
+    "Images/First C++ window code.png",
     "Design.md",
     "Analysis.md",
     "The Process/Research and Initial Development.md",
     "Index.md",
-    "The Process/Testing the Application.md",
-    "The Process/Quaternions.md",
-    "The Process/Documentation and Understanding.md",
-    "The Process/Building the Application.md",
-    "Images/QuatSetOut.png"
+    "The Process/Testing the Application.md"
   ]
 }

@@ -9,6 +9,19 @@
 //local class file imports
 #include "fullMatrix.cpp"
 
+/*
+|Variable name|Type|Usage|
+|:---|:---|:---|
+|model|raylib::model*|mesh and material data for the object|
+|pos|raylib::Vector3|location of the object in 3D space|
+|vel|raylib::Vector3|velocity of the object in 3D space|
+|acc|raylib::Vector3|acceleration of the object in 3D space|
+|qRot|raylib::Vector4|quaternion representing the rotation of the object in 3D space|
+|qOme|raylib::Vector3|angular velocity of the object|
+|scale|raylib::Vector3|scale factor of the model|
+|look|raylib::Vector3|the look vector of the object|
+*/
+
 class Object3D {
     public:
         //object

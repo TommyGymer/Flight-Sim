@@ -224,7 +224,12 @@ class fullMatrix {
         }
 
         ~fullMatrix() {
-            delete array;
+            try{
+                delete array;
+            }catch(...){
+                std::cout << "unable to delete this array\n";
+            }
+            
         }
 
         void Debug(){
