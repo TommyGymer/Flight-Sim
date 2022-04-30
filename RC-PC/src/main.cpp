@@ -16,6 +16,8 @@ int main() {
     //tests
     fullMatrix::Test();
 
+    SetTraceLogLevel(LOG_WARNING); //add LOG_INFO to show detailed debug
+
     // Initialization
     int screenWidth = 1600;
     int screenHeight = 1200;
@@ -47,8 +49,10 @@ int main() {
         "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.fs"
         );
 
-    raylib::Material* mats = ground.model.GetMaterials();
+    Material* mats = ground.model->GetMaterials();
     std::cout << "material array pointer: " << mats << "\n";
+    int n_mats = ground.model->GetMaterialCount();
+    std::cout << n_mats << "\n";
 
     // might need to set some of the shader values:
     //https://blog.weghos.com/raylib/raylib/examples/shaders/shaders_basic_lighting.c.html
