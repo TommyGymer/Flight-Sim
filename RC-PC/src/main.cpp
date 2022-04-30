@@ -45,14 +45,17 @@ int main() {
         CAMERA_PERSPECTIVE);
 
     raylib::Shader shader(
-        "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base_lighting.vs",
-        "vendor\\raylib-cpp\\vendor\\raylib\\examples\\shaders\\resources\\shaders\\glsl330\\base.fs"
+        ".\\shaders\\base.vs",
+        ".\\shaders\\base.fs"
         );
 
     Material* mats = ground.model->GetMaterials();
     std::cout << "material array pointer: " << mats << "\n";
     int n_mats = ground.model->GetMaterialCount();
     std::cout << n_mats << "\n";
+    for(int i = 0; i < n_mats; i++){
+        mats[i].shader = shader;
+    }
 
     // might need to set some of the shader values:
     //https://blog.weghos.com/raylib/raylib/examples/shaders/shaders_basic_lighting.c.html
