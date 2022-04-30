@@ -14,7 +14,7 @@ enum class CameraState{First, Third};
 
 int main() {
     //tests
-    fullMatrix::Test(true);
+    fullMatrix::Test(false);
 
     SetTraceLogLevel(LOG_WARNING); //add LOG_INFO to show detailed debug
 
@@ -50,9 +50,7 @@ int main() {
         );
 
     Material* mats = ground.model->GetMaterials();
-    std::cout << "material array pointer: " << mats << "\n";
     int n_mats = ground.model->GetMaterialCount();
-    std::cout << n_mats << "\n";
     for(int i = 0; i < n_mats; i++){
         mats[i].shader = shader;
     }
