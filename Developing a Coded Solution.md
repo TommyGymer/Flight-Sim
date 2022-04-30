@@ -52,6 +52,14 @@ Using a port of raylib to c++ will provide access to the OOP features that will 
 As I will still be using raylib and the change is only from C to C++, much of the code remains the same
 
 ---
+### Setting up C++
+Starting with simply opening a window using C++ rather than C
+
+![[First C++ window.png]]
+
+The above shows a demo I found which simply opens a windows and displays some text on it
+
+---
 #### Setting up 3D rendering
 
 ```
