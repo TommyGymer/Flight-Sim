@@ -40,13 +40,13 @@ int main() {
     raylib::Camera3D camera(
         raylib::Vector3(10.0f, 2.0f, 10.0f), //camera location
         raylib::Vector3(0.0f, 0.0f, 0.0f), //camera look
-        raylib::Vector3(0.0f, 1.0f, 0.0f),
+        raylib::Vector3(0.0f, 1.0f, 0.0f), //camera up
         60.0f, //fov
         CAMERA_PERSPECTIVE);
 
     raylib::Shader shader(
-        ".\\shaders\\base.vs",
-        ".\\shaders\\base.fs"
+        "shaders\\base.vs",
+        "shaders\\base.fs"
         );
 
     Material* mats = ground.model->GetMaterials();

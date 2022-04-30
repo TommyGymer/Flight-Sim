@@ -41,6 +41,8 @@ class Object3D {
 
         Object3D(const std::string& fileName) {
             model = new raylib::Model(fileName.c_str());
+            GenMeshTangents(model->GetMeshes());
+            GenMeshBinormals(model->GetMeshes());
         }
 
         //posistion, rotation axis, rotation angle, scale
