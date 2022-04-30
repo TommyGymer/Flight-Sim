@@ -49,6 +49,8 @@ A .obj stores the points within the mesh of an object. These can be extracted fo
 
 Using a port of raylib to c++ will provide access to the OOP features that will help to formalise the structure of the program
 
+As I will still be using raylib and the change is only from C to C++, much of the code remains the same
+
 ---
 #### Setting up 3D rendering
 
@@ -62,9 +64,14 @@ camera.type = CAMERA_PERSPECTIVE;
 ```
 
 ---
+
+
+---
 #### Shaders
 
 ![[Shaders.png]]
+
+Testing one of the example shaders with an object made in Blender
 
 ---
 #### Object loading
@@ -78,13 +85,26 @@ raylib::Model plane("..\\obj\\materials.obj");
 ![[Imported cube.png]]
 
 ---
-#### Object based rendering
+#### Moving the model data to an object
 
 ![[OOP demo.mp4]]
 
 Now making use of an object class and instancing to keep track of objects and render them
-
 This will help keep the code clean, as it removes the need to hard code each object required
+
+Object definition
+|Variable name|Type|Usage|
+|:---|:---|:---|
+|model|raylib::model*|mesh and material data for the object|
+|pos|raylib::Vector3|location of the object in 3D space|
+|vel|raylib::Vector3|velocity of the object in 3D space|
+|acc|raylib::Vector3|acceleration of the object in 3D space|
+|qRot|raylib::Vector4|quaternion representing the rotation of the object in 3D space|
+|qOme|raylib::Vector3|angular velocity of the object|
+|scale|raylib::Vector3|scale factor of the model|
+|look|raylib::Vector3|the look vector of the object|
+
+Many of these attributes are required by either the renderer during draw, or for the movement of the camera
 
 ---
 ### Quaternions
@@ -143,7 +163,7 @@ Now able to rotate an object using an Euler 3D vector for angular velocity
 ---
 ### Making a matrix class
 ---
-
+The raylib::Vector4 quaternion class currently in use
 
 ---
 ### Pointers

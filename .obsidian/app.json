@@ -9,7 +9,10 @@
     "behaviour",
     "Quaternion",
     "Quaternions",
-    "quaternions"
+    "quaternions",
+    "quaternion",
+    "renderer",
+    "shaders"
   ],
   "promptDelete": false
 }
