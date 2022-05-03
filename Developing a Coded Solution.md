@@ -306,6 +306,8 @@ With these two functions, all matrix operations can be derived
 
 ![[Matrix sum.png]]
 
+Until all functions shown in the algorithms section of Design are complete and tested
+
 The raylib::Vector4 quaternion class currently in use appears to have some problems with my current aim which is to rotate the camera using the mouse for debugging rotation, movement and rendering
 
 ---
@@ -343,3 +345,86 @@ After these changes, the matrix class can now be used for vector addition.
 Further unit tests need to be written before the use of the rest of the functions to ensure they are working correctly before attempting to implement anything complicated.
 
 The matrix class' delete function, ``~fullMatrix``, simply calls delete[] on the object's array. This is probably not necessary as this should be the default behaviour.
+
+---
+### Look vector camera movement
+
+![[Look vector.png]]
+
+A look vector is defined in the object class and is updated in the update function
+
+![[Update look vector.png]]
+
+The camera can then target its position plus this look vector
+
+![[Camera look vector.png]]
+
+Bellow is a demo of this
+
+![[Look vector demo.mp4]]
+
+The camera is rotated with a and d with forward and backward motion on w and s
+
+![[Rotation input.png]]
+
+---
+### Mouse input
+
+First the mouse must be setup by hiding it
+
+![[Mouse setup.png]]
+
+The change in mouse location is then calculated and a sensitivity factor is used
+The mouse is then moved back to the center to allow the next mouse change to be calculated
+
+![[Find change in mouse location.png]]
+
+A pause button to allow moving the mouse away from the program 
+
+![[Pausing.png]]
+
+A pause toggle button is added to p
+
+![[Pause button on p.png]]
+
+---
+### Camera up vector
+
+Currently, the object drifts as the velocity and acceleration are not being correctly rotated
+
+Adding the camera up vector will allow easier debugging of this by displaying the problem
+
+![[Up vector def.png]]
+
+The up vector is defined within the object class
+
+![[Updating the up vector.png]]
+
+The up vector is updated within the update function
+
+![[Setting camera up vector.png]]
+
+The camera up vector is then set to the object's up vector
+
+![[Demo of the tilt.mp4]]
+
+---
+### Splitting classes into files
+
+![[Split files.png]]
+
+Splitting the classes into separate files will clean up the main file and make it easier to keep the code organized
+
+---
+### Replacing boolean game state with an enum
+
+This will allow easier reading as well as easy addition of new game states, such as main menu or other specific menu area
+
+![[Game state enum.png]]
+
+---
+### Transferring physics to the matrix class
+
+Most of the code remains the same beside the class names used at initialization
+
+![[New object with matrix class.png]]
