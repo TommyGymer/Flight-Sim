@@ -275,8 +275,37 @@ This will need to be a unit vector rotated by the quaternion to be in front of t
 For debugging purposes, the camera target is set to another object's location with is placed at the origin
 
 ---
-### Making a matrix class
+#### Rotating the velocity with the quaternion
+
+![[Vel rot by quat.mp4]]
+
+By rotating the velocity be the quaternion, the look direction of the camera can be kept consistent with the direction of movement caused by the keyboard input
+
+![[Set quat with camera.png]]
+
+In this case, for debugging, the object quaternion is set using the camera's quaternion as this can be easily updated using the `SetTarget` function
+
 ---
+### Making a matrix class
+
+The matrix class begins with a simple double array and two integers to define the width and height of the matrix
+
+![[Start of matrix class.png]]
+
+This will be the base data structure used to store all data about the matrix
+
+A get and set function are required to translate an x,y position in the matrix into the required index in the double array
+
+![[Get matrix.png]]
+
+![[Set matrix.png]]
+
+If the position is outside of the matrix, the function will throw an error after printing an out-of-bounds message
+
+With these two functions, all matrix operations can be derived
+
+![[Matrix sum.png]]
+
 The raylib::Vector4 quaternion class currently in use appears to have some problems with my current aim which is to rotate the camera using the mouse for debugging rotation, movement and rendering
 
 ---

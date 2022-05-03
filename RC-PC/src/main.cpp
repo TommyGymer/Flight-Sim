@@ -21,7 +21,7 @@ class Object3D {
         raylib::Model* model;
 
         //physics
-        raylib::Vector3 pos = raylib::Vector3(0, 1, 0);
+        raylib::Vector3 pos = raylib::Vector3(10, 1, 0);
         raylib::Vector3 vel = raylib::Vector3(0, 0, 0);
         raylib::Vector3 acc = raylib::Vector3(0, -9.81, 0);
 
@@ -45,7 +45,7 @@ class Object3D {
 
         void Update(float dt){
             vel = vel + (acc * dt);
-            pos = pos + (vel * dt);
+            pos = pos + (vel.RotateByQuaternion(qRot) * dt); //rotates object space to global space
 
             //update quaternion with the angular velocity
             float angle = cos((qOme.Length() * dt)/2);
@@ -143,6 +143,8 @@ int main() {
 
             //camera.SetTarget(obj.pos);
             camera.SetPosition(obj.pos);
+
+            obj.qRot = raylib::Vector4::FromMatrix(camera.GetMatrix());
 
             camera.BeginMode();
             {
