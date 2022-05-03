@@ -427,4 +427,27 @@ This will allow easier reading as well as easy addition of new game states, such
 
 Most of the code remains the same beside the class names used at initialization
 
+![[Object with matrix class.png]]
+
+Now using an explicit definition of the update quaternion
+
+![[Updating the quaternion.png]]
+
+This also checks for a 0 length angular velocity which would result in a divide by zero error when normalizing if left
+
+The formula for the update quaternion is from [this lecture from Stanford University](https://stanford.edu/class/ee267/lectures/lecture10.pdf)
+
+---
+### Correcting use of global and local space
+
 ![[New object with matrix class.png]]
+
+Added new global versions of acceleration and velocity to remove the reliance on the rotation quaternion and to reduce the time complexity
+
+![[Split global and local angv.png]]
+
+Splitting of the angular velocity into global and local movements allows the rotation required for use with a mouse
+
+This solution also ensures that any combination of global and local rotation transformations can be easily tested and achieved
+
+When used with a controller, most of the inputs will need to be local and the control surfaces of an aircraft act on along the axis of the plane

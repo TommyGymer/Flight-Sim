@@ -7,7 +7,7 @@
 #include <math.h>
 
 //local class file imports
-//#include "object.cpp"
+#include "object.cpp"
 
 enum class GameState{Menu, Playing, Paused};
 enum class CameraState{First, Third};
