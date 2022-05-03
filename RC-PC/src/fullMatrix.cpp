@@ -225,11 +225,10 @@ class fullMatrix {
 
         ~fullMatrix() {
             try{
-                delete array;
+                delete[] array;
             }catch(...){
                 std::cout << "unable to delete this array\n";
             }
-            
         }
 
         void Debug(){

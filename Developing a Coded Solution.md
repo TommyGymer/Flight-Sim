@@ -451,3 +451,14 @@ Splitting of the angular velocity into global and local movements allows the rot
 This solution also ensures that any combination of global and local rotation transformations can be easily tested and achieved
 
 When used with a controller, most of the inputs will need to be local and the control surfaces of an aircraft act on along the axis of the plane
+
+---
+### Shaders
+
+![[Colouring of surface.png]]
+
+By using the dot product of the normal of the surface and a direction from which to project light, the surface can be coloured with an effect similar to shadows within a single convex shape
+
+![[Normal based shadow shader.png]]
+
+Scaling a shade of green with the dot product of the vertex and an arbitrary direction for the light source
