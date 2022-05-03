@@ -52,7 +52,7 @@ Using a port of raylib to c++ will provide access to the OOP features that will 
 As I will still be using raylib and the change is only from C to C++, much of the code remains the same
 
 ---
-### Setting up C++
+#### Setting up C++
 Starting with simply opening a window using C++ rather than C
 
 ![[First C++ window code.png]]
@@ -73,14 +73,14 @@ Not currently rendering anything
 ![[First render.png]]
 
 ---
-#### Shaders
+### Shaders
 
 ![[Shaders.png]]
 
 Testing one of the example shaders with an object made in Blender
 
 ---
-#### Object loading
+### Object loading
 
 Raylib contains helper methods for parsing .obj files and allows the easy import of a .obj and its related material files
 
@@ -90,7 +90,7 @@ Raylib contains helper methods for parsing .obj files and allows the easy import
 
 ---
 
-#### Shaders
+### Shaders
 Shaders must then be set for each material to allow the renderer to know what to draw to the screen
 ![[material shaders.png]]
 The object can then be drawn during the loop
@@ -101,7 +101,7 @@ A grid can also be rendered to show y=0
 
 ---
 
-#### Updating location during runtime
+### Updating location during runtime
 ![[Moving object at runtime.mp4]]
 ![[Start time.png]]
 ![[total time.png]]
@@ -110,7 +110,7 @@ This can then be used as a parameter of some function to determine location
 
 ---
 
-#### Object tracking
+### Object tracking
 ![[Tracking and parametrics.mp4]]
 A more complex movement can be traced by changing all three x, y and z components of the object's location
 ![[parametric location.png]]
@@ -119,13 +119,13 @@ The object can then be tracked by pointing the camera at this location
 
 ---
 
-#### Gravity
+### Gravity
 ![[SUVAT gravity.mp4]]
 Gravity can then be implemented using a SUVAT and the total elapsed time
 ![[SUVAT gravity implementation.png]]
 
 ---
-#### Moving the model data to an object
+### Moving the model data to an object
 
 ![[OOP demo.mp4]]
 
@@ -151,7 +151,7 @@ It would be better to implement a number of the required function which are curr
 Many of these attributes would also have standard values, which would be useful not to need to initialize for every object
 
 ---
-#### Numerical integration
+### Numerical integration
 Rather than using a predefined SUVAT for movement, integrating an acceleration for velocity and then integrating velocity for position allows the changing of both acceleration and velocity during runtime
 
 This can be easily achieved by tracking the previous frame time and subtracting this from the current time to find the change in time between the two frames
@@ -162,6 +162,24 @@ This will make any physics based off this time entirely frame independent
 The first version of this missed setting start to the current time at the end of dt, resulting in dt being found as the total time since the program started
 
 ![[First pos based on integration.mp4]]
+
+---
+### Moving per object functions to the Object class
+![[Public draw function.png]]
+
+Moving the draw function to within the class allows the use of the local object variables without the need to first extract the required data for drawing from the object
+
+This also allows for the code within the main loop to be kept simpler as each object only requires a single function call to draw
+
+---
+#### Per Object physics
+![[First update function.png]]
+
+By moving the physics updating to a function, the code in the main loop can be further simplified to only require an update call and a draw call per object
+
+This new implementation also features a collision detection with y=0 to allow the cube to stop falling at this plane
+
+![[Cube collide with y0.mp4]]
 
 ---
 ### Quaternions
@@ -211,16 +229,55 @@ $$ k = w_1 z_2 + x_1 y_2 - y_1 x_2 + z_1 w_2 $$
 
 Raylib contains some helpers for working with quaternions, such as a quaternion to axis-angle conversion, but will require the implementing of some way to integrate a quaternion velocity and possible quaternion acceleration
 
+![[Quaternion.png]]
+The above is the rotation quaternion within the object class
+
+By modifying the draw function, the new quaternion representation of the rotation can be used
+
+![[Quat draw.png]]
+
 ![[Quaternions complete.png]]
 
 ![[Rotation demo.mp4]]
 
 Now able to rotate an object using an Euler 3D vector for angular velocity
 
+![[angular vel.png]]
+
+Along with an integrator from the update angular velocity to the rotation quaternion
+
+![[Quat integration.png]]
+
+---
+### Adding simple movement input
+
+![[Movement.mp4]]
+
+![[Keyboard input.png]]
+
+By damping the x-y velocity, an effect similar to friction can be achieved
+The velocity is set to a particular amount in a particular direction when one of the "wasd" keys is pressed
+As the velocity is already being integrated for position, the implantation of this user input is trivial
+
+---
+### First person
+
+By moving the camera to the player object's location and rotation, first person gameplay is achieved
+As both the object location and rotation are already available from the object, they can simply be set as the camera location and rotation
+
+![[Set camera pos.png]]
+
+As the camera is set to the object's location, the target can no longer be the object itself
+This will need to be a unit vector rotated by the quaternion to be in front of the camera
+
+![[First first person.mp4]]
+
+For debugging purposes, the camera target is set to another object's location with is placed at the origin
+
 ---
 ### Making a matrix class
 ---
-The raylib::Vector4 quaternion class currently in use
+The raylib::Vector4 quaternion class currently in use appears to have some problems with my current aim which is to rotate the camera using the mouse for debugging rotation, movement and rendering
 
 ---
 ### Pointers

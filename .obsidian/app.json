@@ -12,7 +12,9 @@
     "quaternions",
     "quaternion",
     "renderer",
-    "shaders"
+    "shaders",
+    "gameplay",
+    "infront"
   ],
   "promptDelete": false
 }
