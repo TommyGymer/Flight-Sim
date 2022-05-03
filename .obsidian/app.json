@@ -14,7 +14,9 @@
     "renderer",
     "shaders",
     "gameplay",
-    "infront"
+    "infront",
+    "coloured",
+    "colour"
   ],
   "promptDelete": false
 }
