@@ -5,6 +5,7 @@
 #include <chrono>
 #include <string>
 #include <math.h>
+#include <vector>
 
 //local class file imports
 #include "fullMatrix.cpp"
@@ -23,6 +24,8 @@
 */
 
 class Object3D {
+    private:
+        std::vector<Object3D> collides;
     public:
         //object
         raylib::Model* model;
@@ -52,16 +55,21 @@ class Object3D {
         //debug
         bool debug = false;
 
+        void CollidesWith(Object3D* other){
+            collides.push_back(*other);
+        }
+
         Object3D(const std::string& fileName) {
             model = new raylib::Model(fileName.c_str());
             GenMeshTangents(model->GetMeshes());
             GenMeshBinormals(model->GetMeshes());
+            collides = {};
         }
 
         //posistion, rotation axis, rotation angle, scale
         void Draw(){
             std::pair<raylib::Vector3, float> rot = qRot.GetVec4().ToAxisAngle();
-            model->Draw(pos.GetVec3(), std::get<0>(rot), (std::get<1>(rot) * 180)/PI, scale);
+            model->Draw(pos.GetVec3(), std::get<0>(rot), (std::get<1>(rot) * 180)/PI, raylib::Vector3(1.0,1.0,1.0));
             if(debug){
                 DrawLine3D(pos.GetVec3(), (pos + vel + gvel).GetVec3(), GOLD);
                 DrawLine3D(pos.GetVec3(), (pos + qRot.ToAxisAngle().GetComplex()).GetVec3(), LIME);
@@ -103,8 +111,17 @@ class Object3D {
             gvel = gvel + (gacc * dt); //global space integration
 
             //call collides here
+            for(int i = 0; i < collides.size(); i++){
+                Collide(collides[i]);
+            }
 
             pos = pos + ((vel.RotateByQuaternion(qRot) + gvel) * dt); //rotates object space to global space
+
+            Matrix mat = model->GetTransform();
+            mat.m0 = scale.GetX();
+            mat.m5 = scale.GetY();
+            mat.m10 = scale.GetZ();
+            model->SetTransform(mat);
 
             look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(qRot).GetVec3();
             up = fullMatrix(MatrixType::Vector, 0, 1, 0).RotateByQuaternion(qRot).GetVec3();
@@ -118,6 +135,11 @@ class Object3D {
         }
 
         void Collide(Object3D other){
-            raylib::Ray()
+            raylib::Ray ray((pos - other.pos).GetVec3(), (vel.RotateByQuaternion(qRot) + gvel).GetVec3());
+            ray.Draw(BLACK);
+            raylib::RayCollision collision = ray.GetCollision(*other.model);
+            if(collision.GetHit()){
+                std::cout << collision.GetDistance() << "\n";
+            }
         }
 };

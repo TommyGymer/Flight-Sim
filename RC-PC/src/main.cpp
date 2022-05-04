@@ -35,10 +35,16 @@ int main() {
 
     Object3D obj("obj\\materials.obj");
     Object3D ground("obj\\surface.obj");
-    ground.scale = raylib::Vector3(100, 50, 100);
+    ground.scale = raylib::Vector3(10, 5, 10);
     ground.pos.y(0);
+    obj.CollidesWith(&ground);
 
-    obj.debug = true;
+    std::cout << ground.model->GetTransform().m0 << " " << ground.model->GetTransform().m1 << " " << ground.model->GetTransform().m2 << " " << ground.model->GetTransform().m3 << "\n";
+    std::cout << ground.model->GetTransform().m4 << " " << ground.model->GetTransform().m5 << " " << ground.model->GetTransform().m6 << " " << ground.model->GetTransform().m7 << "\n";
+    std::cout << ground.model->GetTransform().m8 << " " << ground.model->GetTransform().m9 << " " << ground.model->GetTransform().m10 << " " << ground.model->GetTransform().m11 << "\n";
+    std::cout << ground.model->GetTransform().m12 << " " << ground.model->GetTransform().m13 << " " << ground.model->GetTransform().m14 << " " << ground.model->GetTransform().m15 << "\n";
+
+    obj.debug = false;
 
     raylib::Camera3D camera(
         raylib::Vector3(10.0f, 2.0f, 10.0f), //camera location
