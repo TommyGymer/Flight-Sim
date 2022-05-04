@@ -35,14 +35,16 @@ int main() {
 
     Object3D obj("obj\\materials.obj");
     Object3D ground("obj\\surface.obj");
-    ground.scale = raylib::Vector3(10, 5, 10);
-    ground.pos.y(0);
+    ground.scale = raylib::Vector3(200, 100, 200);
+    ground.pos.y(-1);
     obj.CollidesWith(&ground);
+    obj.pos.x(50);
+    obj.pos.y(50);
 
-    std::cout << ground.model->GetTransform().m0 << " " << ground.model->GetTransform().m1 << " " << ground.model->GetTransform().m2 << " " << ground.model->GetTransform().m3 << "\n";
-    std::cout << ground.model->GetTransform().m4 << " " << ground.model->GetTransform().m5 << " " << ground.model->GetTransform().m6 << " " << ground.model->GetTransform().m7 << "\n";
-    std::cout << ground.model->GetTransform().m8 << " " << ground.model->GetTransform().m9 << " " << ground.model->GetTransform().m10 << " " << ground.model->GetTransform().m11 << "\n";
-    std::cout << ground.model->GetTransform().m12 << " " << ground.model->GetTransform().m13 << " " << ground.model->GetTransform().m14 << " " << ground.model->GetTransform().m15 << "\n";
+    // std::cout << ground.model->GetTransform().m0 << " " << ground.model->GetTransform().m1 << " " << ground.model->GetTransform().m2 << " " << ground.model->GetTransform().m3 << "\n";
+    // std::cout << ground.model->GetTransform().m4 << " " << ground.model->GetTransform().m5 << " " << ground.model->GetTransform().m6 << " " << ground.model->GetTransform().m7 << "\n";
+    // std::cout << ground.model->GetTransform().m8 << " " << ground.model->GetTransform().m9 << " " << ground.model->GetTransform().m10 << " " << ground.model->GetTransform().m11 << "\n";
+    // std::cout << ground.model->GetTransform().m12 << " " << ground.model->GetTransform().m13 << " " << ground.model->GetTransform().m14 << " " << ground.model->GetTransform().m15 << "\n";
 
     obj.debug = false;
 
@@ -77,7 +79,7 @@ int main() {
     std::cout << "Entering event loop\n";
 
     GameState state = GameState::Paused;
-    CameraState cState = CameraState::Third;
+    CameraState cState = CameraState::First;
 
     HideCursor();
     DisableCursor();
@@ -150,10 +152,6 @@ int main() {
                 }
             }
 
-            obj.vel.x(obj.vel.x() * 0.95);
-            obj.vel.z(obj.vel.z() * 0.95);
-            obj.gvel.x(obj.gvel.x() * 0.95);
-            obj.gvel.z(obj.gvel.z() * 0.95);
             if(IsKeyDown(static_cast<int>(Key::A))){
                 obj.vel.x(-10);
             }
@@ -181,6 +179,7 @@ int main() {
             start = std::chrono::high_resolution_clock::now();
             
             obj.Update(dt);
+            ground.Update(dt);
 
             if(cState == CameraState::Third){
                 camera.SetPosition(raylib::Vector3(10, 10, 0));

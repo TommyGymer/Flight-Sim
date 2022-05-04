@@ -249,6 +249,19 @@ class fullMatrix {
             n = tmp;
         }
 
+        double Dot(fullMatrix other){
+            if(n==1){
+                double total = 0;
+                for(int i = 0; i < m; i++){
+                    total += array[i] * other.array[i];
+                }
+                return total;
+            }else{
+                std::cout << "Not a vector\n";
+                throw -1;
+            }
+        }
+
         fullMatrix operator+(fullMatrix other){
             if(m == other.m && n == other.n){
                 fullMatrix rtn(m, n);
