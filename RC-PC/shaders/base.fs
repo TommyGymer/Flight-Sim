@@ -19,6 +19,6 @@ void main()
     vec4 texelColor = texture(texture0, fragTexCoord);
 
     // NOTE: Implement here your fragment shader code
-    finalColor = colDiffuse * fragColor;//fragColor;//texelColor;//texelColor*colDiffuse*fragColor;
+    finalColor = vec4(vec3(0.2), 1.0) * (vec4(1.0) - colDiffuse) + fragColor * colDiffuse;
 }
 

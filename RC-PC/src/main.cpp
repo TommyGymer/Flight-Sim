@@ -11,12 +11,13 @@
 
 enum class GameState{Menu, Playing, Paused};
 enum class CameraState{First, Third};
+enum class Key{A=65,B=66,C=67,D=68,E=69,F=70,G=71,H=72,I=73,J=74,K=75,L=76,M=77,N=78,O=79,P=80,Q=81,R=82,S=83,T=84,U=85,V=86,W=87,X=88,Y=89,Z=90};
 
 //currently documenting: https://github.com/TommyGymer/Flight-Sim/commits/main?before=3745b21ce89bc7fbb89dfa7a8cf0cbd1ce6c7727+35&branch=main
 
 int main() {
     //tests
-    fullMatrix::Test(true);
+    fullMatrix::Test(false);
 
     SetTraceLogLevel(LOG_WARNING); //add LOG_INFO to show detailed debug
 
@@ -32,9 +33,9 @@ int main() {
     
     window.SetState(FLAG_WINDOW_RESIZABLE);
 
-    Object3D obj(".\\obj\\materials.obj");
-    Object3D ground(".\\obj\\surface.obj");
-    ground.scale = raylib::Vector3(10, 10, 10);
+    Object3D obj("obj\\materials.obj");
+    Object3D ground("obj\\surface.obj");
+    ground.scale = raylib::Vector3(100, 50, 100);
     ground.pos.y(0);
 
     obj.debug = true;
@@ -123,22 +124,22 @@ int main() {
             }
 
             if(state == GameState::Paused){
-                if(IsKeyPressed(80)){ //p
+                if(IsKeyPressed(static_cast<int>(Key::P))){
                     raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
                     state = GameState::Playing;
                 }
             }else{
-                if(IsKeyPressed(80)){ //p
+                if(IsKeyPressed(static_cast<int>(Key::P))){
                     state = GameState::Paused;
                 }
             }
 
             if(cState == CameraState::First){
-                if(IsKeyPressed(70)){
+                if(IsKeyPressed(static_cast<int>(Key::F))){
                     cState = CameraState::Third;
                 }
             }else{
-                if(IsKeyPressed(70)){
+                if(IsKeyPressed(static_cast<int>(Key::F))){
                     cState = CameraState::First;
                 }
             }
@@ -147,20 +148,20 @@ int main() {
             obj.vel.z(obj.vel.z() * 0.95);
             obj.gvel.x(obj.gvel.x() * 0.95);
             obj.gvel.z(obj.gvel.z() * 0.95);
-            if(IsKeyDown(65)){ //a
+            if(IsKeyDown(static_cast<int>(Key::A))){
                 obj.vel.x(-10);
             }
-            if(IsKeyDown(68)){ //d
+            if(IsKeyDown(static_cast<int>(Key::D))){
                 obj.vel.x(10);
             }
-            if(IsKeyDown(83)){ //s
+            if(IsKeyDown(static_cast<int>(Key::S))){
                 obj.vel.z(10);
             }
-            if(IsKeyDown(87)){ //w
+            if(IsKeyDown(static_cast<int>(Key::W))){
                 obj.vel.z(-10);
             }
 
-            if(IsKeyDown(69)){ //e
+            if(IsKeyDown(static_cast<int>(Key::E))){
                 obj.pos.x(0);
                 obj.pos.z(0);
                 obj.vel.x(0);
@@ -172,7 +173,7 @@ int main() {
             float dt = duration.count() / 1000000.0f;
             total += dt;
             start = std::chrono::high_resolution_clock::now();
-                
+            
             obj.Update(dt);
 
             if(cState == CameraState::Third){

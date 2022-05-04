@@ -73,17 +73,6 @@ class Object3D {
         void Update(float dt){
             //update quaternion with the angular velocity
 
-            if(debug){
-                //std::cout << qOme.GetX() << ", " << qOme.GetY() << ", " << qOme.GetZ() << "\n";
-                //std::cout << qRot.GetX() << ", " << qRot.GetY() << ", " << qRot.GetZ() << ", " << qRot.GetW() << "\n";
-                //std::cout << "(" << vel.GetX() << ", " << vel.GetY() << ", " << vel.GetZ() << ")" << "\n";
-                //(fullMatrix(vel.RotateByQuaternion(qRot)) * dt).Debug();
-                //std::cout << "(" << pos.GetVec3().GetX() << ", " << pos.GetVec3().GetY() << ", " << pos.GetVec3().GetZ() << ")" << "\n";
-                //std::cout << "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ")" << "\n";
-                //std::cout << pos.x() << ", " << pos.y() << ", " << pos.z() << "\n";
-                //std::cout << vel.x() << ", " << vel.y() << ", " << vel.z() << "\n";
-            }
-
             fullMatrix angVGlob(MatrixType::Vector, 0, angV.y(), 0);
             fullMatrix angVLocl(MatrixType::Vector, angV.x(), 0, 0);
 
@@ -112,6 +101,9 @@ class Object3D {
             //integrating
             vel = vel + (acc * dt); //local space integration
             gvel = gvel + (gacc * dt); //global space integration
+
+            //call collides here
+
             pos = pos + ((vel.RotateByQuaternion(qRot) + gvel) * dt); //rotates object space to global space
 
             look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(qRot).GetVec3();
@@ -123,5 +115,9 @@ class Object3D {
                 vel.y(0);
                 gvel.y(0);
             }
+        }
+
+        void Collide(Object3D other){
+            raylib::Ray()
         }
 };

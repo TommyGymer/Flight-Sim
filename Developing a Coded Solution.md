@@ -462,3 +462,12 @@ By using the dot product of the normal of the surface and a direction from which
 ![[Normal based shadow shader.png]]
 
 Scaling a shade of green with the dot product of the vertex and an arbitrary direction for the light source
+
+---
+### Shaders finished
+
+![[Final shaders.png]]
+
+The shaders now simulate shadows relatively well with the runway correctly colourised
+
+![[Final shaders runway.png]]
