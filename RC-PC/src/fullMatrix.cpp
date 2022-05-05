@@ -591,6 +591,18 @@ class fullMatrix {
             }
         }
 
+        fullMatrix RemoveComponent(fullMatrix normal){
+            fullMatrix add(*this);
+            fullMatrix sub(*this);
+            add = add + (normal * add.Dot(normal));
+            sub = sub - (normal * sub.Dot(normal));
+            if(add.Length() < sub.Length()){
+                return add;
+            }else{
+                return sub;
+            }
+        }
+
         /*fullMatrix Update(fullMatrix update){
 
         }*/

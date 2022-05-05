@@ -123,7 +123,7 @@ class Object3D {
                 Collide(collides[i], dt);
             }
 
-            cvel = vel.RotateByQuaternion(qRot) + gvel;
+            //cvel = vel.RotateByQuaternion(qRot) + gvel;
 
             pos = pos + (cvel * dt); //rotates object space to global space
 
@@ -153,13 +153,17 @@ class Object3D {
             if((vel.RotateByQuaternion(qRot) + gvel).Length() != 0){
                 raylib::Ray ray((pos - other.pos).GetVec3(), cvel.GetVec3());
                 raylib::RayCollision collision = ray.GetCollision(*other.model);
-                if(collision.GetHit() && collision.GetDistance() <= cvel.Length() * dt){
+                if(collision.GetHit() && collision.GetDistance() <= (vel.RotateByQuaternion(qRot) + gvel).Length() * dt){
                     fullMatrix normal(collision.GetNormal());
-                    // pos = fullMatrix(collision.GetPosition());
-                    vel = (vel - (normal * vel.Dot(normal))) + normal;// * 0.9;
-                    gvel = (gvel - (normal * gvel.Dot(normal))) + normal;// * 0.5;
+                    // vel = vel.RotateByQuaternion(qRot).RemoveComponent(normal).DeRotateByQuaternion(qRot);
+                    // gvel = gvel.RemoveComponent(normal);
+                    cvel = gvel.RemoveComponent(normal) + vel.RotateByQuaternion(qRot).RemoveComponent(normal).DeRotateByQuaternion(qRot);
+                    gvel = gvel - (gacc * dt);
                     // cvel = (cvel - (normal * cvel.Dot(normal)));// * 0.9;
-                    // std::cout << collision.GetDistance() << "\n";
+                    std::cout << cvel.x() << ", " << cvel.y() << ", " << cvel.z() << "\n";
+                    //std::cout << collision.GetDistance() << "\n";
+                }else{
+                    cvel = vel.RotateByQuaternion(qRot) + gvel;
                 }
             }
         }
