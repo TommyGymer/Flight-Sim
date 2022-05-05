@@ -136,7 +136,7 @@ class Object3D {
             t.m3 = pos.x();
             t.m7 = pos.y();
             t.m11 = pos.z();
-            model->SetTransform((fullMatrix(s) * fullMatrix(t)).GetMatrix());
+            model->SetTransform((fullMatrix(t) * fullMatrix(s)).GetMatrix());
 
             look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(qRot).GetVec3();
             up = fullMatrix(MatrixType::Vector, 0, 1, 0).RotateByQuaternion(qRot).GetVec3();
