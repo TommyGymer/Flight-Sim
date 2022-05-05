@@ -36,10 +36,11 @@ int main() {
     Object3D obj("obj\\materials.obj");
     Object3D ground("obj\\surface.obj");
     ground.scale = raylib::Vector3(200, 100, 200);
-    ground.pos.y(-1);
+    ground.pos.y(0);
     obj.CollidesWith(&ground);
-    obj.pos.x(50);
-    obj.pos.y(50);
+    obj.pos.x(200);
+    obj.pos.y(10);
+    ground.Update(0);
 
     // std::cout << ground.model->GetTransform().m0 << " " << ground.model->GetTransform().m1 << " " << ground.model->GetTransform().m2 << " " << ground.model->GetTransform().m3 << "\n";
     // std::cout << ground.model->GetTransform().m4 << " " << ground.model->GetTransform().m5 << " " << ground.model->GetTransform().m6 << " " << ground.model->GetTransform().m7 << "\n";
@@ -179,7 +180,6 @@ int main() {
             start = std::chrono::high_resolution_clock::now();
             
             obj.Update(dt);
-            ground.Update(dt);
 
             if(cState == CameraState::Third){
                 camera.SetPosition(raylib::Vector3(10, 10, 0));

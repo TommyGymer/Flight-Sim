@@ -134,9 +134,59 @@ class fullMatrix {
             n = _n;
             if(_m == _n){
                 for(int i = 0; i < _m; i++){
-                    this->Set(i, i, 1);
+                    this->Set(i, i, 0);
                 }
             }
+        }
+
+        fullMatrix(raylib::Matrix mat){
+            m = 4;
+            n = 4;
+            array = new double[m * n];
+
+            array[0] = mat.m0;
+            array[1] = mat.m1;
+            array[2] = mat.m2;
+            array[3] = mat.m3;
+
+            array[4] = mat.m4;
+            array[5] = mat.m5;
+            array[6] = mat.m6;
+            array[7] = mat.m7;
+
+            array[8] = mat.m8;
+            array[9] = mat.m9;
+            array[10] = mat.m10;
+            array[11] = mat.m11;
+
+            array[12] = mat.m12;
+            array[13] = mat.m13;
+            array[14] = mat.m14;
+            array[15] = mat.m15;
+        }
+
+        raylib::Matrix GetMatrix(){
+            return raylib::Matrix(
+                array[0],
+                array[1],
+                array[2],
+                array[3],
+
+                array[4],
+                array[5],
+                array[6],
+                array[7],
+
+                array[8],
+                array[9],
+                array[10],
+                array[11],
+
+                array[12],
+                array[13],
+                array[14],
+                array[15]
+            );
         }
 
         //copy constructor

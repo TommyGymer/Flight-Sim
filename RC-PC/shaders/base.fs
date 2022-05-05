@@ -21,4 +21,3 @@ void main()
     // NOTE: Implement here your fragment shader code
     finalColor = vec4(vec3(0.2), 1.0) * (vec4(1.0) - colDiffuse) + fragColor * colDiffuse;
 }
-
