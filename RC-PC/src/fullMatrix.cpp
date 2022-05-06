@@ -11,7 +11,7 @@ class fullMatrix {
     public:
         int m;
         int n;
-        double* array;
+        double* array = 0;
 
         //1   2   3   ...   n
         //2     
@@ -132,6 +132,7 @@ class fullMatrix {
             m = _m;
             n = _n;
             array = new double[m * n];
+            std::cout << "creating at: " <<array << "\n";
             if(m == n){
                 for(int i = 0; i < m; i++){
                     Set(i, i, 0);
@@ -194,6 +195,7 @@ class fullMatrix {
             m = other.m;
             n = other.n;
             array = new double[m * n];
+            std::cout << "creating at: " <<array << "\n";
             std::copy(other.array, other.array + (n * m), array);
         }
 
@@ -275,7 +277,12 @@ class fullMatrix {
 
         ~fullMatrix() {
             Debug();
+            std::cout << "deleting at: " <<array << "\n";
+            if(array == 0){
+                std::cout << "hmm\n";
+            }
             delete[] array;
+            array = 0;
             // if(array && array[0]){
             //     delete[] array;
             // }else{
@@ -755,7 +762,7 @@ class fullMatrix {
                         for(int i = 0; i < 9; i++){
                             assert(mat.array[i] == values[i]);
                         }
-                        std::cout << "asserts finished\n";
+                        std::cout << "┣━━━asserts finished\n";
                     }
                     if(output)std::cout << "┣━━Testing identity mat: checked\n";
 
