@@ -47,7 +47,7 @@ int main() {
     // std::cout << ground.model->GetTransform().m8 << " " << ground.model->GetTransform().m9 << " " << ground.model->GetTransform().m10 << " " << ground.model->GetTransform().m11 << "\n";
     // std::cout << ground.model->GetTransform().m12 << " " << ground.model->GetTransform().m13 << " " << ground.model->GetTransform().m14 << " " << ground.model->GetTransform().m15 << "\n";
 
-    obj.debug = false;
+    obj.debug = true;
 
     raylib::Camera3D camera(
         raylib::Vector3(10.0f, 2.0f, 10.0f), //camera location

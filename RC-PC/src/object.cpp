@@ -154,19 +154,19 @@ class Object3D {
                 raylib::Ray ray((pos - other.pos).GetVec3(), cvel.GetVec3());
                 raylib::RayCollision collision = ray.GetCollision(*other.model);
                 DrawSphere(collision.GetPosition(), 40, RED);
-                std::cout << 
                 if(collision.GetHit() && collision.GetDistance() <= (vel.RotateByQuaternion(qRot) + gvel).Length() * dt){
                     fullMatrix normal(collision.GetNormal());
                     // vel = vel.RotateByQuaternion(qRot).RemoveComponent(normal).DeRotateByQuaternion(qRot);
                     // gvel = gvel.RemoveComponent(normal);
                     cvel = gvel.RemoveComponent(normal) + vel.RotateByQuaternion(qRot).RemoveComponent(normal).DeRotateByQuaternion(qRot);
                     gvel = gvel - (gacc * dt);
-                    // cvel = (cvel - (normal * cvel.Dot(normal)));// * 0.9;
-                    std::cout << cvel.x() << ", " << cvel.y() << ", " << cvel.z() << "\n";
-                    //std::cout << collision.GetDistance() << "\n";
                 }else{
                     cvel = vel.RotateByQuaternion(qRot) + gvel;
                 }
+                if(debug){
+                    std::cout << cvel.x() << ", " << cvel.y() << ", " << cvel.z() << "\n";
+                }
             }
+            
         }
 };
