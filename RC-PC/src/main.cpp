@@ -39,7 +39,7 @@ int main() {
     ground.pos.y(0);
     obj.CollidesWith(&ground);
     obj.pos.x(200);
-    obj.pos.y(10);
+    obj.pos.y(100);
     ground.Update(0);
 
     // std::cout << ground.model->GetTransform().m0 << " " << ground.model->GetTransform().m1 << " " << ground.model->GetTransform().m2 << " " << ground.model->GetTransform().m3 << "\n";
@@ -182,8 +182,8 @@ int main() {
             obj.Update(dt);
 
             if(cState == CameraState::Third){
-                camera.SetPosition(raylib::Vector3(10, 10, 0));
-                camera.SetTarget(raylib::Vector3(0, 0, 0));
+                camera.SetPosition(obj.pos.GetVec3() + raylib::Vector3(10, 10, 10));
+                camera.SetTarget(obj.pos.GetVec3());
             }else{
                 camera.SetPosition(obj.pos.GetVec3());
                 camera.SetTarget(obj.pos.GetVec3() + obj.look);

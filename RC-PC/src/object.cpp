@@ -127,15 +127,15 @@ class Object3D {
 
             pos = pos + (cvel * dt); //rotates object space to global space
 
-            Matrix mat = model->GetTransform();
+            Matrix mat = raylib::Matrix(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1);
             Matrix s(mat);
             Matrix t(mat);
             s.m0 = scale.GetX();
             s.m5 = scale.GetY();
             s.m10 = scale.GetZ();
-            t.m3 = pos.x();
-            t.m7 = pos.y();
-            t.m11 = pos.z();
+            t.m3 = pos.x() / scale.GetX();
+            t.m7 = pos.y() / scale.GetY();
+            t.m11 = pos.z() / scale.GetZ();
             model->SetTransform((fullMatrix(t) * fullMatrix(s)).GetMatrix());
 
             look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(qRot).GetVec3();
@@ -153,6 +153,7 @@ class Object3D {
             if((vel.RotateByQuaternion(qRot) + gvel).Length() != 0){
                 raylib::Ray ray((pos - other.pos).GetVec3(), cvel.GetVec3());
                 raylib::RayCollision collision = ray.GetCollision(*other.model);
+                DrawSphere((pos - other.pos).GetVec3(), 10, RED);
                 if(collision.GetHit() && collision.GetDistance() <= (vel.RotateByQuaternion(qRot) + gvel).Length() * dt){
                     fullMatrix normal(collision.GetNormal());
                     // vel = vel.RotateByQuaternion(qRot).RemoveComponent(normal).DeRotateByQuaternion(qRot);
