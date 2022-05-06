@@ -142,11 +142,11 @@ class Object3D {
             up = fullMatrix(MatrixType::Vector, 0, 1, 0).RotateByQuaternion(qRot).GetVec3();
 
             //temporary collision detection
-            if(pos.y() < 1){
-                pos.y(1);
-                vel.y(0);
-                gvel.y(0);
-            }
+            // if(pos.y() < 1){
+            //     pos.y(1);
+            //     vel.y(0);
+            //     gvel.y(0);
+            // }
         }
 
         void Collide(Object3D other, float dt){
@@ -159,12 +159,12 @@ class Object3D {
                     // vel = vel.RotateByQuaternion(qRot).RemoveComponent(normal).DeRotateByQuaternion(qRot);
                     // gvel = gvel.RemoveComponent(normal);
                     cvel = gvel.RemoveComponent(normal) + vel.RotateByQuaternion(qRot).RemoveComponent(normal).DeRotateByQuaternion(qRot);
-                    gvel = gvel - (gacc * dt);
+                    // gvel = gvel - (gacc * dt);
+                    if(debug){
+                        std::cout << "(" << cvel.x() << ", " << cvel.y() << ", " << cvel.z() << ") " << vel.Dot(normal) << ", " << gvel.Dot(normal) << " (" << normal.x() << ", " << normal.y() << ", " << normal.z() << ")" << "\n";
+                    }
                 }else{
                     cvel = vel.RotateByQuaternion(qRot) + gvel;
-                }
-                if(debug){
-                    std::cout << cvel.x() << ", " << cvel.y() << ", " << cvel.z() << "\n";
                 }
             }
             

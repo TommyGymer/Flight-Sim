@@ -471,3 +471,10 @@ Scaling a shade of green with the dot product of the vertex and an arbitrary dir
 The shaders now simulate shadows relatively well with the runway correctly colourised
 
 ![[Final shaders runway.png]]
+
+---
+### Debugging an array deletion
+
+![[Delete crash debug log.png]]
+
+The above debug log shows the use of the debug function in debugging an array deletion error in which an array used by an instance of the fullMatrix class is deleted more than once, resulting in an uncatchable crash

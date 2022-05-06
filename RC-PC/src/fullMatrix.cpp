@@ -129,12 +129,12 @@ class fullMatrix {
         }
 
         fullMatrix(const int _m, const int _n) {
-            array = new double[_m * _n];
             m = _m;
             n = _n;
-            if(_m == _n){
-                for(int i = 0; i < _m; i++){
-                    this->Set(i, i, 0);
+            array = new double[m * n];
+            if(m == n){
+                for(int i = 0; i < m; i++){
+                    Set(i, i, 0);
                 }
             }
         }
@@ -274,18 +274,20 @@ class fullMatrix {
         }
 
         ~fullMatrix() {
-            try{
-                delete[] array;
-            }catch(...){
-                std::cout << "unable to delete this array\n";
-            }
+            Debug();
+            delete[] array;
+            // if(array && array[0]){
+            //     delete[] array;
+            // }else{
+            //     std::cout << "unable to delete this array\n";
+            // }
         }
 
         void Debug(){
-            std::cout << "Dubugging " << this->m << " by " << this-> n << " matrix\n";
-            for(int i = 0; i < this->m; i++){
-                for(int j = 0; j < this->n; j++){
-                    std::cout << this->Get(i, j) << " ";
+            std::cout << "Dubugging " << m << " by " <<  n << " matrix\n";
+            for(int i = 0; i < m; i++){
+                for(int j = 0; j < n; j++){
+                    std::cout << Get(i, j) << " ";
                 }
                 std::cout << "\n";
             }
@@ -330,11 +332,11 @@ class fullMatrix {
         }
 
         fullMatrix operator-(fullMatrix other){
-            if(this->m == other.m && this->n == other.n){
-                fullMatrix rtn(this->m, this->n);
-                for(int i = 0; i < this->m; i++){
-                    for(int j = 0; j < this->n; j++){
-                        rtn.Set(i, j, this->Get(i, j) - other.Get(i, j));
+            if(m == other.m && n == other.n){
+                fullMatrix rtn(m, n);
+                for(int i = 0; i < m; i++){
+                    for(int j = 0; j < n; j++){
+                        rtn.Set(i, j, Get(i, j) - other.Get(i, j));
                     }
                 }
                 return rtn;
@@ -346,8 +348,8 @@ class fullMatrix {
 
         fullMatrix operator*(fullMatrix other){
             //quaternion multiplication
-            if((this->n == 1 && this->m == 4) && (other.n==1 && other.m == 4)){
-                fullMatrix rtn(this->m, this->n);
+            if((n == 1 && m == 4) && (other.n==1 && other.m == 4)){
+                fullMatrix rtn(m, n);
 
                 rtn.w(w() * other.w() - x() * other.x() - y() * other.y() - z() * other.z());
                 rtn.x(w() * other.x() + x() * other.w() + y() * other.z() - z() * other.y());
@@ -357,13 +359,13 @@ class fullMatrix {
                 return rtn;
             }
             //generic matrix multiplication
-            else if(this->n == other.m){
-                fullMatrix rtn(this->m, this->n);
-                for(int i = 0; i < this->m; i++){
-                    for(int j = 0; j < this->n; j++){
+            else if(n == other.m){
+                fullMatrix rtn(m, n);
+                for(int i = 0; i < m; i++){
+                    for(int j = 0; j < n; j++){
                         double sum = 0;
-                        for(int k = 0; k < this->n; k++){
-                            sum += this->Get(k, j) * other.Get(i, k);
+                        for(int k = 0; k < n; k++){
+                            sum += Get(k, j) * other.Get(i, k);
                         }
                         rtn.Set(i, j, sum);
                     }
@@ -375,36 +377,38 @@ class fullMatrix {
         }
 
         fullMatrix operator*(double scale){
-            fullMatrix rtn(this->m, this->n);
-            for(int i = 0; i < this->m; i++){
-                for(int j = 0; j < this->n; j++){
-                    rtn.Set(i, j, this->Get(i, j) * scale);
+            fullMatrix rtn(m, n);
+            for(int i = 0; i < m; i++){
+                for(int j = 0; j < n; j++){
+                    rtn.Set(i, j, Get(i, j) * scale);
                 }
             }
             return rtn;
         }
 
         fullMatrix operator/(double scale){
-            fullMatrix rtn(this->m, this->n);
-            for(int i = 0; i < this->m; i++){
-                for(int j = 0; j < this->n; j++){
-                    rtn.Set(i, j, this->Get(i, j) / scale);
+            fullMatrix rtn(m, n);
+            for(int i = 0; i < m; i++){
+                for(int j = 0; j < n; j++){
+                    rtn.Set(i, j, Get(i, j) / scale);
                 }
             }
             return rtn;
         }
 
         fullMatrix Minor(const int x, const int y){
-            fullMatrix minor(this->m - 1, this->n - 1);
+            std::cout << "size of array is: " << (m-1)*(n-1) << "\n";
+            fullMatrix minor(m - 1, n - 1);
 
             int a = 0; //x-index into minor matrix
             int b = 0; //y-index into minor matrix
             bool a_inc = false;
 
-            for(int i = 0; i < this->m; i++){
-                for(int j = 0; j < this->n; j++){
+            std::cout << "before minor loop\n";
+            for(int i = 0; i < m; i++){
+                for(int j = 0; j < n; j++){
                     if(!(x == i | y == j)){
-                        minor.Set(a, b, this->Get(i, j));
+                        minor.Set(a, b, Get(i, j));
                         b++;
                         a_inc = true;
                     }
@@ -415,27 +419,35 @@ class fullMatrix {
                     b = 0;
                 }
             }
+            std::cout << "minor calculated\n";
+
+            minor.Debug();
 
             return minor;
         }
 
         double Det(){
-            if(this->m == this->n){
-                if(this->m == 2){
-                    return (this->Get(0,0) * this->Get(1,1) - this->Get(0,1) * this->Get(1,0));
+            if(m == n){
+                if(m == 2){
+                    return (Get(0,0) * Get(1,1) - Get(0,1) * Get(1,0));
                 }else{
                     //split down into reduced parts using each element in a row * its minor
                     double det = 0;
-                    for(int i = 0; i < this->m; i++){
+                    for(int i = 0; i < m; i++){
                         //alternates between adding and subtracting
                         if(i % 2 == 0){
                             //add
-                            det += this->Get(i, 0) * this->Minor(i, 0).Det();
+                            std::cout << "Det using a minor\n";
+                            det += Get(i, 0) * Minor(i, 0).Det();
+                            std::cout << "added to det\n";
                         }else{
                             //sub
-                            det -= this->Get(i, 0) * this->Minor(i, 0).Det();
+                            std::cout << "Det using a minor\n";
+                            det -= Get(i, 0) * Minor(i, 0).Det();
+                            std::cout << "subbed from det\n";
                         }
                     }
+                    std::cout << "returning the det\n";
                     return det;
                 }
             }else{
@@ -445,52 +457,63 @@ class fullMatrix {
         }
 
         fullMatrix MatOfMinors(){
-            fullMatrix rtn(this->m, this->n);
-            if(this->m == this->n){
-                for(int i = 0; i < this->m; i++){
-                    for(int j = 0; j < this->n; j++){
-                        rtn.Set(i, j, this->Minor(i, j).Det());
+            if(m == n){
+                fullMatrix rtn(m, n);
+                std::cout << "┣━━━━━━mat of minors loop\n";
+                for(int i = 0; i < m; i++){
+                    for(int j = 0; j < n; j++){
+                        rtn.Set(i, j, Minor(i, j).Det());
                     }
                 }
+                std::cout << "┣━━━━━━mat of minors calculated\n";
+                return rtn;
             }else{
                 std::cout << "Matrix not square\n";
+                throw -1;
             }
-            return rtn;
         }
 
         fullMatrix Cofactors(){
-            fullMatrix rtn(this->m, this->n);
-            if(this->m == this->n){
-                fullMatrix minors = this->MatOfMinors();
-                for(int i = 0; i < this->m; i++){
-                    for(int j = 0; j < this->n; j++){
-                        if((i * this->n + j) % 2 == 1){
+            if(m == n){
+                fullMatrix rtn(m, n);
+                std::cout << "┣━━━━━before mat of minors\n";
+                fullMatrix minors = MatOfMinors();
+                std::cout << "┣━━━━━after mat of minors\n";
+                for(int i = 0; i < m; i++){
+                    for(int j = 0; j < n; j++){
+                        if((i * n + j) % 2 == 1){
                             rtn.Set(i, j, -minors.Get(j, i));
                         }else{
                             rtn.Set(i , j, minors.Get(j, i));
                         }
                     }
                 }
+                std::cout << "┣━━━━━after loop\n";
+                return rtn;
             }else{
                 std::cout << "Matrix not square\n";
                 throw -1;
             }
-            return rtn;
         }
 
         fullMatrix Transpose(){
-            fullMatrix rtn(this->Cofactors());
-            if(this->n==this->m){
+            if(n==m){
+                std::cout << "┣━━━━before cofactors\n";
+                fullMatrix rtn(Cofactors());
+                std::cout << "┣━━━━after cofactors\n";
                 //need to split down into recursive steps for 2.2 matrix transpose
 
                 //1) Calculate determinant
                 //2) Move and invert signs of elements
                 //3) Multiply
-                rtn = rtn * (1/this->Det());
+                std::cout << "┣━━━━inverse of det\n";
+                rtn = rtn * (1/Det());
+                std::cout << "┣━━━━rtn value calculated\n";
+                return rtn;
             }else{
                 std::cout << "Matrix not square\n";
+                throw -1;
             }
-            return rtn;
         }
 
         float Magnitude(){
@@ -715,28 +738,36 @@ class fullMatrix {
 
                 if(output)std::cout << "┣━Matrix transpose\n";
                 {
-                    fullMatrix mat(3, 3);
-
                     if(output)std::cout << "┣━━Testing identity mat\n";
                     {
+                        fullMatrix mat(3, 3);
+                        std::cout << "┣━━━mat defined\n";
+
                         double values[9] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
+                        std::cout << "┣━━━before values added\n";
                         std::copy(values, values + 9, mat.array);
+                        std::cout << "┣━━━values added\n";
                         
                         fullMatrix inv(mat.Transpose());
-                        
+
+                        std::cout << "┣━━━inverse calculated\n";
+
                         for(int i = 0; i < 9; i++){
                             assert(mat.array[i] == values[i]);
                         }
-                        if(output)std::cout << "┣━━━Testing identity mat: mat asserts finished\n";
+                        std::cout << "asserts finished\n";
                     }
                     if(output)std::cout << "┣━━Testing identity mat: checked\n";
 
                     if(output)std::cout << "┣━━Testing a matrix\n";
                     {
+                        fullMatrix mat(3, 3);
+
                         double values[9] = {-3, 0, -1, 0, 1, 0, 1, 0, 2};
                         std::copy(values, values + 9, mat.array);
-
+                        
                         fullMatrix inv(mat.Transpose());
+
                         double correct[9] = {-0.4, 0, -0.2, 0, 1, 0, 0.2, 0, 0.6};
                         for(int i = 0; i < 9; i++){
                             assert(abs(inv.array[i] - correct[i]) < 0.0001);
