@@ -9,7 +9,7 @@ target := $(buildDir)/$(executable)
 sources := $(call rwildcard,src/,*.cpp)
 objects := $(patsubst src/%, $(buildDir)/%, $(patsubst %.cpp, %.o, $(sources)))
 depends := $(patsubst %.o, %.d, $(objects))
-compileFlags := -std=c++17 -I include
+compileFlags := -std=c++20 -g -I include
 linkFlags = -L lib/$(platform) -l raylib
 
 # Check for Windows
@@ -90,7 +90,7 @@ $(buildDir)/%.o: src/%.cpp Makefile
 
 # Run the executable
 execute:
-	$(target) $(ARGS)
+	gdb $(target) $(ARGS)
 
 # Clean up all relevant files
 clean:

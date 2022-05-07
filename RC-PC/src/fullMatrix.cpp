@@ -1,9 +1,11 @@
 #include <iostream>
 #include <math.h>
-#include <raylib-cpp.hpp>
 #include <assert.h>
 #include <algorithm>
 #include <iterator>
+
+//import main raylib header file
+#include "../include/raylib-cpp.hpp"
 
 enum class MatrixType {Vector, Coord, Matrix};
 
@@ -132,7 +134,6 @@ class fullMatrix {
             m = _m;
             n = _n;
             array = new double[m * n];
-            std::cout << "creating at: " <<array << "\n";
             if(m == n){
                 for(int i = 0; i < m; i++){
                     Set(i, i, 0);
@@ -195,7 +196,6 @@ class fullMatrix {
             m = other.m;
             n = other.n;
             array = new double[m * n];
-            std::cout << "creating at: " <<array << "\n";
             std::copy(other.array, other.array + (n * m), array);
         }
 
@@ -276,8 +276,6 @@ class fullMatrix {
         }
 
         ~fullMatrix() {
-            Debug();
-            std::cout << "deleting at: " <<array << "\n";
             if(array == 0){
                 std::cout << "hmm\n";
             }
@@ -385,6 +383,7 @@ class fullMatrix {
 
         fullMatrix operator*(double scale){
             fullMatrix rtn(m, n);
+            //something doesn't work here
             for(int i = 0; i < m; i++){
                 for(int j = 0; j < n; j++){
                     rtn.Set(i, j, Get(i, j) * scale);
@@ -404,14 +403,13 @@ class fullMatrix {
         }
 
         fullMatrix Minor(const int x, const int y){
-            std::cout << "size of array is: " << (m-1)*(n-1) << "\n";
+            //std::cout << "size of array is: " << (m-1)*(n-1) << "\n";
             fullMatrix minor(m - 1, n - 1);
 
             int a = 0; //x-index into minor matrix
             int b = 0; //y-index into minor matrix
             bool a_inc = false;
 
-            std::cout << "before minor loop\n";
             for(int i = 0; i < m; i++){
                 for(int j = 0; j < n; j++){
                     if(!(x == i | y == j)){
@@ -426,9 +424,6 @@ class fullMatrix {
                     b = 0;
                 }
             }
-            std::cout << "minor calculated\n";
-
-            minor.Debug();
 
             return minor;
         }
@@ -444,17 +439,12 @@ class fullMatrix {
                         //alternates between adding and subtracting
                         if(i % 2 == 0){
                             //add
-                            std::cout << "Det using a minor\n";
                             det += Get(i, 0) * Minor(i, 0).Det();
-                            std::cout << "added to det\n";
                         }else{
                             //sub
-                            std::cout << "Det using a minor\n";
                             det -= Get(i, 0) * Minor(i, 0).Det();
-                            std::cout << "subbed from det\n";
                         }
                     }
-                    std::cout << "returning the det\n";
                     return det;
                 }
             }else{
@@ -466,13 +456,11 @@ class fullMatrix {
         fullMatrix MatOfMinors(){
             if(m == n){
                 fullMatrix rtn(m, n);
-                std::cout << "┣━━━━━━mat of minors loop\n";
                 for(int i = 0; i < m; i++){
                     for(int j = 0; j < n; j++){
                         rtn.Set(i, j, Minor(i, j).Det());
                     }
                 }
-                std::cout << "┣━━━━━━mat of minors calculated\n";
                 return rtn;
             }else{
                 std::cout << "Matrix not square\n";
@@ -483,9 +471,7 @@ class fullMatrix {
         fullMatrix Cofactors(){
             if(m == n){
                 fullMatrix rtn(m, n);
-                std::cout << "┣━━━━━before mat of minors\n";
                 fullMatrix minors = MatOfMinors();
-                std::cout << "┣━━━━━after mat of minors\n";
                 for(int i = 0; i < m; i++){
                     for(int j = 0; j < n; j++){
                         if((i * n + j) % 2 == 1){
@@ -495,7 +481,6 @@ class fullMatrix {
                         }
                     }
                 }
-                std::cout << "┣━━━━━after loop\n";
                 return rtn;
             }else{
                 std::cout << "Matrix not square\n";
@@ -505,17 +490,15 @@ class fullMatrix {
 
         fullMatrix Transpose(){
             if(n==m){
-                std::cout << "┣━━━━before cofactors\n";
                 fullMatrix rtn(Cofactors());
-                std::cout << "┣━━━━after cofactors\n";
                 //need to split down into recursive steps for 2.2 matrix transpose
 
                 //1) Calculate determinant
                 //2) Move and invert signs of elements
                 //3) Multiply
-                std::cout << "┣━━━━inverse of det\n";
-                rtn = rtn * (1/Det());
-                std::cout << "┣━━━━rtn value calculated\n";
+                float det = Det();
+                float dA = (1/det);
+                rtn = rtn * dA;
                 return rtn;
             }else{
                 std::cout << "Matrix not square\n";
@@ -748,21 +731,15 @@ class fullMatrix {
                     if(output)std::cout << "┣━━Testing identity mat\n";
                     {
                         fullMatrix mat(3, 3);
-                        std::cout << "┣━━━mat defined\n";
 
                         double values[9] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
-                        std::cout << "┣━━━before values added\n";
                         std::copy(values, values + 9, mat.array);
-                        std::cout << "┣━━━values added\n";
                         
                         fullMatrix inv(mat.Transpose());
 
-                        std::cout << "┣━━━inverse calculated\n";
-
                         for(int i = 0; i < 9; i++){
-                            assert(mat.array[i] == values[i]);
+                            assert(abs(inv.array[i] - values[i]) < 0.0001);
                         }
-                        std::cout << "┣━━━asserts finished\n";
                     }
                     if(output)std::cout << "┣━━Testing identity mat: checked\n";
 

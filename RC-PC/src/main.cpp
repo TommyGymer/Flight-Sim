@@ -1,12 +1,12 @@
 #include <iostream>
-//import main raylib header file
-#include <raylib-cpp.hpp>
 //import chrono for timers to keep track of elapsed time
 #include <chrono>
 #include <string>
 #include <math.h>
 
 //local class file imports
+//import main raylib header file
+#include "../include/raylib-cpp.hpp"
 #include "object.cpp"
 
 enum class GameState{Menu, Playing, Paused};

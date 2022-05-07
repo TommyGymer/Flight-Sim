@@ -1,69 +1,76 @@
-bin/fullMatrix.o: src/fullMatrix.cpp include/raylib-cpp.hpp \
- include/./AudioDevice.hpp include/././raylib.hpp include/././raylib.h \
- include/././raylib-cpp-utils.hpp include/./AudioStream.hpp \
- include/./BoundingBox.hpp include/./Camera2D.hpp include/././Vector2.hpp \
- include/./././raylib.hpp include/./././raymath.hpp \
- include/./././raymath.h include/./././raylib-cpp-utils.hpp \
- include/./Camera3D.hpp include/././Vector3.hpp include/./Color.hpp \
- include/././Vector4.hpp include/./Font.hpp include/./Functions.hpp \
- include/./Gamepad.hpp include/./Image.hpp include/./Material.hpp \
- include/./Matrix.hpp include/././raymath.hpp include/./Mesh.hpp \
- include/././BoundingBox.hpp include/././Model.hpp include/./././Mesh.hpp \
- include/./Model.hpp include/./ModelAnimation.hpp include/././Mesh.hpp \
- include/./Mouse.hpp include/./Music.hpp include/./Ray.hpp \
- include/././RayCollision.hpp include/./RayCollision.hpp \
- include/./Rectangle.hpp include/./RenderTexture.hpp include/./Shader.hpp \
- include/./Texture.hpp include/././Material.hpp include/./Sound.hpp \
- include/./Text.hpp include/./Texture.hpp include/./Vector2.hpp \
- include/./Vector3.hpp include/./Vector4.hpp include/./VrStereoConfig.hpp \
- include/./Wave.hpp include/./Window.hpp
-include/raylib-cpp.hpp:
-include/./AudioDevice.hpp:
-include/././raylib.hpp:
-include/././raylib.h:
-include/././raylib-cpp-utils.hpp:
-include/./AudioStream.hpp:
-include/./BoundingBox.hpp:
-include/./Camera2D.hpp:
-include/././Vector2.hpp:
-include/./././raylib.hpp:
-include/./././raymath.hpp:
-include/./././raymath.h:
-include/./././raylib-cpp-utils.hpp:
-include/./Camera3D.hpp:
-include/././Vector3.hpp:
-include/./Color.hpp:
-include/././Vector4.hpp:
-include/./Font.hpp:
-include/./Functions.hpp:
-include/./Gamepad.hpp:
-include/./Image.hpp:
-include/./Material.hpp:
-include/./Matrix.hpp:
-include/././raymath.hpp:
-include/./Mesh.hpp:
-include/././BoundingBox.hpp:
-include/././Model.hpp:
-include/./././Mesh.hpp:
-include/./Model.hpp:
-include/./ModelAnimation.hpp:
-include/././Mesh.hpp:
-include/./Mouse.hpp:
-include/./Music.hpp:
-include/./Ray.hpp:
-include/././RayCollision.hpp:
-include/./RayCollision.hpp:
-include/./Rectangle.hpp:
-include/./RenderTexture.hpp:
-include/./Shader.hpp:
-include/./Texture.hpp:
-include/././Material.hpp:
-include/./Sound.hpp:
-include/./Text.hpp:
-include/./Texture.hpp:
-include/./Vector2.hpp:
-include/./Vector3.hpp:
-include/./Vector4.hpp:
-include/./VrStereoConfig.hpp:
-include/./Wave.hpp:
-include/./Window.hpp:
+bin/fullMatrix.o: src/fullMatrix.cpp src/../include/raylib-cpp.hpp \
+ src/../include/./AudioDevice.hpp src/../include/././raylib.hpp \
+ src/../include/././raylib.h src/../include/././raylib-cpp-utils.hpp \
+ src/../include/./AudioStream.hpp src/../include/./BoundingBox.hpp \
+ src/../include/./Camera2D.hpp src/../include/././Vector2.hpp \
+ src/../include/./././raylib.hpp src/../include/./././raymath.hpp \
+ src/../include/./././raymath.h src/../include/./././raylib-cpp-utils.hpp \
+ src/../include/./Camera3D.hpp src/../include/././Vector3.hpp \
+ src/../include/./Color.hpp src/../include/././Vector4.hpp \
+ src/../include/./Font.hpp src/../include/./Functions.hpp \
+ src/../include/./Gamepad.hpp src/../include/./Image.hpp \
+ src/../include/./Material.hpp src/../include/./Matrix.hpp \
+ src/../include/././raymath.hpp src/../include/./Mesh.hpp \
+ src/../include/././BoundingBox.hpp src/../include/././Model.hpp \
+ src/../include/./././Mesh.hpp src/../include/./Model.hpp \
+ src/../include/./ModelAnimation.hpp src/../include/././Mesh.hpp \
+ src/../include/./Mouse.hpp src/../include/./Music.hpp \
+ src/../include/./Ray.hpp src/../include/././RayCollision.hpp \
+ src/../include/./RayCollision.hpp src/../include/./Rectangle.hpp \
+ src/../include/./RenderTexture.hpp src/../include/./Shader.hpp \
+ src/../include/./Texture.hpp src/../include/././Material.hpp \
+ src/../include/./Sound.hpp src/../include/./Text.hpp \
+ src/../include/./Texture.hpp src/../include/./Vector2.hpp \
+ src/../include/./Vector3.hpp src/../include/./Vector4.hpp \
+ src/../include/./VrStereoConfig.hpp src/../include/./Wave.hpp \
+ src/../include/./Window.hpp
+src/../include/raylib-cpp.hpp:
+src/../include/./AudioDevice.hpp:
+src/../include/././raylib.hpp:
+src/../include/././raylib.h:
+src/../include/././raylib-cpp-utils.hpp:
+src/../include/./AudioStream.hpp:
+src/../include/./BoundingBox.hpp:
+src/../include/./Camera2D.hpp:
+src/../include/././Vector2.hpp:
+src/../include/./././raylib.hpp:
+src/../include/./././raymath.hpp:
+src/../include/./././raymath.h:
+src/../include/./././raylib-cpp-utils.hpp:
+src/../include/./Camera3D.hpp:
+src/../include/././Vector3.hpp:
+src/../include/./Color.hpp:
+src/../include/././Vector4.hpp:
+src/../include/./Font.hpp:
+src/../include/./Functions.hpp:
+src/../include/./Gamepad.hpp:
+src/../include/./Image.hpp:
+src/../include/./Material.hpp:
+src/../include/./Matrix.hpp:
+src/../include/././raymath.hpp:
+src/../include/./Mesh.hpp:
+src/../include/././BoundingBox.hpp:
+src/../include/././Model.hpp:
+src/../include/./././Mesh.hpp:
+src/../include/./Model.hpp:
+src/../include/./ModelAnimation.hpp:
+src/../include/././Mesh.hpp:
+src/../include/./Mouse.hpp:
+src/../include/./Music.hpp:
+src/../include/./Ray.hpp:
+src/../include/././RayCollision.hpp:
+src/../include/./RayCollision.hpp:
+src/../include/./Rectangle.hpp:
+src/../include/./RenderTexture.hpp:
+src/../include/./Shader.hpp:
+src/../include/./Texture.hpp:
+src/../include/././Material.hpp:
+src/../include/./Sound.hpp:
+src/../include/./Text.hpp:
+src/../include/./Texture.hpp:
+src/../include/./Vector2.hpp:
+src/../include/./Vector3.hpp:
+src/../include/./Vector4.hpp:
+src/../include/./VrStereoConfig.hpp:
+src/../include/./Wave.hpp:
+src/../include/./Window.hpp:
