@@ -7,6 +7,7 @@
 //local class file imports
 //import main raylib header file
 #include "../include/raylib-cpp.hpp"
+// #include <raylib-cpp.hpp>
 #include "object.cpp"
 
 enum class GameState{Menu, Playing, Paused};
@@ -24,7 +25,6 @@ int main() {
     // Initialization
     int screenWidth = 1600;
     int screenHeight = 1200;
-    
     auto start = std::chrono::high_resolution_clock::now();
     float total = 0;
 

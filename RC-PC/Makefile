@@ -90,7 +90,8 @@ $(buildDir)/%.o: src/%.cpp Makefile
 
 # Run the executable
 execute:
-	gdb $(target) $(ARGS)
+	$(target) $(ARGS)
+# gdb $(target) $(ARGS)
 
 # Clean up all relevant files
 clean:

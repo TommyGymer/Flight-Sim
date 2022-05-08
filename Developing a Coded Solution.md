@@ -478,3 +478,14 @@ The shaders now simulate shadows relatively well with the runway correctly colou
 ![[Delete crash debug log.png]]
 
 The above debug log shows the use of the debug function in debugging an array deletion error in which an array used by an instance of the fullMatrix class is deleted more than once, resulting in an uncatchable crash
+
+Problem found to be the result of using `rtn = rtn * dA` where `rtn` is the fullMatrix matrix containing the inverse matrix to be returned and `dA` is the inverse of the determinant of the matrix.
+This version appeared to result in the deletion of one of the required arrays while the version used while testing the `fullMatrix * double` function performed as expected.
+By changing over to using the version from the scale test, `fullMatrix rtn(cofacts * dA)`, the inverse matrix function now performs as expected.
+
+---
+### Overloading the assignment operator
+
+![[Assignment operator overloaded.png]]
+
+Explicitly defining the assignment (=) operator appears to have fixed many of the issues that randomly appeared while trying to debug the random crashes from the matrix testing

@@ -6,6 +6,7 @@
 
 //import main raylib header file
 #include "../include/raylib-cpp.hpp"
+// #include <raylib-cpp.hpp>
 
 enum class MatrixType {Vector, Coord, Matrix};
 
@@ -28,7 +29,7 @@ class fullMatrix {
          *@param y the y coordinate in the matrix of m
          *@returns the value at x, y in the matrix
          */
-        double Get(const int x, const int y) {
+        const double Get(const int x, const int y) const {
             if(x >= m || y >= n){
                 std::cout << "Invalid index (" << x << ", " << y << ") outside (" << m << ", " << n << ")\n";
                 throw -1;
@@ -319,6 +320,18 @@ class fullMatrix {
             }
         }
 
+        fullMatrix& operator=(const fullMatrix& other){
+            if(this == &other){
+                return *this;
+            }
+
+            m = other.m;
+            n = other.n;
+            array = new double[m * n];
+            std::copy(other.array, other.array + (n * m), array);
+            return *this;
+        }
+
         fullMatrix operator+(fullMatrix other){
             if(m == other.m && n == other.n){
                 fullMatrix rtn(m, n);
@@ -381,7 +394,7 @@ class fullMatrix {
             }
         }
 
-        fullMatrix operator*(double scale){
+        fullMatrix operator*(double const scale){
             fullMatrix rtn(m, n);
             //something doesn't work here
             for(int i = 0; i < m; i++){
@@ -490,7 +503,7 @@ class fullMatrix {
 
         fullMatrix Transpose(){
             if(n==m){
-                fullMatrix rtn(Cofactors());
+                fullMatrix cofacts(Cofactors());
                 //need to split down into recursive steps for 2.2 matrix transpose
 
                 //1) Calculate determinant
@@ -498,7 +511,7 @@ class fullMatrix {
                 //3) Multiply
                 float det = Det();
                 float dA = (1/det);
-                rtn = rtn * dA;
+                fullMatrix rtn = cofacts * dA;
                 return rtn;
             }else{
                 std::cout << "Matrix not square\n";
@@ -512,8 +525,8 @@ class fullMatrix {
 
         fullMatrix Conjugate(){
             if((m == 4 && n == 1) || (m == 1 && n == 4)){
-                fullMatrix rtn(*this);
-                rtn = rtn * -1;
+                fullMatrix tmp(*this);
+                fullMatrix rtn(tmp * -1);
                 rtn.w(-rtn.w());
                 return rtn;
             }else{
@@ -604,16 +617,18 @@ class fullMatrix {
             }
         }
 
-        fullMatrix RemoveComponent(fullMatrix normal){
-            fullMatrix add(*this);
-            fullMatrix sub(*this);
-            add = add + (normal * add.Dot(normal));
-            sub = sub - (normal * sub.Dot(normal));
-            if(add.Length() < sub.Length()){
-                return add;
-            }else{
-                return sub;
-            }
+        fullMatrix RemoveComponent(fullMatrix normal, fullMatrix point, fullMatrix pos, float dt){
+            fullMatrix add((point - pos));
+            fullMatrix sub((point - pos));
+            add = add - (normal * (*this - add).Dot(normal)) * (dt/add.Length());
+            return add;
+            // sub = sub - (normal * (*this - sub).Dot(normal));
+            // if(add.Length() < sub.Length()){
+            //     return add;
+            // }else{
+            //     return sub;
+            // }
+            // return (point - pos) + normal;
         }
 
         /*fullMatrix Update(fullMatrix update){
