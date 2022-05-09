@@ -160,7 +160,7 @@ The main issue with Microsoft Flight Sim 2020 for the problem I am trying to sol
 
 Microsoft Flight Sim provides a huge number of options and input methods, while managing to maintain a clean and modern interface. This wide range of input methods ensures that different levels of difficulty and skill levels of users can be accounted for.
 
-This huge number of options and features would be imposing for any new user, so ensuring that the sim will function without the ned to browse these menus is important. This allows the user to explore the menus and features at their own pace.
+This huge number of options and features would be imposing for any new user, so ensuring that the sim will function without the need to browse these menus is important. This allows the user to explore the menus and features at their own pace.
 
 ---
 
@@ -192,27 +192,39 @@ To complete in terms of performance, I will need to make use of a modern 3D rend
 
 ### Implementation
 
----
+I have considered a variety of language for this program and have decided to use one of the languages from the C family of languages due to their native support for OpenGL based libraries.
 
-- OpenGL based rendering with C++/C#
+Among the other languages I considered where Java and Python:
+As an interpreted language, Python would likely have been much too slow for any full 3D rendering without large amounts of time dedicated to optimising code and finding the most efficient implementations
+While Java does have a few OpenGL libraries available, having worked with one in the past (aparapi), I concluded that its use in 3D rendering would have required implementing the full 3D rendering process as it is not designed as a graphics engine. Another option would be to use Vulkan or DirectX, both are less well documented as a result of the relative popularity of OpenGL
+
+- OpenGL based rendering with C/C++/C#
 - Using pre-baked physics to remove the need for real time [[CFD]]
 - GLFW input (or XInput for extra compatibility) API
 - Models stored and loaded from a custom file format
+- Using CMake for compiling and linking
+- Use of vcpkg (a package manager for use with CMake) to manage the required libraries
 
 ---
 
 #### Update to implementation
 
+After some initial testing of the previous implementation technique, I found the use of CMake to be too unwieldy and overly complicated for what I required
+
+As such I have switched to using mingw-make as the compiler which removes a large number of features I do not need
+
 - OpenGL based rendering in C/C++ using RayLib as an API
 - Using pre-baked physics to remove the need for real time [[CFD]]
-- RayLib contains libraries to act as interfaces for XInput
+- RayLib contains libraries to act as interfaces for XInput or controller input interfaces
 - Models stored and loaded from a custom file format
+
+Having conducted a quick test of some examples, I have decided to use RayLib in C++ as it will provide access to similar performance to C along with the addition of fully supported OOP
 
 ---
 
 #### Limitations of implementation
 
-- Fairly resource intensive due to the full frame rate rendering
+- Fairly hardware intensive due to the full frame rate rendering, though this should be minimised through the use of OpenGL which is an industry standard 3D render and graphics interface
 - Pre-baked physics will be slightly inaccurate compared to a real time [[CFD]] simulation
 
 ---
@@ -265,6 +277,6 @@ Both the 3D rendering and physics involved with flight can be abstracted down to
 
 Concurrency of the physics and rendering will improve performance by splitting the two most intensive tasks into independent threads. As only the rendering thread needs access to the physics data, and not the other way round, the complexity is kept minimal for a large performance gain.
 
-The precalculation of a number of the physical values for how the aircraft flies is a form of caching, removing the need to be able to calculate these on the fly; without this, it is likely a large part of the GPU's processing would be required to run a full CFD simulation, removing extra headroom for the rendering to expand into.
+The pre-calculation of a number of the physical values for how the aircraft flies is a form of caching, removing the need to be able to calculate these on the fly; without this, it is likely a large part of the GPU's processing would be required to run a full CFD simulation, removing extra headroom for the rendering to expand into.
 
 OpenGL handles the distribution of the 3D rendering to the GPU, reduce the complexity of 3D graphics. I will still need to provide the required models, textures and object locations to render the scene; the best solution here is to write a helper class that handles the object, animations, textures and data to make it easier to have multiple objects in the scene.

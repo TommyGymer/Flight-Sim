@@ -55,19 +55,65 @@ By reducing and fully categorising all available options
 
 ---
 
+### Implementation
+
+#### Renderer
+
+Using C++ and OpenGL for the heavy lifting will reduce the need to focus on the required generic parts of any 3D software. As these two are also industry standards for use in 3D rendering, there should be sufficient documentation for understanding and developing with them.
+
+OpenGL makes use of GLSL as its shading language; this will be used to the write the shaders run by the renderer to determine the colour of each pixel based on objects, textures and colour maps.
+
+#### Object files
+
+Using OpenGL should allow the importing and displaying of .obj files with a bone structure for the active flight surfaces and other animation options, though this may add significant complexity.
+
+The same .obj could be used for calculation of flight characteristic baking; the results of baking will need to be stored in some kind of file format, probably an XML or JSON file. This calculating of flight characteristics will be well beyond the scope of this project to do fully, and will be best abstracted as a set of hand set variables describing the general performance of an aircraft.
+These variables can then be used as coefficients in the physics engine of the application.
+
+[OpenGL Tutorial](http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/particles-instancing/)
+[OpenGL Bones](https://learnopengl.com/Guest-Articles/2020/Skeletal-Animation)
+[GLSL Shaders](https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders)
+
+##### Storing aircraft data
+
+I would either need some way of linking the object file and the XML or JSON file containing the related flight data, or some custom file format to store both in a single file.
+
+The simplest way of achieving this would be to store both the .obj file and the data file in a zip with a renamed file extension to allow easy searching of the files along with the benefit of available libraries in C++ for working with all three formats.
+
+The major issue with making my own file format is the lack of tooling available without programming it myself for editing these files outside of reading them into the application; I would also need to write an editor for these files or not allow the user to make their own aircraft.
+
+#### Physics
+
+As the program is in C++, the physics engine shouldn't require much optimising to reach the required performance compared to a language such as Python.
+The use of cofactors for the flight profiles of aircraft will also greatly simplify the physics engine without the need for complex CFD in real time.
+
+In order of difficultly:
+1. Direct coefficients on the input device axes
+2. Manually entered flight characteristics
+	- Inertia
+	- Mass
+	- Thrust
+3. Auto calculation based on a 3D model
+	- Thrust and mass would still need to be entered manually
+	- Could use vertex weight painting to calculate inertia; my research for a [TVC-system](https://github.com/TommyGymer/TVC-system) should contain all the physics required for this
+
+It is likely that something in between the first and second options will be sufficient for my requirements.
+
+---
+
 ### Objects
 
-#### Objects
+#### Object class
 
 |Variable|Datatype|Reason|
 |:---|:---|:---|
 |position|3D Vector|for object location in 3D space|
 |velocity|3D Vector|to integrate to location in 3D space|
-|acceleration|3D Vector|to integrate to velocuty; simplifies gravity|
+|acceleration|3D Vector|to integrate to velocity; simplifies gravity|
 |rotation|Quaternion|avoids gimble lock present in Euler implementations|
 |angular velocity|3D Vector|to integrate to rotation|
 |scale|3D Vector|for the x, y and z scale of each object|
-|model|raylib::Model|the model data: textures, meshes, etc.|
+|model|RayLib::Model|the model data: textures, meshes, etc.|
 
 - Functions
 	- Initialiser
@@ -98,7 +144,7 @@ Will need to consider how to invert / find the conjunction of square matrices; p
 To make full use of the axis-angle rotation, quaternions will be required
 This will allow full use of angular velocity and accelerations
 
-While raylib already implements many of these, it may be beneficial to write my own vector and matrix lib to allow full use of all required overloads
+While RayLib already implements many of these, it may be beneficial to write my own vector and matrix lib to allow full use of all required overloads
 
 ---
 
