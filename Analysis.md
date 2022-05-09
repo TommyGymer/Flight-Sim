@@ -1,7 +1,12 @@
+
 ## Analysis
+
 ---
+
 ### Overview
+
 ---
+
 #### A market gap for a model flight sim
 
 The available flight sims currently on the market are designed with full scale aircraft in mind, making them unsuitable for people wishing to increase their flight hours on model aircraft.
@@ -22,10 +27,12 @@ To fill this market gap, the sim will need to have sufficient game textures avai
 - It will be built in C/C++ using OpenGL
 
 ##### Points to research
+
 - OpenGL options in C/C++
 - Physics of flight
 
 ---
+
 #### Stakeholders
 
 My stakeholders will include:
@@ -43,6 +50,7 @@ My stakeholders will include:
 As such, I will get a number of people within these groups to test the application during testing and once complete to gain an understanding of the success and areas for improvement.
 
 ##### Stakeholder requirements
+
 - A flight sim to satisfy the requirements of a practice sim and an enjoyment sim
 - Interactive process
 	- Create or load aircraft
@@ -54,6 +62,7 @@ As such, I will get a number of people within these groups to test the applicati
 - It should be possible to use as wide a range of input devices as possible, allowing for not only the use of dedicated flight control hardware, but also mouse and keyboard prevents limiting the number of users
 
 ##### Usage
+
 - Inputs and outputs from each of the parts of the application:
 	- Flight
 		- The flight part of the application will require the 3D model of the aircraft, the pre-calculated physics of the model and a map model
@@ -70,6 +79,7 @@ As such, I will get a number of people within these groups to test the applicati
 		- Option to edit the physics values directly; some of these, such as thrust, will need to be edited manually regardless
 
 ##### Meeting stakeholder requirements
+
 - As a game:
 Modern graphics with the performance to run on most systems
 Variety of built in quality models; remove the need to spend too much time to get the best experience from a casual perspective
@@ -84,6 +94,7 @@ I also plan to ask some people outside of this target market to gauge usability 
 - To expand this, the tutorial could try to detect the type of input device in use and tailor the information to fit the input device
 
 ---
+
 #### First steps
 - Build an application in C++ and OpenGL following tutorials to gain an understanding of the architecture
 - Document the architecture to begin work on the application
@@ -91,14 +102,18 @@ I also plan to ask some people outside of this target market to gauge usability 
 - Research the scope of full CFD on an arbitrary .obj file
 
 ---
+
 #### Possible expansions
 If I find time to add more features, I would like to add support for OpenVR to allow the use of VR headsets with the application to assist with immersion in the sim.
 
 If possible, it would also be preferable to try to find some way of fully, or at least partially including the CFD in the physics calculations each frame using a separate thread for the physics engine. This would improve the accuracy of the sim while maintaining the same, or similar, performance.
 
 ---
+
 ### Existing products and projects
+
 ---
+
 #### RC Desk Pilot
 
 ![[Images/RCDeskPilot.png]]
@@ -124,6 +139,7 @@ It has a simple and easy to use interface while managing to provide all of the o
 Many times the sim will require use of the menus to even be able to connect and use a controller, as a keyboard cannot be used. While some controllers may simply work, many require knowledge of drivers and other hardware management systems. Fixing this from the perspective of the application would either require a refresh for the device selection list along with an explanation of the most common issues.
 
 ---
+
 #### Microsoft Flight Sim 2020
 
 ![[Images/Ms-flight-sim.jpg]]
@@ -147,6 +163,7 @@ Microsoft Flight Sim provides a huge number of options and input methods, while 
 This huge number of options and features would be imposing for any new user, so ensuring that the sim will function without the ned to browse these menus is important. This allows the user to explore the menus and features at their own pace.
 
 ---
+
 #### Requirements to compete
 - High quality models and rendering
 - Detailed environment
@@ -159,7 +176,9 @@ Performance is also a major take away from this research, as it will need to run
 To complete in terms of performance, I will need to make use of a modern 3D rendering library to ensure that I do not spend the entire project only on optimising a sub par implementation.
 
 ---
+
 ### Features
+
 ---
 - Pre-made models available
 - Tools to make new models
@@ -170,29 +189,38 @@ To complete in terms of performance, I will need to make use of a modern 3D rend
 - Reasonable environment
 
 ---
+
 ### Implementation
+
 ---
+
 - OpenGL based rendering with C++/C#
 - Using pre-baked physics to remove the need for real time [[CFD]]
 - GLFW input (or XInput for extra compatibility) API
 - Models stored and loaded from a custom file format
 
 ---
+
 #### Update to implementation
+
 - OpenGL based rendering in C/C++ using RayLib as an API
 - Using pre-baked physics to remove the need for real time [[CFD]]
 - RayLib contains libraries to act as interfaces for XInput
 - Models stored and loaded from a custom file format
 
 ---
+
 #### Limitations of implementation
+
 - Fairly resource intensive due to the full frame rate rendering
 - Pre-baked physics will be slightly inaccurate compared to a real time [[CFD]] simulation
-- 
 
 ---
+
 ### Hardware requirements
+
 ---
+
 - A computer capable of running an OpenGL application at a usable frame rate; this should include almost any computer from the 6 or 7 years and probably longer
 - A compatible controller
 - The project will be self contained through the use of RayLib, an OpenGL wrapper library that allows easier use of the OpenGL interface
@@ -201,8 +229,11 @@ To complete in terms of performance, I will need to make use of a modern 3D rend
 - This results in a fully portable development environment, allowing me to make use of GitHub to store and version my code in a private repository
 
 ---
+
 ### Brief: success criteria
+
 ---
+
 - Realistic flight performance of aircraft
 - Can be controlled with a variety of different input devices
 - Runs at least 30fps, preferably more than 60fps
@@ -226,7 +257,9 @@ Real time CFD | Handcrafted implementation | Only required for hyper accuracy an
 Built in 3D editor | Recommend use of Blender | Not required to edit the aircraft models as Blender can be used to edit these which prevents the need for me to implement a full mesh editor.
 
 ---
+
 ### Computational methods
+
 ---
 Both the 3D rendering and physics involved with flight can be abstracted down to lower poly models along with an argument based physics engine rather than a real time flow simulator. This vastly reduces the complexity of the problem, allowing it to be run at reasonable frame rates on consumer hardware.
 

@@ -18,7 +18,9 @@
     "coloured",
     "colour",
     "colourised",
-    "uncatchable"
+    "uncatchable",
+    "initialised",
+    "resizable"
   ],
   "promptDelete": false,
   "pdfExportSettings": {

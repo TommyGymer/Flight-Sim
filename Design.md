@@ -1,8 +1,12 @@
+
 ## Design
+
 ---
+
 ![[Images/System_overview.png]]
 
 ### Menus
+
 ---
 
 #### Main Menu
@@ -50,6 +54,7 @@ By reducing and fully categorising all available options
 	- This should help reduce load times into the sim once the application has been started
 
 ---
+
 ### Objects
 
 #### Objects
@@ -96,6 +101,7 @@ This will allow full use of angular velocity and accelerations
 While raylib already implements many of these, it may be beneficial to write my own vector and matrix lib to allow full use of all required overloads
 
 ---
+
 ### Algorithms
 
 #### Vector and Matrix Maths Lib
@@ -211,17 +217,20 @@ matrix inverse():
 
 
 ---
+
 ### Input Validation
 
 - Combinations of keys: e.g. Ctrl, Shift, Caps Lock, etc.
 
 ---
+
 ### Unit testing
 
 - Testing specific functions with specific test cases
 - Set up test functions to be run at program start while in debug mode to test the basic functions of classes and functions
 
 ##### Testing the matrix class
+
 |Function to test|Given input|Expected output|
 |:---|:---|:---|
 |Vector get|![[Images/MatADef.png]]|![[Images/VecGetTest.png]]|
@@ -241,7 +250,11 @@ matrix inverse():
 |Arbitrary matrix inverse|![[Images/ArbMatInvIn.png]]|![[Images/ArbMatInvOut.png]]|
 
 This testing is run at startup of the program
+
 ![[Images/Startup_test.png]]
+
 This function outputs the debug results to the terminal if the boolean argument is set to true
+
 ![[Images/MatClassDebug.png]]
+
 This ensures that the class is functioning correctly before entering the main loop
