@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Physics/Baked Physics/Baked Physics Format.md",
-            "mode": "preview"
+            "file": "Design.md",
+            "mode": "source"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Physics/Baked Physics/Baked Physics Format.md",
+                "file": "Design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "97f2d7e50b206d33",
   "lastOpenFiles": [
-    "Physics/Baked Physics/Baked Physics Format.md",
-    "Physics/Baked Physics/CFD.md",
-    "Physics/Flight Characteristics.md",
-    "Building/Old Requirements/vcpkg.md",
-    "Building/Old Requirements/Requirements.md",
-    "Building/Old Requirements/CMake.md",
-    "Building/Old Requirements/Libraries/Imgui.md",
-    "Building/Old Requirements/Libraries/GLM.md",
-    "Developing a Coded Solution.md",
-    "Analysis.md"
+    "Design.md",
+    "Analysis.md",
+    "Images/Total_time.png",
+    "Images/Render_grid.png",
+    "Images/Game_state_enum.png",
+    "Images/Final_shaders.png",
+    "Images/Documenting programming projects OCR H446 (non games projects) (2).pdf",
+    "Images/Assignment_operator_overloaded.png",
+    "Images/ArbMatInvIn.png",
+    "Images/Angular_vel.png"
   ]
 }
