@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Design.md",
+            "file": "mdtemp_Developing a Coded Solution.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design.md",
+                "file": "mdtemp_Developing a Coded Solution.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "97f2d7e50b206d33",
   "lastOpenFiles": [
+    "mdtemp_Developing a Coded Solution.md",
+    "Developing a Coded Solution.md",
     "Design.md",
+    "mdtemp_Design.md",
     "Analysis.md",
     "Images/Total_time.png",
     "Images/Render_grid.png",
     "Images/Game_state_enum.png",
     "Images/Final_shaders.png",
-    "Images/Documenting programming projects OCR H446 (non games projects) (2).pdf",
-    "Images/Assignment_operator_overloaded.png",
-    "Images/ArbMatInvIn.png",
-    "Images/Angular_vel.png"
+    "Images/Documenting programming projects OCR H446 (non games projects) (2).pdf"
   ]
 }

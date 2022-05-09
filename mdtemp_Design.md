@@ -2,8 +2,8 @@
 ---
 ![](Images/System_overview.png)
 
----
 ### Menus
+---
 
 #### Main Menu
 
@@ -224,24 +224,24 @@ matrix inverse():
 ##### Testing the matrix class
 |Function to test|Given input|Expected output|
 |:---|:---|:---|
-|Vector get|![](MatADef.png]]|![[VecGetTest.png)|
-|Vector set|![](VecSetInp.png]]|![[VecSetOut.png)|
-|Vector add|![](VecArithIn.png]]|![[VecAddOut.png)|
-|Vector subtract|![](VecArithIn.png]]|![[VecSubOut.png)|
-|Quaternion get|![](QuatDef.png]]|![[QuatGet.png)|
-|Quaternion set|![](QuatSetIn.png]]|![[QuatSetOut.png)|
-|Quaternion add|![](QuatAddIn.png]]|![[QuatAddOut.png)|
-|Quaternion multiply|![](QuatMultIn.png]]|![[QuatMultOut.png)|
-|Quaternion multiply with a negative|![](QuatMultNegIn.png]]|![[QuatMultNegOut.png)|
-|Quaternion rotate|![](QuatRotIn.png]]|![[QuatRotOut.png)|
-|Quaternion rotate continuity|![](QuatRotContIn.png]]|![[QuatRotContOut.png)|
-|Matrix multiply|![](MatMultIn.png]]|![[MatMultOut.png)|
-|Matrix scale|![](MatScaleIn.png]]|![[MatScaleOut.png)|
-|Identity matrix inverse|![](IMatInvIn.png]]|![[IMatInvOut.png)|
-|Arbitrary matrix inverse|![](ArbMatInvIn.png]]|![[ArbMatInvOut.png)|
+|Vector get|![](Images/MatADef.png]]|![[Images/VecGetTest.png)|
+|Vector set|![](Images/VecSetInp.png]]|![[Images/VecSetOut.png)|
+|Vector add|![](Images/VecArithIn.png]]|![[Images/VecAddOut.png)|
+|Vector subtract|![](Images/VecArithIn.png]]|![[Images/VecSubOut.png)|
+|Quaternion get|![](Images/QuatDef.png]]|![[Images/QuatGet.png)|
+|Quaternion set|![](Images/QuatSetIn.png]]|![[Images/QuatSetOut.png)|
+|Quaternion add|![](Images/QuatAddIn.png]]|![[Images/QuatAddOut.png)|
+|Quaternion multiply|![](Images/QuatMultIn.png]]|![[Images/QuatMultOut.png)|
+|Quaternion multiply with a negative|![](Images/QuatMultNegIn.png]]|![[Images/QuatMultNegOut.png)|
+|Quaternion rotate|![](Images/QuatRotIn.png]]|![[Images/QuatRotOut.png)|
+|Quaternion rotate continuity|![](Images/QuatRotContIn.png]]|![[Images/QuatRotContOut.png)|
+|Matrix multiply|![](Images/MatMultIn.png]]|![[Images/MatMultOut.png)|
+|Matrix scale|![](Images/MatScaleIn.png]]|![[Images/MatScaleOut.png)|
+|Identity matrix inverse|![](Images/IMatInvIn.png]]|![[Images/IMatInvOut.png)|
+|Arbitrary matrix inverse|![](Images/ArbMatInvIn.png]]|![[Images/ArbMatInvOut.png)|
 
 This testing is run at startup of the program
-![](Startup_test.png)
+![](Images/Startup_test.png)
 This function outputs the debug results to the terminal if the boolean argument is set to true
-![](MatClassDebug.png)
+![](Images/MatClassDebug.png)
 This ensures that the class is functioning correctly before entering the main loop

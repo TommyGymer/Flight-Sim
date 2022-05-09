@@ -14,12 +14,12 @@ with screenWidth/Height as int's
 
 ```SetWindowState(FLAG_WINDOW_RESIZEABLE)``` for a resizable window
 
-![[First_window.png]]
+![[Image/First_window.png]]
 
 ---
 #### Setting up [VSCodium](https://vscodium.com/) to facilitate development
 
-![[Shapes.png]]
+![[Image/Shapes.png]]
 
 Added a shortcut to build and run the active file to allow for easier and quicker testing.
 
@@ -33,13 +33,13 @@ Once I have a better understanding of the architecture, I should be able to cons
 
 I will be following an [OpenGL in C++](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/) tutorial to develop my first application in C++ and OpenGL. This covers the basics of C++ and OpenGL to be able render an object using shaders.
 
-![[First_cube.png]]
+![[Image/First_cube.png]]
 
 ---
 #### Loading from a .obj file
 [Tutorial](https://ogldev.org/www/tutorial22/tutorial22.html)
 
-![[Cube_points.png]]
+![[Image/Cube_points.png]]
 
 A .obj stores the points within the mesh of an object. These can be extracted form the file using Assimp and then loaded into the mesh array for the renderer.
 
@@ -55,27 +55,27 @@ As I will still be using raylib and the change is only from C to C++, much of th
 #### Setting up C++
 Starting with simply opening a window using C++ rather than C
 
-![[First_C++_window_code.png]]
+![[Image/First_C++_window_code.png]]
 
 The above shows a demo I found which simply opens a windows and displays some text on it
 
-![[First_C++_window.png]]
+![[Image/First_C++_window.png]]
 
 Allowing window resizing
-![[Window_resizing.png]]
+![[Image/Window_resizing.png]]
 
 ---
 #### Setting up 3D rendering
 
-![[First_render_code.png]]
+![[Image/First_render_code.png]]
 
 Not currently rendering anything
-![[First_render.png]]
+![[Image/First_render.png]]
 
 ---
 ### Shaders
 
-![[Shaders.png]]
+![[Image/Shaders.png]]
 
 Testing one of the example shaders with an object made in Blender
 
@@ -84,55 +84,55 @@ Testing one of the example shaders with an object made in Blender
 
 Raylib contains helper methods for parsing .obj files and allows the easy import of a .obj and its related material files
 
-![[Cube_loading_code.png]]
+![[Image/Cube_loading_code.png]]
 
-![[Loading_a_cube.png]]
+![[Image/Loading_a_cube.png]]
 
 ---
 
 ### Shaders
 Shaders must then be set for each material to allow the renderer to know what to draw to the screen
-![[Material shaders.png]]
+![[Image/Material shaders.png]]
 The object can then be drawn during the loop
-![[first_draw_object.png]]
+![[Image/first_draw_object.png]]
 A grid can also be rendered to show y=0
-![[Cube_rendered_with_grid.png]]
-![[Render_grid.png]]
+![[Image/Cube_rendered_with_grid.png]]
+![[Image/Render_grid.png]]
 
 ---
 
 ### Updating location during runtime
-![[Moving_object_at_runtime.mp4]]
-![[Start_time.png]]
-![[Total_time.png]]
+![[Image/Moving_object_at_runtime.mp4]]
+![[Image/Start_time.png]]
+![[Image/Total_time.png]]
 By recoding the start time of the program, the total run time can be determined
 This can then be used as a parameter of some function to determine location
 
 ---
 
 ### Object tracking
-![[Tracking_and_parametrics.mp4]]
+![[Image/Tracking_and_parametrics.mp4]]
 A more complex movement can be traced by changing all three x, y and z components of the object's location
-![[parametric_location.png]]
+![[Image/parametric_location.png]]
 The object can then be tracked by pointing the camera at this location
-![[Camera_targeting.png]]
+![[Image/Camera_targeting.png]]
 
 ---
 
 ### Gravity
-![[SUVAT_gravity.mp4]]
+![[Image/SUVAT_gravity.mp4]]
 Gravity can then be implemented using a SUVAT and the total elapsed time
-![[SUVAT_gravity_implementation.png]]
+![[Image/SUVAT_gravity_implementation.png]]
 
 ---
 ### Moving the model data to an object
 
-![[OOP_demo.mp4]]
+![[Image/OOP_demo.mp4]]
 
 Now making use of an object class and instancing to keep track of objects and render them
 This will help keep the code clean, as it removes the need to hard code each object required
 
-![[First_object_class.png]]
+![[Image/First_object_class.png]]
 
 Object definition
 
@@ -157,15 +157,15 @@ Rather than using a predefined SUVAT for movement, integrating an acceleration f
 This can be easily achieved by tracking the previous frame time and subtracting this from the current time to find the change in time between the two frames
 This will make any physics based off this time entirely frame independent
 
-![[Finding_dt.png]]
+![[Image/Finding_dt.png]]
 
 The first version of this missed setting start to the current time at the end of dt, resulting in dt being found as the total time since the program started
 
-![[First_pos_based_on_integration.mp4]]
+![[Image/First_pos_based_on_integration.mp4]]
 
 ---
 ### Moving per object functions to the Object class
-![[Public_draw_function.png]]
+![[Image/Public_draw_function.png]]
 
 Moving the draw function to within the class allows the use of the local object variables without the need to first extract the required data for drawing from the object
 
@@ -173,13 +173,13 @@ This also allows for the code within the main loop to be kept simpler as each ob
 
 ---
 #### Per Object physics
-![[First_update_function.png]]
+![[Image/First_update_function.png]]
 
 By moving the physics updating to a function, the code in the main loop can be further simplified to only require an update call and a draw call per object
 
 This new implementation also features a collision detection with y=0 to allow the cube to stop falling at this plane
 
-![[Cube_collide_with_y0.mp4]]
+![[Image/Cube_collide_with_y0.mp4]]
 
 ---
 ### Quaternions
@@ -229,31 +229,31 @@ $$ k = w_1 z_2 + x_1 y_2 - y_1 x_2 + z_1 w_2 $$
 
 Raylib contains some helpers for working with quaternions, such as a quaternion to axis-angle conversion, but will require the implementing of some way to integrate a quaternion velocity and possible quaternion acceleration
 
-![[Quaternion.png]]
+![[Image/Quaternion.png]]
 The above is the rotation quaternion within the object class
 
 By modifying the draw function, the new quaternion representation of the rotation can be used
 
-![[Quat_draw.png]]
+![[image/Quat_draw.png]]
 
-![[Quaternions_complete.png]]
+![[Image/Quaternions_complete.png]]
 
-![[Rotation_demo.mp4]]
+![[Image/Rotation_demo.mp4]]
 
 Now able to rotate an object using an Euler 3D vector for angular velocity
 
-![[Angular_vel.png]]
+![[Image/Angular_vel.png]]
 
 Along with an integrator from the update angular velocity to the rotation quaternion
 
-![[Quat_integration.png]]
+![[Image/Quat_integration.png]]
 
 ---
 ### Adding simple movement input
 
-![[Movement.mp4]]
+![[Image/Movement.mp4]]
 
-![[Keyboard_input.png]]
+![Image/Keyboard_input.png]]
 
 By damping the x-y velocity, an effect similar to friction can be achieved
 The velocity is set to a particular amount in a particular direction when one of the "wasd" keys is pressed
@@ -265,23 +265,23 @@ As the velocity is already being integrated for position, the implantation of th
 By moving the camera to the player object's location and rotation, first person gameplay is achieved
 As both the object location and rotation are already available from the object, they can simply be set as the camera location and rotation
 
-![[Set_camera_pos.png]]
+![[Image/Set_camera_pos.png]]
 
 As the camera is set to the object's location, the target can no longer be the object itself
 This will need to be a unit vector rotated by the quaternion to be in front of the camera
 
-![[First_first_person.mp4]]
+![[Image/First_first_person.mp4]]
 
 For debugging purposes, the camera target is set to another object's location with is placed at the origin
 
 ---
 #### Rotating the velocity with the quaternion
 
-![[Vel_rot_by_quat.mp4]]
+![[Image/Vel_rot_by_quat.mp4]]
 
 By rotating the velocity be the quaternion, the look direction of the camera can be kept consistent with the direction of movement caused by the keyboard input
 
-![[Set_quat_with_camera.png]]
+![[Image/Set_quat_with_camera.png]]
 
 In this case, for debugging, the object quaternion is set using the camera's quaternion as this can be easily updated using the `SetTarget` function
 
@@ -290,21 +290,21 @@ In this case, for debugging, the object quaternion is set using the camera's qua
 
 The matrix class begins with a simple double array and two integers to define the width and height of the matrix
 
-![[Start_of_matrix_class.png]]
+![[Image/Start_of_matrix_class.png]]
 
 This will be the base data structure used to store all data about the matrix
 
 A get and set function are required to translate an x,y position in the matrix into the required index in the double array
 
-![[Get_matrix.png]]
+![[Image/Get_matrix.png]]
 
-![[Set_matrix.png]]
+![[Image/Set_matrix.png]]
 
 If the position is outside of the matrix, the function will throw an error after printing an out-of-bounds message
 
 With these two functions, all matrix operations can be derived
 
-![[Matrix_sum.png]]
+![[Image/Matrix_sum.png]]
 
 Until all functions shown in the algorithms section of Design are complete and tested
 
@@ -349,43 +349,43 @@ The matrix class' delete function, ``~fullMatrix``, simply calls delete[] on the
 ---
 ### Look vector camera movement
 
-![[Look_vector.png]]
+![[Image/Look_vector.png]]
 
 A look vector is defined in the object class and is updated in the update function
 
-![[Update_look_vector.png]]
+![[Image/Update_look_vector.png]]
 
 The camera can then target its position plus this look vector
 
-![[Camera_look_vector.png]]
+![[Image/Camera_look_vector.png]]
 
 Bellow is a demo of this
 
-![[Look_vector_demo.mp4]]
+![[Image/Look_vector_demo.mp4]]
 
 The camera is rotated with a and d with forward and backward motion on w and s
 
-![[Rotation_input.png]]
+![[Image/Rotation_input.png]]
 
 ---
 ### Mouse input
 
 First the mouse must be setup by hiding it
 
-![[Mouse_setup.png]]
+![[Image/Mouse_setup.png]]
 
 The change in mouse location is then calculated and a sensitivity factor is used
 The mouse is then moved back to the center to allow the next mouse change to be calculated
 
-![[Find_change_in_mouse_location.png]]
+![[Image/Find_change_in_mouse_location.png]]
 
 A pause button to allow moving the mouse away from the program 
 
-![[Pausing.png]]
+![[Image/Pausing.png]]
 
 A pause toggle button is added to p
 
-![[Pause_button_on_p.png]]
+![[Image/Pause_button_on_p.png]]
 
 ---
 ### Camera up vector
@@ -394,24 +394,24 @@ Currently, the object drifts as the velocity and acceleration are not being corr
 
 Adding the camera up vector will allow easier debugging of this by displaying the problem
 
-![[Up_vector_def.png]]
+![[Image/Up_vector_def.png]]
 
 The up vector is defined within the object class
 
-![[Updating_the_up_vector.png]]
+![[Image/Updating_the_up_vector.png]]
 
 The up vector is updated within the update function
 
-![[Setting_camera_up_vector.png]]
+![[Image/Setting_camera_up_vector.png]]
 
 The camera up vector is then set to the object's up vector
 
-![[Demo_of_the_tilt.mp4]]
+![[Image/Demo_of_the_tilt.mp4]]
 
 ---
 ### Splitting classes into files
 
-![[Split_files.png]]
+![[Image/Split_files.png]]
 
 Splitting the classes into separate files will clean up the main file and make it easier to keep the code organized
 
@@ -420,18 +420,18 @@ Splitting the classes into separate files will clean up the main file and make i
 
 This will allow easier reading as well as easy addition of new game states, such as main menu or other specific menu area
 
-![[Game_state_enum.png]]
+![[Image/Game_state_enum.png]]
 
 ---
 ### Transferring physics to the matrix class
 
 Most of the code remains the same beside the class names used at initialization
 
-![[Object_with_matrix_class.png]]
+![[Image/Object_with_matrix_class.png]]
 
 Now using an explicit definition of the update quaternion
 
-![[Updating_the_quaternion.png]]
+![[Image/Updating_the_quaternion.png]]
 
 This also checks for a 0 length angular velocity which would result in a divide by zero error when normalizing if left
 
@@ -440,11 +440,11 @@ The formula for the update quaternion is from [this lecture from Stanford Univer
 ---
 ### Correcting use of global and local space
 
-![[New_object_with_matrix_class.png]]
+![[Image/New_object_with_matrix_class.png]]
 
 Added new global versions of acceleration and velocity to remove the reliance on the rotation quaternion and to reduce the time complexity
 
-![[Split_global_and_local_angv.png]]
+![[Image/Split_global_and_local_angv.png]]
 
 Splitting of the angular velocity into global and local movements allows the rotation required for use with a mouse
 
@@ -455,27 +455,27 @@ When used with a controller, most of the inputs will need to be local and the co
 ---
 ### Shaders
 
-![[Colouring_of_surface.png]]
+![[Image/Colouring_of_surface.png]]
 
 By using the dot product of the normal of the surface and a direction from which to project light, the surface can be coloured with an effect similar to shadows within a single convex shape
 
-![[Normal_based_shadow_shader.png]]
+![[Image/Normal_based_shadow_shader.png]]
 
 Scaling a shade of green with the dot product of the vertex and an arbitrary direction for the light source
 
 ---
 ### Shaders finished
 
-![[Final_shaders.png]]
+![[Image/Final_shaders.png]]
 
 The shaders now simulate shadows relatively well with the runway correctly colourised
 
-![[Final_shaders_runway.png]]
+![[Image/Final_shaders_runway.png]]
 
 ---
 ### Debugging an array deletion
 
-![[Delete_crash_debug_log.png]]
+![[Image/Delete_crash_debug_log.png]]
 
 The above debug log shows the use of the debug function in debugging an array deletion error in which an array used by an instance of the fullMatrix class is deleted more than once, resulting in an uncatchable crash
 
@@ -486,6 +486,6 @@ By changing over to using the version from the scale test, `fullMatrix rtn(cofac
 ---
 ### Overloading the assignment operator
 
-![[Assignment_operator_overloaded.png]]
+![[Image/Assignment_operator_overloaded.png]]
 
 Explicitly defining the assignment (=) operator appears to have fixed many of the issues that randomly appeared while trying to debug the random crashes from the matrix testing
