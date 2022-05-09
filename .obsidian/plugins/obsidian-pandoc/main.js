@@ -10741,6 +10741,7 @@ function render(plugin, view, inputFile, outputFormat, parentFiles = []) {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
         // Use Obsidian's markdown renderer to render to a hidden <div>
+        console.log(view);
         const markdown = view.data;
         const wrapper = document.createElement('div');
         wrapper.style.display = 'hidden';
@@ -10751,6 +10752,7 @@ function render(plugin, view, inputFile, outputFormat, parentFiles = []) {
         let html = wrapper.innerHTML;
         document.body.removeChild(wrapper);
         // If it's a top level note, make the HTML a standalone document - inject CSS, a <title>, etc.
+        console.log(markdown);
         const metadata = getYAMLMetadata(markdown);
         (_a = metadata.title) !== null && _a !== void 0 ? _a : (metadata.title = fileBaseName(inputFile));
         if (parentFiles.length === 0) {

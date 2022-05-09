@@ -4,7 +4,7 @@
   "injectAppCSS": "light",
   "injectThemeCSS": false,
   "customCSSFile": null,
-  "displayYAMLFrontmatter": false,
+  "displayYAMLFrontmatter": true,
   "linkStrippingBehaviour": "text",
   "highDPIDiagrams": true,
   "pandoc": null,

@@ -1,0 +1,9 @@
+obsidian_folder_path_str: 'D:/RC-PC/' 
+
+obsidian_entrypoint_path_str: 'D:/RC-PC/Project Proposal.md'
+
+exclude_subfolders:
+  - ".obsidian"
+  - ".git"
+  - ".vscode"
+  - "RC-PC"

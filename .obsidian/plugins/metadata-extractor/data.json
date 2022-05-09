@@ -1,0 +1,11 @@
+{
+  "tagPath": "",
+  "metadataPath": "",
+  "allExceptMdPath": "",
+  "tagFile": "tags.json",
+  "metadataFile": "metadata.json",
+  "allExceptMdFile": "allExceptMd.json",
+  "writingFrequency": "0",
+  "writeFilesOnLaunch": false,
+  "consoleLog": true
+}
