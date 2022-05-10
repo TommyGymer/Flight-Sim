@@ -96,6 +96,7 @@ I also plan to ask some people outside of this target market to gauge usability 
 ---
 
 #### First steps
+
 - Build an application in C++ and OpenGL following tutorials to gain an understanding of the architecture
 - Document the architecture to begin work on the application
 - Research into the physics of flight to understand what inputs would be required for directly input properties or properties calculated from a .obj
@@ -104,6 +105,7 @@ I also plan to ask some people outside of this target market to gauge usability 
 ---
 
 #### Possible expansions
+
 If I find time to add more features, I would like to add support for OpenVR to allow the use of VR headsets with the application to assist with immersion in the sim.
 
 If possible, it would also be preferable to try to find some way of fully, or at least partially including the CFD in the physics calculations each frame using a separate thread for the physics engine. This would improve the accuracy of the sim while maintaining the same, or similar, performance.
@@ -180,6 +182,7 @@ To complete in terms of performance, I will need to make use of a modern 3D rend
 ### Features
 
 ---
+
 - Pre-made models available
 - Tools to make new models
 - Loading these models

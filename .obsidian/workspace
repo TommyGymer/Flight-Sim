@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Analysis.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -89,14 +89,14 @@
   "active": "97f2d7e50b206d33",
   "lastOpenFiles": [
     "Analysis.md",
+    "Design.md",
+    "Developing a Coded Solution.md",
     "README.md",
     "Project Proposal.md",
-    "Design.md",
     "Index.md",
     "Physics/Baked Physics/Baked Physics Format.md",
     "Physics/Flight Characteristics.md",
     "Physics/Baked Physics/CFD.md",
-    "OpenGL/Opening a Window.md",
-    "Developing a Coded Solution.md"
+    "OpenGL/Opening a Window.md"
   ]
 }

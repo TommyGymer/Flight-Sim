@@ -17,7 +17,8 @@ def convert(src):
 files = [
     "Analysis.md",
     "Design.md",
-    "Developing a Coded Solution.md"
+    "Developing a Coded Solution.md",
+    "Project Proposal.md"
 ]
 
 expr = re.compile("!\[\[[^\]^\[]*\]\]")

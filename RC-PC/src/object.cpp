@@ -109,12 +109,20 @@ class Object3D {
                 qRot = qRot.Normalize();
             }
 
+            acc.y(-vel.z() * 0.15);
+
+            gacc = acc.RotateByQuaternion(qRot);
+            gacc.y(gacc.y() - 9.81);
+            acc.y(0);
+
+            vel = vel * 0.95;
+
             //integrating
             vel = vel + (acc * dt); //local space integration
             gvel = gvel + (gacc * dt); //global space integration
 
             //velocity damping/friction
-            vel = vel * 0.8;
+            //vel = vel * 0.8;
             // gvel = gvel * 0.8;            
 
             //call collides here
@@ -135,7 +143,7 @@ class Object3D {
             t.m3 = pos.x() / scale.GetX();
             t.m7 = pos.y() / scale.GetY();
             t.m11 = pos.z() / scale.GetZ();
-            model->SetTransform((fullMatrix(t) * fullMatrix(s)).GetMatrix());
+            model->SetTransform((fullMatrix(t) * fullMatrix(qRot.GetVec4().ToMatrix()) * fullMatrix(s)).GetMatrix());
 
             look = fullMatrix(MatrixType::Vector, 0, 0, -1).RotateByQuaternion(qRot).GetVec3();
             up = fullMatrix(MatrixType::Vector, 0, 1, 0).RotateByQuaternion(qRot).GetVec3();
@@ -150,23 +158,43 @@ class Object3D {
 
         void Collide(Object3D other, float dt){
             if((vel.RotateByQuaternion(qRot) + gvel).Length() != 0){
+                // fullMatrix tvel = fullMatrix(MatrixType::Vector, cvel.x() * 0.98, cvel.y(), cvel.z() * 0.98) + vel.RotateByQuaternion(qRot) + gvel;
                 fullMatrix tvel = vel.RotateByQuaternion(qRot) + gvel;
                 raylib::Ray ray((pos - other.pos).GetVec3(), tvel.GetVec3());
                 raylib::RayCollision collision = ray.GetCollision(*other.model);
-                fullMatrix point(collision.GetPosition());
                 DrawSphere(collision.GetPosition(), 40, RED);
                 if(collision.GetHit() && collision.GetDistance() <= tvel.Length() * dt){
                     fullMatrix normal(collision.GetNormal());
+                    fullMatrix point(collision.GetPosition());
+                    double dist = collision.GetDistance();
                     // vel = vel.RotateByQuaternion(qRot).RemoveComponent(normal).DeRotateByQuaternion(qRot);
                     // gvel = gvel.RemoveComponent(normal);
-                    cvel = gvel.RemoveComponent(normal, point + other.pos, pos, dt) + vel.RotateByQuaternion(qRot).RemoveComponent(normal, point, pos, dt).DeRotateByQuaternion(qRot);
-                    gvel = gvel.RemoveComponent(normal, point + other.pos, pos, dt);
-                    vel = vel.RotateByQuaternion(qRot).RemoveComponent(normal, point, pos, dt).DeRotateByQuaternion(qRot);
+                    // gvel = gvel.VelCollide(normal, collision.GetDistance());
+                    // vel = vel.VelCollide(normal, collision.GetDistance());
+
+                    // cvel = fullMatrix(MatrixType::Vector, cvel.x() * 0.98, cvel.y(), cvel.z() * 0.98) + vel.RotateByQuaternion(qRot) + gvel;
+                    // cvel = cvel.VelCollide(normal, dist);
+                    // gvel = gvel * 0;
+                    // vel = vel * 0;
+
+                    vel = vel.RotateByQuaternion(qRot).VelCollide(normal, dt).DeRotateByQuaternion(qRot);
+                    gvel = gvel.VelCollide(normal, dt);
+
+                    cvel = vel.RotateByQuaternion(qRot) + gvel;
+
+                    // cvel = cvel.VelCollide(normal, collision.GetDistance());
+                    // cvel = gvel.RemoveComponent(normal, point + other.pos, pos, dt) + vel.RotateByQuaternion(qRot).RemoveComponent(normal, point, pos, dt).DeRotateByQuaternion(qRot);
+                    // gvel = gvel.RemoveComponent(normal, point + other.pos, pos, dt);
+                    // vel = vel.RotateByQuaternion(qRot).RemoveComponent(normal, point, pos, dt).DeRotateByQuaternion(qRot);
                     // gvel = gvel - (gacc * dt);
                     if(debug){
-                        std::cout << "(" << cvel.x() << ", " << cvel.y() << ", " << cvel.z() << ") "<< "(" << gvel.x() << ", " << gvel.y() << ", " << gvel.z() << ") "<< "(" << vel.x() << ", " << vel.y() << ", " << vel.z() << ") " << dt << " " << vel.Dot(normal) << ", " << gvel.Dot(normal) << " (" << normal.x() << ", " << normal.y() << ", " << normal.z() << ") " << collision.GetDistance() << "\n";
+                        std::cout << "(" << cvel.x() << ", " << cvel.y() << ", " << cvel.z() << ") "<< "(" << vel.x() << ", " << vel.y() << ", " << vel.z() << ") "<< "(" << pos.x() << ", " << pos.y() << ", " << pos.z() << ") " << dt << " " << vel.Dot(normal) << ", " << gvel.Dot(normal) << " (" << normal.x() << ", " << normal.y() << ", " << normal.z() << ") " << collision.GetDistance() << "\n";
                     }
                 }else{
+                    // cvel = vel.RotateByQuaternion(qRot) + gvel;
+                    // cvel = fullMatrix(MatrixType::Vector, cvel.x() * 0.98, cvel.y(), cvel.z() * 0.98) + vel.RotateByQuaternion(qRot) + gvel;
+                    // gvel = gvel * 0;
+                    // vel = vel * 0;
                     cvel = vel.RotateByQuaternion(qRot) + gvel;
                 }
             }else{

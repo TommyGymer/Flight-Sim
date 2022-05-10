@@ -230,6 +230,7 @@ This new implementation also features a collision detection with y=0 to allow th
 ### Quaternions
 
 ---
+
 To fully represent the required rotations for a plane in 3D, quaternions are required
 
 A Quaternion is defined as a 4D vector
@@ -301,7 +302,7 @@ Along with an integrator from the update angular velocity to the rotation quater
 
 ![[Images/Movement.mp4]]
 
-![Images/Keyboard_input.png]]
+![[Images/Keyboard_input.png]]
 
 By damping the x-y velocity, an effect similar to friction can be achieved
 The velocity is set to a particular amount in a particular direction when one of the "wasd" keys is pressed
@@ -325,7 +326,7 @@ For debugging purposes, the camera target is set to another object's location wi
 
 ---
 
-####Rotating the velocity with the quaternion
+#### Rotating the velocity with the quaternion
 
 ![[Images/Vel_rot_by_quat.mp4]]
 
@@ -379,7 +380,7 @@ fullMatrix(const fullMatrix& other){
  }
 ```
 
-When an object is passed into a function or returned from a function, the object is redecleared through the copy constructor
+When an object is passed into a function or returned from a function, the object is redeclared through the copy constructor
 
 This caused a number of problems before I rewrote this function to correctly copy the attributes of the object. As the array was not being copied correctly, the data was lost seemingly without reason.
 
@@ -415,7 +416,7 @@ The camera can then target its position plus this look vector
 
 ![[Images/Camera_look_vector.png]]
 
-Bellow is a demo of this
+Below is a demo of this
 
 ![[Images/Look_vector_demo.mp4]]
 

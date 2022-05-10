@@ -33,7 +33,7 @@ int main() {
     
     window.SetState(FLAG_WINDOW_RESIZABLE);
 
-    Object3D obj("obj\\materials.obj");
+    Object3D obj("obj\\box plane.obj");
     Object3D ground("obj\\surface.obj");
     ground.scale = raylib::Vector3(200, 100, 200);
     ground.pos.y(0);
@@ -55,6 +55,11 @@ int main() {
         raylib::Vector3(0.0f, 1.0f, 0.0f), //camera up
         60.0f, //fov
         CAMERA_PERSPECTIVE);
+
+    raylib::Camera2D cam2D(
+        raylib::Vector2(0, 0),
+        raylib::Vector2(0, 0)
+    );
 
     raylib::Shader shader(
         "shaders\\base.vs",
@@ -79,16 +84,58 @@ int main() {
 
     std::cout << "Entering event loop\n";
 
-    GameState state = GameState::Paused;
+    GameState state = GameState::Menu;
     CameraState cState = CameraState::First;
 
-    HideCursor();
-    DisableCursor();
-    raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
+    raylib::Texture mainMenu("../Images/Main_Menu.png");
+
+    // HideCursor();
+    // DisableCursor();
+    // raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
 
     // Main game loop
     while (!window.ShouldClose()) // Detect window close button or ESC key
     {
+        raylib::Rectangle windowRect(raylib::Vector2(0, 0), raylib::Vector2(window.GetWidth(), window.GetHeight()));
+        if(state == GameState::Menu){
+            ShowCursor();
+            EnableCursor();
+
+            raylib::Rectangle btnStart(raylib::Vector2((454.0/1717.0)*windowRect.GetWidth(), (455.0/997.0)*windowRect.GetHeight()), raylib::Vector2((720.0/1717.0)*windowRect.GetWidth(), (90.0/997.0)*windowRect.GetHeight()));
+            raylib::Rectangle btnSettings(raylib::Vector2((454.0/1717.0)*windowRect.GetWidth(), (634.0/997.0)*windowRect.GetHeight()), raylib::Vector2((720.0/1717.0)*windowRect.GetWidth(), (90.0/997.0)*windowRect.GetHeight()));
+            raylib::Rectangle btnExit(raylib::Vector2((454.0/1717.0)*windowRect.GetWidth(), (814.0/997.0)*windowRect.GetHeight()), raylib::Vector2((720.0/1717.0)*windowRect.GetWidth(), (90.0/997.0)*windowRect.GetHeight()));
+
+            raylib::Vector2 mouse = raylib::Mouse::GetPosition();
+
+            if(btnStart.CheckCollision(mouse) && raylib::Mouse::IsButtonPressed(0)){
+                state = GameState::Playing;
+                raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
+            }
+
+            if(btnSettings.CheckCollision(mouse) && raylib::Mouse::IsButtonPressed(0)){
+                std::cout << "Not yet implemented\n";
+            }
+
+            if(btnExit.CheckCollision(mouse) && raylib::Mouse::IsButtonPressed(0)){
+                return 0;
+            }
+            BeginDrawing();
+            {
+                ClearBackground(RAYWHITE);
+                cam2D.BeginMode();
+                {
+                    mainMenu.Draw(raylib::Rectangle(raylib::Vector2(0, 0), mainMenu.GetSize()), windowRect);
+
+                    btnStart.DrawLines(RED, 3);
+                    btnSettings.DrawLines(RED, 3);
+                    btnExit.DrawLines(RED, 3);
+                }
+                cam2D.EndMode();
+            }   
+            EndDrawing(); 
+            continue;    
+        }
+
         // Update
         camera.Update();
         // Draw
@@ -135,11 +182,11 @@ int main() {
             if(state == GameState::Paused){
                 if(IsKeyPressed(static_cast<int>(Key::P))){
                     raylib::Mouse::SetPosition(window.GetWidth()/2, window.GetHeight()/2);
-                    state = GameState::Playing;
+                    state = GameState::Menu;
                 }
             }else{
                 if(IsKeyPressed(static_cast<int>(Key::P))){
-                    state = GameState::Paused;
+                    state = GameState::Menu;
                 }
             }
 
@@ -154,16 +201,16 @@ int main() {
             }
 
             if(IsKeyDown(static_cast<int>(Key::A))){
-                obj.vel.x(-10);
+                obj.vel.x(-100);
             }
             if(IsKeyDown(static_cast<int>(Key::D))){
-                obj.vel.x(10);
+                obj.vel.x(100);
             }
             if(IsKeyDown(static_cast<int>(Key::S))){
-                obj.vel.z(10);
+                obj.vel.z(100);
             }
             if(IsKeyDown(static_cast<int>(Key::W))){
-                obj.vel.z(-10);
+                obj.vel.z(-100);
             }
 
             if(IsKeyDown(static_cast<int>(Key::E))){
@@ -177,6 +224,7 @@ int main() {
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start);
             float dt = duration.count() / 1000000.0f;
             total += dt;
+            
             start = std::chrono::high_resolution_clock::now();
             
             obj.Update(dt);

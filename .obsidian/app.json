@@ -43,7 +43,8 @@
     "Maths",
     "cofactors",
     "Ctrl",
-    "gimble"
+    "gimble",
+    "redeclared"
   ],
   "promptDelete": false,
   "pdfExportSettings": {

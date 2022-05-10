@@ -617,18 +617,17 @@ class fullMatrix {
             }
         }
 
-        fullMatrix RemoveComponent(fullMatrix normal, fullMatrix point, fullMatrix pos, float dt){
-            fullMatrix add((point - pos));
-            fullMatrix sub((point - pos));
-            add = add - (normal * (*this - add).Dot(normal)) * (dt/add.Length());
-            return add;
-            // sub = sub - (normal * (*this - sub).Dot(normal));
-            // if(add.Length() < sub.Length()){
-            //     return add;
-            // }else{
-            //     return sub;
-            // }
-            // return (point - pos) + normal;
+        fullMatrix RemoveComponent(fullMatrix normal){
+            fullMatrix rtn(*this);
+            return *this - (normal * this->Dot(normal));
+        }
+
+        fullMatrix VelCollide(fullMatrix normal, double dist){
+            if(this->Length() != 0){
+                return this->RemoveComponent(normal) + (normal * this->Dot(normal)) * (dist/this->Length());
+            }else{
+                return *this * 0;
+            }
         }
 
         /*fullMatrix Update(fullMatrix update){
